@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DAEWOO 视频中心</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="video-page" data-page="video">
+    <header class="site-header">
+      <div class="brand-bar">
+        <a class="brand" href="index.html" data-i18n="brand.name">DAEWOO 服务</a>
+        <form class="global-search" role="search">
+          <label for="video-search-input" class="sr-only" data-i18n="search.label">输入搜索词</label>
+          <input
+            id="video-search-input"
+            type="search"
+            placeholder="请输入想了解的内容"
+            autocomplete="off"
+            data-i18n-placeholder="search.placeholder"
+          />
+          <button type="submit" data-i18n="search.button">搜索</button>
+        </form>
+      </div>
+
+      <nav
+        class="mega-nav"
+        aria-label="DAEWOO 主要服务"
+        data-i18n-aria-label="nav.label"
+      >
+        <button class="mega-nav__toggle" aria-expanded="false" aria-controls="mega-nav-menu" data-i18n="nav.toggle">
+          全部菜单
+        </button>
+        <ul id="mega-nav-menu" class="mega-nav__list">
+          <li class="mega-nav__item" data-panel="product">
+            <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.product">产品中心</button>
+          </li>
+          <li class="mega-nav__item" data-panel="news">
+            <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.news">新闻动态</button>
+          </li>
+          <li class="mega-nav__item is-current-tab" data-panel="video" data-nav-url="video-center.html">
+            <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.video">视频中心</button>
+          </li>
+          <li class="mega-nav__item" data-panel="contact">
+            <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.contact">联系我们</button>
+          </li>
+          <li class="mega-nav__item" data-panel="about">
+            <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.about">公司概况</button>
+          </li>
+          <li class="mega-nav__item" data-panel="language">
+            <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.language">LANGUAGE</button>
+          </li>
+        </ul>
+        <div class="mega-board" id="mega-board">
+          <div class="mega-board__inner">
+            <section class="mega-board__column" data-panel="product">
+              <h3 data-i18n="panel.product.heading">产品类别</h3>
+              <ul>
+                <li><a href="product-center.html#home-appliances" data-i18n="panel.product.home">家用电器</a></li>
+                <li><a href="product-center.html#smart-home" data-i18n="panel.product.smartHome">智能家居</a></li>
+                <li><a href="product-center.html#commercial" data-i18n="panel.product.commercial">商用电器</a></li>
+                <li><a href="product-center.html#personal-care" data-i18n="panel.product.personalCare">个人护理</a></li>
+                <li><a href="product-center.html#wearable" data-i18n="panel.product.wearable">智能穿戴</a></li>
+                <li><a href="product-center.html#digital" data-i18n="panel.product.digital">智能数码</a></li>
+                <li><a href="product-center.html#others" data-i18n="panel.product.others">其他产品</a></li>
+              </ul>
+            </section>
+            <section class="mega-board__column" data-panel="news">
+              <h3 data-i18n="panel.news.heading">新闻分类</h3>
+              <ul>
+                <li><a href="news.html#news-section" data-i18n="panel.news.latest">新闻资讯 · 行业资讯</a></li>
+              </ul>
+            </section>
+            <section class="mega-board__column is-active" data-panel="video">
+              <h3 data-i18n="panel.video.heading">精选视频</h3>
+              <ul>
+                <li><a href="video-center.html?video=zb10" data-i18n="panel.video.zb10">ZB10便携式果汁杯</a></li>
+                <li><a href="video-center.html?video=smop02" data-i18n="panel.video.smop02">SMOP02电动蒸汽洗地机</a></li>
+                <li><a href="video-center.html?video=k10" data-i18n="panel.video.k10">K10电烤炉</a></li>
+                <li><a href="video-center.html?video=f20" data-i18n="panel.video.f20">F20挂脖风扇</a></li>
+                <li><a href="video-center.html?video=dyks01" data-i18n="panel.video.dyks01">DY-KS01电热开水瓶</a></li>
+                <li><a href="video-center.html?video=dybgx09" data-i18n="panel.video.dygx09">DY-BGX09全自动壁挂滚筒洗衣机</a></li>
+                <li><a href="video-center.html" data-i18n="panel.video.more">更多</a></li>
+              </ul>
+            </section>
+            <section class="mega-board__column" data-panel="contact">
+              <h3 data-i18n="panel.contact.heading">联系渠道</h3>
+              <ul>
+                <li><a href="#" data-i18n="panel.contact.hotline">客服热线 400-123-0000</a></li>
+                <li><a href="#" data-i18n="panel.contact.online">在线客服</a></li>
+                <li><a href="#" data-i18n="panel.contact.center">服务中心预约</a></li>
+                <li><a href="#" data-i18n="panel.contact.partner">合作伙伴支持</a></li>
+                <li><a href="#" data-i18n="panel.contact.feedback">意见反馈</a></li>
+              </ul>
+            </section>
+            <section class="mega-board__column" data-panel="about">
+              <h3 data-i18n="panel.about.heading">DAEWOO 公司概况</h3>
+              <ul>
+                <li><a href="#" data-i18n="panel.about.story">品牌故事</a></li>
+                <li><a href="#" data-i18n="panel.about.timeline">发展历程</a></li>
+                <li><a href="#" data-i18n="panel.about.leadership">管理团队</a></li>
+                <li><a href="#" data-i18n="panel.about.csr">社会责任</a></li>
+                <li><a href="#" data-i18n="panel.about.partner">合作伙伴</a></li>
+              </ul>
+            </section>
+            <section class="mega-board__column" data-panel="language">
+              <h3 data-i18n="panel.language.heading">选择语言</h3>
+              <p data-i18n="panel.language.description">请选择您希望浏览网站的语言版本。</p>
+              <ul class="language-list" data-language-list>
+                <li>
+                  <button type="button" data-lang="en">
+                    English
+                  </button>
+                </li>
+                <li>
+                  <button type="button" data-lang="zh">
+                    中文
+                  </button>
+                </li>
+                <li>
+                  <button type="button" data-lang="ko">
+                    한국어
+                  </button>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="video-center">
+      <section class="page-hero page-hero--video">
+        <div class="page-hero__content">
+          <p class="page-hero__eyebrow">视频中心</p>
+          <h1 class="page-hero__title">沉浸式了解 DAEWOO 精品家电</h1>
+          <p class="page-hero__description">
+            精选品牌广告、产品演示与使用场景视频，让您快速掌握每一款精品家电的亮点功能与使用体验。
+          </p>
+        </div>
+      </section>
+
+      <section class="video-overview" aria-labelledby="video-overview-heading">
+        <div class="video-overview__inner">
+          <header class="video-overview__header">
+            <h2 id="video-overview-heading">内容导览</h2>
+            <p>
+              聚焦厨房新鲜力、清洁场景与舒适生活三大主题，持续更新符合中国家庭需求的真实体验视频。
+            </p>
+          </header>
+          <div class="video-overview__grid">
+            <article class="video-overview__card">
+              <span class="video-overview__icon" aria-hidden="true">🍳</span>
+              <h3>厨房灵感</h3>
+              <p>从便携榨汁到多功能烹饪，了解如何用精品家电提升每日餐桌效率。</p>
+            </article>
+            <article class="video-overview__card">
+              <span class="video-overview__icon" aria-hidden="true">🧽</span>
+              <h3>洁净科技</h3>
+              <p>直观展示蒸汽洗地机、壁挂洗烘等解决方案带来的高效家务流程。</p>
+            </article>
+            <article class="video-overview__card">
+              <span class="video-overview__icon" aria-hidden="true">🌬️</span>
+              <h3>舒适体验</h3>
+              <p>探索挂脖风扇、智能饮水等生活灵感，打造四季皆宜的品质生活。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="video-featured" aria-labelledby="video-featured-heading">
+        <div class="video-featured__inner">
+          <div class="video-featured__media">
+            <img
+              src="https://www.daewoolife.com.cn/data/attachment/202204/23/e5940312cb38128e.jpg"
+              alt="ZB10便携式果汁杯"
+            />
+            <button
+              type="button"
+              class="video-featured__play"
+              data-video-src="https://v.qq.com/txp/iframe/player.html?vid=k3333a3pszf"
+              data-video-title="ZB10便携式果汁杯"
+              data-video-id="zb10"
+              data-video-tags="kitchen"
+            >
+              <span class="video-featured__play-icon" aria-hidden="true">▶</span>
+              <span class="video-featured__play-label">立即播放</span>
+            </button>
+          </div>
+          <div class="video-featured__content">
+            <span class="video-featured__badge">FEATURED</span>
+            <h2 id="video-featured-heading">ZB10 便携式果汁杯</h2>
+            <p>
+              一杯新鲜随行的轻生活演绎：双杯体搭配磁吸主机，按下即可高速搅拌，
+              视频中演示了户外、办公室与家庭场景的应用方式，帮助您掌握清洗与安全锁扣技巧。
+            </p>
+            <ul>
+              <li>演示快速榨汁、分离杯体与便携饮用的完整流程</li>
+              <li>讲解Type-C 充电与旅行收纳的小贴士</li>
+              <li>适合看重颜值、轻便与健康饮食的年轻家庭</li>
+            </ul>
+            <div class="video-featured__actions">
+              <a
+                class="video-featured__link"
+                href="https://v.qq.com/txp/iframe/player.html?vid=k3333a3pszf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                立即跳转观看
+              </a>
+              <button
+                type="button"
+                class="video-featured__cta"
+                data-video-src="https://v.qq.com/txp/iframe/player.html?vid=k3333a3pszf"
+                data-video-title="ZB10便携式果汁杯"
+              >
+                弹窗播放
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="video-collections" aria-labelledby="video-collections-heading">
+        <div class="video-collections__header">
+          <div>
+            <p class="video-collections__eyebrow">Video Library</p>
+            <h2 id="video-collections-heading">产品演示合集</h2>
+            <p>按兴趣主题筛选，快速找到与您生活场景匹配的产品演示视频。</p>
+          </div>
+          <div class="video-collections__filters" role="toolbar" aria-label="视频筛选">
+            <button type="button" class="is-active" data-video-filter="all" aria-pressed="true">全部</button>
+            <button type="button" data-video-filter="kitchen" aria-pressed="false">厨房饮品</button>
+            <button type="button" data-video-filter="cleaning" aria-pressed="false">居家清洁</button>
+            <button type="button" data-video-filter="comfort" aria-pressed="false">舒适生活</button>
+            <button type="button" data-video-filter="care" aria-pressed="false">洗护护理</button>
+          </div>
+        </div>
+
+        <div class="video-collections__grid">
+          <article class="video-card" data-video-card data-video-tags="kitchen" data-video-id="zb8">
+            <div class="video-card__poster">
+              <img src="https://www.daewoolife.com.cn/data/attachment/202204/23/63612c1887adddf8.jpg" alt="ZB8便携式果汁杯" loading="lazy" />
+              <button
+                type="button"
+                class="video-card__play"
+                data-video-src="https://v.qq.com/txp/iframe/player.html?vid=v3333vyjomz"
+                data-video-title="ZB8便携式果汁杯"
+                data-video-id="zb8"
+                aria-label="播放 ZB8便携式果汁杯 视频"
+              >
+                ▶
+              </button>
+            </div>
+            <div class="video-card__body">
+              <h3>
+                <a href="https://v.qq.com/txp/iframe/player.html?vid=v3333vyjomz" target="_blank" rel="noopener noreferrer">
+                  ZB8 便携式果汁杯
+                </a>
+              </h3>
+              <p>主打轻盈便携与随行鲜榨，视频演示三档搅拌与安全双击启动的使用细节。</p>
+              <div class="video-card__meta">
+                <span class="video-card__tag">#厨房饮品</span>
+                <a
+                  class="video-card__link"
+                  href="https://v.qq.com/txp/iframe/player.html?vid=v3333vyjomz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  点击前往播放
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card" data-video-card data-video-tags="cleaning" data-video-id="smop02">
+            <div class="video-card__poster">
+              <img src="https://www.daewoolife.com.cn/data/attachment/202204/23/05f6d71b2cbfa33c.jpg" alt="SMOP02电动蒸汽洗地机" loading="lazy" />
+              <button
+                type="button"
+                class="video-card__play"
+                data-video-src="https://v.qq.com/txp/iframe/player.html?vid=j3333wm917j"
+                data-video-title="SMOP02电动蒸汽洗地机"
+                data-video-id="smop02"
+                aria-label="播放 SMOP02电动蒸汽洗地机 视频"
+              >
+                ▶
+              </button>
+            </div>
+            <div class="video-card__body">
+              <h3>
+                <a href="https://v.qq.com/txp/iframe/player.html?vid=j3333wm917j" target="_blank" rel="noopener noreferrer">
+                  SMOP02 电动蒸汽洗地机
+                </a>
+              </h3>
+              <p>30 秒快速出蒸汽，展示同步吸拖、顽渍除菌与多滚刷快速拆洗的高效日常清洁方案。</p>
+              <div class="video-card__meta">
+                <span class="video-card__tag">#居家清洁</span>
+                <a
+                  class="video-card__link"
+                  href="https://v.qq.com/txp/iframe/player.html?vid=j3333wm917j"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  点击前往播放
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card" data-video-card data-video-tags="kitchen" data-video-id="k10">
+            <div class="video-card__poster">
+              <img src="https://www.daewoolife.com.cn/data/attachment/202204/23/ee684646a0ac90a4.jpg" alt="K10电烤炉(空气炸锅)" loading="lazy" />
+              <button
+                type="button"
+                class="video-card__play"
+                data-video-src="https://v.qq.com/txp/iframe/player.html?vid=w33335bp94z"
+                data-video-title="K10电烤炉(空气炸锅)"
+                data-video-id="k10"
+                aria-label="播放 K10电烤炉 视频"
+              >
+                ▶
+              </button>
+            </div>
+            <div class="video-card__body">
+              <h3>
+                <a href="https://v.qq.com/txp/iframe/player.html?vid=w33335bp94z" target="_blank" rel="noopener noreferrer">
+                  K10 电烤炉（空气炸锅）
+                </a>
+              </h3>
+              <p>展示上下独立控温与多种配件，更有多道菜谱实拍，帮助快速掌握无油空气炸的技巧。</p>
+              <div class="video-card__meta">
+                <span class="video-card__tag">#厨房饮品</span>
+                <a
+                  class="video-card__link"
+                  href="https://v.qq.com/txp/iframe/player.html?vid=w33335bp94z"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  点击前往播放
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card" data-video-card data-video-tags="comfort" data-video-id="f20">
+            <div class="video-card__poster">
+              <img src="https://www.daewoolife.com.cn/data/attachment/202204/23/dbc9cc9f99ef27c8.jpg" alt="F20挂脖风扇" loading="lazy" />
+              <button
+                type="button"
+                class="video-card__play"
+                data-video-src="https://v.qq.com/txp/iframe/player.html?vid=v3333wl1121"
+                data-video-title="F20挂脖风扇"
+                data-video-id="f20"
+                aria-label="播放 F20挂脖风扇 视频"
+              >
+                ▶
+              </button>
+            </div>
+            <div class="video-card__body">
+              <h3>
+                <a href="https://v.qq.com/txp/iframe/player.html?vid=v3333wl1121" target="_blank" rel="noopener noreferrer">
+                  F20 挂脖风扇
+                </a>
+              </h3>
+              <p>围绕夏日通勤场景拍摄，介绍四段风速、柔性导风口与长续航设计，解锁户外降温体验。</p>
+              <div class="video-card__meta">
+                <span class="video-card__tag">#舒适生活</span>
+                <a
+                  class="video-card__link"
+                  href="https://v.qq.com/txp/iframe/player.html?vid=v3333wl1121"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  点击前往播放
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card" data-video-card data-video-tags="comfort" data-video-id="dyks01">
+            <div class="video-card__poster">
+              <img src="https://www.daewoolife.com.cn/data/attachment/202204/23/da3570b54308cb9e.jpg" alt="DY-KS01电热开水瓶" loading="lazy" />
+              <button
+                type="button"
+                class="video-card__play"
+                data-video-src="https://v.qq.com/txp/iframe/player.html?vid=e3333mbtswk"
+                data-video-title="DY-KS01电热开水瓶"
+                data-video-id="dyks01"
+                aria-label="播放 DY-KS01电热开水瓶 视频"
+              >
+                ▶
+              </button>
+            </div>
+            <div class="video-card__body">
+              <h3>
+                <a href="https://v.qq.com/txp/iframe/player.html?vid=e3333mbtswk" target="_blank" rel="noopener noreferrer">
+                  DY-KS01 电热开水瓶
+                </a>
+              </h3>
+              <p>详解四档控温、双重安全防护与除氯模式，适合家庭婴儿冲调与全天候饮水的场景。</p>
+              <div class="video-card__meta">
+                <span class="video-card__tag">#舒适生活</span>
+                <a
+                  class="video-card__link"
+                  href="https://v.qq.com/txp/iframe/player.html?vid=e3333mbtswk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  点击前往播放
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card" data-video-card data-video-tags="cleaning,care" data-video-id="dybgx09">
+            <div class="video-card__poster">
+              <img src="https://www.daewoolife.com.cn/data/attachment/202204/23/291fb68abc7c20ef.jpg" alt="DY-BGX09全自动壁挂滚筒洗衣机" loading="lazy" />
+              <button
+                type="button"
+                class="video-card__play"
+                data-video-src="https://v.qq.com/txp/iframe/player.html?vid=v3333ra8xls"
+                data-video-title="DY-BGX09全自动壁挂滚筒洗衣机"
+                data-video-id="dybgx09"
+                aria-label="播放 DY-BGX09洗衣机 视频"
+              >
+                ▶
+              </button>
+            </div>
+            <div class="video-card__body">
+              <h3>
+                <a href="https://v.qq.com/txp/iframe/player.html?vid=v3333ra8xls" target="_blank" rel="noopener noreferrer">
+                  DY-BGX09 全自动壁挂滚筒洗衣机
+                </a>
+              </h3>
+              <p>通过实景卫浴空间展示壁挂节省面积、母婴洗模式与60℃除菌洗，满足小户型洁净需求。</p>
+              <div class="video-card__meta">
+                <span class="video-card__tag">#洗护护理</span>
+                <a
+                  class="video-card__link"
+                  href="https://v.qq.com/txp/iframe/player.html?vid=v3333ra8xls"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  点击前往播放
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card" data-video-card data-video-tags="cleaning,care" data-video-id="dybgx09h">
+            <div class="video-card__poster">
+              <img src="https://www.daewoolife.com.cn/data/attachment/202204/23/396d6898ccf5b163.jpg" alt="DY-BGX09H全自动壁挂滚筒洗衣干衣机" loading="lazy" />
+              <button
+                type="button"
+                class="video-card__play"
+                data-video-src="https://v.qq.com/txp/iframe/player.html?vid=h33339dogb6"
+                data-video-title="DY-BGX09H全自动壁挂滚筒洗衣干衣机"
+                data-video-id="dybgx09h"
+                aria-label="播放 DY-BGX09H洗烘机 视频"
+              >
+                ▶
+              </button>
+            </div>
+            <div class="video-card__body">
+              <h3>
+                <a href="https://v.qq.com/txp/iframe/player.html?vid=h33339dogb6" target="_blank" rel="noopener noreferrer">
+                  DY-BGX09H 全自动壁挂洗烘一体机
+                </a>
+              </h3>
+              <p>升级热泵烘干与智能除菌烘，视频演示衣物容量规划与壁挂安装要点。</p>
+              <div class="video-card__meta">
+                <span class="video-card__tag">#洗护护理</span>
+                <a
+                  class="video-card__link"
+                  href="https://v.qq.com/txp/iframe/player.html?vid=h33339dogb6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  点击前往播放
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card" data-video-card data-video-tags="care" data-video-id="db01">
+            <div class="video-card__poster">
+              <img src="https://www.daewoolife.com.cn/data/attachment/202204/23/8b701eb960514309.jpg" alt="DB01干衣盒+HI-031折叠蒸汽电熨斗套装" loading="lazy" />
+              <button
+                type="button"
+                class="video-card__play"
+                data-video-src="https://v.qq.com/txp/iframe/player.html?vid=b33336smib9"
+                data-video-title="DB01干衣盒+HI-031折叠蒸汽电熨斗套装"
+                data-video-id="db01"
+                aria-label="播放 DB01干衣盒套装 视频"
+              >
+                ▶
+              </button>
+            </div>
+            <div class="video-card__body">
+              <h3>
+                <a href="https://v.qq.com/txp/iframe/player.html?vid=b33336smib9" target="_blank" rel="noopener noreferrer">
+                  DB01 干衣盒 + HI-031 折叠蒸汽电熨斗套装
+                </a>
+              </h3>
+              <p>展示快速烘干与熨烫一体流程，分享旅行携带方式与衣物护理技巧。</p>
+              <div class="video-card__meta">
+                <span class="video-card__tag">#洗护护理</span>
+                <a
+                  class="video-card__link"
+                  href="https://v.qq.com/txp/iframe/player.html?vid=b33336smib9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  点击前往播放
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card" data-video-card data-video-tags="kitchen" data-video-id="dybm05">
+            <div class="video-card__poster">
+              <img src="https://www.daewoolife.com.cn/data/attachment/202204/08/a7c231bb80b0b6cb.jpg" alt="DY-BM05迷你原汁机" loading="lazy" />
+              <button
+                type="button"
+                class="video-card__play"
+                data-video-src="https://v.qq.com/txp/iframe/player.html?vid=l33310xbbw0"
+                data-video-title="DY-BM05迷你原汁机"
+                data-video-id="dybm05"
+                aria-label="播放 DY-BM05迷你原汁机 视频"
+              >
+                ▶
+              </button>
+            </div>
+            <div class="video-card__body">
+              <h3>
+                <a href="https://v.qq.com/txp/iframe/player.html?vid=l33310xbbw0" target="_blank" rel="noopener noreferrer">
+                  DY-BM05 迷你原汁机
+                </a>
+              </h3>
+              <p>以清晨厨房场景展示慢速挤压护营养、易拆洗部件与儿童辅食扩展玩法。</p>
+              <div class="video-card__meta">
+                <span class="video-card__tag">#厨房饮品</span>
+                <a
+                  class="video-card__link"
+                  href="https://v.qq.com/txp/iframe/player.html?vid=l33310xbbw0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  点击前往播放
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card" data-video-card data-video-tags="comfort" data-video-id="dysp25f01">
+            <div class="video-card__poster">
+              <img src="https://www.daewoolife.com.cn/data/attachment/202203/30/51d6a34967a0a0c4.jpg" alt="DYSP-25F01电热开水瓶" loading="lazy" />
+              <button
+                type="button"
+                class="video-card__play"
+                data-video-src="https://v.qq.com/txp/iframe/player.html?vid=l3329zpbubq"
+                data-video-title="DYSP-25F01电热开水瓶"
+                data-video-id="dysp25f01"
+                aria-label="播放 DYSP-25F01电热开水瓶 视频"
+              >
+                ▶
+              </button>
+            </div>
+            <div class="video-card__body">
+              <h3>
+                <a href="https://v.qq.com/txp/iframe/player.html?vid=l3329zpbubq" target="_blank" rel="noopener noreferrer">
+                  DYSP-25F01 电热开水瓶
+                </a>
+              </h3>
+              <p>多角度展示大容量储水、定时保温与童锁防烫功能，满足办公室与家庭多人饮水。</p>
+              <div class="video-card__meta">
+                <span class="video-card__tag">#舒适生活</span>
+                <a
+                  class="video-card__link"
+                  href="https://v.qq.com/txp/iframe/player.html?vid=l3329zpbubq"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  点击前往播放
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="video-card" data-video-card data-video-tags="kitchen" data-video-id="dyzm1266">
+            <div class="video-card__poster">
+              <img src="https://www.daewoolife.com.cn/data/attachment/202203/30/d55e022f234ffc37.jpg" alt="DYZM-1266电煮锅" loading="lazy" />
+              <button
+                type="button"
+                class="video-card__play"
+                data-video-src="https://v.qq.com/txp/iframe/player.html?vid=d3329tkgruy"
+                data-video-title="DYZM-1266电煮锅"
+                data-video-id="dyzm1266"
+                aria-label="播放 DYZM-1266电煮锅 视频"
+              >
+                ▶
+              </button>
+            </div>
+            <div class="video-card__body">
+              <h3>
+                <a href="https://v.qq.com/txp/iframe/player.html?vid=d3329tkgruy" target="_blank" rel="noopener noreferrer">
+                  DYZM-1266 电煮锅
+                </a>
+              </h3>
+              <p>小容量多功能烹饪演示，覆盖煲汤、火锅与一人食，展示可视盖与分体清洗设计。</p>
+              <div class="video-card__meta">
+                <span class="video-card__tag">#厨房饮品</span>
+                <a
+                  class="video-card__link"
+                  href="https://v.qq.com/txp/iframe/player.html?vid=d3329tkgruy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  点击前往播放
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <aside class="video-collections__note">
+          <h3>更多视频即将上新</h3>
+          <p>
+            视频中心会同步更新新品上市、安装指南与客户故事，敬请关注。
+            如需线下演示或培训资料，请联系 DAEWOO 服务顾问。
+          </p>
+          <a class="video-collections__contact" href="mailto:admin@goodplusgood.com">预约线下体验</a>
+        </aside>
+      </section>
+    </main>
+
+    <dialog class="video-modal" data-video-modal>
+      <div class="video-modal__container">
+        <button type="button" class="video-modal__close" data-video-close aria-label="关闭视频">×</button>
+        <div class="video-modal__frame">
+          <iframe
+            src=""
+            title="视频播放"
+            loading="lazy"
+            allow="autoplay; fullscreen"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </dialog>
+
+    <footer>
+      <p data-i18n="footer.copy">© 2025 DAEWOO SERVICE CO., LTD. 保留所有权利。</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
+

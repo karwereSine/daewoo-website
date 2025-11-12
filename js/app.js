@@ -835,6 +835,11 @@ document.addEventListener("DOMContentLoaded", () => {
       if (mediaQuery.matches) {
         event.preventDefault();
         activate();
+        return;
+      }
+      const targetUrl = item.dataset.navUrl || trigger.getAttribute("data-nav-url");
+      if (targetUrl) {
+        window.location.href = targetUrl;
       }
     });
   });
@@ -887,6 +892,191 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize state based on current viewport
   handleMediaChange(mediaQuery);
+
+  const isVideoPage = document.body?.classList?.contains("video-page");
+  if (isVideoPage) {
+    const filterButtons = Array.from(document.querySelectorAll("[data-video-filter]"));
+    const videoCards = Array.from(document.querySelectorAll("[data-video-card]"));
+    const modal = document.querySelector("[data-video-modal]");
+    const iframe = modal?.querySelector("iframe");
+    let lastFocusedTrigger = null;
+    let currentFilter = "all";
+
+    const setActiveFilter = (filter) => {
+      const normalized = filter.toLowerCase();
+      currentFilter = normalized;
+      filterButtons.forEach((button) => {
+        const isActive = (button.dataset.videoFilter ?? "").toLowerCase() === normalized;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+
+      videoCards.forEach((card) => {
+        const tags = (card.dataset.videoTags ?? "")
+          .split(",")
+          .map((tag) => tag.trim().toLowerCase())
+          .filter(Boolean);
+        const shouldShow = normalized === "all" || tags.includes(normalized);
+        card.hidden = !shouldShow;
+        card.setAttribute("aria-hidden", String(!shouldShow));
+      });
+    };
+
+    const getDefaultFilter = () => {
+      const activeButton = filterButtons.find((button) => button.classList.contains("is-active"));
+      return (activeButton?.dataset.videoFilter ?? "all").toLowerCase();
+    };
+
+    const getVideoCard = (videoId) =>
+      document.querySelector(`[data-video-card][data-video-id="${videoId}"]`);
+    const getVideoTrigger = (videoId) =>
+      document.querySelector(`[data-video-src][data-video-id="${videoId}"]`);
+
+    if (filterButtons.length > 0) {
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const targetFilter = (button.dataset.videoFilter ?? "all").toLowerCase();
+          setActiveFilter(targetFilter);
+        });
+      });
+
+      setActiveFilter(getDefaultFilter());
+    }
+
+    let openVideoModal = null;
+    let closeVideoModal = null;
+
+    if (modal && iframe) {
+      const closeButton = modal.querySelector("[data-video-close]");
+      const getModalOpenState = () => {
+        if (typeof modal.open === "boolean") {
+          return modal.open;
+        }
+        return modal.hasAttribute("open");
+      };
+
+      openVideoModal = (src, title, trigger) => {
+        if (!src) return;
+        iframe.src = src;
+        iframe.title = title || iframe.title || "视频播放";
+        if (typeof modal.showModal === "function") {
+          modal.showModal();
+        } else {
+          modal.setAttribute("open", "true");
+        }
+        document.documentElement.classList.add("is-video-modal-open");
+        if (trigger) {
+          lastFocusedTrigger = trigger;
+        }
+      };
+
+      closeVideoModal = () => {
+        if (typeof modal.close === "function") {
+          if (getModalOpenState()) {
+            modal.close();
+          }
+        } else {
+          modal.removeAttribute("open");
+        }
+        iframe.src = "";
+        document.documentElement.classList.remove("is-video-modal-open");
+        if (lastFocusedTrigger && document.body.contains(lastFocusedTrigger)) {
+          lastFocusedTrigger.focus();
+        }
+      };
+
+      if (closeButton instanceof HTMLElement) {
+        closeButton.addEventListener("click", () => {
+          closeVideoModal?.();
+        });
+      }
+
+      modal.addEventListener("cancel", (event) => {
+        event.preventDefault();
+        closeVideoModal?.();
+      });
+
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+          closeVideoModal?.();
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && getModalOpenState()) {
+          closeVideoModal?.();
+        }
+      });
+    }
+
+    document.addEventListener("click", (event) => {
+      const target = event.target;
+      if (!(target instanceof HTMLElement)) return;
+      const trigger = target.closest("[data-video-src]");
+      if (!trigger) return;
+      const src = trigger.getAttribute("data-video-src");
+      if (!src) return;
+      const title = trigger.getAttribute("data-video-title") || trigger.textContent?.trim();
+      lastFocusedTrigger = trigger;
+      openVideoModal?.(src, title, trigger);
+      if (modal && typeof modal.showModal !== "function") {
+        event.preventDefault();
+      }
+    });
+
+    const activateVideoById = (videoId, { autoOpen = true } = {}) => {
+      const normalizedId = (videoId ?? "").toLowerCase();
+      if (!normalizedId) return;
+      const targetCard = getVideoCard(normalizedId);
+      const trigger =
+        getVideoTrigger(normalizedId) ||
+        targetCard?.querySelector("[data-video-src]");
+      if (!trigger) {
+        return;
+      }
+
+      const tagsSource = targetCard ?? trigger;
+      const tags = (tagsSource?.dataset?.videoTags ?? "")
+        .split(",")
+        .map((tag) => tag.trim().toLowerCase())
+        .filter(Boolean);
+
+      if (tags.length > 0 && !tags.includes(currentFilter)) {
+        setActiveFilter(tags[0]);
+      } else if (tags.length === 0 && currentFilter !== "all") {
+        setActiveFilter("all");
+      }
+
+      if (targetCard && typeof targetCard.scrollIntoView === "function") {
+        targetCard.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+
+      if (trigger instanceof HTMLElement) {
+        try {
+          trigger.focus({ preventScroll: true });
+        } catch (error) {
+          trigger.focus();
+        }
+      }
+
+      if (autoOpen && typeof openVideoModal === "function") {
+        const src = trigger.getAttribute("data-video-src");
+        if (src) {
+          const title = trigger.getAttribute("data-video-title") || trigger.textContent?.trim();
+          openVideoModal(src, title, trigger);
+        }
+      }
+    };
+
+    const url = new URL(window.location.href);
+    const requestedVideoId =
+      url.searchParams.get("video") || (window.location.hash ? window.location.hash.substring(1) : "");
+    if (requestedVideoId) {
+      setTimeout(() => {
+        activateVideoById(requestedVideoId, { autoOpen: true });
+      }, 150);
+    }
+  }
 
   const sliderContainers = Array.from(document.querySelectorAll("[data-slider]"));
 
