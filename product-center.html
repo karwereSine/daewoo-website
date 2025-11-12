@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DAEWOO 产品中心</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand-bar">
+      <a class="brand" href="index.html" data-i18n="brand.name">DAEWOO 服务</a>
+      <form class="global-search" role="search">
+        <label for="global-search-input" class="sr-only" data-i18n="search.label">输入搜索词</label>
+        <input
+          id="global-search-input"
+          type="search"
+          placeholder="请输入想了解的内容"
+          autocomplete="off"
+          data-i18n-placeholder="search.placeholder"
+        />
+        <button type="submit" data-i18n="search.button">搜索</button>
+      </form>
+    </div>
+
+    <nav
+      class="mega-nav"
+      aria-label="DAEWOO 主要服务"
+      data-i18n-aria-label="nav.label"
+    >
+      <button class="mega-nav__toggle" aria-expanded="false" aria-controls="mega-nav-menu" data-i18n="nav.toggle">
+        全部菜单
+      </button>
+      <ul id="mega-nav-menu" class="mega-nav__list">
+        <li class="mega-nav__item" data-panel="product">
+          <a class="mega-nav__link is-current" href="product-center.html" data-i18n="nav.product">产品中心</a>
+        </li>
+        <li class="mega-nav__item" data-panel="news">
+          <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.news">新闻动态</button>
+        </li>
+        <li class="mega-nav__item" data-panel="video">
+          <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.video">视频中心</button>
+        </li>
+        <li class="mega-nav__item" data-panel="contact">
+          <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.contact">联系我们</button>
+        </li>
+        <li class="mega-nav__item" data-panel="about">
+          <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.about">公司概况</button>
+        </li>
+        <li class="mega-nav__item" data-panel="language">
+          <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.language">LANGUAGE</button>
+        </li>
+      </ul>
+      <div class="mega-board" id="mega-board">
+        <div class="mega-board__inner">
+          <section class="mega-board__column is-active" data-panel="product">
+            <h3 data-i18n="panel.product.heading">产品类别</h3>
+            <ul>
+              <li><a href="#home-appliances" data-i18n="panel.product.home">家用电器</a></li>
+              <li><a href="#smart-home" data-i18n="panel.product.smartHome">智能家居</a></li>
+              <li><a href="#commercial" data-i18n="panel.product.commercial">商用电器</a></li>
+              <li><a href="#personal-care" data-i18n="panel.product.personalCare">个人护理</a></li>
+              <li><a href="#wearable" data-i18n="panel.product.wearable">智能穿戴</a></li>
+              <li><a href="#digital" data-i18n="panel.product.digital">智能数码</a></li>
+              <li><a href="#others" data-i18n="panel.product.others">其他产品</a></li>
+            </ul>
+          </section>
+          <section class="mega-board__column" data-panel="news">
+            <h3 data-i18n="panel.news.heading">新闻分类</h3>
+            <ul>
+              <li><a href="#" data-i18n="panel.news.press">媒体稿件</a></li>
+              <li><a href="#" data-i18n="panel.news.event">品牌活动</a></li>
+              <li><a href="#" data-i18n="panel.news.notice">公告通知</a></li>
+              <li><a href="#" data-i18n="panel.news.story">客户故事</a></li>
+            </ul>
+          </section>
+          <section class="mega-board__column" data-panel="video">
+            <h3 data-i18n="panel.video.heading">精选视频</h3>
+            <ul>
+              <li><a href="#" data-i18n="panel.video.zb10">ZB10便携式果汁杯</a></li>
+              <li><a href="#" data-i18n="panel.video.smop02">SMOP02电动蒸汽洗地机</a></li>
+              <li><a href="#" data-i18n="panel.video.k10">K10电烤炉</a></li>
+              <li><a href="#" data-i18n="panel.video.f20">F20挂脖风扇</a></li>
+              <li><a href="#" data-i18n="panel.video.dyks01">DY-KS01电热开水瓶</a></li>
+              <li><a href="#" data-i18n="panel.video.dygx09">DY-BGX09全自动壁挂滚筒洗衣机</a></li>
+              <li><a href="#" data-i18n="panel.video.more">更多</a></li>
+            </ul>
+          </section>
+          <section class="mega-board__column" data-panel="contact">
+            <h3 data-i18n="panel.contact.heading">联系渠道</h3>
+            <ul>
+              <li><a href="#" data-i18n="panel.contact.hotline">客服热线 400-123-0000</a></li>
+              <li><a href="#" data-i18n="panel.contact.online">在线客服</a></li>
+              <li><a href="#" data-i18n="panel.contact.center">服务中心预约</a></li>
+              <li><a href="#" data-i18n="panel.contact.partner">合作伙伴支持</a></li>
+              <li><a href="#" data-i18n="panel.contact.feedback">意见反馈</a></li>
+            </ul>
+          </section>
+          <section class="mega-board__column" data-panel="about">
+            <h3 data-i18n="panel.about.heading">DAEWOO 公司概况</h3>
+            <ul>
+              <li><a href="#" data-i18n="panel.about.story">品牌故事</a></li>
+              <li><a href="#" data-i18n="panel.about.timeline">发展历程</a></li>
+              <li><a href="#" data-i18n="panel.about.leadership">管理团队</a></li>
+              <li><a href="#" data-i18n="panel.about.csr">社会责任</a></li>
+              <li><a href="#" data-i18n="panel.about.partner">合作伙伴</a></li>
+            </ul>
+          </section>
+          <section class="mega-board__column" data-panel="language">
+            <h3 data-i18n="panel.language.heading">选择语言</h3>
+            <p data-i18n="panel.language.description">请选择您希望浏览网站的语言版本。</p>
+            <ul class="language-list" data-language-list>
+              <li>
+                <button type="button" data-lang="en">
+                  English
+                </button>
+              </li>
+              <li>
+                <button type="button" data-lang="zh">
+                  中文
+                </button>
+              </li>
+              <li>
+                <button type="button" data-lang="ko">
+                  한국어
+                </button>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="product-center">
+    <section class="page-hero page-hero--compact">
+      <div class="page-hero__content">
+        <p class="page-hero__eyebrow" data-i18n="productCenter.eyebrow">产品中心</p>
+        <h1 class="page-hero__title" data-i18n="productCenter.title">探索 DAEWOO 全品类解决方案</h1>
+        <p class="page-hero__description" data-i18n="productCenter.description">
+          从家庭到商业，我们为不同场景提供可靠的产品与服务组合。挑选适合您的系列，轻松了解规格、应用及支持信息。
+        </p>
+      </div>
+    </section>
+
+    <div class="product-center__layout">
+      <aside class="product-center__sidebar" aria-label="产品目录" data-i18n-aria-label="productCenter.sidebarLabel">
+        <div class="product-center__sidebar-inner">
+          <h2 class="product-center__sidebar-title" data-i18n="productCenter.sidebarTitle">产品分类</h2>
+          <nav class="product-center__nav" aria-label="产品分类导航" data-i18n-aria-label="productCenter.sidebarNavLabel">
+            <ul>
+              <li><a href="#home-appliances" data-i18n="panel.product.home">家用电器</a></li>
+              <li><a href="#smart-home" data-i18n="panel.product.smartHome">智能家居</a></li>
+              <li><a href="#commercial" data-i18n="panel.product.commercial">商用电器</a></li>
+              <li><a href="#personal-care" data-i18n="panel.product.personalCare">个人护理</a></li>
+              <li><a href="#wearable" data-i18n="panel.product.wearable">智能穿戴</a></li>
+              <li><a href="#digital" data-i18n="panel.product.digital">智能数码</a></li>
+              <li><a href="#others" data-i18n="panel.product.others">其他产品</a></li>
+            </ul>
+          </nav>
+          <div class="product-center__note">
+            <strong data-i18n="productCenter.noteTitle">选购贴士</strong>
+            <p data-i18n="productCenter.noteDescription">
+              先选择系列，再查看对应型号的功能亮点与配套服务，获得专属的解决方案建议。
+            </p>
+          </div>
+        </div>
+      </aside>
+
+      <div class="product-center__content">
+        <section id="home-appliances" class="product-section">
+          <header class="product-section__header">
+            <p class="product-section__eyebrow" data-i18n="productCenter.collection">产品系列</p>
+            <h2 class="product-section__title" data-i18n="panel.product.home">家用电器</h2>
+            <p class="product-section__description" data-i18n="productCenter.home.description">
+              覆盖厨房、清洁与空气改善等多种家庭场景，助力健康便捷生活。
+            </p>
+          </header>
+          <div class="product-grid">
+            <article class="product-card">
+              <div class="product-card__badge" data-i18n="productCenter.badgeNew">NEW</div>
+              <h3 class="product-card__title">DY-X90 风冷对开门冰箱</h3>
+              <p class="product-card__summary" data-i18n="productCenter.home.card1.summary">
+                采用风冷无霜与精控恒温系统，保持食材原鲜口感。
+              </p>
+              <ul class="product-card__meta">
+                <li data-i18n="productCenter.home.card1.meta1">容量 600L，支持可调冷藏区</li>
+                <li data-i18n="productCenter.home.card1.meta2">AI 智能补水保鲜模式</li>
+                <li data-i18n="productCenter.home.card1.meta3">手机远程控温与告警推送</li>
+              </ul>
+            </article>
+            <article class="product-card">
+              <h3 class="product-card__title">DW-TurboClean 洗烘一体机</h3>
+              <p class="product-card__summary" data-i18n="productCenter.home.card2.summary">
+                45 分钟速洗烘，智能投放洗剂，一键匹配最优模式。
+              </p>
+              <ul class="product-card__meta">
+                <li data-i18n="productCenter.home.card2.meta1">铂金离子除菌，呵护敏感肌</li>
+                <li data-i18n="productCenter.home.card2.meta2">16 种程序，支持自定义记忆</li>
+                <li data-i18n="productCenter.home.card2.meta3">全屋互联，一键预约</li>
+              </ul>
+            </article>
+            <article class="product-card">
+              <h3 class="product-card__title">AirFresh Pro 智能空气净化器</h3>
+              <p class="product-card__summary" data-i18n="productCenter.home.card3.summary">
+                双向循环净化系统，30 分钟全屋空气焕新。
+              </p>
+              <ul class="product-card__meta">
+                <li data-i18n="productCenter.home.card3.meta1">PM0.1 级滤净力</li>
+                <li data-i18n="productCenter.home.card3.meta2">静音睡眠模式低至 19dB</li>
+                <li data-i18n="productCenter.home.card3.meta3">传感器实时监测空气质量</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section id="smart-home" class="product-section">
+          <header class="product-section__header">
+            <p class="product-section__eyebrow" data-i18n="productCenter.collection">产品系列</p>
+            <h2 class="product-section__title" data-i18n="panel.product.smartHome">智能家居</h2>
+            <p class="product-section__description" data-i18n="productCenter.smart.description">
+              构建互联互通的智慧生活空间，实现场景化自动控制。
+            </p>
+          </header>
+          <div class="product-coming-soon">
+            <img
+              class="product-coming-soon__image"
+              src="img/icons/daewooproductnone.gif"
+              alt="产品即将上线动画"
+            />
+            <div class="product-coming-soon__text">
+              <h3 data-i18n="productCenter.comingSoon.title">产品即将上线</h3>
+              <p data-i18n="productCenter.comingSoon.description">敬请期待</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="commercial" class="product-section">
+          <header class="product-section__header">
+            <p class="product-section__eyebrow" data-i18n="productCenter.collection">产品系列</p>
+            <h2 class="product-section__title" data-i18n="panel.product.commercial">商用电器</h2>
+            <p class="product-section__description" data-i18n="productCenter.commercial.description">
+              面向餐饮、酒店与公共空间，提供稳定高效的商用设备组合。
+            </p>
+          </header>
+          <div class="product-coming-soon">
+            <img
+              class="product-coming-soon__image"
+              src="img/icons/daewooproductnone.gif"
+              alt="产品即将上线动画"
+            />
+            <div class="product-coming-soon__text">
+              <h3 data-i18n="productCenter.comingSoon.title">产品即将上线</h3>
+              <p data-i18n="productCenter.comingSoon.description">敬请期待</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="personal-care" class="product-section">
+          <header class="product-section__header">
+            <p class="product-section__eyebrow" data-i18n="productCenter.collection">产品系列</p>
+            <h2 class="product-section__title" data-i18n="panel.product.personalCare">个人护理</h2>
+            <p class="product-section__description" data-i18n="productCenter.care.description">
+              关注日常美容与健康管理，为个人与家庭提供贴心呵护。
+            </p>
+          </header>
+          <div class="product-coming-soon">
+            <img
+              class="product-coming-soon__image"
+              src="img/icons/daewooproductnone.gif"
+              alt="产品即将上线动画"
+            />
+            <div class="product-coming-soon__text">
+              <h3 data-i18n="productCenter.comingSoon.title">产品即将上线</h3>
+              <p data-i18n="productCenter.comingSoon.description">敬请期待</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="wearable" class="product-section">
+          <header class="product-section__header">
+            <p class="product-section__eyebrow" data-i18n="productCenter.collection">产品系列</p>
+            <h2 class="product-section__title" data-i18n="panel.product.wearable">智能穿戴</h2>
+            <p class="product-section__description" data-i18n="productCenter.wearable.description">
+              将科技融入日常出行、运动与健康管理，轻松掌握生活节奏。
+            </p>
+          </header>
+          <div class="product-coming-soon">
+            <img
+              class="product-coming-soon__image"
+              src="img/icons/daewooproductnone.gif"
+              alt="产品即将上线动画"
+            />
+            <div class="product-coming-soon__text">
+              <h3 data-i18n="productCenter.comingSoon.title">产品即将上线</h3>
+              <p data-i18n="productCenter.comingSoon.description">敬请期待</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="digital" class="product-section">
+          <header class="product-section__header">
+            <p class="product-section__eyebrow" data-i18n="productCenter.collection">产品系列</p>
+            <h2 class="product-section__title" data-i18n="panel.product.digital">智能数码</h2>
+            <p class="product-section__description" data-i18n="productCenter.digital.description">
+              聚焦影音娱乐与移动办公，打造灵动高效的数码体验。
+            </p>
+          </header>
+          <div class="product-coming-soon">
+            <img
+              class="product-coming-soon__image"
+              src="img/icons/daewooproductnone.gif"
+              alt="产品即将上线动画"
+            />
+            <div class="product-coming-soon__text">
+              <h3 data-i18n="productCenter.comingSoon.title">产品即将上线</h3>
+              <p data-i18n="productCenter.comingSoon.description">敬请期待</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="others" class="product-section">
+          <header class="product-section__header">
+            <p class="product-section__eyebrow" data-i18n="productCenter.collection">产品系列</p>
+            <h2 class="product-section__title" data-i18n="panel.product.others">其他产品</h2>
+            <p class="product-section__description" data-i18n="productCenter.others.description">
+              更多定制化或季节性产品，满足多元化的业务与生活需求。
+            </p>
+          </header>
+          <div class="product-coming-soon">
+            <img
+              class="product-coming-soon__image"
+              src="img/icons/daewooproductnone.gif"
+              alt="产品即将上线动画"
+            />
+            <div class="product-coming-soon__text">
+              <h3 data-i18n="productCenter.comingSoon.title">产品即将上线</h3>
+              <p data-i18n="productCenter.comingSoon.description">敬请期待</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <section class="product-service">
+      <div class="product-service__inner">
+        <div class="product-service__text">
+          <h2 data-i18n="productCenter.service.heading">获取专属产品咨询与服务方案</h2>
+          <p data-i18n="productCenter.service.description">
+            提交您的需求，我们的顾问团队将提供选型建议、安装规划，以及售后支持安排。
+          </p>
+        </div>
+        <div class="product-service__cta">
+          <a class="button button--primary" href="mailto:support@daewoo.com" data-i18n="productCenter.service.ctaPrimary">联系顾问</a>
+          <a class="button button--ghost" href="index.html#contact" data-i18n="productCenter.service.ctaSecondary">预约服务中心</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p data-i18n="footer.copy">© 2025 DAEWOO SERVICE CO., LTD. 保留所有权利。</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
+

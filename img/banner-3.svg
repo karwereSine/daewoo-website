@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400">
+  <defs>
+    <linearGradient id="g3" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#012e63" />
+      <stop offset="50%" stop-color="#1457a3" />
+      <stop offset="100%" stop-color="#5cb6ff" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="400" fill="url(#g3)" />
+  <g fill="#ffffff" opacity="0.15">
+    <circle cx="160" cy="320" r="120" />
+    <circle cx="600" cy="140" r="70" />
+    <circle cx="980" cy="80" r="90" />
+  </g>
+  <g fill="#ffffff" opacity="0.3">
+    <path d="M920 340h120v12H920z" />
+    <path d="M970 300h70v8h-70z" />
+    <path d="M1020 260h40v6h-40z" />
+  </g>
+  <text x="120" y="220" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="58" font-weight="700">
+    Global Care, Local Touch
+  </text>
+  <text x="120" y="280" fill="#ffffff" opacity="0.85" font-family="Segoe UI, Arial, sans-serif" font-size="30">
+    Trusted maintenance solutions for your smart life
+  </text>
+</svg>
+

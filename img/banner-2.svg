@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400">
+  <defs>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0f4c97" />
+      <stop offset="50%" stop-color="#0ca2e8" />
+      <stop offset="100%" stop-color="#70d8ff" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="400" fill="url(#g2)" />
+  <g fill="#ffffff" opacity="0.12">
+    <rect x="90" y="60" width="320" height="220" rx="36" />
+    <rect x="680" y="40" width="440" height="280" rx="48" />
+  </g>
+  <g fill="#ffffff" opacity="0.25">
+    <circle cx="520" cy="320" r="90" />
+    <circle cx="1040" cy="120" r="70" />
+  </g>
+  <text x="120" y="220" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="60" font-weight="700">
+    스마트 케어 파트너
+  </text>
+  <text x="120" y="280" fill="#ffffff" opacity="0.88" font-family="Segoe UI, Arial, sans-serif" font-size="30">
+    언제 어디서나 편리한 DAEWOO 서비스 경험
+  </text>
+</svg>
+
