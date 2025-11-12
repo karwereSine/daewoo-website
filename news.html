@@ -6,29 +6,144 @@
     <title>新闻资讯 · 行业资讯 - DAEWOO</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body class="news-page">
-    <header class="news-header">
-      <div class="news-header__inner">
-        <a class="brand" href="index.html">DAEWOO 服务</a>
-        <nav class="news-nav" aria-label="新闻导航">
-          <a href="index.html">首页</a>
-          <span aria-hidden="true">/</span>
-          <span>新闻资讯 · 行业资讯</span>
-        </nav>
+  <body class="news-page" data-page="news">
+    <header class="site-header">
+      <div class="brand-bar">
+        <a class="brand" href="index.html" data-i18n="brand.name">DAEWOO 服务</a>
+        <form class="global-search" role="search">
+          <label for="news-search-input" class="sr-only" data-i18n="search.label"
+            >输入搜索词</label
+          >
+          <input
+            id="news-search-input"
+            type="search"
+            placeholder="请输入想了解的内容"
+            autocomplete="off"
+            data-i18n-placeholder="search.placeholder"
+          />
+          <button type="submit" data-i18n="search.button">搜索</button>
+        </form>
       </div>
+
+      <nav
+        class="mega-nav"
+        aria-label="DAEWOO 主要服务"
+        data-i18n-aria-label="nav.label"
+      >
+        <button class="mega-nav__toggle" aria-expanded="false" aria-controls="mega-nav-menu" data-i18n="nav.toggle">
+          全部菜单
+        </button>
+        <ul id="mega-nav-menu" class="mega-nav__list">
+          <li class="mega-nav__item" data-panel="product">
+            <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.product">产品中心</button>
+          </li>
+          <li class="mega-nav__item is-current-tab" data-panel="news">
+            <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.news">新闻动态</button>
+          </li>
+          <li class="mega-nav__item" data-panel="video">
+            <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.video">视频中心</button>
+          </li>
+          <li class="mega-nav__item" data-panel="contact">
+            <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.contact">联系我们</button>
+          </li>
+          <li class="mega-nav__item" data-panel="about">
+            <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.about">公司概况</button>
+          </li>
+          <li class="mega-nav__item" data-panel="language">
+            <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.language">LANGUAGE</button>
+          </li>
+        </ul>
+        <div class="mega-board" id="mega-board">
+          <div class="mega-board__inner">
+            <section class="mega-board__column" data-panel="product">
+              <h3 data-i18n="panel.product.heading">产品类别</h3>
+              <ul>
+                <li><a href="product-center.html#home-appliances" data-i18n="panel.product.home">家用电器</a></li>
+                <li><a href="product-center.html#smart-home" data-i18n="panel.product.smartHome">智能家居</a></li>
+                <li><a href="product-center.html#commercial" data-i18n="panel.product.commercial">商用电器</a></li>
+                <li><a href="product-center.html#personal-care" data-i18n="panel.product.personalCare">个人护理</a></li>
+                <li><a href="product-center.html#wearable" data-i18n="panel.product.wearable">智能穿戴</a></li>
+                <li><a href="product-center.html#digital" data-i18n="panel.product.digital">智能数码</a></li>
+                <li><a href="product-center.html#others" data-i18n="panel.product.others">其他产品</a></li>
+              </ul>
+            </section>
+            <section class="mega-board__column" data-panel="news">
+              <h3 data-i18n="panel.news.heading">新闻分类</h3>
+              <ul>
+                <li><a href="#news-section" data-i18n="panel.news.latest">新闻资讯 · 行业资讯</a></li>
+              </ul>
+            </section>
+            <section class="mega-board__column" data-panel="video">
+              <h3 data-i18n="panel.video.heading">精选视频</h3>
+              <ul>
+                <li><a href="#" data-i18n="panel.video.zb10">ZB10便携式果汁杯</a></li>
+                <li><a href="#" data-i18n="panel.video.smop02">SMOP02电动蒸汽洗地机</a></li>
+                <li><a href="#" data-i18n="panel.video.k10">K10电烤炉</a></li>
+                <li><a href="#" data-i18n="panel.video.f20">F20挂脖风扇</a></li>
+                <li><a href="#" data-i18n="panel.video.dyks01">DY-KS01电热开水瓶</a></li>
+                <li><a href="#" data-i18n="panel.video.dygx09">DY-BGX09全自动壁挂滚筒洗衣机</a></li>
+                <li><a href="#" data-i18n="panel.video.more">更多</a></li>
+              </ul>
+            </section>
+            <section class="mega-board__column" data-panel="contact">
+              <h3 data-i18n="panel.contact.heading">联系渠道</h3>
+              <ul>
+                <li><a href="#" data-i18n="panel.contact.hotline">客服热线 400-123-0000</a></li>
+                <li><a href="#" data-i18n="panel.contact.online">在线客服</a></li>
+                <li><a href="#" data-i18n="panel.contact.center">服务中心预约</a></li>
+                <li><a href="#" data-i18n="panel.contact.partner">合作伙伴支持</a></li>
+                <li><a href="#" data-i18n="panel.contact.feedback">意见反馈</a></li>
+              </ul>
+            </section>
+            <section class="mega-board__column" data-panel="about">
+              <h3 data-i18n="panel.about.heading">DAEWOO 公司概况</h3>
+              <ul>
+                <li><a href="#" data-i18n="panel.about.story">品牌故事</a></li>
+                <li><a href="#" data-i18n="panel.about.timeline">发展历程</a></li>
+                <li><a href="#" data-i18n="panel.about.leadership">管理团队</a></li>
+                <li><a href="#" data-i18n="panel.about.csr">社会责任</a></li>
+                <li><a href="#" data-i18n="panel.about.partner">合作伙伴</a></li>
+              </ul>
+            </section>
+            <section class="mega-board__column" data-panel="language">
+              <h3 data-i18n="panel.language.heading">选择语言</h3>
+              <p data-i18n="panel.language.description">请选择您希望浏览网站的语言版本。</p>
+              <ul class="language-list" data-language-list>
+                <li>
+                  <button type="button" data-lang="en">English</button>
+                </li>
+                <li>
+                  <button type="button" data-lang="zh">中文</button>
+                </li>
+                <li>
+                  <button type="button" data-lang="ko">한국어</button>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </nav>
     </header>
 
-    <main class="news-main">
+    <main id="news-section" class="news-main">
+      <nav class="news-nav" aria-label="新闻导航" data-i18n-aria-label="newsPage.breadcrumb.label">
+        <a href="index.html" data-i18n="newsPage.breadcrumb.home">首页</a>
+        <span aria-hidden="true">/</span>
+        <span data-i18n="newsPage.breadcrumb.current">新闻资讯 · 行业资讯</span>
+      </nav>
+
       <section class="news-hero">
         <div class="news-hero__content">
-          <h1>新闻资讯 · 行业资讯</h1>
-          <p>来自 DAEWOO 的品牌动态、行业洞察、产品故事与服务资讯。</p>
+          <h1 data-i18n="newsPage.hero.title">新闻资讯 · 行业资讯</h1>
+          <p data-i18n="newsPage.hero.description">
+            来自 DAEWOO 的品牌动态、行业洞察、产品故事与服务资讯。
+          </p>
         </div>
       </section>
 
-      <section class="news-list" aria-label="新闻列表">
+      <section class="news-list" id="news-list" aria-label="新闻列表">
         <article class="news-card">
-          <a class="news-card__media" href="articles/article-6.html">
+          <a class="news-card__media" href="news/articles/article-6.html">
             <img
               src="img/news/article-6.jpg"
               alt="大宇智能坐便盖功能/特点"
@@ -36,15 +151,19 @@
           </a>
           <div class="news-card__body">
             <time datetime="2022-01-15">2022-01-15</time>
-            <h2><a href="articles/article-6.html">大宇智能坐便盖功能/特点</a></h2>
-            <p>
-              感应自动翻盖、空气柔珠技术、丰富水洗模式与多重安全防护，为家庭带来更智能的人性化如厕体验。
+            <h2>
+              <a href="news/articles/article-6.html" data-i18n="homeNews.article6.title"
+                >大宇智能坐便盖功能/特点</a
+              >
+            </h2>
+            <p data-i18n="homeNews.article6.summary">
+              感应翻盖、柔珠清洗、恒温座圈，多重科技带来舒适如厕体验。
             </p>
           </div>
         </article>
 
         <article class="news-card">
-          <a class="news-card__media" href="articles/article-5.html">
+          <a class="news-card__media" href="news/articles/article-5.html">
             <img
               src="img/news/article-5.jpg"
               alt="大宇智能坐便盖介绍"
@@ -52,15 +171,19 @@
           </a>
           <div class="news-card__body">
             <time datetime="2022-01-15">2022-01-15</time>
-            <h2><a href="articles/article-5.html">大宇智能坐便盖介绍</a></h2>
-            <p>
-              介绍智能坐便盖的核心结构、上市背景以及多模式洗护、翻盖联动等亮点，帮助用户快速了解产品价值。
+            <h2>
+              <a href="news/articles/article-5.html" data-i18n="homeNews.article5.title"
+                >大宇智能坐便盖介绍</a
+              >
+            </h2>
+            <p data-i18n="homeNews.article5.summary">
+              多模式水洗、暖风烘干与电解水除菌，打造洁净健康的卫浴新选择。
             </p>
           </div>
         </article>
 
         <article class="news-card">
-          <a class="news-card__media" href="articles/article-4.html">
+          <a class="news-card__media" href="news/articles/article-4.html">
             <img
               src="img/news/article-4.jpg"
               alt="大宇DAEWOO亮相抖音818新潮好物节，精品家电夺得销冠"
@@ -69,18 +192,18 @@
           <div class="news-card__body">
             <time datetime="2021-10-28">2021-10-28</time>
             <h2>
-              <a href="articles/article-4.html"
+              <a href="news/articles/article-4.html" data-i18n="homeNews.article4.title"
                 >大宇DAEWOO亮相抖音818新潮好物节，精品家电夺得销冠</a
               >
             </h2>
-            <p>
-              大宇精品家电在抖音818新潮好物节中多项产品销量排名第一，展示品牌在直播电商领域的影响力。
+            <p data-i18n="homeNews.article4.summary">
+              多款精品家电以高颜值与高性能脱颖而出，直播电商场景强势破圈。
             </p>
           </div>
         </article>
 
         <article class="news-card">
-          <a class="news-card__media" href="articles/article-3.html">
+          <a class="news-card__media" href="news/articles/article-3.html">
             <img
               src="img/news/article-3.jpg"
               alt="大宇DAEWOO家电为何能够在中国持续走火？"
@@ -89,16 +212,18 @@
           <div class="news-card__body">
             <time datetime="2021-10-22">2021-10-22</time>
             <h2>
-              <a href="articles/article-3.html">大宇DAEWOO家电为何能够在中国持续走火？</a>
+              <a href="news/articles/article-3.html" data-i18n="homeNews.article3.title"
+                >大宇DAEWOO家电为何能够在中国持续走火？</a
+              >
             </h2>
-            <p>
-              回顾品牌发展历程，解析大宇在中国市场持续走热的因素，从产品、渠道到品牌战略全面剖析。
+            <p data-i18n="homeNews.article3.summary">
+              深耕精品路线、洞察用户需求，大宇品牌在中国持续收获口碑。
             </p>
           </div>
         </article>
 
         <article class="news-card">
-          <a class="news-card__media" href="articles/article-2.html">
+          <a class="news-card__media" href="news/articles/article-2.html">
             <img
               src="img/news/article-2.jpg"
               alt="大宇壁挂洗衣机星云上市，家电品质追求无止境"
@@ -107,16 +232,18 @@
           <div class="news-card__body">
             <time datetime="2021-10-14">2021-10-14</time>
             <h2>
-              <a href="articles/article-2.html">大宇壁挂洗衣机星云上市，家电品质追求无止境</a>
+              <a href="news/articles/article-2.html" data-i18n="newsPage.article2.title"
+                >大宇壁挂洗衣机星云上市，家电品质追求无止境</a
+              >
             </h2>
-            <p>
+            <p data-i18n="newsPage.article2.summary">
               星云系列延续大宇壁挂洗衣机的省空间优势，并加入母婴衣物专护，满足家庭高品质洗护需求。
             </p>
           </div>
         </article>
 
         <article class="news-card">
-          <a class="news-card__media" href="articles/article-1.html">
+          <a class="news-card__media" href="news/articles/article-1.html">
             <img
               src="img/news/article-1.jpg"
               alt="AWE2021：大宇电器深耕中国市场"
@@ -125,9 +252,11 @@
           <div class="news-card__body">
             <time datetime="2021-04-16">2021-04-16</time>
             <h2>
-              <a href="articles/article-1.html">AWE2021：大宇电器深耕中国市场</a>
+              <a href="news/articles/article-1.html" data-i18n="newsPage.article1.title"
+                >AWE2021：大宇电器深耕中国市场</a
+              >
             </h2>
-            <p>
+            <p data-i18n="newsPage.article1.summary">
               现场回顾中国家电及消费电子博览会，展示大宇深耕中国市场的策略与成果。
             </p>
           </div>
@@ -136,9 +265,11 @@
     </main>
 
     <footer class="news-footer">
-      <p>© 2025 DAEWOO SERVICE CO., LTD. All rights reserved.</p>
-      <a href="index.html">返回首页</a>
+      <p data-i18n="footer.copy">© 2025 DAEWOO SERVICE CO., LTD. 保留所有权利。</p>
+      <a href="index.html" data-i18n="newsPage.backHome">返回首页</a>
     </footer>
+
+    <script src="js/app.js"></script>
   </body>
 </html>
 

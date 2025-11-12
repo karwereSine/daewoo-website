@@ -68,7 +68,7 @@
           <section class="mega-board__column" data-panel="news">
             <h3 data-i18n="panel.news.heading">新闻分类</h3>
             <ul>
-              <li><a href="news.html" data-i18n="panel.news.latest">新闻资讯 · 行业资讯</a></li>
+              <li><a href="#news-section" data-i18n="panel.news.latest">新闻资讯 · 行业资讯</a></li>
             </ul>
           </section>
           <section class="mega-board__column" data-panel="video">
@@ -126,11 +126,11 @@
           </section>
         </div>
       </div>
-    </nav>
-  </header>
+  </nav>
+</header>
 
-  <main>
-    <section class="hero">
+<main>
+  <section class="hero">
       <div class="hero-slider" data-slider>
         <div class="hero-track">
           <div class="hero-slide is-active">
@@ -264,11 +264,100 @@
         </ul>
       </div>
     </section>
-  </main>
 
-  <footer>
+    <section id="news-section" class="home-news" aria-labelledby="home-news-heading">
+      <div class="home-news__header">
+        <p class="home-news__eyebrow" data-i18n="homeNews.eyebrow">新闻资讯</p>
+        <h2 id="home-news-heading" data-i18n="homeNews.title">最新动态与行业资讯</h2>
+        <p data-i18n="homeNews.description">
+          精选 DAEWOO 最新新闻、产品发布与行业洞察，帮助您快速了解品牌动向。
+        </p>
+      </div>
+
+      <div class="home-news__grid">
+        <article class="home-news-card">
+          <a class="home-news-card__thumb" href="news/articles/article-6.html">
+            <img src="img/news/article-6.jpg" alt="大宇智能坐便盖功能/特点" />
+          </a>
+          <div class="home-news-card__body">
+            <time datetime="2022-01-15">2022-01-15</time>
+            <h3>
+              <a href="news/articles/article-6.html" data-i18n="homeNews.article6.title"
+                >大宇智能坐便盖功能/特点</a
+              >
+            </h3>
+            <p data-i18n="homeNews.article6.summary">
+              感应翻盖、柔珠清洗、恒温座圈，多重科技带来舒适如厕体验。
+            </p>
+          </div>
+        </article>
+
+        <article class="home-news-card">
+          <a class="home-news-card__thumb" href="news/articles/article-5.html">
+            <img src="img/news/article-5.jpg" alt="大宇智能坐便盖介绍" />
+          </a>
+          <div class="home-news-card__body">
+            <time datetime="2022-01-15">2022-01-15</time>
+            <h3>
+              <a href="news/articles/article-5.html" data-i18n="homeNews.article5.title"
+                >大宇智能坐便盖介绍</a
+              >
+            </h3>
+            <p data-i18n="homeNews.article5.summary">
+              多模式水洗、暖风烘干与电解水除菌，打造洁净健康的卫浴新选择。
+            </p>
+          </div>
+        </article>
+
+        <article class="home-news-card">
+          <a class="home-news-card__thumb" href="news/articles/article-4.html">
+            <img
+              src="img/news/article-4.jpg"
+              alt="大宇亮相抖音818新潮好物节，精品家电夺得销冠"
+            />
+          </a>
+          <div class="home-news-card__body">
+            <time datetime="2021-10-28">2021-10-28</time>
+            <h3>
+              <a href="news/articles/article-4.html" data-i18n="homeNews.article4.title"
+                >大宇亮相抖音818新潮好物节，精品家电夺得销冠</a
+              >
+            </h3>
+            <p data-i18n="homeNews.article4.summary">
+              多款精品家电以高颜值与高性能脱颖而出，直播电商场景强势破圈。
+            </p>
+          </div>
+        </article>
+
+        <article class="home-news-card">
+          <a class="home-news-card__thumb" href="news/articles/article-3.html">
+            <img src="img/news/article-3.jpg" alt="大宇家电为何能够在中国持续走火？" />
+          </a>
+          <div class="home-news-card__body">
+            <time datetime="2021-10-22">2021-10-22</time>
+            <h3>
+              <a href="news/articles/article-3.html" data-i18n="homeNews.article3.title"
+                >大宇家电为何能够在中国持续走火？</a
+              >
+            </h3>
+            <p data-i18n="homeNews.article3.summary">
+              深耕精品路线、洞察用户需求，大宇品牌在中国持续收获口碑。
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="home-news__footer">
+        <a class="home-news__more" href="news.html" data-i18n="homeNews.more"
+          >查看更多新闻</a
+        >
+      </div>
+  </section>
+</main>
+
+<footer>
     <p data-i18n="footer.copy">© 2025 DAEWOO SERVICE CO., LTD. 保留所有权利。</p>
-  </footer>
+</footer>
 
   <script src="js/app.js"></script>
 </body>
