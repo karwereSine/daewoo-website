@@ -943,8 +943,8 @@ a {
 .hero-slider {
   position: relative;
   width: 100%;
-  height: clamp(240px, calc(100vw * 850 / 1920), 80vh);
-  max-height: 80vh;
+  height: clamp(240px, calc(100vw * 850 / 1920), 65vh);
+  max-height: 65vh;
   overflow: hidden;
   isolation: isolate;
 }
