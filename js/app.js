@@ -1661,6 +1661,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
   syncLanguageButtons(defaultLang);
 
+  const productMainImage = document.querySelector("[data-product-main]");
+  const productThumbnails = Array.from(
+    document.querySelectorAll("[data-product-thumbnails] .product-detail__thumbnail")
+  );
+
+  if (productMainImage && productThumbnails.length > 0) {
+    const setActiveThumbnail = (targetButton) => {
+      productThumbnails.forEach((button) => {
+        button.classList.toggle("is-active", button === targetButton);
+      });
+    };
+
+    productThumbnails.forEach((button) => {
+      button.addEventListener("click", () => {
+        const newSrc = button.getAttribute("data-img");
+        if (!newSrc) {
+          return;
+        }
+
+        if (productMainImage.getAttribute("src") !== newSrc) {
+          productMainImage.setAttribute("src", newSrc);
+        }
+
+        const altText = button.querySelector("img")?.getAttribute("alt");
+        if (altText) {
+          productMainImage.setAttribute("alt", altText);
+        }
+
+        setActiveThumbnail(button);
+      });
+    });
+  }
+
   if (typeof mediaQuery.addEventListener === "function") {
     mediaQuery.addEventListener("change", handleMediaChange);
   } else if (typeof mediaQuery.addListener === "function") {
