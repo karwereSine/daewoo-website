@@ -943,7 +943,8 @@ a {
 .hero-slider {
   position: relative;
   width: 100%;
-  height: clamp(320px, 60vh, 720px);
+  height: clamp(240px, calc(100vw * 850 / 1920), 80vh);
+  max-height: 80vh;
   overflow: hidden;
   isolation: isolate;
 }
@@ -958,6 +959,9 @@ a {
   position: absolute;
   inset: 0;
   opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: opacity 0.65s ease;
 }
 
@@ -969,9 +973,8 @@ a {
 .hero-slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
-  aspect-ratio: 1920 / 850;
 }
 
 .hero-nav {
