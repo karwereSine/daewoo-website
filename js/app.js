@@ -1530,6 +1530,17 @@ document.addEventListener("DOMContentLoaded", () => {
       activeIndex = 0;
     }
 
+    const setBackdropFromSlide = (index) => {
+      const slide = slides[index];
+      if (!slide) return;
+      const img = slide.querySelector("img");
+      if (!img) return;
+      const source =
+        img.getAttribute("data-src") || img.getAttribute("src") || img.dataset.lazySrc;
+      if (!source) return;
+      slider.style.setProperty("--hero-backdrop", `url("${source}")`);
+    };
+
     const setActiveSlide = (targetIndex) => {
       if (slides.length === 0) return;
       const normalized = (targetIndex + slides.length) % slides.length;
@@ -1543,6 +1554,7 @@ document.addEventListener("DOMContentLoaded", () => {
         dot.setAttribute("aria-pressed", String(index === normalized));
       });
       activeIndex = normalized;
+      setBackdropFromSlide(activeIndex);
     };
 
     const stopTimer = () => {
