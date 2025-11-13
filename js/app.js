@@ -168,6 +168,76 @@ document.addEventListener("DOMContentLoaded", () => {
       "productCenter.home.card3.meta1": "PM0.1 级滤净力",
       "productCenter.home.card3.meta2": "静音睡眠模式低至 19dB",
       "productCenter.home.card3.meta3": "传感器实时监测空气质量",
+      "productCenter.home.tablistLabel": "家用电器分类切换",
+      "productCenter.home.tabLarge": "大型家电",
+      "productCenter.home.tabSmall": "小型家电",
+      "productCenter.home.more": "查看全部",
+      "productCenter.home.large.refrigerator.title": "冰箱系列",
+      "productCenter.home.large.refrigerator.description": "覆盖法式多门、风冷对开门等系列，满足大容量保鲜需求。",
+      "productCenter.home.large.refrigerator.item1": "法式多门冰箱",
+      "productCenter.home.large.refrigerator.item2": "风冷对开门",
+      "productCenter.home.large.refrigerator.item3": "嵌入式薄体柜",
+      "productCenter.home.large.refrigerator.item4": "玻璃面板系列",
+      "productCenter.home.large.airConditioner.title": "空调系列",
+      "productCenter.home.large.airConditioner.description": "提供变频壁挂及客厅柜机，舒适控温更节能。",
+      "productCenter.home.large.airConditioner.item1": "变频壁挂式",
+      "productCenter.home.large.airConditioner.item2": "立式客厅柜机",
+      "productCenter.home.large.airConditioner.item3": "新风净化系统",
+      "productCenter.home.large.airConditioner.item4": "一级能效系列",
+      "productCenter.home.large.tv.title": "电视系列",
+      "productCenter.home.large.tv.description": "超高清显示与智慧影音体验，打造家庭影院。",
+      "productCenter.home.large.tv.item1": "Mini LED 旗舰",
+      "productCenter.home.large.tv.item2": "超高清全面屏",
+      "productCenter.home.large.tv.item3": "智能语音控制",
+      "productCenter.home.large.tv.item4": "护眼模式",
+      "productCenter.home.large.wineCabinet.title": "酒柜系列",
+      "productCenter.home.large.wineCabinet.description": "恒温恒湿酒柜，为私人酒窖提供专业存储方案。",
+      "productCenter.home.large.wineCabinet.item1": "多温区恒温系统",
+      "productCenter.home.large.wineCabinet.item2": "分层储酒设计",
+      "productCenter.home.large.wineCabinet.item3": "活性炭净味",
+      "productCenter.home.large.wineCabinet.item4": "可视玻璃门",
+      "productCenter.home.large.dryer.title": "烘干机系列",
+      "productCenter.home.large.dryer.description": "热泵烘干技术，快速烘干衣物同时呵护面料。",
+      "productCenter.home.large.dryer.item1": "热泵烘干机",
+      "productCenter.home.large.dryer.item2": "智能除皱程序",
+      "productCenter.home.large.dryer.item3": "羊毛柔烘模式",
+      "productCenter.home.large.dryer.item4": "筒自洁系统",
+      "productCenter.home.large.washerDryer.title": "洗衣干衣机",
+      "productCenter.home.large.washerDryer.description": "洗烘一体整合空间，满足家庭多场景洗护需求。",
+      "productCenter.home.large.washerDryer.item1": "洗烘一体机",
+      "productCenter.home.large.washerDryer.item2": "蒸汽除螨",
+      "productCenter.home.large.washerDryer.item3": "极速快洗",
+      "productCenter.home.large.washerDryer.item4": "手机互联控制",
+      "productCenter.home.large.warmingDrawer.title": "嵌入式保温抽屉",
+      "productCenter.home.large.warmingDrawer.description": "餐具恒温存放，满足家庭聚餐与多菜品备餐需求。",
+      "productCenter.home.large.warmingDrawer.item1": "多段恒温调节",
+      "productCenter.home.large.warmingDrawer.item2": "宽幅储物容量",
+      "productCenter.home.large.warmingDrawer.item3": "缓启缓关设计",
+      "productCenter.home.large.warmingDrawer.item4": "嵌入式无缝安装",
+      "productCenter.home.small.kitchen.title": "厨房电器",
+      "productCenter.home.small.kitchen.description": "围绕烹饪与饮品场景，提供多功能智能厨房电器。",
+      "productCenter.home.small.kitchen.item1": "破壁机",
+      "productCenter.home.small.kitchen.item2": "空气炸锅",
+      "productCenter.home.small.kitchen.item3": "多功能料理锅",
+      "productCenter.home.small.kitchen.item4": "蒸烤箱",
+      "productCenter.home.small.living.title": "生活电器",
+      "productCenter.home.small.living.description": "居家清洁与空气改善，一站式生活电器选择。",
+      "productCenter.home.small.living.item1": "扫地机器人",
+      "productCenter.home.small.living.item2": "加湿器",
+      "productCenter.home.small.living.item3": "空气循环扇",
+      "productCenter.home.small.living.item4": "除螨仪",
+      "productCenter.home.small.maternal.title": "母婴电器",
+      "productCenter.home.small.maternal.description": "关注妈妈与宝宝的日常，贴心守护每一步成长。",
+      "productCenter.home.small.maternal.item1": "辅食机",
+      "productCenter.home.small.maternal.item2": "暖奶器",
+      "productCenter.home.small.maternal.item3": "消毒烘干箱",
+      "productCenter.home.small.maternal.item4": "婴儿理发器",
+      "productCenter.home.small.seasonal.title": "两季电器",
+      "productCenter.home.small.seasonal.description": "应对四季温度变化，打造舒适居住环境。",
+      "productCenter.home.small.seasonal.item1": "冷暖扇",
+      "productCenter.home.small.seasonal.item2": "温控取暖器",
+      "productCenter.home.small.seasonal.item3": "暖风机",
+      "productCenter.home.small.seasonal.item4": "制冰机",
       "productCenter.smart.description": "构建互联互通的智慧生活空间，实现场景化自动控制。",
       "productCenter.smart.card1.summary": "支持 200+ 设备互联，统一控制照明、安防与环境。",
       "productCenter.smart.card1.meta1": "Matter 协议兼容",
@@ -426,6 +496,76 @@ document.addEventListener("DOMContentLoaded", () => {
       "productCenter.home.card3.meta1": "PM0.1 등급 초미세 제거",
       "productCenter.home.card3.meta2": "슬립 모드 19dB 저소음",
       "productCenter.home.card3.meta3": "공기질을 실시간 센서 모니터링",
+      "productCenter.home.tablistLabel": "생활가전 카테고리 전환",
+      "productCenter.home.tabLarge": "대형 가전",
+      "productCenter.home.tabSmall": "소형 가전",
+      "productCenter.home.more": "전체 보기",
+      "productCenter.home.large.refrigerator.title": "냉장고 시리즈",
+      "productCenter.home.large.refrigerator.description": "프렌치도어와 양문형 등 대용량 보관 라인업을 제공합니다.",
+      "productCenter.home.large.refrigerator.item1": "프렌치 도어 냉장고",
+      "productCenter.home.large.refrigerator.item2": "양문형 냉장고",
+      "productCenter.home.large.refrigerator.item3": "빌트인 슬림형",
+      "productCenter.home.large.refrigerator.item4": "글라스 패널 시리즈",
+      "productCenter.home.large.airConditioner.title": "에어컨 시리즈",
+      "productCenter.home.large.airConditioner.description": "인버터 벽걸이와 스탠드형까지 쾌적한 온도를 유지합니다.",
+      "productCenter.home.large.airConditioner.item1": "인버터 벽걸이형",
+      "productCenter.home.large.airConditioner.item2": "거실 스탠드형",
+      "productCenter.home.large.airConditioner.item3": "신선한 공기 순환 시스템",
+      "productCenter.home.large.airConditioner.item4": "1등급 에너지 효율",
+      "productCenter.home.large.tv.title": "TV 시리즈",
+      "productCenter.home.large.tv.description": "초고화질과 스마트 AV 기능으로 홈시네마를 완성합니다.",
+      "productCenter.home.large.tv.item1": "Mini LED 플래그십",
+      "productCenter.home.large.tv.item2": "초고화질 베젤리스",
+      "productCenter.home.large.tv.item3": "AI 음성 제어",
+      "productCenter.home.large.tv.item4": "아이케어 모드",
+      "productCenter.home.large.wineCabinet.title": "와인셀러 시리즈",
+      "productCenter.home.large.wineCabinet.description": "온도·습도를 정밀 제어해 프리미엄 보관을 지원합니다.",
+      "productCenter.home.large.wineCabinet.item1": "멀티 존 온도 제어",
+      "productCenter.home.large.wineCabinet.item2": "계층형 보관 설계",
+      "productCenter.home.large.wineCabinet.item3": "활성탄 탈취 시스템",
+      "productCenter.home.large.wineCabinet.item4": "시인성 글라스 도어",
+      "productCenter.home.large.dryer.title": "건조기 시리즈",
+      "productCenter.home.large.dryer.description": "히트펌프 기술로 섬세한 의류까지 빠르게 건조합니다.",
+      "productCenter.home.large.dryer.item1": "히트펌프 건조기",
+      "productCenter.home.large.dryer.item2": "스마트 구김 방지",
+      "productCenter.home.large.dryer.item3": "울 케어 모드",
+      "productCenter.home.large.dryer.item4": "드럼 자동 세척",
+      "productCenter.home.large.washerDryer.title": "세탁·건조기",
+      "productCenter.home.large.washerDryer.description": "세탁과 건조를 한 번에, 다양한 세탁 시나리오를 지원합니다.",
+      "productCenter.home.large.washerDryer.item1": "세탁·건조 겸용",
+      "productCenter.home.large.washerDryer.item2": "스팀 살균 코스",
+      "productCenter.home.large.washerDryer.item3": "초고속 쾌속 세탁",
+      "productCenter.home.large.washerDryer.item4": "모바일 연동 제어",
+      "productCenter.home.large.warmingDrawer.title": "빌트인 보온 서랍",
+      "productCenter.home.large.warmingDrawer.description": "식기와 음식 온도를 일정하게 유지하는 키친 솔루션입니다.",
+      "productCenter.home.large.warmingDrawer.item1": "다단 온도 조절",
+      "productCenter.home.large.warmingDrawer.item2": "넉넉한 수납 용량",
+      "productCenter.home.large.warmingDrawer.item3": "소프트 오픈·클로즈",
+      "productCenter.home.large.warmingDrawer.item4": "빌트인 일체형 설치",
+      "productCenter.home.small.kitchen.title": "주방 가전",
+      "productCenter.home.small.kitchen.description": "요리와 음료 준비를 돕는 다기능 스마트 주방 가전입니다.",
+      "productCenter.home.small.kitchen.item1": "블렌더",
+      "productCenter.home.small.kitchen.item2": "에어프라이어",
+      "productCenter.home.small.kitchen.item3": "멀티 쿠커",
+      "productCenter.home.small.kitchen.item4": "스팀 오븐",
+      "productCenter.home.small.living.title": "생활 가전",
+      "productCenter.home.small.living.description": "청소와 공기 관리를 위한 필수 생활 가전 라인업입니다.",
+      "productCenter.home.small.living.item1": "로봇 청소기",
+      "productCenter.home.small.living.item2": "가습기",
+      "productCenter.home.small.living.item3": "공기 순환 선풍기",
+      "productCenter.home.small.living.item4": "침구 진드기 제거기",
+      "productCenter.home.small.maternal.title": "육아 가전",
+      "productCenter.home.small.maternal.description": "엄마와 아기를 위한 맞춤형 케어 가전입니다.",
+      "productCenter.home.small.maternal.item1": "이유식 제조기",
+      "productCenter.home.small.maternal.item2": "젖병 워머",
+      "productCenter.home.small.maternal.item3": "살균 건조기",
+      "productCenter.home.small.maternal.item4": "유아 이발기",
+      "productCenter.home.small.seasonal.title": "사계절 가전",
+      "productCenter.home.small.seasonal.description": "계절 온도 변화에 맞춰 집안을 쾌적하게 유지합니다.",
+      "productCenter.home.small.seasonal.item1": "냉·온 겸용 선풍기",
+      "productCenter.home.small.seasonal.item2": "온도 제어 히터",
+      "productCenter.home.small.seasonal.item3": "온풍기",
+      "productCenter.home.small.seasonal.item4": "제빙기",
       "productCenter.smart.description": "연결된 스마트 홈을 구축해 상황별 자동 제어와 시나리오를 구현합니다.",
       "productCenter.smart.card1.summary": "200개 이상 디바이스를 연동해 조명, 보안, 환경을 통합 제어합니다.",
       "productCenter.smart.card1.meta1": "Matter 프로토콜 호환",
@@ -684,6 +824,76 @@ document.addEventListener("DOMContentLoaded", () => {
       "productCenter.home.card3.meta1": "PM0.1-grade filtration performance",
       "productCenter.home.card3.meta2": "Whisper sleep mode down to 19 dB",
       "productCenter.home.card3.meta3": "Real-time air-quality sensing",
+      "productCenter.home.tablistLabel": "Switch household appliance categories",
+      "productCenter.home.tabLarge": "Major Appliances",
+      "productCenter.home.tabSmall": "Small Appliances",
+      "productCenter.home.more": "View all",
+      "productCenter.home.large.refrigerator.title": "Refrigerator Collection",
+      "productCenter.home.large.refrigerator.description": "French-door, side-by-side, and slim built-in options for generous preservation.",
+      "productCenter.home.large.refrigerator.item1": "French-door refrigerators",
+      "productCenter.home.large.refrigerator.item2": "Side-by-side cooling",
+      "productCenter.home.large.refrigerator.item3": "Slim built-in columns",
+      "productCenter.home.large.refrigerator.item4": "Glass-panel designs",
+      "productCenter.home.large.airConditioner.title": "Air Conditioner Lineup",
+      "productCenter.home.large.airConditioner.description": "Inverter wall units and living-room floor models deliver efficient comfort.",
+      "productCenter.home.large.airConditioner.item1": "Inverter wall-mounted",
+      "productCenter.home.large.airConditioner.item2": "Floor-standing smart towers",
+      "productCenter.home.large.airConditioner.item3": "Fresh-air purification system",
+      "productCenter.home.large.airConditioner.item4": "Grade-1 energy efficiency",
+      "productCenter.home.large.tv.title": "TV Series",
+      "productCenter.home.large.tv.description": "Ultra HD visuals and smart AV features create a home cinema experience.",
+      "productCenter.home.large.tv.item1": "Mini LED flagships",
+      "productCenter.home.large.tv.item2": "Ultra HD bezel-less",
+      "productCenter.home.large.tv.item3": "Intelligent voice control",
+      "productCenter.home.large.tv.item4": "Eye-care viewing mode",
+      "productCenter.home.large.wineCabinet.title": "Wine Cabinet Series",
+      "productCenter.home.large.wineCabinet.description": "Precision temperature and humidity management for private cellars.",
+      "productCenter.home.large.wineCabinet.item1": "Multi-zone temperature control",
+      "productCenter.home.large.wineCabinet.item2": "Tiered storage layout",
+      "productCenter.home.large.wineCabinet.item3": "Activated-carbon odor filter",
+      "productCenter.home.large.wineCabinet.item4": "Crystal-view glass door",
+      "productCenter.home.large.dryer.title": "Dryer Series",
+      "productCenter.home.large.dryer.description": "Heat-pump technology dries quickly while protecting delicate fabrics.",
+      "productCenter.home.large.dryer.item1": "Heat-pump dryers",
+      "productCenter.home.large.dryer.item2": "Smart wrinkle care",
+      "productCenter.home.large.dryer.item3": "Wool gentle cycle",
+      "productCenter.home.large.dryer.item4": "Drum self-clean system",
+      "productCenter.home.large.washerDryer.title": "Washer-Dryer Combos",
+      "productCenter.home.large.washerDryer.description": "Space-saving laundry stations that cover multiple wash scenarios.",
+      "productCenter.home.large.washerDryer.item1": "All-in-one washer dryers",
+      "productCenter.home.large.washerDryer.item2": "Steam allergen care",
+      "productCenter.home.large.washerDryer.item3": "Rapid quick-wash",
+      "productCenter.home.large.washerDryer.item4": "App-connected control",
+      "productCenter.home.large.warmingDrawer.title": "Built-in Warming Drawers",
+      "productCenter.home.large.warmingDrawer.description": "Keep dishes ready-to-serve with flexible temperature programs.",
+      "productCenter.home.large.warmingDrawer.item1": "Multi-level temperature settings",
+      "productCenter.home.large.warmingDrawer.item2": "Wide-capacity storage",
+      "productCenter.home.large.warmingDrawer.item3": "Soft-open, soft-close",
+      "productCenter.home.large.warmingDrawer.item4": "Seamless built-in fit",
+      "productCenter.home.small.kitchen.title": "Kitchen Appliances",
+      "productCenter.home.small.kitchen.description": "Multi-function tools for cooking, drinks, and everyday meal prep.",
+      "productCenter.home.small.kitchen.item1": "High-speed blenders",
+      "productCenter.home.small.kitchen.item2": "Air fryers",
+      "productCenter.home.small.kitchen.item3": "Multi-purpose cookers",
+      "productCenter.home.small.kitchen.item4": "Steam ovens",
+      "productCenter.home.small.living.title": "Home Living",
+      "productCenter.home.small.living.description": "Cleaning and air-care devices for a healthier home.",
+      "productCenter.home.small.living.item1": "Robot vacuums",
+      "productCenter.home.small.living.item2": "Humidifiers",
+      "productCenter.home.small.living.item3": "Air circulator fans",
+      "productCenter.home.small.living.item4": "Anti-mite cleaners",
+      "productCenter.home.small.maternal.title": "Mother & Baby",
+      "productCenter.home.small.maternal.description": "Caring essentials that support every stage of family life.",
+      "productCenter.home.small.maternal.item1": "Baby food processors",
+      "productCenter.home.small.maternal.item2": "Bottle warmers",
+      "productCenter.home.small.maternal.item3": "Sterilizer & dryer units",
+      "productCenter.home.small.maternal.item4": "Baby hair trimmers",
+      "productCenter.home.small.seasonal.title": "Seasonal Comfort",
+      "productCenter.home.small.seasonal.description": "Cooling and heating companions to manage year-round climate.",
+      "productCenter.home.small.seasonal.item1": "Cooling & heating fans",
+      "productCenter.home.small.seasonal.item2": "Thermostatic heaters",
+      "productCenter.home.small.seasonal.item3": "Warm-air blowers",
+      "productCenter.home.small.seasonal.item4": "Ice makers",
       "productCenter.smart.description": "Build an interconnected smart living space with automated, scenario-based control.",
       "productCenter.smart.card1.summary": "Connect 200+ devices and orchestrate lighting, security, and environment from one hub.",
       "productCenter.smart.card1.meta1": "Matter protocol compatible",
@@ -1242,6 +1452,62 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 150);
     }
   }
+
+  document.querySelectorAll("[data-product-tabs]").forEach((tabsContainer) => {
+    const tabButtons = Array.from(tabsContainer.querySelectorAll("[data-tab]"));
+    const panels = Array.from(tabsContainer.querySelectorAll("[data-tab-panel]"));
+    if (tabButtons.length === 0 || panels.length === 0) {
+      return;
+    }
+
+    const setActiveTab = (tabId) => {
+      tabButtons.forEach((button) => {
+        const isActive = button.dataset.tab === tabId;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-selected", String(isActive));
+        button.setAttribute("tabindex", isActive ? "0" : "-1");
+      });
+
+      panels.forEach((panel) => {
+        const isActive = panel.dataset.tabPanel === tabId;
+        panel.classList.toggle("is-active", isActive);
+        panel.toggleAttribute("hidden", !isActive);
+      });
+    };
+
+    const focusTab = (index) => {
+      const button = tabButtons[index];
+      if (!button) return;
+      button.focus();
+      setActiveTab(button.dataset.tab);
+    };
+
+    tabButtons.forEach((button, index) => {
+      button.addEventListener("click", () => {
+        setActiveTab(button.dataset.tab);
+      });
+
+      button.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowRight") {
+          event.preventDefault();
+          const nextIndex = (index + 1) % tabButtons.length;
+          focusTab(nextIndex);
+        } else if (event.key === "ArrowLeft") {
+          event.preventDefault();
+          const prevIndex = (index - 1 + tabButtons.length) % tabButtons.length;
+          focusTab(prevIndex);
+        }
+      });
+    });
+
+    const initialTab =
+      tabButtons.find((button) => button.classList.contains("is-active"))?.dataset.tab ??
+      tabButtons[0]?.dataset.tab;
+
+    if (initialTab) {
+      setActiveTab(initialTab);
+    }
+  });
 
   const sliderContainers = Array.from(document.querySelectorAll("[data-slider]"));
 
