@@ -1694,6 +1694,70 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  if (document.body?.classList?.contains("product-detail-page")) {
+    const topbar = document.querySelector(".product-detail__topbar");
+    const heroEyebrow = document.querySelector(".product-detail__hero .page-hero__eyebrow");
+    const heroTitle = document.querySelector(".product-detail__hero .page-hero__title");
+    const siteHeader = document.querySelector(".site-header");
+
+    if (topbar && heroTitle) {
+      let titleGroup = topbar.querySelector(".product-detail__topbar-group");
+      if (!titleGroup) {
+        titleGroup = document.createElement("div");
+        titleGroup.className = "product-detail__topbar-group";
+        const backLink = topbar.querySelector(".product-detail__back");
+        if (backLink) {
+          topbar.insertBefore(titleGroup, backLink.nextSibling);
+          titleGroup.insertAdjacentElement("afterbegin", backLink);
+        } else {
+          topbar.appendChild(titleGroup);
+        }
+      }
+
+      if (!titleGroup.querySelector(".product-detail__topbar-title")) {
+        const titleWrapper = document.createElement("div");
+        titleWrapper.className = "product-detail__topbar-title";
+
+        if (heroEyebrow?.textContent?.trim()) {
+          const category = document.createElement("span");
+          category.className = "product-detail__topbar-category";
+          category.textContent = heroEyebrow.textContent.trim();
+          titleWrapper.appendChild(category);
+        }
+
+        const name = document.createElement("span");
+        name.className = "product-detail__topbar-name";
+        name.textContent = heroTitle.textContent.trim();
+        titleWrapper.appendChild(name);
+
+        titleGroup.appendChild(titleWrapper);
+      }
+
+      const sentinel = document.createElement("div");
+      sentinel.className = "product-detail__topbar-sentinel";
+      sentinel.setAttribute("aria-hidden", "true");
+      topbar.parentNode.insertBefore(sentinel, topbar);
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          topbar.classList.toggle("is-stuck", entry ? !entry.isIntersecting : false);
+        },
+        { threshold: 0 }
+      );
+
+      observer.observe(sentinel);
+    }
+
+    const updateTopbarOffset = () => {
+      if (!siteHeader) return;
+      const offset = siteHeader.offsetHeight;
+      document.documentElement.style.setProperty("--product-topbar-offset", `${offset}px`);
+    };
+
+    updateTopbarOffset();
+    window.addEventListener("resize", updateTopbarOffset);
+  }
+
   if (typeof mediaQuery.addEventListener === "function") {
     mediaQuery.addEventListener("change", handleMediaChange);
   } else if (typeof mediaQuery.addListener === "function") {
