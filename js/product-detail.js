@@ -19,6 +19,48 @@
   const servicePrimary = document.querySelector("[data-product-service-primary]");
   const serviceSecondary = document.querySelector("[data-product-service-secondary]");
 
+  const syncTopbarTitle = (categoryText, nameText) => {
+    const topbar = document.querySelector(".product-detail__topbar");
+    if (!topbar) return;
+
+    let titleGroup = topbar.querySelector(".product-detail__topbar-group");
+    if (!titleGroup) {
+      titleGroup = document.createElement("div");
+      titleGroup.className = "product-detail__topbar-group";
+
+      const backLink = topbar.querySelector(".product-detail__back");
+      if (backLink) {
+        topbar.insertBefore(titleGroup, backLink.nextSibling);
+      } else {
+        topbar.appendChild(titleGroup);
+      }
+    }
+
+    let titleWrapper = titleGroup.querySelector(".product-detail__topbar-title");
+    if (!titleWrapper) {
+      titleWrapper = document.createElement("div");
+      titleWrapper.className = "product-detail__topbar-title";
+      titleGroup.appendChild(titleWrapper);
+    }
+
+    let category = titleWrapper.querySelector(".product-detail__topbar-category");
+    if (!category) {
+      category = document.createElement("span");
+      category.className = "product-detail__topbar-category";
+      titleWrapper.appendChild(category);
+    }
+
+    let name = titleWrapper.querySelector(".product-detail__topbar-name");
+    if (!name) {
+      name = document.createElement("span");
+      name.className = "product-detail__topbar-name";
+      titleWrapper.appendChild(name);
+    }
+
+    category.textContent = categoryText || "";
+    name.textContent = nameText || "";
+  };
+
   const showErrorState = (message) => {
     const fallback = message || "暂未找到对应的产品信息。";
     if (pageTitle) pageTitle.textContent = "产品信息未找到 | DAEWOO";
@@ -210,6 +252,8 @@
     }
 
     renderSpecs(summary.details);
+
+    syncTopbarTitle(hero.eyebrow, hero.title);
 
     if (noteElement) {
       noteElement.textContent = summary.note || "";
