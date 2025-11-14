@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-product-page-title>DAEWOO 产品详情</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="product-detail-page">
+  <header class="site-header">
+    <div class="brand-bar">
+      <a class="brand" href="index.html">
+        <img src="img/icons/DAEWOO-LOGO.png" alt="DAEWOO 服务" />
+        <span class="sr-only" data-i18n="brand.name">DAEWOO 服务</span>
+      </a>
+      <form class="global-search" role="search">
+        <label for="global-search-input" class="sr-only" data-i18n="search.label">输入搜索词</label>
+        <input
+          id="global-search-input"
+          type="search"
+          placeholder="请输入想了解的内容"
+          autocomplete="off"
+          data-i18n-placeholder="search.placeholder"
+        />
+        <button type="submit" data-i18n="search.button">搜索</button>
+      </form>
+    </div>
+  </header>
+
+  <main class="product-detail">
+    <div class="product-detail__topbar">
+      <a class="product-detail__back" href="product-center.html" data-product-back-link>返回产品中心</a>
+    </div>
+
+    <section class="page-hero page-hero--compact product-detail__hero">
+      <div class="page-hero__content">
+        <p class="page-hero__eyebrow" data-product-hero-eyebrow>产品分类</p>
+        <h1 class="page-hero__title" data-product-hero-title>产品名称</h1>
+        <p class="page-hero__description" data-product-hero-description>产品简介。</p>
+      </div>
+    </section>
+
+    <section class="product-detail__summary">
+      <div class="product-detail__cover">
+        <img data-product-main src="img/icons/daewooproductnone.gif" alt="产品主图" />
+      </div>
+      <div class="product-detail__info">
+        <dl data-product-specs></dl>
+        <p class="product-detail__note" data-product-note>数据更新中，请稍候…</p>
+      </div>
+    </section>
+
+    <div class="product-detail__thumbnails" data-product-thumbnails></div>
+
+    <section class="product-detail__description">
+      <h2 data-i18n="product.description.title">产品描述</h2>
+      <ul class="product-detail__media-list" data-product-media></ul>
+    </section>
+
+    <section class="product-service">
+      <div class="product-service__inner">
+        <div class="product-service__text">
+          <h2 data-product-service-title>联系顾问</h2>
+          <p data-product-service-description>提交您的需求，我们将为您匹配合适的方案。</p>
+        </div>
+        <div class="product-service__cta">
+          <a class="button button--primary" href="mailto:support@daewoo.com" data-product-service-primary>联系顾问</a>
+          <a class="button button--ghost" href="contact.html" data-product-service-secondary>预约服务中心</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p data-i18n="footer.copy">© 2025 DAEWOO SERVICE CO., LTD. 保留所有权利。</p>
+  </footer>
+
+  <script src="js/product-detail.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
+
