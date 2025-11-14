@@ -18,6 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
       "nav.contact": "联系我们",
       "nav.about": "公司概况",
       "nav.language": "LANGUAGE",
+      "mobileNav.toggle": "打开目录",
+      "mobileNav.panelLabel": "DAEWOO 移动目录",
+      "mobileNav.close": "关闭目录",
       "panel.product.heading": "产品类别",
       "panel.product.home": "家用电器",
       "panel.product.smartHome": "智能家居",
@@ -346,6 +349,9 @@ document.addEventListener("DOMContentLoaded", () => {
       "nav.contact": "문의하기",
       "nav.about": "회사 개요",
       "nav.language": "LANGUAGE",
+      "mobileNav.toggle": "모바일 메뉴 열기",
+      "mobileNav.panelLabel": "DAEWOO 모바일 메뉴",
+      "mobileNav.close": "메뉴 닫기",
       "panel.product.heading": "제품 카테고리",
       "panel.product.home": "생활가전",
       "panel.product.smartHome": "스마트홈",
@@ -674,6 +680,9 @@ document.addEventListener("DOMContentLoaded", () => {
       "nav.contact": "Contact Us",
       "nav.about": "About DAEWOO",
       "nav.language": "LANGUAGE",
+      "mobileNav.toggle": "Open mobile menu",
+      "mobileNav.panelLabel": "DAEWOO mobile directory",
+      "mobileNav.close": "Close menu",
       "panel.product.heading": "Product Categories",
       "panel.product.home": "Home Appliances",
       "panel.product.smartHome": "Smart Home",
@@ -1089,6 +1098,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const board = document.getElementById("mega-board");
   const boardColumns = board ? Array.from(board.querySelectorAll(".mega-board__column")) : [];
   const mediaQuery = window.matchMedia("(max-width: 960px)");
+  const bodyElement = document.body;
+  const mobileMenuToggle = document.querySelector("[data-mobile-menu-toggle]");
+  const mobileNavPanel = document.querySelector("[data-mobile-nav]");
+  const mobileNavCloseButtons = Array.from(document.querySelectorAll("[data-mobile-nav-close]"));
+  const mobileNavCollapsibleTriggers = Array.from(
+    document.querySelectorAll("[data-mobile-nav-collapsible]")
+  );
+  const mobileNavPanels = Array.from(document.querySelectorAll("[data-mobile-nav-panel]"));
+  const mobileNavMenu = mobileNavPanel?.querySelector(".mobile-nav-menu");
+  const isHomePage = bodyElement?.classList?.contains("home-page");
+  const canUseMobileNavPanel = Boolean(isHomePage && mobileMenuToggle && mobileNavPanel);
   let activePanelId = null;
 
   const currentPage = document.body?.dataset?.page;
@@ -1159,20 +1179,65 @@ document.addEventListener("DOMContentLoaded", () => {
     clearActivePanel();
   };
 
+  const syncToggleState = (expanded) => {
+    navToggle?.setAttribute("aria-expanded", String(expanded));
+    navToggle?.classList.toggle("is-active", expanded);
+    mobileMenuToggle?.setAttribute("aria-expanded", String(expanded));
+    mobileMenuToggle?.classList.toggle("is-active", expanded);
+  };
+
+  const setBodyScrollLock = (locked) => {
+    if (!canUseMobileNavPanel) {
+      bodyElement?.classList.remove("is-mobile-nav-open");
+      return;
+    }
+    bodyElement?.classList.toggle("is-mobile-nav-open", locked);
+  };
+
+  const setMobileSectionState = (trigger, expanded) => {
+    const container = trigger?.closest(".mobile-nav-menu__item--collapsible");
+    const panel = container?.querySelector("[data-mobile-nav-panel]");
+    trigger.setAttribute("aria-expanded", String(expanded));
+    container?.classList.toggle("is-open", expanded);
+    if (panel instanceof HTMLElement) {
+      panel.setAttribute("aria-hidden", String(!expanded));
+      panel.style.maxHeight = expanded ? `${panel.scrollHeight}px` : "0px";
+    }
+  };
+
+  const collapseAllMobileSections = () => {
+    mobileNavCollapsibleTriggers.forEach((trigger) => setMobileSectionState(trigger, false));
+  };
+
   const setListExpanded = (expanded) => {
-    if (!nav || !navToggle || !navList) return;
-    navToggle.setAttribute("aria-expanded", String(expanded));
-    nav.classList.toggle("is-expanded", expanded);
+    if (!nav) return;
+    syncToggleState(expanded);
+    const useMobilePanel = canUseMobileNavPanel && mediaQuery.matches;
+    nav.classList.toggle("is-expanded", expanded && !useMobilePanel);
+
     if (mediaQuery.matches) {
-      navList.classList.toggle("is-open", expanded);
-      if (expanded) {
-        const firstPanel = navItems[0]?.dataset.panel ?? null;
-        setActivePanel(firstPanel);
-      } else {
-        clearActivePanel();
+      if (useMobilePanel) {
+        mobileNavPanel?.classList.toggle("is-open", expanded);
+        mobileNavPanel?.setAttribute("aria-hidden", String(!expanded));
+        setBodyScrollLock(expanded);
+        if (!expanded) {
+          collapseAllMobileSections();
+        }
+      } else if (navList) {
+        navList.classList.toggle("is-open", expanded);
+        if (expanded) {
+          const firstPanel = navItems[0]?.dataset.panel ?? null;
+          setActivePanel(firstPanel);
+        } else {
+          clearActivePanel();
+        }
       }
     } else {
-      navList.classList.remove("is-open");
+      navList?.classList.remove("is-open");
+      mobileNavPanel?.classList.remove("is-open");
+      mobileNavPanel?.setAttribute("aria-hidden", "true");
+      collapseAllMobileSections();
+      setBodyScrollLock(false);
       if (!expanded) {
         hideBoard();
       }
@@ -1185,6 +1250,42 @@ document.addEventListener("DOMContentLoaded", () => {
       setListExpanded(willExpand);
     });
   }
+
+  if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener("click", () => {
+      const willExpand = !(mobileMenuToggle.getAttribute("aria-expanded") === "true");
+      setListExpanded(willExpand);
+    });
+  }
+
+  mobileNavCloseButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      setListExpanded(false);
+    });
+  });
+
+  mobileNavPanels.forEach((panel) => {
+    if (panel instanceof HTMLElement) {
+      panel.style.maxHeight = "0px";
+      panel.setAttribute("aria-hidden", "true");
+    }
+  });
+
+  mobileNavCollapsibleTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const isExpanded = trigger.getAttribute("aria-expanded") === "true";
+      setMobileSectionState(trigger, !isExpanded);
+    });
+  });
+
+  mobileNavMenu?.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement)) return;
+    const link = target.closest("a");
+    if (link && mobileNavPanel?.classList.contains("is-open")) {
+      setListExpanded(false);
+    }
+  });
 
   navItems.forEach((item) => {
     const trigger = item.querySelector(".mega-nav__trigger");
@@ -1256,8 +1357,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const handleMediaChange = () => {
+    const isMobileView = mediaQuery.matches;
+    bodyElement?.classList.toggle("is-mobile-screen", isMobileView);
     setListExpanded(false);
-    if (mediaQuery.matches) {
+    if (isMobileView) {
       nav?.classList.remove("is-board-open");
       clearActivePanel();
     } else {
@@ -1667,6 +1770,10 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("preferredLang", requestedLang);
       } catch (error) {
         // ignore
+      }
+
+      if (canUseMobileNavPanel && mobileNavPanel?.classList.contains("is-open")) {
+        setListExpanded(false);
       }
     });
   });

@@ -6,7 +6,7 @@
   <title>DAEWOO 서비스센터</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
+<body class="home-page" data-page="home">
   <header class="site-header">
     <div class="brand-bar">
       <a class="brand" href="index.html">
@@ -24,6 +24,17 @@
         />
         <button type="submit" data-i18n="search.button">搜索</button>
       </form>
+      <button
+        class="mobile-menu-toggle"
+        type="button"
+        aria-controls="mega-nav-menu"
+        aria-expanded="false"
+        aria-label="目录"
+        data-mobile-menu-toggle
+      >
+        <img src="img/icons/menu.svg" alt="" class="mobile-menu-toggle__icon" aria-hidden="true" />
+        <span class="sr-only">Open menu</span>
+      </button>
     </div>
 
     <nav
@@ -130,6 +141,56 @@
         </div>
       </div>
   </nav>
+
+  <div class="mobile-nav-panel" data-mobile-nav aria-hidden="true">
+    <div class="mobile-nav-panel__mask" data-mobile-nav-close></div>
+    <div
+      class="mobile-nav-panel__sheet"
+      role="dialog"
+      aria-modal="true"
+      aria-label="DAEWOO 移动目录"
+      data-i18n-aria-label="mobileNav.panelLabel"
+    >
+      <div class="mobile-nav-panel__header">
+        <a class="mobile-nav-panel__brand" href="index.html">
+          <img src="img/icons/DAEWOO-LOGO.png" alt="DAEWOO 服务" />
+        </a>
+        <button
+          type="button"
+          class="mobile-nav-panel__close"
+          data-mobile-nav-close
+          aria-label="关闭目录"
+        >
+          <span aria-hidden="true">×</span>
+          <span class="sr-only">Close menu</span>
+        </button>
+      </div>
+      <ul class="mobile-nav-menu">
+        <li><a href="product-center.html" data-i18n="nav.product">产品中心</a></li>
+        <li><a href="#news-section" data-i18n="nav.news">新闻动态</a></li>
+        <li><a href="video-center.html" data-i18n="nav.video">视频中心</a></li>
+        <li><a href="#contact-section" data-i18n="nav.contact">联系我们</a></li>
+        <li><a href="#about-section" data-i18n="nav.about">公司概况</a></li>
+        <li class="mobile-nav-menu__item mobile-nav-menu__item--collapsible">
+          <button
+            type="button"
+            data-mobile-nav-collapsible
+            aria-expanded="false"
+          >
+            <span>LANGUAGE</span>
+            <span class="mobile-nav-menu__chevron" aria-hidden="true"></span>
+          </button>
+          <div class="mobile-nav-menu__panel" data-mobile-nav-panel aria-hidden="true">
+            <div class="mobile-nav-menu__language-group" data-language-list>
+              <button type="button" data-lang="en">English</button>
+              <button type="button" data-lang="zh">中文</button>
+              <button type="button" data-lang="ko">한국어</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
 </header>
 
 <main>
