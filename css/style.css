@@ -2850,10 +2850,6 @@ html.is-video-modal-open {
     display: none;
   }
 
-  .mega-nav__toggle {
-    display: inline-flex;
-  }
-
   .mega-nav__list {
     flex-direction: column;
     max-height: 0;

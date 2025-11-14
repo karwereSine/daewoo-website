@@ -999,6 +999,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const supportedLangs = Object.keys(translations);
   const htmlElement = document.documentElement;
   const langSelector = document.getElementById("lang-select");
+  let currentLang = fallbackLang;
 
   const formatLangAttr = (lang) => {
     switch (lang) {
@@ -1023,6 +1024,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const applyTranslations = (lang) => {
     const normalized = supportedLangs.includes(lang) ? lang : fallbackLang;
+    currentLang = normalized;
     htmlElement.setAttribute("lang", formatLangAttr(normalized));
 
     document.querySelectorAll("[data-i18n]").forEach((el) => {
@@ -1073,7 +1075,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ? storedLang
     : fallbackLang;
 
-  applyTranslations(defaultLang);
+  currentLang = defaultLang;
+  applyTranslations(currentLang);
 
   if (langSelector) {
     langSelector.value = defaultLang;
@@ -1093,22 +1096,97 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const nav = document.querySelector(".mega-nav");
   const navList = nav?.querySelector(".mega-nav__list");
-  const navToggle = nav?.querySelector(".mega-nav__toggle");
+  let navToggle = nav?.querySelector(".mega-nav__toggle");
   const navItems = nav ? Array.from(nav.querySelectorAll(".mega-nav__item")) : [];
   const board = document.getElementById("mega-board");
   const boardColumns = board ? Array.from(board.querySelectorAll(".mega-board__column")) : [];
   const mediaQuery = window.matchMedia("(max-width: 960px)");
   const bodyElement = document.body;
-  const mobileMenuToggle = document.querySelector("[data-mobile-menu-toggle]");
-  const mobileNavPanel = document.querySelector("[data-mobile-nav]");
-  const mobileNavCloseButtons = Array.from(document.querySelectorAll("[data-mobile-nav-close]"));
-  const mobileNavCollapsibleTriggers = Array.from(
+  const brandBar = document.querySelector(".brand-bar");
+  let mobileMenuToggle = document.querySelector("[data-mobile-menu-toggle]");
+  let mobileNavPanel = document.querySelector("[data-mobile-nav]");
+  const getMobileNavTemplate = () => `
+    <div class="mobile-nav-panel" data-mobile-nav aria-hidden="true">
+      <div class="mobile-nav-panel__mask" data-mobile-nav-close></div>
+      <div class="mobile-nav-panel__sheet" role="dialog" aria-modal="true" aria-label="DAEWOO 移动目录">
+        <div class="mobile-nav-panel__header">
+          <a class="mobile-nav-panel__brand" href="index.html">
+            <img src="img/icons/DAEWOO-LOGO.png" alt="DAEWOO 服务" />
+          </a>
+          <button type="button" class="mobile-nav-panel__close" data-mobile-nav-close aria-label="关闭目录">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Close menu</span>
+          </button>
+        </div>
+        <ul class="mobile-nav-menu">
+          <li><a href="product-center.html" data-i18n="nav.product">产品中心</a></li>
+          <li><a href="news.html#news-section" data-i18n="nav.news">新闻动态</a></li>
+          <li><a href="video-center.html" data-i18n="nav.video">视频中心</a></li>
+          <li><a href="#contact-section" data-i18n="nav.contact">联系我们</a></li>
+          <li><a href="#about-section" data-i18n="nav.about">公司概况</a></li>
+          <li class="mobile-nav-menu__item mobile-nav-menu__item--collapsible">
+            <button type="button" data-mobile-nav-collapsible aria-expanded="false">
+              <span>LANGUAGE</span>
+              <span class="mobile-nav-menu__chevron" aria-hidden="true"></span>
+            </button>
+            <div class="mobile-nav-menu__panel" data-mobile-nav-panel aria-hidden="true">
+              <div class="mobile-nav-menu__language-group" data-language-list>
+                <button type="button" data-lang="en">English</button>
+                <button type="button" data-lang="zh">中文</button>
+                <button type="button" data-lang="ko">한국어</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  `;
+
+  if (!mobileNavPanel) {
+    document.body.insertAdjacentHTML("beforeend", getMobileNavTemplate());
+    mobileNavPanel = document.querySelector("[data-mobile-nav]");
+    applyTranslations(currentLang);
+  }
+
+  let mobileNavCloseButtons = Array.from(document.querySelectorAll("[data-mobile-nav-close]"));
+  let mobileNavCollapsibleTriggers = Array.from(
     document.querySelectorAll("[data-mobile-nav-collapsible]")
   );
-  const mobileNavPanels = Array.from(document.querySelectorAll("[data-mobile-nav-panel]"));
-  const mobileNavMenu = mobileNavPanel?.querySelector(".mobile-nav-menu");
+  let mobileNavPanels = Array.from(document.querySelectorAll("[data-mobile-nav-panel]"));
+  let mobileNavMenu = mobileNavPanel?.querySelector(".mobile-nav-menu");
   const isHomePage = bodyElement?.classList?.contains("home-page");
-  const canUseMobileNavPanel = Boolean(isHomePage && mobileMenuToggle && mobileNavPanel);
+  if (!mobileMenuToggle && brandBar) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "mobile-menu-toggle";
+    button.setAttribute("aria-controls", "mega-nav-menu");
+    button.setAttribute("aria-expanded", "false");
+    button.setAttribute("aria-label", "目录");
+    button.dataset.mobileMenuToggle = "";
+
+    const icon = document.createElement("img");
+    icon.src = "img/icons/menu.svg";
+    icon.alt = "";
+    icon.setAttribute("aria-hidden", "true");
+    icon.className = "mobile-menu-toggle__icon";
+    button.appendChild(icon);
+
+    const srLabel = document.createElement("span");
+    srLabel.className = "sr-only";
+    srLabel.textContent = "Open menu";
+    button.appendChild(srLabel);
+
+    brandBar.appendChild(button);
+    mobileMenuToggle = button;
+  }
+
+  if (navToggle) {
+    navToggle.remove();
+    navToggle = null;
+  }
+
+  const canUseMobileNavPanel = Boolean(mobileNavPanel);
+
   let activePanelId = null;
 
   const currentPage = document.body?.dataset?.page;
