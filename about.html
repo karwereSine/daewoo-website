@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>公司概况 - DAEWOO 品牌全景</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="about-page" data-page="about">
+    <header class="site-header">
+      <div class="brand-bar">
+        <a class="brand" href="index.html">
+          <img src="img/icons/DAEWOO-LOGO.png" alt="DAEWOO 服务" />
+          <span class="sr-only" data-i18n="brand.name">DAEWOO 服务</span>
+        </a>
+        <form class="global-search" role="search">
+          <label for="about-search-input" class="sr-only" data-i18n="search.label">输入搜索词</label>
+          <input
+            id="about-search-input"
+            type="search"
+            placeholder="请输入想了解的内容"
+            autocomplete="off"
+            data-i18n-placeholder="search.placeholder"
+          />
+          <button type="submit" data-i18n="search.button">搜索</button>
+        </form>
+      </div>
+
+      <nav
+        class="mega-nav"
+        aria-label="DAEWOO 主要服务"
+        data-i18n-aria-label="nav.label"
+      >
+        <button class="mega-nav__toggle" aria-expanded="false" aria-controls="mega-nav-menu" data-i18n="nav.toggle">
+          全部菜单
+        </button>
+        <ul id="mega-nav-menu" class="mega-nav__list">
+          <li class="mega-nav__item" data-panel="product" data-nav-url="product-center.html">
+            <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.product">产品中心</button>
+          </li>
+          <li class="mega-nav__item" data-panel="news" data-nav-url="news.html">
+            <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.news">新闻动态</button>
+          </li>
+          <li class="mega-nav__item" data-panel="video" data-nav-url="video-center.html">
+            <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.video">视频中心</button>
+          </li>
+          <li class="mega-nav__item" data-panel="contact" data-nav-url="contact.html">
+            <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.contact">联系我们</button>
+          </li>
+          <li class="mega-nav__item is-current-tab" data-panel="about" data-nav-url="about.html">
+            <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.about">公司概况</button>
+          </li>
+          <li class="mega-nav__item" data-panel="language">
+            <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.language">LANGUAGE</button>
+          </li>
+        </ul>
+        <div class="mega-board" id="mega-board">
+          <div class="mega-board__inner">
+            <section class="mega-board__column" data-panel="product">
+              <h3 data-i18n="panel.product.heading">产品类别</h3>
+              <ul>
+                <li><a href="product-center.html#humidifier" data-i18n="panel.product.home">家用电器</a></li>
+                <li><a href="product-center.html#iron" data-i18n="panel.product.smartHome">智能家居</a></li>
+                <li><a href="product-center.html#cooker" data-i18n="panel.product.commercial">商用电器</a></li>
+                <li><a href="product-center.html#juicer" data-i18n="panel.product.personalCare">个人护理</a></li>
+              </ul>
+            </section>
+            <section class="mega-board__column" data-panel="news">
+              <h3 data-i18n="panel.news.heading">新闻分类</h3>
+              <ul>
+                <li><a href="news.html#news-section" data-i18n="panel.news.latest">新闻资讯 · 行业资讯</a></li>
+              </ul>
+            </section>
+            <section class="mega-board__column" data-panel="video">
+              <h3 data-i18n="panel.video.heading">精选视频</h3>
+              <ul>
+                <li><a href="video-center.html?video=zb10" data-i18n="panel.video.zb10">ZB10便携式果汁杯</a></li>
+                <li><a href="video-center.html?video=smop02" data-i18n="panel.video.smop02">SMOP02电动蒸汽洗地机</a></li>
+                <li><a href="video-center.html?video=k10" data-i18n="panel.video.k10">K10电烤炉</a></li>
+                <li><a href="video-center.html?video=f20" data-i18n="panel.video.f20">F20挂脖风扇</a></li>
+                <li><a href="video-center.html?video=dyks01" data-i18n="panel.video.dyks01">DY-KS01电热开水瓶</a></li>
+                <li><a href="video-center.html?video=dybgx09" data-i18n="panel.video.dygx09">DY-BGX09全自动壁挂滚筒洗衣机</a></li>
+                <li><a href="video-center.html" data-i18n="panel.video.more">更多</a></li>
+              </ul>
+            </section>
+            <section class="mega-board__column" data-panel="contact">
+              <h3 data-i18n="panel.contact.heading">联系渠道</h3>
+              <ul>
+                <li><a href="tel:4001230000" data-i18n="panel.contact.hotline">客服热线 400-123-0000</a></li>
+                <li><a href="contact.html#online" data-i18n="panel.contact.online">在线客服</a></li>
+                <li><a href="contact.html#partners" data-i18n="panel.contact.partner">合作伙伴支持</a></li>
+                <li><a href="contact.html#feedback" data-i18n="panel.contact.feedback">意见反馈</a></li>
+              </ul>
+            </section>
+            <section class="mega-board__column is-active" data-panel="about">
+              <h3 data-i18n="panel.about.heading">DAEWOO 公司概况</h3>
+              <ul>
+                <li><a href="#brand-story" data-i18n="panel.about.story">品牌故事</a></li>
+                <li><a href="#timeline" data-i18n="panel.about.timeline">发展历程</a></li>
+                <li><a href="#csr" data-i18n="panel.about.csr">社会责任</a></li>
+                <li><a href="#partners" data-i18n="panel.about.partner">合作伙伴</a></li>
+              </ul>
+            </section>
+            <section class="mega-board__column" data-panel="language">
+              <h3 data-i18n="panel.language.heading">选择语言</h3>
+              <p data-i18n="panel.language.description">请选择您希望浏览网站的语言版本。</p>
+              <ul class="language-list" data-language-list>
+                <li>
+                  <button type="button" data-lang="en">
+                    English
+                  </button>
+                </li>
+                <li>
+                  <button type="button" data-lang="zh">
+                    中文
+                  </button>
+                </li>
+                <li>
+                  <button type="button" data-lang="ko">
+                    한국어
+                  </button>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="about-main">
+      <section class="page-hero page-hero--about" id="brand-story">
+        <div class="page-hero__content">
+          <p class="page-hero__eyebrow" data-i18n="about.hero.eyebrow">BRAND STORY</p>
+          <h1 class="page-hero__title" data-i18n="about.hero.title">用精品家电重新定义东方生活美学</h1>
+          <p class="page-hero__description" data-i18n="about.hero.description">
+            1967 年诞生于韩国首尔，DAEWOO 以技术创新与审美力著称，如今在家电、健康生活与智能物联领域持续向全球家庭和商业客户输出高品质解决方案。
+          </p>
+          <ul class="page-hero__meta-list">
+            <li data-i18n="about.hero.meta1">业务覆盖 60+ 国家</li>
+            <li data-i18n="about.hero.meta2">3500+ 技术专利</li>
+            <li data-i18n="about.hero.meta3">22 个区域创新实验室</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="about-pillars" aria-labelledby="about-pillars-heading">
+        <div class="section-header">
+          <p class="section-eyebrow" data-i18n="about.pillars.eyebrow">核心理念</p>
+          <h2 id="about-pillars-heading" data-i18n="about.pillars.title">支撑 DAEWOO 可持续增长的三大支柱</h2>
+          <p data-i18n="about.pillars.description">
+            我们坚持以用户洞察驱动设计，以工程实力确保品质，以生态协作为全球伙伴创造价值。
+          </p>
+        </div>
+        <div class="about-pillars__grid">
+          <article>
+            <h3 data-i18n="about.pillars.card1.title">以人为本的设计</h3>
+            <p data-i18n="about.pillars.card1.description">
+              在首尔、上海、米兰设立设计工作室，跨界建筑、材料与交互专家，共同探索东方家庭的生活灵感。
+            </p>
+            <ul>
+              <li data-i18n="about.pillars.card1.item1">年度消费者洞察报告</li>
+              <li data-i18n="about.pillars.card1.item2">Color & Material 实验室</li>
+              <li data-i18n="about.pillars.card1.item3">联合博物馆/艺术家展出</li>
+            </ul>
+          </article>
+          <article>
+            <h3 data-i18n="about.pillars.card2.title">工程与供应链协同</h3>
+            <p data-i18n="about.pillars.card2.description">
+              以模块化平台支撑产品开发，整合韩国研发、中国智造与全球供应商，实现稳定可靠的交付。
+            </p>
+            <ul>
+              <li data-i18n="about.pillars.card2.item1">智能制造云控中心</li>
+              <li data-i18n="about.pillars.card2.item2">零部件可追溯链路</li>
+              <li data-i18n="about.pillars.card2.item3">48h 快速备件履约</li>
+            </ul>
+          </article>
+          <article>
+            <h3 data-i18n="about.pillars.card3.title">伙伴共赢生态</h3>
+            <p data-i18n="about.pillars.card3.description">
+              开放 API、联合营销、技术培训与售后网络，共同打造覆盖全生命周期的服务体验。
+            </p>
+            <ul>
+              <li data-i18n="about.pillars.card3.item1">全球体验共建计划</li>
+              <li data-i18n="about.pillars.card3.item2">渠道伙伴成长营</li>
+              <li data-i18n="about.pillars.card3.item3">品牌共创基金</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="about-stats">
+        <dl>
+          <div>
+            <dt data-i18n="about.stats.item1.title">12 大产品事业部</dt>
+            <dd data-i18n="about.stats.item1.description">覆盖厨房、空气、水健康、个人护理、智能物联等全场景。</dd>
+          </div>
+          <div>
+            <dt data-i18n="about.stats.item2.title">4 个区域总部</dt>
+            <dd data-i18n="about.stats.item2.description">首尔、上海、慕尼黑、洛杉矶协同全球研发与供应。</dd>
+          </div>
+          <div>
+            <dt data-i18n="about.stats.item3.title">97% 客户满意度</dt>
+            <dd data-i18n="about.stats.item3.description">基于 NPS 指标持续改进用户体验与售后服务。</dd>
+          </div>
+          <div>
+            <dt data-i18n="about.stats.item4.title">25% 绿色营收占比</dt>
+            <dd data-i18n="about.stats.item4.description">节能/环保型产品与回收计划持续扩大。</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="about-story" aria-labelledby="about-story-heading">
+        <div class="about-story__content">
+          <p class="section-eyebrow" data-i18n="about.story.eyebrow">发展策略</p>
+          <h2 id="about-story-heading" data-i18n="about.story.title">从精品家电到智慧生活服务商</h2>
+          <p data-i18n="about.story.description">
+            DAEWOO 将「高颜值、易操作、轻维护」作为研发底层逻辑，结合 IoT 平台与数据算法，让产品不仅是工具，更是有温度的生活伙伴。
+          </p>
+          <ul>
+            <li data-i18n="about.story.item1">全场景互联：厨房、卫浴、空气、水饮与清洁统一在 DAEWOO Home OS。</li>
+            <li data-i18n="about.story.item2">数据驱动迭代：基于真实使用数据优化能效、安全与舒适性。</li>
+            <li data-i18n="about.story.item3">服务即产品：售后团队与顾问团队参与产品定义，构建「一站式托管」。</li>
+          </ul>
+        </div>
+        <div class="about-story__media">
+          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80" alt="DAEWOO 体验中心" />
+        </div>
+      </section>
+
+      <section class="about-timeline" id="timeline" aria-labelledby="about-timeline-heading">
+        <div class="section-header">
+          <p class="section-eyebrow" data-i18n="about.timeline.eyebrow">里程碑</p>
+          <h2 id="about-timeline-heading" data-i18n="about.timeline.title">重要节点一览</h2>
+        </div>
+        <ol class="about-timeline__list">
+          <li>
+            <span>1967</span>
+            <h3 data-i18n="about.timeline.item1.title">品牌创立</h3>
+            <p data-i18n="about.timeline.item1.description">在韩国首尔启动家电制造业务，以创新与可靠性著称。</p>
+          </li>
+          <li>
+            <span>1994</span>
+            <h3 data-i18n="about.timeline.item2.title">进入中国市场</h3>
+            <p data-i18n="about.timeline.item2.description">与中国制造基地协同，打造适配本土生活方式的爆款产品。</p>
+          </li>
+          <li>
+            <span>2015</span>
+            <h3 data-i18n="about.timeline.item3.title">智能家电平台</h3>
+            <p data-i18n="about.timeline.item3.description">推出 DAEWOO Smart Hub，实现设备联动与云端维护。</p>
+          </li>
+          <li>
+            <span>2021</span>
+            <h3 data-i18n="about.timeline.item4.title">全球精品策略</h3>
+            <p data-i18n="about.timeline.item4.description">以设计力与用户体验重新定义精品小家电赛道，荣获多项国际大奖。</p>
+          </li>
+          <li>
+            <span>2025</span>
+            <h3 data-i18n="about.timeline.item5.title">可持续目标</h3>
+            <p data-i18n="about.timeline.item5.description">承诺生产基地 100% 使用绿色电力，并实现主要产品可回收设计。</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="about-csr" id="csr" aria-labelledby="about-csr-heading">
+        <div class="about-csr__panel">
+          <div>
+            <p class="section-eyebrow" data-i18n="about.csr.eyebrow">可持续行动</p>
+            <h2 id="about-csr-heading" data-i18n="about.csr.title">不仅是产品，更是对地球的承诺</h2>
+            <p data-i18n="about.csr.description">我们在研发、制造、物流、使用与回收全链路推进 ESG 目标，以实证数据衡量影响力。</p>
+            <ul>
+              <li data-i18n="about.csr.item1">2030 年实现核心品类碳排放减半</li>
+              <li data-i18n="about.csr.item2">以旧换新与回收计划覆盖 120 个城市</li>
+              <li data-i18n="about.csr.item3">建立家电再制造工厂，实现零填埋</li>
+            </ul>
+          </div>
+          <div class="about-csr__stats">
+            <article>
+              <h3>90%</h3>
+              <p data-i18n="about.csr.stat1">包装材料使用可再生纸浆</p>
+            </article>
+            <article>
+              <h3>1.5Mt</h3>
+              <p data-i18n="about.csr.stat2">累计减少二氧化碳排放</p>
+            </article>
+            <article>
+              <h3>120+</h3>
+              <p data-i18n="about.csr.stat3">公益课堂与技能培训</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-partners" id="partners" aria-labelledby="about-partners-heading">
+        <div class="section-header">
+          <p class="section-eyebrow" data-i18n="about.partners.eyebrow">合作网络</p>
+          <h2 id="about-partners-heading" data-i18n="about.partners.title">与行业伙伴共建未来生活方式</h2>
+          <p data-i18n="about.partners.description">
+            我们与地产、酒店、家居、内容平台及零售渠道建立长期合作，共享技术、运营与用户资产。
+          </p>
+        </div>
+        <div class="about-partners__grid">
+          <article>
+            <h3 data-i18n="about.partners.card1.title">地产与空间运营</h3>
+            <p data-i18n="about.partners.card1.description">提供整套智慧样板房、集中式公寓、长租社区家电解决方案。</p>
+            <ul>
+              <li data-i18n="about.partners.card1.item1">批量安装与维保服务</li>
+              <li data-i18n="about.partners.card1.item2">入住即用的能源管理</li>
+              <li data-i18n="about.partners.card1.item3">精装定制色彩/材质</li>
+            </ul>
+          </article>
+          <article>
+            <h3 data-i18n="about.partners.card2.title">零售与内容平台</h3>
+            <p data-i18n="about.partners.card2.description">携手线上线下渠道，打造沉浸式体验与内容共创，放大品牌影响力。</p>
+            <ul>
+              <li data-i18n="about.partners.card2.item1">共建体验店与快闪店</li>
+              <li data-i18n="about.partners.card2.item2">直播技术与培训支持</li>
+              <li data-i18n="about.partners.card2.item3">共享数字人货场数据</li>
+            </ul>
+          </article>
+          <article>
+            <h3 data-i18n="about.partners.card3.title">技术生态伙伴</h3>
+            <p data-i18n="about.partners.card3.description">开放 IoT、AI、材料等技术接口，与芯片、传感器、互联网企业共创。</p>
+            <ul>
+              <li data-i18n="about.partners.card3.item1">开发者平台与沙箱</li>
+              <li data-i18n="about.partners.card3.item2">联合实验室与标准制定</li>
+              <li data-i18n="about.partners.card3.item3">多方安全与隐私治理</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p data-i18n="footer.copy">© 2025 DAEWOO SERVICE CO., LTD. 保留所有权利。</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
+

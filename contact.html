@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>联系我们 - DAEWOO 服务网络</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="contact-page" data-page="contact">
+    <header class="site-header">
+      <div class="brand-bar">
+        <a class="brand" href="index.html">
+          <img src="img/icons/DAEWOO-LOGO.png" alt="DAEWOO 服务" />
+          <span class="sr-only" data-i18n="brand.name">DAEWOO 服务</span>
+        </a>
+        <form class="global-search" role="search">
+          <label for="contact-search-input" class="sr-only" data-i18n="search.label"
+            >输入搜索词</label
+          >
+          <input
+            id="contact-search-input"
+            type="search"
+            placeholder="请输入想了解的内容"
+            autocomplete="off"
+            data-i18n-placeholder="search.placeholder"
+          />
+          <button type="submit" data-i18n="search.button">搜索</button>
+        </form>
+      </div>
+
+      <nav
+        class="mega-nav"
+        aria-label="DAEWOO 主要服务"
+        data-i18n-aria-label="nav.label"
+      >
+        <button class="mega-nav__toggle" aria-expanded="false" aria-controls="mega-nav-menu" data-i18n="nav.toggle">
+          全部菜单
+        </button>
+        <ul id="mega-nav-menu" class="mega-nav__list">
+          <li class="mega-nav__item" data-panel="product" data-nav-url="product-center.html">
+            <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.product">产品中心</button>
+          </li>
+          <li class="mega-nav__item" data-panel="news" data-nav-url="news.html">
+            <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.news">新闻动态</button>
+          </li>
+          <li class="mega-nav__item" data-panel="video" data-nav-url="video-center.html">
+            <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.video">视频中心</button>
+          </li>
+          <li class="mega-nav__item is-current-tab" data-panel="contact" data-nav-url="contact.html">
+            <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.contact">联系我们</button>
+          </li>
+          <li class="mega-nav__item" data-panel="about" data-nav-url="about.html">
+            <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.about">公司概况</button>
+          </li>
+          <li class="mega-nav__item" data-panel="language">
+            <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.language">LANGUAGE</button>
+          </li>
+        </ul>
+        <div class="mega-board" id="mega-board">
+          <div class="mega-board__inner">
+            <section class="mega-board__column" data-panel="product">
+              <h3 data-i18n="panel.product.heading">产品类别</h3>
+              <ul>
+                <li><a href="product-center.html#humidifier" data-i18n="panel.product.home">家用电器</a></li>
+                <li><a href="product-center.html#iron" data-i18n="panel.product.smartHome">智能家居</a></li>
+                <li><a href="product-center.html#cooker" data-i18n="panel.product.commercial">商用电器</a></li>
+                <li><a href="product-center.html#juicer" data-i18n="panel.product.personalCare">个人护理</a></li>
+              </ul>
+            </section>
+            <section class="mega-board__column" data-panel="news">
+              <h3 data-i18n="panel.news.heading">新闻分类</h3>
+              <ul>
+                <li><a href="news.html#news-section" data-i18n="panel.news.latest">新闻资讯 · 行业资讯</a></li>
+              </ul>
+            </section>
+            <section class="mega-board__column" data-panel="video">
+              <h3 data-i18n="panel.video.heading">精选视频</h3>
+              <ul>
+                <li><a href="video-center.html?video=zb10" data-i18n="panel.video.zb10">ZB10便携式果汁杯</a></li>
+                <li><a href="video-center.html?video=smop02" data-i18n="panel.video.smop02">SMOP02电动蒸汽洗地机</a></li>
+                <li><a href="video-center.html?video=k10" data-i18n="panel.video.k10">K10电烤炉</a></li>
+                <li><a href="video-center.html?video=f20" data-i18n="panel.video.f20">F20挂脖风扇</a></li>
+                <li><a href="video-center.html?video=dyks01" data-i18n="panel.video.dyks01">DY-KS01电热开水瓶</a></li>
+                <li><a href="video-center.html?video=dybgx09" data-i18n="panel.video.dygx09">DY-BGX09全自动壁挂滚筒洗衣机</a></li>
+                <li><a href="video-center.html" data-i18n="panel.video.more">更多</a></li>
+              </ul>
+            </section>
+            <section class="mega-board__column is-active" data-panel="contact">
+              <h3 data-i18n="panel.contact.heading">联系渠道</h3>
+              <ul>
+                <li><a href="#online" data-i18n="panel.contact.online">在线客服</a></li>
+                <li><a href="tel:4001230000" data-i18n="panel.contact.hotline">客服热线 400-123-0000</a></li>
+                <li><a href="#partners" data-i18n="panel.contact.partner">合作伙伴支持</a></li>
+                <li><a href="#feedback" data-i18n="panel.contact.feedback">意见反馈</a></li>
+              </ul>
+            </section>
+            <section class="mega-board__column" data-panel="about">
+              <h3 data-i18n="panel.about.heading">DAEWOO 公司概况</h3>
+              <ul>
+                <li><a href="about.html#brand-story" data-i18n="panel.about.story">品牌故事</a></li>
+                <li><a href="about.html#timeline" data-i18n="panel.about.timeline">发展历程</a></li>
+                <li><a href="about.html#csr" data-i18n="panel.about.csr">社会责任</a></li>
+                <li><a href="about.html#partners" data-i18n="panel.about.partner">合作伙伴</a></li>
+              </ul>
+            </section>
+            <section class="mega-board__column" data-panel="language">
+              <h3 data-i18n="panel.language.heading">选择语言</h3>
+              <p data-i18n="panel.language.description">请选择您希望浏览网站的语言版本。</p>
+              <ul class="language-list" data-language-list>
+                <li>
+                  <button type="button" data-lang="en">
+                    English
+                  </button>
+                </li>
+                <li>
+                  <button type="button" data-lang="zh">
+                    中文
+                  </button>
+                </li>
+                <li>
+                  <button type="button" data-lang="ko">
+                    한국어
+                  </button>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="contact-center">
+      <section class="page-hero page-hero--contact">
+        <div class="page-hero__content">
+          <p class="page-hero__eyebrow" data-i18n="contact.hero.eyebrow">SERVICE NETWORK</p>
+          <h1 class="page-hero__title" data-i18n="contact.hero.title">多触点联络 DAEWOO 服务团队</h1>
+          <p class="page-hero__description" data-i18n="contact.hero.description">
+            24/7 客服热线、在线客服、线下体验与企业顾问全线协同，为消费者、渠道与企业项目提供极速响应与闭环支持。
+          </p>
+          <ul class="page-hero__meta-list">
+            <li data-i18n="contact.hero.meta1">400+ 认证服务网点</li>
+            <li data-i18n="contact.hero.meta2">2 小时问题初反馈</li>
+            <li data-i18n="contact.hero.meta3">7x24 全天候监控</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="overview" class="contact-overview" aria-labelledby="contact-overview-heading">
+        <div class="section-header">
+          <p class="section-eyebrow" data-i18n="contact.overview.eyebrow">全场景触点</p>
+          <h2 id="contact-overview-heading" data-i18n="contact.overview.title">把问题交给我们，您只需选择入口</h2>
+          <p data-i18n="contact.overview.description">
+            以「客服热线 + 智能工单 + 区域服务中心」三位一体模式运行，将家电售前、售后到企业合作需求整合到同一管控平台。
+          </p>
+        </div>
+        <div class="contact-overview__grid">
+          <article class="contact-card">
+            <div class="contact-card__icon">📞</div>
+            <h3 data-i18n="contact.overview.cards.hotline.title">客服热线</h3>
+            <p data-i18n="contact.overview.cards.hotline.description">
+              400-123-0000 · 支持安装咨询、故障报修、保养预约与快速升级服务。
+            </p>
+            <ul>
+              <li data-i18n="contact.overview.cards.hotline.item1">7x24 小时人工接听</li>
+              <li data-i18n="contact.overview.cards.hotline.item2">30 秒内响应率 ≥ 95%</li>
+              <li data-i18n="contact.overview.cards.hotline.item3">实时短信回执</li>
+            </ul>
+          </article>
+          <article class="contact-card">
+            <div class="contact-card__icon">💬</div>
+            <h3 data-i18n="contact.overview.cards.online.title">智能在线客服</h3>
+            <p data-i18n="contact.overview.cards.online.description">
+              网页/小程序随时发起对话，AI 识别设备型号并推送图文教程，必要时转人工。
+            </p>
+            <ul>
+              <li data-i18n="contact.overview.cards.online.item1">支持图片/视频上传</li>
+              <li data-i18n="contact.overview.cards.online.item2">语音描述自动转文字</li>
+              <li data-i18n="contact.overview.cards.online.item3">记录全程可追溯</li>
+            </ul>
+          </article>
+          <article class="contact-card">
+            <div class="contact-card__icon">🤝</div>
+            <h3 data-i18n="contact.overview.cards.partner.title">渠道与合作</h3>
+            <p data-i18n="contact.overview.cards.partner.description">
+              面向经销商、地产/酒店项目与跨界品牌，提供定制化采购、培训与联合营销方案。
+            </p>
+            <ul>
+              <li data-i18n="contact.overview.cards.partner.item1">1V1 商务顾问</li>
+              <li data-i18n="contact.overview.cards.partner.item2">多地样板房支持</li>
+              <li data-i18n="contact.overview.cards.partner.item3">共建数据看板</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="online" class="contact-channels" aria-labelledby="contact-channels-heading">
+        <div class="section-header">
+          <p class="section-eyebrow" data-i18n="contact.channels.eyebrow">渠道矩阵</p>
+          <h2 id="contact-channels-heading" data-i18n="contact.channels.title">根据角色快速定位最佳联络路径</h2>
+          <p data-i18n="contact.channels.description">
+            无论您是终端用户、商用客户还是内容合作伙伴，都能通过专属窗口直接对接到负责团队。
+          </p>
+        </div>
+        <div class="contact-channels__grid">
+          <article class="contact-channel">
+            <header>
+              <p class="contact-channel__tag" data-i18n="contact.channels.consumer.tag">消费者</p>
+              <h3 data-i18n="contact.channels.consumer.title">售后关怀 / 延长质保</h3>
+            </header>
+            <p data-i18n="contact.channels.consumer.description">
+              激活产品保修、登记安装信息，或升级包含免费年检、滤芯订阅的延长质保服务。
+            </p>
+            <ul>
+              <li data-i18n="contact.channels.consumer.item1">提交发票/序列号在线核验</li>
+              <li data-i18n="contact.channels.consumer.item2">支持家电健康档案同步</li>
+              <li data-i18n="contact.channels.consumer.item3">服务进度消息推送</li>
+            </ul>
+          </article>
+          <article class="contact-channel">
+            <header>
+              <p class="contact-channel__tag" data-i18n="contact.channels.enterprise.tag">企业客户</p>
+              <h3 data-i18n="contact.channels.enterprise.title">项目化交付与培训</h3>
+            </header>
+            <p data-i18n="contact.channels.enterprise.description">
+              提交项目需求（酒店、公寓、写字楼等），我们提供选型、安装、交付培训与SLA。
+            </p>
+            <ul>
+              <li data-i18n="contact.channels.enterprise.item1">7 日内完成方案初稿</li>
+              <li data-i18n="contact.channels.enterprise.item2">驻场培训 & 远程指挥</li>
+              <li data-i18n="contact.channels.enterprise.item3">IoT 数据开放接口</li>
+            </ul>
+          </article>
+          <article class="contact-channel">
+            <header>
+              <p class="contact-channel__tag" data-i18n="contact.channels.content.tag">内容/渠道伙伴</p>
+              <h3 data-i18n="contact.channels.content.title">营销与联合IP</h3>
+            </header>
+            <p data-i18n="contact.channels.content.description">
+              对接抖音、天猫、线下体验店等合作，一站式领取素材、排期与新品试用权益。
+            </p>
+            <ul>
+              <li data-i18n="contact.channels.content.item1">新品首发排期抢先锁定</li>
+              <li data-i18n="contact.channels.content.item2">共创城市快闪店</li>
+              <li data-i18n="contact.channels.content.item3">获取高分辨率素材库</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact-service" aria-labelledby="contact-service-heading">
+        <div class="section-header">
+          <p class="section-eyebrow" data-i18n="contact.service.eyebrow">服务流程</p>
+          <h2 id="contact-service-heading" data-i18n="contact.service.title">统一工单平台，确保每一步可视、可追踪</h2>
+          <p data-i18n="contact.service.description">我们以 ITSM 思路打造服务闭环，关键节点透明告知，复杂问题支持专家远程协作。</p>
+        </div>
+        <ol class="contact-service__timeline">
+          <li>
+            <span class="contact-service__step">01</span>
+            <h3 data-i18n="contact.service.step1.title">需求受理</h3>
+            <p data-i18n="contact.service.step1.description">热线/网页/微信入口自动创建工单，智能分配至对应区域/品类团队。</p>
+          </li>
+          <li>
+            <span class="contact-service__step">02</span>
+            <h3 data-i18n="contact.service.step2.title">诊断与方案</h3>
+            <p data-i18n="contact.service.step2.description">通过远程诊断、图像识别工具快速定位问题，必要时安排上门工程师。</p>
+          </li>
+          <li>
+            <span class="contact-service__step">03</span>
+            <h3 data-i18n="contact.service.step3.title">执行与反馈</h3>
+            <p data-i18n="contact.service.step3.description">系统同步备用件物流、预约时间与现场记录，完工后推送服务报告。</p>
+          </li>
+          <li>
+            <span class="contact-service__step">04</span>
+            <h3 data-i18n="contact.service.step4.title">回访与升级</h3>
+            <p data-i18n="contact.service.step4.description">满意度低于 90% 自动升级复盘，持续优化产品与服务体验。</p>
+          </li>
+        </ol>
+      </section>
+
+      <section id="partners" class="contact-touchpoint" aria-labelledby="contact-touchpoint-heading">
+        <div class="contact-touchpoint__panel">
+          <div>
+            <p class="section-eyebrow" data-i18n="contact.touchpoint.eyebrow">专属顾问</p>
+            <h2 id="contact-touchpoint-heading" data-i18n="contact.touchpoint.title">需要 VIP/企业级支持？</h2>
+            <p data-i18n="contact.touchpoint.description">
+              留下需求，即可由指定行业的顾问联系您。我们将根据预算、交付周期与使用场景提供一体化建议。
+            </p>
+            <ul>
+              <li data-i18n="contact.touchpoint.item1">商用楼宇与酒店智能家电集采</li>
+              <li data-i18n="contact.touchpoint.item2">地产精装、长租公寓交付解决方案</li>
+              <li data-i18n="contact.touchpoint.item3">品牌联合营销、体验空间共建</li>
+            </ul>
+          </div>
+          <form class="contact-form" aria-label="企业支持需求表单">
+            <label>
+              <span data-i18n="contact.form.name.label">姓名</span>
+              <input
+                type="text"
+                name="name"
+                placeholder="请输入姓名"
+                data-i18n-placeholder="contact.form.name.placeholder"
+                required
+              />
+            </label>
+            <label>
+              <span data-i18n="contact.form.company.label">公司 / 机构</span>
+              <input
+                type="text"
+                name="company"
+                placeholder="请输入公司或机构名称"
+                data-i18n-placeholder="contact.form.company.placeholder"
+                required
+              />
+            </label>
+            <label>
+              <span data-i18n="contact.form.phone.label">联系方式</span>
+              <input
+                type="tel"
+                name="phone"
+                placeholder="手机或邮箱"
+                data-i18n-placeholder="contact.form.phone.placeholder"
+                required
+              />
+            </label>
+            <label>
+              <span data-i18n="contact.form.intent.label">需求类别</span>
+              <select name="intent">
+                <option value="b2b" data-i18n="contact.form.intent.option1">企业集采</option>
+                <option value="project" data-i18n="contact.form.intent.option2">项目交付</option>
+                <option value="marketing" data-i18n="contact.form.intent.option3">营销合作</option>
+                <option value="other" data-i18n="contact.form.intent.option4">其他</option>
+              </select>
+            </label>
+            <label>
+              <span data-i18n="contact.form.message.label">补充说明</span>
+              <textarea
+                name="message"
+                rows="4"
+                placeholder="请输入您希望了解的内容"
+                data-i18n-placeholder="contact.form.message.placeholder"
+              ></textarea>
+            </label>
+            <button type="submit" data-i18n="contact.form.submit">提交需求</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="feedback" class="contact-faq" aria-labelledby="contact-faq-heading">
+        <div class="section-header">
+          <p class="section-eyebrow" data-i18n="contact.faq.eyebrow">常见问题</p>
+          <h2 id="contact-faq-heading" data-i18n="contact.faq.title">最快速的自助解答</h2>
+        </div>
+        <div class="contact-faq__grid">
+          <article>
+            <h3 data-i18n="contact.faq.q1.title">如何查询维修进度？</h3>
+            <p data-i18n="contact.faq.q1.answer">
+              凭工单号/手机号在「在线客服-订单中心」即可查看状态，也可通过短信链接实时刷新。
+            </p>
+          </article>
+          <article>
+            <h3 data-i18n="contact.faq.q2.title">到店体验是否需要预约？</h3>
+            <p data-i18n="contact.faq.q2.answer">
+              周末/新品首发建议提前在线预约，系统会推送二维码，凭码入场并享受专属讲解。
+            </p>
+          </article>
+          <article>
+            <h3 data-i18n="contact.faq.q3.title">企业项目是否支持定制？</h3>
+            <p data-i18n="contact.faq.q3.answer">
+              支持 OEM/ODM、面板配色、软件功能定制，提交需求后将由项目经理提供排期与打样方案。
+            </p>
+          </article>
+          <article>
+            <h3 data-i18n="contact.faq.q4.title">滤芯、配件如何购买？</h3>
+            <p data-i18n="contact.faq.q4.answer">
+              在商城/服务号选择对应产品并填写 SN，即可匹配适配件；也可到附近服务中心直接购买。
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p data-i18n="footer.copy">© 2025 DAEWOO SERVICE CO., LTD. 保留所有权利。</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
+
