@@ -972,7 +972,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "about.partners.card3.item2": "공동 연구소 및 표준 협의",
       "about.partners.card3.item3": "멀티 레이어 보안·프라이버시 거버넌스",
       "productCenter.eyebrow": "제품 센터",
-      "productCenter.title": "DAEWOO 전 제품군 솔루션을 만나보세요",
+      "productCenter.title": "DAEWOO 전 제품군 솔루션을<br />만나보세요",
       "productCenter.description": "가정부터 비즈니스 환경까지, 다양한 상황에 맞는 제품과 서비스를 제공합니다. 관심 시리즈를 선택하고 사양, 활용, 지원 정보를 손쉽게 확인하세요.",
       "productCenter.sidebarLabel": "제품 디렉터리",
       "productCenter.sidebarTitle": "제품 분류",
