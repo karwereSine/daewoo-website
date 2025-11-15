@@ -125,145 +125,212 @@
       </nav>
     </header>
 
-    <main id="news-section" class="news-main">
-      <nav class="news-nav" aria-label="新闻导航" data-i18n-aria-label="newsPage.breadcrumb.label">
-        <a href="index.html" data-i18n="newsPage.breadcrumb.home">首页</a>
-        <span aria-hidden="true">/</span>
-        <span data-i18n="newsPage.breadcrumb.current">新闻资讯 · 行业资讯</span>
-      </nav>
-
-      <section
-        class="news-hero"
-        style="--news-hero-bg: url('https://www.daewoolife.com.cn/data/attachment/202006/23/68f932a0ded35a00.jpg')"
-      >
-        <div class="news-hero__content">
-          <h1 data-i18n="newsPage.hero.title">新闻资讯 · 行业资讯</h1>
-          <p data-i18n="newsPage.hero.description">
+    <main id="news-section" class="news-center">
+      <section class="page-hero page-hero--news">
+        <div class="page-hero__content">
+          <p class="page-hero__eyebrow" data-i18n="newsPage.hero.eyebrow">Newsroom</p>
+          <h1 class="page-hero__title" data-i18n="newsPage.hero.title">新闻资讯 · 行业资讯</h1>
+          <p class="page-hero__description" data-i18n="newsPage.hero.description">
             来自 DAEWOO 的品牌动态、行业洞察、产品故事与服务资讯。
           </p>
         </div>
       </section>
 
-      <section class="news-list" id="news-list" aria-label="新闻列表">
-        <article class="news-card">
-          <a class="news-card__media" href="news/articles/article-6.html">
+      <section class="news-spotlight" aria-labelledby="news-spotlight-heading">
+        <div class="news-spotlight__inner">
+          <div class="news-spotlight__media">
             <img
               src="https://www.daewoolife.com.cn/data/attachment/image/20220115/20220115141106_89534.jpg"
               alt="大宇智能坐便盖功能/特点"
             />
-          </a>
-          <div class="news-card__body">
-            <time datetime="2022-01-15">2022-01-15</time>
-            <h2>
-              <a href="news/articles/article-6.html" data-i18n="homeNews.article6.title"
-                >大宇智能坐便盖功能/特点</a
-              >
-            </h2>
-            <p data-i18n="homeNews.article6.summary">
-              感应翻盖、柔珠清洗、恒温座圈，多重科技带来舒适如厕体验。
-            </p>
           </div>
-        </article>
+          <div class="news-spotlight__content">
+            <p class="news-spotlight__eyebrow" data-i18n="newsPage.spotlight.eyebrow">Focus · 热点速递</p>
+            <h2 id="news-spotlight-heading" data-i18n="homeNews.article6.title">大宇智能坐便盖功能/特点</h2>
+            <p data-i18n="newsPage.spotlight.description">
+              感应翻盖、柔珠清洗、恒温座圈，多重科技场景演示，展示健康卫浴的舒适体验，并提供安装与日常养护建议。
+            </p>
+            <ul>
+              <li data-i18n="newsPage.spotlight.bullet1">全程展示自动翻盖、暖风烘干与电解水除菌等核心卖点</li>
+              <li data-i18n="newsPage.spotlight.bullet2">结合用户口碑与真实场景，输出焕新卫浴空间的灵感</li>
+              <li data-i18n="newsPage.spotlight.bullet3">附带维护步骤与售后服务指引，便于渠道销售使用</li>
+            </ul>
+            <div class="news-spotlight__actions">
+              <a class="news-spotlight__link" href="news/articles/article-6.html" data-i18n="newsPage.spotlight.cta">查看完整报道</a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <article class="news-card">
-          <a class="news-card__media" href="news/articles/article-5.html">
-            <img
-              src="https://www.daewoolife.com.cn/data/attachment/image/20220115/20220115140347_15635.jpg"
-              alt="大宇智能坐便盖介绍"
-            />
-          </a>
-          <div class="news-card__body">
-            <time datetime="2022-01-15">2022-01-15</time>
-            <h2>
-              <a href="news/articles/article-5.html" data-i18n="homeNews.article5.title"
-                >大宇智能坐便盖介绍</a
-              >
-            </h2>
-            <p data-i18n="homeNews.article5.summary">
-              多模式水洗、暖风烘干与电解水除菌，打造洁净健康的卫浴新选择。
+      <section class="news-collections" aria-labelledby="news-collections-heading">
+        <div class="news-collections__header">
+          <div>
+            <p class="news-collections__eyebrow" data-i18n="newsPage.collections.eyebrow">News Library</p>
+            <h2 id="news-collections-heading" data-i18n="newsPage.collections.title">主题精选 · 文章合集</h2>
+            <p data-i18n="newsPage.collections.description">
+              按照品牌动态、行业趋势、产品上新与服务口碑等主题，快速筛选您关注的资讯焦点，搭配卡片化阅读体验。
             </p>
           </div>
-        </article>
+          <div class="news-collections__filters" role="toolbar" aria-label="新闻筛选">
+            <button
+              type="button"
+              class="is-active"
+              data-news-filter="all"
+              aria-pressed="true"
+              data-i18n="newsPage.filters.all"
+            >
+              全部
+            </button>
+            <button type="button" data-news-filter="brand" aria-pressed="false" data-i18n="newsPage.filters.brand">
+              品牌动态
+            </button>
+            <button type="button" data-news-filter="trend" aria-pressed="false" data-i18n="newsPage.filters.trend">
+              行业趋势
+            </button>
+            <button type="button" data-news-filter="product" aria-pressed="false" data-i18n="newsPage.filters.product">
+              产品上新
+            </button>
+            <button type="button" data-news-filter="service" aria-pressed="false" data-i18n="newsPage.filters.service">
+              服务与口碑
+            </button>
+          </div>
+        </div>
 
-        <article class="news-card">
-          <a class="news-card__media" href="news/articles/article-4.html">
-            <img
-              src="https://www.daewoolife.com.cn/data/attachment/image/20211028/20211028094609_60312.jpg"
-              alt="大宇DAEWOO亮相抖音818新潮好物节，精品家电夺得销冠"
-            />
-          </a>
-          <div class="news-card__body">
-            <time datetime="2021-10-28">2021-10-28</time>
-            <h2>
-              <a href="news/articles/article-4.html" data-i18n="homeNews.article4.title"
-                >大宇DAEWOO亮相抖音818新潮好物节，精品家电夺得销冠</a
-              >
-            </h2>
-            <p data-i18n="homeNews.article4.summary">
-              多款精品家电以高颜值与高性能脱颖而出，直播电商场景强势破圈。
-            </p>
-          </div>
-        </article>
+        <div class="news-collections__grid" id="news-list" aria-label="新闻列表">
+          <article
+            class="news-article-card"
+            data-news-card
+            data-news-id="article-6"
+            data-news-tags="product,service"
+          >
+            <a class="news-article-card__inner" href="news/articles/article-6.html">
+              <div class="news-article-card__media">
+                <img
+                  src="https://www.daewoolife.com.cn/data/attachment/image/20220115/20220115141106_89534.jpg"
+                  alt="大宇智能坐便盖功能/特点"
+                />
+                <span class="news-article-card__tag" data-i18n="newsPage.tags.product">#产品上新</span>
+              </div>
+              <div class="news-article-card__body">
+                <time datetime="2022-01-15">2022-01-15</time>
+                <h3 data-i18n="homeNews.article6.title">大宇智能坐便盖功能/特点</h3>
+                <p data-i18n="homeNews.article6.summary">
+                  感应翻盖、柔珠清洗、恒温座圈，多重科技带来舒适如厕体验。
+                </p>
+              </div>
+            </a>
+          </article>
 
-        <article class="news-card">
-          <a class="news-card__media" href="news/articles/article-3.html">
-            <img
-              src="https://www.daewoolife.com.cn/data/attachment/image/20211022/20211022134835_41328.jpg"
-              alt="大宇DAEWOO家电为何能够在中国持续走火？"
-            />
-          </a>
-          <div class="news-card__body">
-            <time datetime="2021-10-22">2021-10-22</time>
-            <h2>
-              <a href="news/articles/article-3.html" data-i18n="homeNews.article3.title"
-                >大宇DAEWOO家电为何能够在中国持续走火？</a
-              >
-            </h2>
-            <p data-i18n="homeNews.article3.summary">
-              深耕精品路线、洞察用户需求，大宇品牌在中国持续收获口碑。
-            </p>
-          </div>
-        </article>
+          <article
+            class="news-article-card"
+            data-news-card
+            data-news-id="article-5"
+            data-news-tags="product,service"
+          >
+            <a class="news-article-card__inner" href="news/articles/article-5.html">
+              <div class="news-article-card__media">
+                <img
+                  src="https://www.daewoolife.com.cn/data/attachment/image/20220115/20220115140347_15635.jpg"
+                  alt="大宇智能坐便盖介绍"
+                />
+                <span class="news-article-card__tag" data-i18n="newsPage.tags.product">#产品上新</span>
+              </div>
+              <div class="news-article-card__body">
+                <time datetime="2022-01-15">2022-01-15</time>
+                <h3 data-i18n="homeNews.article5.title">大宇智能坐便盖介绍</h3>
+                <p data-i18n="homeNews.article5.summary">
+                  多模式水洗、暖风烘干与电解水除菌，打造洁净健康的卫浴新选择。
+                </p>
+              </div>
+            </a>
+          </article>
 
-        <article class="news-card">
-          <a class="news-card__media" href="news/articles/article-2.html">
-            <img
-              src="https://www.daewoolife.com.cn/data/attachment/image/20211014/20211014162825_46316.jpg"/>/
-              alt="大宇壁挂洗衣机星云上市，家电品质追求无止境"
-            />
-          </a>
-          <div class="news-card__body">
-            <time datetime="2021-10-14">2021-10-14</time>
-            <h2>
-              <a href="news/articles/article-2.html" data-i18n="newsPage.article2.title"
-                >大宇壁挂洗衣机星云上市，家电品质追求无止境</a
-              >
-            </h2>
-            <p data-i18n="newsPage.article2.summary">
-              星云系列延续大宇壁挂洗衣机的省空间优势，并加入母婴衣物专护，满足家庭高品质洗护需求。
-            </p>
-          </div>
-        </article>
+          <article class="news-article-card" data-news-card data-news-id="article-4" data-news-tags="brand">
+            <a class="news-article-card__inner" href="news/articles/article-4.html">
+              <div class="news-article-card__media">
+                <img
+                  src="https://www.daewoolife.com.cn/data/attachment/image/20211028/20211028094609_60312.jpg"
+                  alt="大宇DAEWOO亮相抖音818新潮好物节，精品家电夺得销冠"
+                />
+                <span class="news-article-card__tag" data-i18n="newsPage.tags.brand">#品牌动态</span>
+              </div>
+              <div class="news-article-card__body">
+                <time datetime="2021-10-28">2021-10-28</time>
+                <h3 data-i18n="homeNews.article4.title">大宇DAEWOO亮相抖音818新潮好物节，精品家电夺得销冠</h3>
+                <p data-i18n="homeNews.article4.summary">
+                  多款精品家电以高颜值与高性能脱颖而出，直播电商场景强势破圈。
+                </p>
+              </div>
+            </a>
+          </article>
 
-        <article class="news-card">
-          <a class="news-card__media" href="news/articles/article-1.html">
-            <img
-              src="https://www.daewoolife.com.cn/data/attachment/image/20210417/20210417142014_44529.jpg"
-              alt="AWE2021：大宇电器深耕中国市场"
-            />
+          <article class="news-article-card" data-news-card data-news-id="article-3" data-news-tags="brand,trend">
+            <a class="news-article-card__inner" href="news/articles/article-3.html">
+              <div class="news-article-card__media">
+                <img
+                  src="https://www.daewoolife.com.cn/data/attachment/image/20211022/20211022134835_41328.jpg"
+                  alt="大宇DAEWOO家电为何能够在中国持续走火？"
+                />
+                <span class="news-article-card__tag" data-i18n="newsPage.tags.brand">#品牌动态</span>
+              </div>
+              <div class="news-article-card__body">
+                <time datetime="2021-10-22">2021-10-22</time>
+                <h3 data-i18n="homeNews.article3.title">大宇DAEWOO家电为何能够在中国持续走火？</h3>
+                <p data-i18n="homeNews.article3.summary">
+                  深耕精品路线、洞察用户需求，大宇品牌在中国持续收获口碑。
+                </p>
+              </div>
+            </a>
+          </article>
+
+          <article class="news-article-card" data-news-card data-news-id="article-2" data-news-tags="product,trend">
+            <a class="news-article-card__inner" href="news/articles/article-2.html">
+              <div class="news-article-card__media">
+                <img
+                  src="https://www.daewoolife.com.cn/data/attachment/image/20211014/20211014162825_46316.jpg"
+                  alt="大宇壁挂洗衣机星云上市，家电品质追求无止境"
+                />
+                <span class="news-article-card__tag" data-i18n="newsPage.tags.product">#产品上新</span>
+              </div>
+              <div class="news-article-card__body">
+                <time datetime="2021-10-14">2021-10-14</time>
+                <h3 data-i18n="newsPage.article2.title">大宇壁挂洗衣机星云上市，家电品质追求无止境</h3>
+                <p data-i18n="newsPage.article2.summary">
+                  星云系列延续大宇壁挂洗衣机的省空间优势，并加入母婴衣物专护，满足家庭高品质洗护需求。
+                </p>
+              </div>
+            </a>
+          </article>
+
+          <article class="news-article-card" data-news-card data-news-id="article-1" data-news-tags="trend,service">
+            <a class="news-article-card__inner" href="news/articles/article-1.html">
+              <div class="news-article-card__media">
+                <img
+                  src="https://www.daewoolife.com.cn/data/attachment/image/20210417/20210417142014_44529.jpg"
+                  alt="AWE2021：大宇电器深耕中国市场"
+                />
+                <span class="news-article-card__tag" data-i18n="newsPage.tags.trend">#行业趋势</span>
+              </div>
+              <div class="news-article-card__body">
+                <time datetime="2021-04-16">2021-04-16</time>
+                <h3 data-i18n="newsPage.article1.title">AWE2021：大宇电器深耕中国市场</h3>
+                <p data-i18n="newsPage.article1.summary">
+                  现场回顾中国家电及消费电子博览会，展示大宇深耕中国市场的策略与成果。
+                </p>
+              </div>
+            </a>
+          </article>
+        </div>
+
+        <aside class="news-collections__note">
+          <h3 data-i18n="newsPage.note.title">持续上新 · 内容日历</h3>
+          <p data-i18n="newsPage.note.description">
+            新闻中心将同步新品上市、渠道动态、客户故事与服务案例，欢迎订阅月度快讯或联系 DAEWOO 服务顾问，获取定制报道素材。
+          </p>
+          <a class="news-collections__contact" href="mailto:admin@goodplusgood.com" data-i18n="newsPage.note.cta">
+            订阅与合作洽谈
           </a>
-          <div class="news-card__body">
-            <time datetime="2021-04-16">2021-04-16</time>
-            <h2>
-              <a href="news/articles/article-1.html" data-i18n="newsPage.article1.title"
-                >AWE2021：大宇电器深耕中国市场</a
-              >
-            </h2>
-            <p data-i18n="newsPage.article1.summary">
-              现场回顾中国家电及消费电子博览会，展示大宇深耕中国市场的策略与成果。
-            </p>
-          </div>
-        </article>
+        </aside>
       </section>
     </main>
 

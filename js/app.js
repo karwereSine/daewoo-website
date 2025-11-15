@@ -93,6 +93,28 @@ document.addEventListener("DOMContentLoaded", () => {
       "newsPage.article2.summary": "星云系列延续大宇壁挂洗衣机的省空间优势，并加入母婴衣物专护，满足家庭高品质洗护需求。",
       "newsPage.article1.title": "AWE2021：大宇电器深耕中国市场",
       "newsPage.article1.summary": "现场回顾中国家电及消费电子博览会，展示大宇深耕中国市场的策略与成果。",
+      "newsPage.hero.eyebrow": "NEWSROOM",
+      "newsPage.spotlight.eyebrow": "Focus · 热点速递",
+      "newsPage.spotlight.description": "感应翻盖、柔珠清洗、恒温座圈，多重科技场景演示，展示健康卫浴的舒适体验，并提供安装与日常养护建议。",
+      "newsPage.spotlight.bullet1": "全程展示自动翻盖、暖风烘干与电解水除菌等核心卖点",
+      "newsPage.spotlight.bullet2": "结合用户口碑与真实场景，输出焕新卫浴空间的灵感",
+      "newsPage.spotlight.bullet3": "附带维护步骤与售后服务指引，便于渠道销售使用",
+      "newsPage.spotlight.cta": "查看完整报道",
+      "newsPage.collections.eyebrow": "News Library",
+      "newsPage.collections.title": "主题精选 · 文章合集",
+      "newsPage.collections.description": "按照品牌动态、行业趋势、产品上新与服务口碑等主题，快速筛选您关注的资讯焦点，搭配卡片化阅读体验。",
+      "newsPage.filters.all": "全部",
+      "newsPage.filters.brand": "品牌动态",
+      "newsPage.filters.trend": "行业趋势",
+      "newsPage.filters.product": "产品上新",
+      "newsPage.filters.service": "服务与口碑",
+      "newsPage.tags.brand": "#品牌动态",
+      "newsPage.tags.trend": "#行业趋势",
+      "newsPage.tags.product": "#产品上新",
+      "newsPage.tags.service": "#服务与口碑",
+      "newsPage.note.title": "持续上新 · 内容日历",
+      "newsPage.note.description": "新闻中心将同步新品上市、渠道动态、客户故事与服务案例，欢迎订阅月度快讯或联系 DAEWOO 服务顾问，获取定制报道素材。",
+      "newsPage.note.cta": "订阅与合作洽谈",
       "videoPage.hero.eyebrow": "视频中心",
       "videoPage.hero.title": "沉浸式了解 DAEWOO 精品家电",
       "videoPage.hero.description": "精选品牌广告、产品演示与使用场景视频，让您快速掌握每一款精品家电的亮点功能与使用体验。",
@@ -424,6 +446,28 @@ document.addEventListener("DOMContentLoaded", () => {
       "newsPage.article2.summary": "네뷸라 시리즈는 공간을 절약하는 벽걸이 세탁기의 장점을 유지하면서, 아기 옷 전용 케어 기능을 더해 프리미엄 세탁 니즈를 충족합니다.",
       "newsPage.article1.title": "AWE2021: 대우전자가 중국 시장에 집중하는 이유",
       "newsPage.article1.summary": "중국 가전·소비전자 박람회의 현장을 통해 대우전자가 중국 시장에 투자하며 얻은 전략과 성과를 전합니다.",
+      "newsPage.hero.eyebrow": "NEWSROOM",
+      "newsPage.spotlight.eyebrow": "Focus · 주요 이슈",
+      "newsPage.spotlight.description": "감지형 자동 커버, 소프트 버블 세정, 온열 시트 등 핵심 기능을 실제 사용 장면으로 소개하고 설치 및 일상 관리 팁을 제공합니다.",
+      "newsPage.spotlight.bullet1": "자동 커버, 온풍 건조, 전해수 살균 등 핵심 포인트를 전 과정에서 상세히 안내",
+      "newsPage.spotlight.bullet2": "사용자 후기와 실제 공간을 결합해 욕실 업그레이드 아이디어를 제안",
+      "newsPage.spotlight.bullet3": "유지보수 단계와 A/S 가이드를 포함해 유통 파트너가 활용하기 쉽도록 구성",
+      "newsPage.spotlight.cta": "전체 기사 보기",
+      "newsPage.collections.eyebrow": "News Library",
+      "newsPage.collections.title": "테마별 기사 모음",
+      "newsPage.collections.description": "브랜드 동향, 산업 트렌드, 신제품, 서비스 스토리 등 관심 주제를 카드 형태로 빠르게 탐색하세요.",
+      "newsPage.filters.all": "전체",
+      "newsPage.filters.brand": "브랜드 동향",
+      "newsPage.filters.trend": "산업 트렌드",
+      "newsPage.filters.product": "신제품",
+      "newsPage.filters.service": "서비스 & 평판",
+      "newsPage.tags.brand": "#브랜드 동향",
+      "newsPage.tags.trend": "#산업 트렌드",
+      "newsPage.tags.product": "#신제품",
+      "newsPage.tags.service": "#서비스 & 평판",
+      "newsPage.note.title": "상시 업데이트 · 콘텐츠 캘린더",
+      "newsPage.note.description": "뉴스룸은 신제품 출시, 채널 이슈, 고객 스토리, 서비스 사례를 실시간으로 전달합니다. 월간 뉴스레터 구독이나 맞춤 자료가 필요하면 DAEWOO 컨설턴트에게 문의하세요.",
+      "newsPage.note.cta": "구독 및 제휴 문의",
       "videoPage.hero.eyebrow": "영상 센터",
       "videoPage.hero.title": "DAEWOO 프리미엄 가전을 몰입형으로 만나보세요",
       "videoPage.hero.description": "브랜드 스토리, 제품 데모, 실제 사용 영상을 통해 핵심 기능과 경험을 빠르게 확인하세요.",
@@ -755,6 +799,28 @@ document.addEventListener("DOMContentLoaded", () => {
       "newsPage.article2.summary": "The Nebula series preserves the space-saving design while adding baby-care programs for premium laundering needs.",
       "newsPage.article1.title": "AWE2021: DAEWOO Deepens Its Commitment to the Chinese Market",
       "newsPage.article1.summary": "Expo highlights showcase DAEWOO's strategies and achievements as it invests in the China market.",
+      "newsPage.hero.eyebrow": "NEWSROOM",
+      "newsPage.spotlight.eyebrow": "Focus · Highlights",
+      "newsPage.spotlight.description": "Sensor-driven lid lift, gentle aerated cleansing, and a heated seat are demonstrated across real scenarios, along with installation and care tips for a healthier bathroom.",
+      "newsPage.spotlight.bullet1": "Covers automatic lid opening, warm-air drying, and electrolyzed-water sterilization from start to finish.",
+      "newsPage.spotlight.bullet2": "Blends customer quotes with real spaces to spark bathroom makeover ideas.",
+      "newsPage.spotlight.bullet3": "Includes maintenance steps and after-sales guidance so channel teams can use it easily.",
+      "newsPage.spotlight.cta": "View full story",
+      "newsPage.collections.eyebrow": "News Library",
+      "newsPage.collections.title": "Curated Themes · Article Collection",
+      "newsPage.collections.description": "Filter by brand updates, industry trends, product launches, or service stories and enjoy a card-based reading experience.",
+      "newsPage.filters.all": "All",
+      "newsPage.filters.brand": "Brand Updates",
+      "newsPage.filters.trend": "Industry Trends",
+      "newsPage.filters.product": "Product Launches",
+      "newsPage.filters.service": "Service & Reputation",
+      "newsPage.tags.brand": "#BrandUpdates",
+      "newsPage.tags.trend": "#IndustryTrends",
+      "newsPage.tags.product": "#ProductLaunches",
+      "newsPage.tags.service": "#ServiceStories",
+      "newsPage.note.title": "Continuous Updates · Editorial Calendar",
+      "newsPage.note.description": "The newsroom tracks product launches, channel news, customer stories, and service cases. Subscribe to the monthly brief or contact a DAEWOO consultant for bespoke materials.",
+      "newsPage.note.cta": "Subscribe & Partnerships",
       "videoPage.hero.eyebrow": "Video Center",
       "videoPage.hero.title": "Immerse Yourself in DAEWOO's Premium Appliances",
       "videoPage.hero.description": "Curated brand stories, product demos, and scenario videos help you understand every hero product in minutes.",
@@ -1448,6 +1514,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize state based on current viewport
   handleMediaChange(mediaQuery);
+
+  const isNewsLanding = document.body?.dataset?.page === "news";
+  if (isNewsLanding) {
+    const filterButtons = Array.from(document.querySelectorAll("[data-news-filter]"));
+    const newsCards = Array.from(document.querySelectorAll("[data-news-card]"));
+    let currentFilter = "all";
+
+    const setActiveFilter = (filter) => {
+      const normalized = filter.toLowerCase();
+      currentFilter = normalized;
+
+      filterButtons.forEach((button) => {
+        const isActive = (button.dataset.newsFilter ?? "").toLowerCase() === normalized;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+
+      newsCards.forEach((card) => {
+        const tags = (card.dataset.newsTags ?? "")
+          .split(",")
+          .map((tag) => tag.trim().toLowerCase())
+          .filter(Boolean);
+        const shouldShow = normalized === "all" || tags.includes(normalized);
+        card.hidden = !shouldShow;
+        card.setAttribute("aria-hidden", String(!shouldShow));
+      });
+    };
+
+    const getDefaultFilter = () => {
+      const activeButton = filterButtons.find((button) => button.classList.contains("is-active"));
+      return (activeButton?.dataset.newsFilter ?? "all").toLowerCase();
+    };
+
+    if (filterButtons.length > 0) {
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const targetFilter = (button.dataset.newsFilter ?? "all").toLowerCase();
+          setActiveFilter(targetFilter);
+        });
+      });
+
+      setActiveFilter(getDefaultFilter());
+    }
+  }
 
   const isVideoPage = document.body?.classList?.contains("video-page");
   if (isVideoPage) {
