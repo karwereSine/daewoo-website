@@ -1,6 +1,13 @@
 (() => {
   const DATA_URL = "data/products.json";
   const DEFAULT_LOCALE = "zh";
+  const SUPPORTED_LOCALES = ["zh", "en", "ko"];
+
+  const normalizeLocale = (locale) => {
+    if (!locale) return null;
+    const lower = locale.toLowerCase();
+    return SUPPORTED_LOCALES.find((item) => lower.startsWith(item)) || null;
+  };
 
   const pageTitle = document.querySelector("[data-product-page-title]");
   const htmlElement = document.documentElement;
@@ -85,11 +92,116 @@
     return "";
   };
 
+  let isInternalLocaleUpdate = false;
+
   const setLocale = (locale) => {
     if (!htmlElement) return;
-    const normalized = typeof locale === "string" && locale.trim() ? locale.trim() : DEFAULT_LOCALE;
+    const normalized = normalizeLocale(locale) || DEFAULT_LOCALE;
+    if (htmlElement.getAttribute("lang") === normalized) return;
+    isInternalLocaleUpdate = true;
     htmlElement.setAttribute("lang", normalized);
+    queueMicrotask(() => {
+      isInternalLocaleUpdate = false;
+    });
   };
+
+  const getStoredLocale = () => {
+    try {
+      const stored = localStorage.getItem("preferredLang");
+      if (stored && SUPPORTED_LOCALES.includes(stored)) {
+        return stored;
+      }
+    } catch (error) {
+      // storage unavailable, ignore
+    }
+    return null;
+  };
+
+  const getNavigatorLocale = () => {
+    const navLang = navigator.language || navigator.userLanguage;
+    return normalizeLocale(navLang);
+  };
+
+  const getDocumentLocale = () => normalizeLocale(document.documentElement?.getAttribute("lang"));
+
+  const getPreferredLocale = () =>
+    getStoredLocale() || getDocumentLocale() || getNavigatorLocale() || DEFAULT_LOCALE;
+
+  const mergeObjects = (base = {}, override = {}) => ({ ...base, ...override });
+
+  const mergeDetails = (baseDetails, overrideDetails) => {
+    if (Array.isArray(overrideDetails) && overrideDetails.length > 0) {
+      return overrideDetails;
+    }
+    return Array.isArray(baseDetails) ? baseDetails : [];
+  };
+
+  const mergeMediaItems = (baseItems, overrideItems) => {
+    if (!Array.isArray(baseItems)) {
+      return Array.isArray(overrideItems) ? overrideItems : [];
+    }
+    if (!Array.isArray(overrideItems) || overrideItems.length === 0) {
+      return baseItems;
+    }
+    const merged = baseItems.map((item, index) => ({
+      ...item,
+      ...(overrideItems[index] || {}),
+    }));
+    if (overrideItems.length > baseItems.length) {
+      return merged.concat(overrideItems.slice(baseItems.length));
+    }
+    return merged;
+  };
+
+  const applyLocalization = (product, requestedLocale) => {
+    if (!product) return null;
+    const fallbackLocale = product.locale && SUPPORTED_LOCALES.includes(product.locale)
+      ? product.locale
+      : DEFAULT_LOCALE;
+    const localeToUse = product.translations?.[requestedLocale]
+      ? requestedLocale
+      : fallbackLocale;
+
+    const translation = product.translations?.[localeToUse];
+    if (!translation) {
+      return { ...product, locale: localeToUse };
+    }
+
+    return {
+      ...product,
+      locale: localeToUse,
+      backLink: mergeObjects(product.backLink, translation.backLink),
+      hero: mergeObjects(product.hero, translation.hero),
+      summary: {
+        ...product.summary,
+        ...translation.summary,
+        cover: mergeObjects(product.summary?.cover, translation.summary?.cover),
+        details: mergeDetails(product.summary?.details, translation.summary?.details),
+      },
+      media: {
+        thumbnails: mergeMediaItems(
+          product.media?.thumbnails,
+          translation.media?.thumbnails
+        ),
+        gallery: mergeMediaItems(product.media?.gallery, translation.media?.gallery),
+      },
+      service: {
+        ...product.service,
+        ...translation.service,
+        primaryCta: mergeObjects(
+          product.service?.primaryCta,
+          translation.service?.primaryCta
+        ),
+        secondaryCta: mergeObjects(
+          product.service?.secondaryCta,
+          translation.service?.secondaryCta
+        ),
+      },
+    };
+  };
+
+  // Ensure the document language reflects stored preference as early as possible.
+  setLocale(getPreferredLocale());
 
   const renderSpecs = (details) => {
     if (!specsList) return;
@@ -211,17 +323,19 @@
     }
   };
 
-  const renderProduct = (product) => {
+  const renderProduct = (product, requestedLocale) => {
     if (!product) {
       showErrorState();
       return;
     }
 
-    setLocale(product.locale);
+    const preferredLocale = requestedLocale || getPreferredLocale();
+    const localizedProduct = applyLocalization(product, preferredLocale) || product;
+    setLocale(localizedProduct.locale || preferredLocale);
 
-    const hero = product.hero || {};
-       const summary = product.summary || {};
-    const media = product.media || {};
+    const hero = localizedProduct.hero || {};
+    const summary = localizedProduct.summary || {};
+    const media = localizedProduct.media || {};
 
     if (pageTitle) {
       pageTitle.textContent = `${hero.title || "产品详情"} | DAEWOO`;
@@ -238,10 +352,10 @@
     }
 
     if (backLink) {
-      if (product.backLink?.href) {
-        backLink.href = product.backLink.href;
+      if (localizedProduct.backLink?.href) {
+        backLink.href = localizedProduct.backLink.href;
       }
-      backLink.textContent = product.backLink?.label || "返回产品中心";
+      backLink.textContent = localizedProduct.backLink?.label || "返回产品中心";
     }
 
     if (mainImage) {
@@ -261,7 +375,7 @@
 
     renderThumbnails(media.thumbnails, summary.cover);
     renderGallery(media.gallery);
-    renderService(product.service);
+    renderService(localizedProduct.service);
   };
 
   const initialize = async () => {
@@ -291,12 +405,15 @@
         return;
       }
 
-      renderProduct(product);
+      currentProduct = product;
+      renderProduct(currentProduct);
     } catch (error) {
       console.error("[product-detail] 数据加载失败：", error);
       showErrorState("产品数据加载失败，请稍后重试。");
     }
   };
+
+  let currentProduct = null;
 
   if (bodyElement?.classList.contains("product-detail-page")) {
     if (document.readyState === "loading") {
@@ -304,6 +421,34 @@
     } else {
       initialize();
     }
+
+    const observer = new MutationObserver(() => {
+      if (isInternalLocaleUpdate || !currentProduct) return;
+      const docLocale = getDocumentLocale();
+      renderProduct(currentProduct, docLocale);
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["lang"],
+    });
+
+    window.addEventListener("storage", (event) => {
+      if (event.key === "preferredLang" && currentProduct) {
+        const newLocale = normalizeLocale(event.newValue);
+        if (newLocale) {
+          renderProduct(currentProduct, newLocale);
+        }
+      }
+    });
+
+    window.addEventListener("daewoo:languagechange", (event) => {
+      if (!currentProduct) return;
+      const newLocale = normalizeLocale(event.detail?.lang);
+      if (newLocale) {
+        renderProduct(currentProduct, newLocale);
+      }
+    });
   }
 })();
 

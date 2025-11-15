@@ -576,6 +576,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "productCenter.service.description": "提交您的需求，我们的顾问团队将提供选型建议、安装规划，以及售后支持安排。",
       "productCenter.service.ctaPrimary": "联系顾问",
       "productCenter.service.ctaSecondary": "预约服务中心",
+      "product.description.title": "产品描述",
       "productCenter.comingSoon.title": "产品即将上线",
       "productCenter.comingSoon.description": "敬请期待",
       "hero.title": "与 DAEWOO 一起体验全新服务",
@@ -1160,6 +1161,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "productCenter.service.description": "요구 사항을 보내주시면 전담 컨설턴트가 제품 추천, 설치 기획, 사후 지원 일정을 안내드립니다.",
       "productCenter.service.ctaPrimary": "컨설턴트에게 문의",
       "productCenter.service.ctaSecondary": "서비스 센터 예약",
+      "product.description.title": "제품 설명",
       "productCenter.comingSoon.title": "제품이 곧 공개됩니다",
       "productCenter.comingSoon.description": "조금만 기다려 주세요",
       "hero.title": "DAEWOO와 함께하는 새로운 서비스 경험",
@@ -1744,6 +1746,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "productCenter.service.description": "Share your needs and our consultants will recommend models, installation plans, and after-sales support.",
       "productCenter.service.ctaPrimary": "Contact a consultant",
       "productCenter.service.ctaSecondary": "Book a service center visit",
+      "product.description.title": "Product Description",
       "productCenter.comingSoon.title": "Coming Soon",
       "productCenter.comingSoon.description": "Stay tuned for updates",
       "hero.title": "Experience new service with DAEWOO",
@@ -1785,6 +1788,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const normalized = supportedLangs.includes(lang) ? lang : fallbackLang;
     currentLang = normalized;
     htmlElement.setAttribute("lang", formatLangAttr(normalized));
+    window.dispatchEvent(
+      new CustomEvent("daewoo:languagechange", {
+        detail: { lang: normalized },
+      })
+    );
 
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.dataset.i18n;

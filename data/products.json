@@ -147,6 +147,66 @@
           "label": "预约服务中心",
           "href": "contact.html"
         }
+      },
+      "translations": {
+        "en": {
+          "backLink": {
+            "label": "Back to Product Center"
+          },
+          "hero": {
+            "eyebrow": "Nursery Appliances · Formula Maker",
+            "title": "DY-TN33 Liquid Heater (Portable Dual-Mode Formula Maker)",
+            "description": "Portable dual-mode design with fast heating and precise temperature holding for every feeding scenario."
+          },
+          "summary": {
+            "details": [
+              { "label": "Product ID", "value": "SN1761793198" },
+              { "label": "MSRP", "value": "¥432" },
+              { "label": "Launch Date", "value": "2025-10-30" },
+              { "label": "Category", "value": "Formula maker" }
+            ],
+            "note": "Data source: DAEWOO official website. Refer to official announcements for the latest specifications."
+          },
+          "service": {
+            "title": "Talk to a consultant",
+            "description": "Share your needs and we will recommend the right appliance bundle and service plan.",
+            "primaryCta": {
+              "label": "Email consultant"
+            },
+            "secondaryCta": {
+              "label": "Book service center"
+            }
+          }
+        },
+        "ko": {
+          "backLink": {
+            "label": "제품 센터로 돌아가기"
+          },
+          "hero": {
+            "eyebrow": "모유·유아 가전 · 분유 조제기",
+            "title": "DY-TN33 액체 가열기(휴대 듀얼모드 분유기)",
+            "description": "휴대 듀얼 모드와 정밀 온도 제어로 수유 상황별 원하는 온도를 빠르게 맞춰 줍니다."
+          },
+          "summary": {
+            "details": [
+              { "label": "제품 번호", "value": "SN1761793198" },
+              { "label": "권장 소비자가", "value": "¥432" },
+              { "label": "출시일", "value": "2025-10-30" },
+              { "label": "제품 유형", "value": "분유 조제기" }
+            ],
+            "note": "자료 출처: DAEWOO 공식 웹사이트. 최신 사양은 공식 공지를 참고하세요."
+          },
+          "service": {
+            "title": "상담원에게 문의",
+            "description": "요구 사항을 알려주시면 맞춤 가전 구성과 서비스 플랜을 추천해 드립니다.",
+            "primaryCta": {
+              "label": "이메일 상담"
+            },
+            "secondaryCta": {
+              "label": "서비스 센터 예약"
+            }
+          }
+        }
       }
     },
     {
@@ -351,6 +411,66 @@
         "secondaryCta": {
           "label": "预约服务中心",
           "href": "contact.html"
+        }
+      },
+      "translations": {
+        "en": {
+          "backLink": {
+            "label": "Back to Product Center"
+          },
+          "hero": {
+            "eyebrow": "Seasonal Appliances · Heater",
+            "title": "T2311AYV Baseboard Heater",
+            "description": "Slim baseboard heating with circulating airflow and multi-stage temperature modes for living rooms, bedrooms, and studios."
+          },
+          "summary": {
+            "details": [
+              { "label": "Product ID", "value": "SN1761794295" },
+              { "label": "MSRP", "value": "¥699" },
+              { "label": "Launch Date", "value": "2025-10-30" },
+              { "label": "Category", "value": "Baseboard heater" }
+            ],
+            "note": "Data source: DAEWOO official website. Latest parameters and promotions are subject to official announcements."
+          },
+          "service": {
+            "title": "Need more help?",
+            "description": "Contact our consultants for installation planning, after-sales coverage, and maintenance scheduling.",
+            "primaryCta": {
+              "label": "Email consultant"
+            },
+            "secondaryCta": {
+              "label": "Book service center"
+            }
+          }
+        },
+        "ko": {
+          "backLink": {
+            "label": "제품 센터로 돌아가기"
+          },
+          "hero": {
+            "eyebrow": "계절가전 · 난방기",
+            "title": "T2311AYV 플린스 히터",
+            "description": "슬림한 킥보드형 난방과 순환 온풍으로 거실·침실·서재까지 빠르게 따뜻해집니다."
+          },
+          "summary": {
+            "details": [
+              { "label": "제품 번호", "value": "SN1761794295" },
+              { "label": "권장 소비자가", "value": "¥699" },
+              { "label": "출시일", "value": "2025-10-30" },
+              { "label": "제품 유형", "value": "플린스 히터" }
+            ],
+            "note": "자료 출처: DAEWOO 공식 웹사이트. 최신 사양과 프로모션은 공식 공지를 따릅니다."
+          },
+          "service": {
+            "title": "더 많은 지원이 필요하신가요?",
+            "description": "설치 계획부터 사후 보장, 유지보수 일정까지 전문 상담사가 안내해 드립니다.",
+            "primaryCta": {
+              "label": "이메일 상담"
+            },
+            "secondaryCta": {
+              "label": "서비스 센터 예약"
+            }
+          }
         }
       }
     },
@@ -587,6 +707,66 @@
         "secondaryCta": {
           "label": "预约服务中心",
           "href": "contact.html"
+        }
+      },
+      "translations": {
+        "en": {
+          "backLink": {
+            "label": "Back to Product Center"
+          },
+          "hero": {
+            "eyebrow": "Kitchen Appliances · Multi Cooker",
+            "title": "S30PRO Multi-function Stew & Steam Pot",
+            "description": "One appliance for stewing, steaming, and boiling so families can prepare healthy meals with ease."
+          },
+          "summary": {
+            "details": [
+              { "label": "Product ID", "value": "SN1761793525" },
+              { "label": "MSRP", "value": "¥940" },
+              { "label": "Launch Date", "value": "2025-10-30" },
+              { "label": "Category", "value": "Multi-function stew & steam pot" }
+            ],
+            "note": "Data source: DAEWOO official website. Specifications and accessories follow the official listing."
+          },
+          "service": {
+            "title": "Need more help?",
+            "description": "Talk with our consultants for selection advice, installation planning, and post-sales support.",
+            "primaryCta": {
+              "label": "Email consultant"
+            },
+            "secondaryCta": {
+              "label": "Book service center"
+            }
+          }
+        },
+        "ko": {
+          "backLink": {
+            "label": "제품 센터로 돌아가기"
+          },
+          "hero": {
+            "eyebrow": "주방가전 · 멀티 쿠커",
+            "title": "S30PRO 멀티 스튜 & 스팀 포트",
+            "description": "한 대로 찌기·끓이기·조림까지 가능한 올인원 쿠커로 건강한 식단을 손쉽게 완성하세요."
+          },
+          "summary": {
+            "details": [
+              { "label": "제품 번호", "value": "SN1761793525" },
+              { "label": "권장 소비자가", "value": "¥940" },
+              { "label": "출시일", "value": "2025-10-30" },
+              { "label": "제품 유형", "value": "멀티 스튜 & 스팀 포트" }
+            ],
+            "note": "자료 출처: DAEWOO 공식 웹사이트. 세부 사양과 구성품은 공식 공지를 따릅니다."
+          },
+          "service": {
+            "title": "더 많은 지원이 필요하신가요?",
+            "description": "제품 선택부터 설치 계획, 사후 지원까지 전문 상담사가 함께합니다.",
+            "primaryCta": {
+              "label": "이메일 상담"
+            },
+            "secondaryCta": {
+              "label": "서비스 센터 예약"
+            }
+          }
         }
       }
     }
