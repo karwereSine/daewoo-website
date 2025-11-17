@@ -2301,6 +2301,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // 确保 URL 使用正确的协议（如果是 HTTPS 网站，使用 HTTPS 资源）
+  const ensureSecureUrl = (url) => {
+    if (!url) return url;
+    // 如果当前页面是 HTTPS，但资源是 HTTP，尝试改为 HTTPS
+    if (window.location.protocol === 'https:' && url.startsWith('http://')) {
+      return url.replace('http://', 'https://');
+    }
+    return url;
+  };
+
   // 视频弹窗功能（在所有页面可用）
   const modal = document.querySelector("[data-video-modal]");
   const iframe = modal?.querySelector("[data-video-iframe]");
@@ -2325,6 +2335,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     openVideoModal = (src, title, trigger) => {
       if (!src) return;
+      
+      // 确保使用安全的 URL
+      src = ensureSecureUrl(src);
       
       // 先打开模态框
       if (typeof modal.showModal === "function") {
@@ -2428,13 +2441,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // 确保所有 HTTP 资源在 HTTPS 网站上使用 HTTPS
+  if (window.location.protocol === 'https:') {
+    // 修复所有图片链接
+    document.querySelectorAll('img[src^="http://"]').forEach((img) => {
+      const originalSrc = img.getAttribute('src');
+      if (originalSrc && originalSrc.startsWith('http://')) {
+        img.src = originalSrc.replace('http://', 'https://');
+      }
+    });
+    
+    // 修复所有 video 元素的 src
+    document.querySelectorAll('video source[src^="http://"]').forEach((source) => {
+      const originalSrc = source.getAttribute('src');
+      if (originalSrc && originalSrc.startsWith('http://')) {
+        source.src = originalSrc.replace('http://', 'https://');
+      }
+    });
+  }
+
   document.addEventListener("click", (event) => {
     const target = event.target;
     if (!(target instanceof HTMLElement)) return;
     const trigger = target.closest("[data-video-src]");
     if (!trigger) return;
-    const src = trigger.getAttribute("data-video-src");
+    let src = trigger.getAttribute("data-video-src");
     if (!src) return;
+    // 确保视频 URL 使用正确的协议
+    src = ensureSecureUrl(src);
     const title = trigger.getAttribute("data-video-title") || trigger.textContent?.trim();
     lastFocusedTrigger = trigger;
     openVideoModal?.(src, title, trigger);
