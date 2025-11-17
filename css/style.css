@@ -2917,6 +2917,23 @@ html.is-video-modal-open {
   background: #000000;
 }
 
+.video-error-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.video-error-message a {
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.video-error-message a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(9, 128, 255, 0.4);
+}
+
 @media (max-width: 1240px) {
   .video-featured__inner {
     grid-template-columns: 1fr;

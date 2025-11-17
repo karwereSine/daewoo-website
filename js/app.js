@@ -2301,14 +2301,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // 确保 URL 使用正确的协议（如果是 HTTPS 网站，使用 HTTPS 资源）
-  const ensureSecureUrl = (url) => {
-    if (!url) return url;
-    // 如果当前页面是 HTTPS，但资源是 HTTP，尝试改为 HTTPS
-    if (window.location.protocol === 'https:' && url.startsWith('http://')) {
-      return url.replace('http://', 'https://');
-    }
-    return url;
+  // 检测是否为混合内容问题（HTTPS 网站加载 HTTP 资源）
+  const isMixedContent = (url) => {
+    return window.location.protocol === 'https:' && url && url.startsWith('http://');
   };
 
   // 视频弹窗功能（在所有页面可用）
@@ -2336,8 +2331,17 @@ document.addEventListener("DOMContentLoaded", () => {
     openVideoModal = (src, title, trigger) => {
       if (!src) return;
       
-      // 确保使用安全的 URL
-      src = ensureSecureUrl(src);
+      // 检测混合内容问题，如果是 HTTPS 网站但资源是 HTTP
+      if (isMixedContent(src)) {
+        // Safari 会阻止混合内容，无法绕过
+        // 但我们可以尝试使用协议相对 URL（//），让浏览器根据当前协议选择
+        // 不过如果当前是 HTTPS，协议相对 URL 还是会尝试 HTTPS
+        // 所以最好的方案是提示用户使用 HTTP 访问网站
+        console.warn('检测到混合内容，视频可能无法在 Safari 中播放:', src);
+        
+        // 对于图片，可以尝试使用协议相对 URL（虽然可能还是会被阻止）
+        // 但对于视频，Safari 会严格阻止，所以只能提示用户
+      }
       
       // 先打开模态框
       if (typeof modal.showModal === "function") {
@@ -2372,10 +2376,39 @@ document.addEventListener("DOMContentLoaded", () => {
           videoPlayer.load();
           
           // 添加错误处理
-          const handleError = () => {
-            console.error("视频加载失败:", src);
+          const handleError = (e) => {
+            console.error("视频加载失败:", src, e);
+            // 如果是混合内容问题，显示提示和解决方案
+            if (isMixedContent(src)) {
+              // 移除之前的错误消息（如果有）
+              const existingError = videoPlayer.parentElement.querySelector('.video-error-message');
+              if (existingError) {
+                existingError.remove();
+              }
+              
+              const errorMsg = document.createElement("div");
+              errorMsg.className = "video-error-message";
+              errorMsg.style.cssText = "padding: 2rem; text-align: center; color: #fff; background: rgba(0,0,0,0.9); border-radius: 8px; margin: 1rem; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: calc(100% - 2rem); max-width: 500px; z-index: 10;";
+              const httpUrl = window.location.href.replace('https://', 'http://');
+              errorMsg.innerHTML = `
+                <p style="margin: 0 0 1rem 0; font-size: 1.1rem; font-weight: 600;">视频无法加载</p>
+                <p style="margin: 0 0 1rem 0; font-size: 0.9rem; opacity: 0.9; line-height: 1.6;">由于浏览器安全策略，HTTPS 网站无法加载 HTTP 视频资源。</p>
+                <a href="${httpUrl}" style="display: inline-block; padding: 0.75rem 1.5rem; background: var(--color-primary, #0980ff); color: #fff; text-decoration: none; border-radius: 6px; font-weight: 600; margin-top: 0.5rem;">使用 HTTP 访问网站</a>
+              `;
+              videoPlayer.parentElement.style.position = "relative";
+              videoPlayer.parentElement.appendChild(errorMsg);
+            }
           };
           videoPlayer.addEventListener("error", handleError, { once: true });
+          
+          // 也监听 loadeddata 事件，如果视频成功加载，移除错误消息
+          const handleLoadedData = () => {
+            const existingError = videoPlayer.parentElement.querySelector('.video-error-message');
+            if (existingError) {
+              existingError.remove();
+            }
+          };
+          videoPlayer.addEventListener("loadeddata", handleLoadedData, { once: true });
           
           // 不自动播放，让用户点击播放按钮（Safari 需要用户交互）
         }, 150);
@@ -2441,21 +2474,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 确保所有 HTTP 资源在 HTTPS 网站上使用 HTTPS
+  // 处理混合内容问题：为 HTTP 图片添加错误处理和降级方案
   if (window.location.protocol === 'https:') {
-    // 修复所有图片链接
     document.querySelectorAll('img[src^="http://"]').forEach((img) => {
       const originalSrc = img.getAttribute('src');
       if (originalSrc && originalSrc.startsWith('http://')) {
-        img.src = originalSrc.replace('http://', 'https://');
-      }
-    });
-    
-    // 修复所有 video 元素的 src
-    document.querySelectorAll('video source[src^="http://"]').forEach((source) => {
-      const originalSrc = source.getAttribute('src');
-      if (originalSrc && originalSrc.startsWith('http://')) {
-        source.src = originalSrc.replace('http://', 'https://');
+        // 添加错误处理
+        img.addEventListener('error', function() {
+          // 如果图片加载失败（可能是混合内容阻止），尝试使用协议相对 URL
+          // 或者显示占位符
+          console.warn('图片加载失败（可能是混合内容阻止）:', originalSrc);
+          // 可以在这里添加占位符图片
+        }, { once: true });
       }
     });
   }
@@ -2467,8 +2497,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!trigger) return;
     let src = trigger.getAttribute("data-video-src");
     if (!src) return;
-    // 确保视频 URL 使用正确的协议
-    src = ensureSecureUrl(src);
     const title = trigger.getAttribute("data-video-title") || trigger.textContent?.trim();
     lastFocusedTrigger = trigger;
     openVideoModal?.(src, title, trigger);
