@@ -2303,12 +2303,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 视频弹窗功能（在所有页面可用）
   const modal = document.querySelector("[data-video-modal]");
-  const iframe = modal?.querySelector("iframe");
+  const iframe = modal?.querySelector("[data-video-iframe]");
+  const videoPlayer = modal?.querySelector("[data-video-player]");
   let lastFocusedTrigger = null;
   let openVideoModal = null;
   let closeVideoModal = null;
 
-  if (modal && iframe) {
+  if (modal && iframe && videoPlayer) {
     const closeButton = modal.querySelector("[data-video-close]");
     const getModalOpenState = () => {
       if (typeof modal.open === "boolean") {
@@ -2317,10 +2318,35 @@ document.addEventListener("DOMContentLoaded", () => {
       return modal.hasAttribute("open");
     };
 
+    // 判断是否为 MP4 文件
+    const isMp4File = (url) => {
+      return url && (url.toLowerCase().endsWith('.mp4') || url.toLowerCase().includes('.mp4'));
+    };
+
     openVideoModal = (src, title, trigger) => {
       if (!src) return;
-      iframe.src = src;
-      iframe.title = title || iframe.title || "视频播放";
+      
+      // 根据 URL 类型选择播放器
+      if (isMp4File(src)) {
+        // 使用 HTML5 video 标签播放 MP4
+        iframe.style.display = "none";
+        videoPlayer.style.display = "block";
+        videoPlayer.src = src;
+        videoPlayer.load();
+        // 尝试自动播放
+        videoPlayer.play().catch((e) => {
+          console.log("自动播放被阻止:", e);
+        });
+      } else {
+        // 使用 iframe 播放第三方播放器
+        videoPlayer.style.display = "none";
+        videoPlayer.src = ""; // 清空 video src
+        videoPlayer.pause();
+        iframe.style.display = "block";
+        iframe.src = src;
+        iframe.title = title || iframe.title || "视频播放";
+      }
+      
       if (typeof modal.showModal === "function") {
         modal.showModal();
       } else {
@@ -2340,7 +2366,12 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         modal.removeAttribute("open");
       }
+      // 清理播放器
       iframe.src = "";
+      videoPlayer.src = "";
+      videoPlayer.pause();
+      iframe.style.display = "none";
+      videoPlayer.style.display = "none";
       document.documentElement.classList.remove("is-video-modal-open");
       if (lastFocusedTrigger && document.body.contains(lastFocusedTrigger)) {
         lastFocusedTrigger.focus();
