@@ -71,6 +71,11 @@ document.addEventListener("DOMContentLoaded", () => {
       "productInterest.waterPurifier": "净水器",
       "productInterest.fan": "电风扇",
       "productInterest.heater": "取暖器",
+      "homeVideo.eyebrow": "视频中心",
+      "homeVideo.title": "沉浸式视频速览",
+      "homeVideo.description": "精选 3 支产品演示视频，快速了解 DAEWOO 视频中心正在播放的明星内容。",
+      "homeVideo.watch": "观看视频",
+      "homeVideo.cta": "进入视频中心",
       "homeNews.eyebrow": "新闻资讯",
       "homeNews.title": "最新动态与行业资讯",
       "homeNews.description": "精选 DAEWOO 最新新闻、产品发布与行业洞察，帮助您快速了解品牌动向。",
@@ -662,6 +667,11 @@ document.addEventListener("DOMContentLoaded", () => {
       "productInterest.waterPurifier": "정수기",
       "productInterest.fan": "선풍기",
       "productInterest.heater": "난방기",
+      "homeVideo.eyebrow": "영상 센터",
+      "homeVideo.title": "몰입형 영상 미리보기",
+      "homeVideo.description": "대표 제품 데모 3편으로 DAEWOO 영상 센터의 핵심 콘텐츠를 빠르게 확인하세요.",
+      "homeVideo.watch": "영상 보기",
+      "homeVideo.cta": "영상 센터 바로가기",
       "homeNews.eyebrow": "뉴스",
       "homeNews.title": "최신 소식과 업계 인사이트",
       "homeNews.description": "DAEWOO의 최신 뉴스, 제품 발표, 업계 인사이트를 한눈에 확인하세요.",
@@ -1253,6 +1263,11 @@ document.addEventListener("DOMContentLoaded", () => {
       "productInterest.waterPurifier": "Water Purifiers",
       "productInterest.fan": "Electric Fans",
       "productInterest.heater": "Heaters",
+      "homeVideo.eyebrow": "Video Center",
+      "homeVideo.title": "Immersive video highlights",
+      "homeVideo.description": "Explore three signature demos to sample what is streaming inside the DAEWOO Video Center.",
+      "homeVideo.watch": "Watch video",
+      "homeVideo.cta": "Go to Video Center",
       "homeNews.eyebrow": "News",
       "homeNews.title": "Latest Updates & Industry Insights",
       "homeNews.description": "Stay current with DAEWOO product announcements, brand stories, and industry insights.",
@@ -2286,13 +2301,95 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // 视频弹窗功能（在所有页面可用）
+  const modal = document.querySelector("[data-video-modal]");
+  const iframe = modal?.querySelector("iframe");
+  let lastFocusedTrigger = null;
+  let openVideoModal = null;
+  let closeVideoModal = null;
+
+  if (modal && iframe) {
+    const closeButton = modal.querySelector("[data-video-close]");
+    const getModalOpenState = () => {
+      if (typeof modal.open === "boolean") {
+        return modal.open;
+      }
+      return modal.hasAttribute("open");
+    };
+
+    openVideoModal = (src, title, trigger) => {
+      if (!src) return;
+      iframe.src = src;
+      iframe.title = title || iframe.title || "视频播放";
+      if (typeof modal.showModal === "function") {
+        modal.showModal();
+      } else {
+        modal.setAttribute("open", "true");
+      }
+      document.documentElement.classList.add("is-video-modal-open");
+      if (trigger) {
+        lastFocusedTrigger = trigger;
+      }
+    };
+
+    closeVideoModal = () => {
+      if (typeof modal.close === "function") {
+        if (getModalOpenState()) {
+          modal.close();
+        }
+      } else {
+        modal.removeAttribute("open");
+      }
+      iframe.src = "";
+      document.documentElement.classList.remove("is-video-modal-open");
+      if (lastFocusedTrigger && document.body.contains(lastFocusedTrigger)) {
+        lastFocusedTrigger.focus();
+      }
+    };
+
+    if (closeButton instanceof HTMLElement) {
+      closeButton.addEventListener("click", () => {
+        closeVideoModal?.();
+      });
+    }
+
+    modal.addEventListener("cancel", (event) => {
+      event.preventDefault();
+      closeVideoModal?.();
+    });
+
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        closeVideoModal?.();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && getModalOpenState()) {
+        closeVideoModal?.();
+      }
+    });
+  }
+
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement)) return;
+    const trigger = target.closest("[data-video-src]");
+    if (!trigger) return;
+    const src = trigger.getAttribute("data-video-src");
+    if (!src) return;
+    const title = trigger.getAttribute("data-video-title") || trigger.textContent?.trim();
+    lastFocusedTrigger = trigger;
+    openVideoModal?.(src, title, trigger);
+    if (modal && typeof modal.showModal !== "function") {
+      event.preventDefault();
+    }
+  });
+
   const isVideoPage = document.body?.classList?.contains("video-page");
   if (isVideoPage) {
     const filterButtons = Array.from(document.querySelectorAll("[data-video-filter]"));
     const videoCards = Array.from(document.querySelectorAll("[data-video-card]"));
-    const modal = document.querySelector("[data-video-modal]");
-    const iframe = modal?.querySelector("iframe");
-    let lastFocusedTrigger = null;
     let currentFilter = "all";
 
     const setActiveFilter = (filter) => {
@@ -2335,87 +2432,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       setActiveFilter(getDefaultFilter());
     }
-
-    let openVideoModal = null;
-    let closeVideoModal = null;
-
-    if (modal && iframe) {
-      const closeButton = modal.querySelector("[data-video-close]");
-      const getModalOpenState = () => {
-        if (typeof modal.open === "boolean") {
-          return modal.open;
-        }
-        return modal.hasAttribute("open");
-      };
-
-      openVideoModal = (src, title, trigger) => {
-        if (!src) return;
-        iframe.src = src;
-        iframe.title = title || iframe.title || "视频播放";
-        if (typeof modal.showModal === "function") {
-          modal.showModal();
-        } else {
-          modal.setAttribute("open", "true");
-        }
-        document.documentElement.classList.add("is-video-modal-open");
-        if (trigger) {
-          lastFocusedTrigger = trigger;
-        }
-      };
-
-      closeVideoModal = () => {
-        if (typeof modal.close === "function") {
-          if (getModalOpenState()) {
-            modal.close();
-          }
-        } else {
-          modal.removeAttribute("open");
-        }
-        iframe.src = "";
-        document.documentElement.classList.remove("is-video-modal-open");
-        if (lastFocusedTrigger && document.body.contains(lastFocusedTrigger)) {
-          lastFocusedTrigger.focus();
-        }
-      };
-
-      if (closeButton instanceof HTMLElement) {
-        closeButton.addEventListener("click", () => {
-          closeVideoModal?.();
-        });
-      }
-
-      modal.addEventListener("cancel", (event) => {
-        event.preventDefault();
-        closeVideoModal?.();
-      });
-
-      modal.addEventListener("click", (event) => {
-        if (event.target === modal) {
-          closeVideoModal?.();
-        }
-      });
-
-      document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && getModalOpenState()) {
-          closeVideoModal?.();
-        }
-      });
-    }
-
-    document.addEventListener("click", (event) => {
-      const target = event.target;
-      if (!(target instanceof HTMLElement)) return;
-      const trigger = target.closest("[data-video-src]");
-      if (!trigger) return;
-      const src = trigger.getAttribute("data-video-src");
-      if (!src) return;
-      const title = trigger.getAttribute("data-video-title") || trigger.textContent?.trim();
-      lastFocusedTrigger = trigger;
-      openVideoModal?.(src, title, trigger);
-      if (modal && typeof modal.showModal !== "function") {
-        event.preventDefault();
-      }
-    });
 
     const activateVideoById = (videoId, { autoOpen = true } = {}) => {
       const normalizedId = (videoId ?? "").toLowerCase();
