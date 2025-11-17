@@ -2326,33 +2326,56 @@ document.addEventListener("DOMContentLoaded", () => {
     openVideoModal = (src, title, trigger) => {
       if (!src) return;
       
-      // 根据 URL 类型选择播放器
-      if (isMp4File(src)) {
-        // 使用 HTML5 video 标签播放 MP4
-        iframe.style.display = "none";
-        videoPlayer.style.display = "block";
-        videoPlayer.src = src;
-        videoPlayer.load();
-        // 尝试自动播放
-        videoPlayer.play().catch((e) => {
-          console.log("自动播放被阻止:", e);
-        });
-      } else {
-        // 使用 iframe 播放第三方播放器
-        videoPlayer.style.display = "none";
-        videoPlayer.src = ""; // 清空 video src
-        videoPlayer.pause();
-        iframe.style.display = "block";
-        iframe.src = src;
-        iframe.title = title || iframe.title || "视频播放";
-      }
-      
+      // 先打开模态框
       if (typeof modal.showModal === "function") {
         modal.showModal();
       } else {
         modal.setAttribute("open", "true");
       }
       document.documentElement.classList.add("is-video-modal-open");
+      
+      // 根据 URL 类型选择播放器
+      if (isMp4File(src)) {
+        // 使用 HTML5 video 标签播放 MP4
+        iframe.style.display = "none";
+        videoPlayer.style.display = "block";
+        
+        // 清空之前的视频
+        videoPlayer.pause();
+        videoPlayer.currentTime = 0;
+        
+        // 使用 setTimeout 确保模态框已渲染后再设置视频源
+        setTimeout(() => {
+          // 先清空 src
+          videoPlayer.removeAttribute("src");
+          videoPlayer.load();
+          
+          // 然后设置新的 src（使用 source 标签，对 Safari 更友好）
+          const videoSrc = document.createElement("source");
+          videoSrc.src = src;
+          videoSrc.type = "video/mp4";
+          videoPlayer.innerHTML = "";
+          videoPlayer.appendChild(videoSrc);
+          videoPlayer.load();
+          
+          // 添加错误处理
+          const handleError = () => {
+            console.error("视频加载失败:", src);
+          };
+          videoPlayer.addEventListener("error", handleError, { once: true });
+          
+          // 不自动播放，让用户点击播放按钮（Safari 需要用户交互）
+        }, 150);
+      } else {
+        // 使用 iframe 播放第三方播放器
+        videoPlayer.style.display = "none";
+        videoPlayer.src = "";
+        videoPlayer.pause();
+        iframe.style.display = "block";
+        iframe.src = src;
+        iframe.title = title || iframe.title || "视频播放";
+      }
+      
       if (trigger) {
         lastFocusedTrigger = trigger;
       }
@@ -2368,8 +2391,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       // 清理播放器
       iframe.src = "";
-      videoPlayer.src = "";
       videoPlayer.pause();
+      videoPlayer.currentTime = 0;
+      videoPlayer.removeAttribute("src");
+      videoPlayer.innerHTML = "您的浏览器不支持视频播放。";
+      videoPlayer.load();
       iframe.style.display = "none";
       videoPlayer.style.display = "none";
       document.documentElement.classList.remove("is-video-modal-open");
