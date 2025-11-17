@@ -5,6 +5,18 @@ document.addEventListener("DOMContentLoaded", () => {
       "search.label": "输入搜索词",
       "search.placeholder": "请输入想了解的内容",
       "search.button": "搜索",
+      "search.results.heading": "搜索结果",
+      "search.results.hint": "输入产品、新闻或视频关键词即可开始搜索",
+      "search.results.empty": "未找到匹配内容，请尝试其他关键词",
+      "search.results.products": "产品",
+      "search.results.news": "新闻",
+      "search.results.videos": "视频",
+      "search.results.loading": "正在加载搜索数据…",
+      "search.results.viewAll": "查看全部",
+      "search.results.remaining": "还有 {{count}} 条结果",
+      "search.results.count": "共 {{count}} 个结果",
+      "search.results.shortQuery": "请输入至少 2 个字符（中文可直接输入单个字）",
+      "search.results.close": "关闭搜索结果",
       "lang.selector": "选择语言",
       "lang.selectorAria": "语言选择器",
       "lang.zh": "中文",
@@ -613,6 +625,18 @@ document.addEventListener("DOMContentLoaded", () => {
       "search.label": "검색어 입력",
       "search.placeholder": "궁금하신 내용을 검색해주세요",
       "search.button": "검색",
+      "search.results.heading": "검색 결과",
+      "search.results.hint": "제품·뉴스·영상 키워드를 입력하면 검색이 시작됩니다",
+      "search.results.empty": "일치하는 콘텐츠가 없습니다. 다른 키워드를 입력해 주세요",
+      "search.results.products": "제품",
+      "search.results.news": "뉴스",
+      "search.results.videos": "영상",
+      "search.results.loading": "검색 데이터를 불러오는 중…",
+      "search.results.viewAll": "전체 보기",
+      "search.results.remaining": "추가 {{count}}건의 결과",
+      "search.results.count": "총 {{count}}건",
+      "search.results.shortQuery": "영문/숫자는 최소 2자 이상 입력해 주세요",
+      "search.results.close": "검색 닫기",
       "lang.selector": "언어 선택",
       "lang.selectorAria": "언어 선택기",
       "lang.zh": "중국어",
@@ -1221,6 +1245,18 @@ document.addEventListener("DOMContentLoaded", () => {
       "search.label": "Search keywords",
       "search.placeholder": "Search for what you need",
       "search.button": "Search",
+      "search.results.heading": "Search results",
+      "search.results.hint": "Type any product, news, or video keyword to get started.",
+      "search.results.empty": "No matching content. Try a different keyword.",
+      "search.results.products": "Products",
+      "search.results.news": "News",
+      "search.results.videos": "Videos",
+      "search.results.loading": "Preparing search data…",
+      "search.results.viewAll": "View all",
+      "search.results.remaining": "{{count}} more results",
+      "search.results.count": "{{count}} matches",
+      "search.results.shortQuery": "Enter at least 2 characters to search.",
+      "search.results.close": "Close search",
       "lang.selector": "Language",
       "lang.selectorAria": "Language selector",
       "lang.zh": "Chinese",
@@ -1826,6 +1862,309 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  const SEARCH_NEWS_INDEX = [
+    {
+      type: "news",
+      id: "article-6",
+      url: "news/articles/article-6.html",
+      titleKey: "homeNews.article6.title",
+      summaryKey: "homeNews.article6.summary",
+      badgeKey: "newsPage.tags.product",
+      keywords: ["智能坐便盖", "bidet", "卫浴", "功能特点"],
+    },
+    {
+      type: "news",
+      id: "article-5",
+      url: "news/articles/article-5.html",
+      titleKey: "homeNews.article5.title",
+      summaryKey: "homeNews.article5.summary",
+      badgeKey: "newsPage.tags.product",
+      keywords: ["坐便盖介绍", "新品", "舒适体验", "智能卫浴"],
+    },
+    {
+      type: "news",
+      id: "article-4",
+      url: "news/articles/article-4.html",
+      titleKey: "homeNews.article4.title",
+      summaryKey: "homeNews.article4.summary",
+      badgeKey: "newsPage.tags.brand",
+      keywords: ["抖音818", "品牌动态", "直播带货", "상승세"],
+    },
+    {
+      type: "news",
+      id: "article-3",
+      url: "news/articles/article-3.html",
+      titleKey: "homeNews.article3.title",
+      summaryKey: "homeNews.article3.summary",
+      badgeKey: "newsPage.tags.brand",
+      keywords: ["中国市场", "家电口碑", "品牌故事", "成长"],
+    },
+    {
+      type: "news",
+      id: "article-2",
+      url: "news/articles/article-2.html",
+      titleKey: "newsPage.article2.title",
+      summaryKey: "newsPage.article2.summary",
+      badgeKey: "newsPage.tags.product",
+      keywords: ["壁挂洗衣机", "星云", "新品发布", "laundry"],
+    },
+    {
+      type: "news",
+      id: "article-1",
+      url: "news/articles/article-1.html",
+      titleKey: "newsPage.article1.title",
+      summaryKey: "newsPage.article1.summary",
+      badgeKey: "newsPage.tags.trend",
+      keywords: ["AWE2021", "行业展会", "市场战略", "industry"],
+    },
+  ];
+
+  const SEARCH_VIDEO_INDEX = [
+    {
+      type: "videos",
+      id: "hi050",
+      url: "video-center.html?video=hi050",
+      titleKey: "videoPage.cards.hi050.title",
+      summaryKey: "videoPage.cards.hi050.description",
+      badgeKey: "videoPage.tags.care",
+      keywords: ["HI-050", "喷熨挂烫机", "steam", "care"],
+    },
+    {
+      type: "videos",
+      id: "hi029pro",
+      url: "video-center.html?video=hi029pro",
+      titleKey: "videoPage.cards.hi029pro.title",
+      summaryKey: "videoPage.cards.hi029pro.description",
+      badgeKey: "videoPage.tags.care",
+      keywords: ["HI-029PRO", "手持挂烫机", "steamer", "travel"],
+    },
+    {
+      type: "videos",
+      id: "hi045",
+      url: "video-center.html?video=hi045",
+      titleKey: "videoPage.cards.hi045.title",
+      summaryKey: "videoPage.cards.hi045.description",
+      badgeKey: "videoPage.tags.care",
+      keywords: ["HI-045", "Hobo", "handheld steamer", "护理"],
+    },
+    {
+      type: "videos",
+      id: "hi046",
+      url: "video-center.html?video=hi046",
+      titleKey: "videoPage.cards.hi046.title",
+      summaryKey: "videoPage.cards.hi046.description",
+      badgeKey: "videoPage.tags.care",
+      keywords: ["HI-046", "衣物护理机", "round box", "케어"],
+    },
+    {
+      type: "videos",
+      id: "db01",
+      url: "video-center.html?video=db01",
+      titleKey: "videoPage.cards.db01.title",
+      summaryKey: "videoPage.cards.db01.description",
+      badgeKey: "videoPage.tags.care",
+      keywords: ["DB01", "干衣盒", "travel set", "steam"],
+    },
+    {
+      type: "videos",
+      id: "dybgx09",
+      url: "video-center.html?video=dybgx09",
+      titleKey: "videoPage.cards.dybgx09.title",
+      summaryKey: "videoPage.cards.dybgx09.description",
+      badgeKey: "videoPage.tags.cleaning",
+      keywords: ["DY-BGX09", "壁挂洗衣机", "cleaning", "laundry"],
+    },
+    {
+      type: "videos",
+      id: "dybgx09h",
+      url: "video-center.html?video=dybgx09h",
+      titleKey: "videoPage.cards.dybgx09h.title",
+      summaryKey: "videoPage.cards.dybgx09h.description",
+      badgeKey: "videoPage.tags.cleaning",
+      keywords: ["DY-BGX09H", "洗烘一体", "heat pump", "laundry"],
+    },
+    {
+      type: "videos",
+      id: "zb8",
+      url: "video-center.html?video=zb8",
+      titleKey: "videoPage.cards.zb8.title",
+      summaryKey: "videoPage.cards.zb8.description",
+      badgeKey: "videoPage.tags.kitchen",
+      keywords: ["ZB8", "果汁杯", "portable blender", "juicer"],
+    },
+    {
+      type: "videos",
+      id: "smop02",
+      url: "video-center.html?video=smop02",
+      titleKey: "videoPage.cards.smop02.title",
+      summaryKey: "videoPage.cards.smop02.description",
+      badgeKey: "videoPage.tags.cleaning",
+      keywords: ["SMOP02", "蒸汽洗地机", "steam mop", "clean"],
+    },
+    {
+      type: "videos",
+      id: "k10",
+      url: "video-center.html?video=k10",
+      titleKey: "videoPage.cards.k10.title",
+      summaryKey: "videoPage.cards.k10.description",
+      badgeKey: "videoPage.tags.kitchen",
+      keywords: ["K10", "电烤炉", "air fryer", "kitchen"],
+    },
+    {
+      type: "videos",
+      id: "f20",
+      url: "video-center.html?video=f20",
+      titleKey: "videoPage.cards.f20.title",
+      summaryKey: "videoPage.cards.f20.description",
+      badgeKey: "videoPage.tags.comfort",
+      keywords: ["F20", "挂脖风扇", "neck fan", "summer"],
+    },
+    {
+      type: "videos",
+      id: "dyks01",
+      url: "video-center.html?video=dyks01",
+      titleKey: "videoPage.cards.dyks01.title",
+      summaryKey: "videoPage.cards.dyks01.description",
+      badgeKey: "videoPage.tags.comfort",
+      keywords: ["DY-KS01", "开水瓶", "hot water", "comfort"],
+    },
+    {
+      type: "videos",
+      id: "dybm05",
+      url: "video-center.html?video=dybm05",
+      titleKey: "videoPage.cards.dybm05.title",
+      summaryKey: "videoPage.cards.dybm05.description",
+      badgeKey: "videoPage.tags.kitchen",
+      keywords: ["DY-BM05", "原汁机", "juicer", "slow press"],
+    },
+    {
+      type: "videos",
+      id: "dysp25f01",
+      url: "video-center.html?video=dysp25f01",
+      titleKey: "videoPage.cards.dysp25f01.title",
+      summaryKey: "videoPage.cards.dysp25f01.description",
+      badgeKey: "videoPage.tags.comfort",
+      keywords: ["DYSP-25F01", "开水瓶", "office", "hydration"],
+    },
+    {
+      type: "videos",
+      id: "ph05",
+      url: "video-center.html?video=ph05",
+      titleKey: "videoPage.cards.ph05.title",
+      summaryKey: "videoPage.cards.ph05.description",
+      badgeKey: "videoPage.tags.comfort",
+      keywords: ["PH05", "小巨蛋加湿器", "humidifier", "comfort"],
+    },
+    {
+      type: "videos",
+      id: "ph06",
+      url: "video-center.html?video=ph06",
+      titleKey: "videoPage.cards.ph06.title",
+      summaryKey: "videoPage.cards.ph06.description",
+      badgeKey: "videoPage.tags.comfort",
+      keywords: ["PH06", "无雾加湿器", "cool mist", "comfort"],
+    },
+    {
+      type: "videos",
+      id: "dyzm1266",
+      url: "video-center.html?video=dyzm1266",
+      titleKey: "videoPage.cards.dyzm1266.title",
+      summaryKey: "videoPage.cards.dyzm1266.description",
+      badgeKey: "videoPage.tags.kitchen",
+      keywords: ["DYZM-1266", "电煮锅", "one-pot", "kitchen"],
+    },
+    {
+      type: "videos",
+      id: "s30pro",
+      url: "video-center.html?video=s30pro",
+      titleKey: "videoPage.cards.s30pro.title",
+      summaryKey: "videoPage.cards.s30pro.description",
+      badgeKey: "videoPage.tags.kitchen",
+      keywords: ["S30PRO", "炖蒸煮锅", "multi cooker", "kitchen"],
+    },
+    {
+      type: "videos",
+      id: "s31",
+      url: "video-center.html?video=s31",
+      titleKey: "videoPage.cards.s31.title",
+      summaryKey: "videoPage.cards.s31.description",
+      badgeKey: "videoPage.tags.kitchen",
+      keywords: ["S31", "蒸汽料理锅", "steam cooker", "healthy"],
+    },
+  ];
+
+  const SEARCH_GROUPS = [
+    { key: "products", labelKey: "search.results.products", viewAllUrl: "product-center.html", limit: 3 },
+    { key: "news", labelKey: "search.results.news", viewAllUrl: "news.html#news-section", limit: 3 },
+    { key: "videos", labelKey: "search.results.videos", viewAllUrl: "video-center.html", limit: 3 },
+  ];
+
+  const PRODUCT_SEARCH_FALLBACK = [
+    {
+      type: "products",
+      id: "product-988",
+      url: "product-988.html",
+      title: {
+        zh: "DY-TN33 液体加热器（便携双模调奶器）",
+        en: "DY-TN33 Liquid Heater (Portable Dual-Mode Formula Maker)",
+        ko: "DY-TN33 액체 가열기(휴대 듀얼모드 분유기)",
+      },
+      summary: {
+        zh: "搭载便携双模加热与恒温功能，满足宝宝喂养的多场景需求。",
+        en: "Portable dual-mode heating with precise temperature control for every feeding scenario.",
+        ko: "휴대 듀얼 모드와 정밀 온도 제어로 다양한 수유 상황에 맞게 빠르게 가열합니다.",
+      },
+      eyebrow: {
+        zh: "母婴电器 · 调奶器",
+        en: "Nursery Appliances · Formula Maker",
+        ko: "모유·유아 가전 · 분유 조제기",
+      },
+      keywords: ["DY-TN33", "调奶器", "formula maker", "母婴", "portable heater"],
+    },
+    {
+      type: "products",
+      id: "product-t2311ayv",
+      url: "product-t2311ayv.html",
+      title: {
+        zh: "T2311AYV 踢脚线取暖器",
+        en: "T2311AYV Baseboard Heater",
+        ko: "T2311AYV 플린스 히터",
+      },
+      summary: {
+        zh: "纤薄踢脚线循环供暖，兼顾客厅、卧室与办公空间的舒适温度。",
+        en: "Slim baseboard heating with circulating airflow and multi-stage modes for living rooms, bedrooms, and studios.",
+        ko: "슬림한 플린스 난방과 순환 온풍으로 거실·침실·서재를 빠르게 데워 줍니다.",
+      },
+      eyebrow: {
+        zh: "两季电器 · 取暖器",
+        en: "Seasonal Appliances · Heater",
+        ko: "계절가전 · 난방기",
+      },
+      keywords: ["T2311AYV", "踢脚线取暖", "baseboard heater", "温控", "난방기"],
+    },
+    {
+      type: "products",
+      id: "product-s30pro",
+      url: "product-s30pro.html",
+      title: {
+        zh: "S30PRO 多功能炖蒸煮锅",
+        en: "S30PRO Multi-function Stew & Steam Pot",
+        ko: "S30PRO 멀티 스튜 & 스팀 포트",
+      },
+      summary: {
+        zh: "一机多用支持炖、蒸、煮，让家庭轻松打造健康餐桌。",
+        en: "An all-in-one cooker for stewing, steaming, and boiling to help families prepare healthy meals with ease.",
+        ko: "찌기·끓이기·조림까지 가능한 올인원 쿠커로 건강한 식단을 손쉽게 완성하세요.",
+      },
+      eyebrow: {
+        zh: "厨房电器 · 电炖锅",
+        en: "Kitchen Appliances · Multi Cooker",
+        ko: "주방가전 · 멀티 쿠커",
+      },
+      keywords: ["S30PRO", "多功能烹饪", "multi cooker", "厨房", "healthy meals"],
+    },
+  ];
+
   const fallbackLang = "zh";
   const supportedLangs = Object.keys(translations);
   const htmlElement = document.documentElement;
@@ -1852,6 +2191,451 @@ document.addEventListener("DOMContentLoaded", () => {
       ""
     );
   };
+
+  class GlobalSearchController {
+    constructor({ supportedLangs, getTranslation, getCurrentLang }) {
+      this.supportedLangs = Array.isArray(supportedLangs) && supportedLangs.length > 0 ? supportedLangs : [fallbackLang];
+      this.getTranslation = getTranslation;
+      this.getCurrentLang = typeof getCurrentLang === "function" ? getCurrentLang : () => fallbackLang;
+      this.forms = Array.from(document.querySelectorAll(".global-search"));
+      this.data = {
+        products: [],
+        news: SEARCH_NEWS_INDEX.slice(),
+        videos: SEARCH_VIDEO_INDEX.slice(),
+      };
+      this.groupMeta = SEARCH_GROUPS;
+      this.panels = new Map();
+      this.renderCache = new WeakMap();
+      this.queryTimers = new WeakMap();
+      this.activeForm = null;
+      this.readyPromise = this.loadProducts();
+      if (this.forms.length === 0) {
+        return;
+      }
+      this.forms.forEach((form) => this.enhanceForm(form));
+      document.addEventListener("click", (event) => this.handleDocumentClick(event));
+      document.addEventListener("keydown", (event) => this.handleKeydown(event));
+      window.addEventListener("daewoo:languagechange", () => {
+        this.panels.forEach((panel, form) => {
+          if (!panel.classList.contains("is-visible")) return;
+          const cached = this.renderCache.get(form);
+          if (cached?.query && cached.matches) {
+            this.renderResults(form, cached.query, cached.matches, { silent: true });
+          }
+        });
+      });
+    }
+
+    async loadProducts() {
+      try {
+        const response = await fetch("data/products.json", { cache: "force-cache" });
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+        const payload = await response.json();
+        const items = Array.isArray(payload?.products) ? payload.products : [];
+        this.data.products = items
+          .map((product) => this.transformProduct(product))
+          .filter(Boolean);
+        if (this.data.products.length === 0) {
+          this.data.products = PRODUCT_SEARCH_FALLBACK;
+        }
+      } catch (error) {
+        console.warn("GlobalSearchController: failed to load product data", error);
+        this.data.products = PRODUCT_SEARCH_FALLBACK;
+      }
+    }
+
+    transformProduct(product) {
+      if (!product || !product.id) {
+        return null;
+      }
+      const localizedTitle = {};
+      const localizedSummary = {};
+      const localizedEyebrow = {};
+      this.supportedLangs.forEach((lang) => {
+        if (lang === "zh") {
+          localizedTitle[lang] = product.hero?.title ?? "";
+          localizedSummary[lang] = product.hero?.description ?? "";
+          localizedEyebrow[lang] = product.hero?.eyebrow ?? "";
+        } else {
+          const translation = product.translations?.[lang];
+          localizedTitle[lang] = translation?.hero?.title ?? "";
+          localizedSummary[lang] = translation?.hero?.description ?? "";
+          localizedEyebrow[lang] = translation?.hero?.eyebrow ?? "";
+        }
+      });
+      const fallbackTitle = localizedTitle.zh || localizedTitle.en || "";
+      const fallbackSummary = localizedSummary.zh || localizedSummary.en || "";
+      const fallbackEyebrow = localizedEyebrow.zh || localizedEyebrow.en || "";
+      this.supportedLangs.forEach((lang) => {
+        if (!localizedTitle[lang]) localizedTitle[lang] = fallbackTitle;
+        if (!localizedSummary[lang]) localizedSummary[lang] = fallbackSummary;
+        if (!localizedEyebrow[lang]) localizedEyebrow[lang] = fallbackEyebrow;
+      });
+      const keywords = [
+        product.id,
+        product.slug,
+        product.hero?.title,
+        product.hero?.description,
+        product.hero?.eyebrow,
+      ];
+      if (Array.isArray(product.summary?.details)) {
+        product.summary.details.forEach((detail) => {
+          if (detail?.value) {
+            keywords.push(String(detail.value));
+          }
+        });
+      }
+      this.supportedLangs.forEach((lang) => {
+        keywords.push(localizedTitle[lang], localizedSummary[lang], localizedEyebrow[lang]);
+      });
+      return {
+        type: "products",
+        id: product.id,
+        url: `${product.id}.html`,
+        title: localizedTitle,
+        summary: localizedSummary,
+        eyebrow: localizedEyebrow,
+        keywords: keywords.filter(Boolean),
+      };
+    }
+
+    enhanceForm(form) {
+      const input = form.querySelector("input[type='search']");
+      if (!input) return;
+      const panel = document.createElement("div");
+      panel.className = "global-search__results";
+      panel.dataset.searchPanel = "true";
+      panel.setAttribute("role", "region");
+      panel.setAttribute("aria-live", "polite");
+      panel.hidden = true;
+      form.appendChild(panel);
+      this.panels.set(form, panel);
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        this.executeSearch(form, input.value);
+      });
+
+      input.addEventListener("input", () => {
+        const previousTimer = this.queryTimers.get(form);
+        if (previousTimer) {
+          clearTimeout(previousTimer);
+        }
+        const value = input.value;
+        if (!value.trim()) {
+          this.hidePanel(form);
+          return;
+        }
+        const timerId = window.setTimeout(() => {
+          this.executeSearch(form, value, { isLive: true });
+        }, 240);
+        this.queryTimers.set(form, timerId);
+      });
+
+      input.addEventListener("focus", () => {
+        if (!input.value.trim()) {
+          this.renderMessage(form, "hint");
+          return;
+        }
+        const cached = this.renderCache.get(form);
+        if (cached?.query && cached.matches) {
+          this.renderResults(form, cached.query, cached.matches, { silent: true });
+        }
+      });
+
+      panel.addEventListener("click", (event) => {
+        const target = event.target;
+        if (target instanceof HTMLElement && target.closest("[data-search-close]")) {
+          this.hidePanel(form);
+        }
+      });
+    }
+
+    async executeSearch(form, rawQuery) {
+      const query = rawQuery.trim();
+      if (!query) {
+        this.hidePanel(form);
+        return;
+      }
+      if (!this.isQueryLongEnough(query)) {
+        this.renderMessage(form, "short");
+        return;
+      }
+      this.renderMessage(form, "loading", { query });
+      await this.readyPromise;
+      const matches = this.runQuery(query);
+      if (matches.total === 0) {
+        this.renderMessage(form, "empty", { query });
+        return;
+      }
+      this.renderResults(form, query, matches);
+    }
+
+    isQueryLongEnough(query) {
+      if (!query) return false;
+      const trimmed = query.trim();
+      const hasCjk = /[\u3040-\u30ff\u3400-\u9fff]/.test(trimmed);
+      if (hasCjk) {
+        return trimmed.length >= 1;
+      }
+      return trimmed.replace(/\s+/g, "").length >= 2;
+    }
+
+    runQuery(query) {
+      const normalized = query.toLowerCase();
+      const tokens = normalized.split(/\s+/).filter(Boolean);
+      const result = {
+        products: [],
+        news: [],
+        videos: [],
+        total: 0,
+      };
+      ["products", "news", "videos"].forEach((key) => {
+        this.data[key].forEach((entry) => {
+          if (this.entryMatches(entry, normalized, tokens)) {
+            result[key].push(entry);
+            result.total += 1;
+          }
+        });
+      });
+      return result;
+    }
+
+    entryMatches(entry, normalizedQuery, tokens) {
+      const haystack = this.getEntrySearchText(entry);
+      if (!haystack) {
+        return false;
+      }
+      if (tokens.length <= 1) {
+        return haystack.includes(normalizedQuery);
+      }
+      return tokens.every((token) => haystack.includes(token));
+    }
+
+    getEntrySearchText(entry) {
+      if (entry._searchText) {
+        return entry._searchText;
+      }
+      const parts = [];
+      if (entry.titleKey) {
+        this.supportedLangs.forEach((lang) => {
+          parts.push(this.getTranslation(lang, entry.titleKey));
+        });
+      }
+      if (entry.summaryKey) {
+        this.supportedLangs.forEach((lang) => {
+          parts.push(this.getTranslation(lang, entry.summaryKey));
+        });
+      }
+      if (entry.title && typeof entry.title === "object") {
+        this.supportedLangs.forEach((lang) => parts.push(entry.title[lang]));
+      } else if (typeof entry.title === "string") {
+        parts.push(entry.title);
+      }
+      if (entry.summary && typeof entry.summary === "object") {
+        this.supportedLangs.forEach((lang) => parts.push(entry.summary[lang]));
+      } else if (typeof entry.summary === "string") {
+        parts.push(entry.summary);
+      }
+      if (entry.badge) {
+        parts.push(entry.badge);
+      }
+      if (entry.keywords) {
+        parts.push(...entry.keywords);
+      }
+      if (entry.id) {
+        parts.push(entry.id);
+      }
+      entry._searchText = parts
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase();
+      return entry._searchText;
+    }
+
+    getEntryTitle(entry, lang) {
+      if (entry.titleKey) {
+        return this.getTranslation(lang, entry.titleKey) || "";
+      }
+      if (entry.title && typeof entry.title === "object") {
+        return entry.title[lang] || entry.title.zh || entry.title.en || "";
+      }
+      return entry.title ?? "";
+    }
+
+    getEntrySummary(entry, lang) {
+      if (entry.summaryKey) {
+        return this.getTranslation(lang, entry.summaryKey) || "";
+      }
+      if (entry.summary && typeof entry.summary === "object") {
+        return entry.summary[lang] || entry.summary.zh || entry.summary.en || "";
+      }
+      return entry.summary ?? "";
+    }
+
+    getEntryBadge(entry, lang) {
+      if (entry.badgeKey) {
+        return this.getTranslation(lang, entry.badgeKey) || "";
+      }
+      if (entry.eyebrow && typeof entry.eyebrow === "object") {
+        return entry.eyebrow[lang] || entry.eyebrow.zh || entry.eyebrow.en || "";
+      }
+      return entry.badge ?? "";
+    }
+
+    renderMessage(form, state, { query = "" } = {}) {
+      const panel = this.panels.get(form);
+      if (!panel) return;
+      const lang = this.getCurrentLang();
+      const keyMap = {
+        hint: "search.results.hint",
+        short: "search.results.shortQuery",
+        loading: "search.results.loading",
+        empty: "search.results.empty",
+      };
+      const message = this.getTranslation(lang, keyMap[state]) || "";
+      const closeLabel = this.getTranslation(lang, "search.results.close") || "Close";
+      panel.innerHTML = `
+        <button type="button" class="global-search__close" data-search-close aria-label="${this.escapeHtml(closeLabel)}">&times;</button>
+        <p class="global-search__status">${this.escapeHtml(message)}</p>
+      `;
+      panel.dataset.query = query;
+      panel.classList.toggle("is-loading", state === "loading");
+      panel.setAttribute("aria-live", "polite");
+      this.renderCache.set(form, { query, matches: null });
+      this.showPanel(form);
+    }
+
+    renderResults(form, query, matches, { silent = false } = {}) {
+      const panel = this.panels.get(form);
+      if (!panel) return;
+      const lang = this.getCurrentLang();
+      const heading = this.getTranslation(lang, "search.results.heading") || "Search";
+      const closeLabel = this.getTranslation(lang, "search.results.close") || "Close";
+      const countTemplate = this.getTranslation(lang, "search.results.count") || "{{count}}";
+      const countLabel = this.fillTemplate(countTemplate, { count: matches.total });
+      const groupsMarkup = this.groupMeta
+        .map((group) => this.renderGroup(group, matches[group.key], lang))
+        .filter(Boolean)
+        .join("");
+      const emptyMarkup = `<p class="global-search__empty">${this.escapeHtml(
+        this.getTranslation(lang, "search.results.empty") || ""
+      )}</p>`;
+      panel.innerHTML = `
+        <button type="button" class="global-search__close" data-search-close aria-label="${this.escapeHtml(closeLabel)}">&times;</button>
+        <p class="global-search__status"><strong>${this.escapeHtml(heading)}</strong> · ${this.escapeHtml(countLabel)}</p>
+        ${groupsMarkup || emptyMarkup}
+      `;
+      panel.dataset.query = query;
+      panel.classList.remove("is-loading");
+      panel.setAttribute("aria-live", silent ? "off" : "polite");
+      this.renderCache.set(form, { query, matches });
+      this.showPanel(form);
+    }
+
+    renderGroup(meta, entries = [], lang) {
+      if (!entries || entries.length === 0) {
+        return "";
+      }
+      const limit = meta.limit ?? 3;
+      const subset = entries.slice(0, limit);
+      const label = this.getTranslation(lang, meta.labelKey) || "";
+      const itemsMarkup = subset.map((entry) => this.renderEntry(entry, lang)).join("");
+      const remaining = entries.length - subset.length;
+      const viewAllLabel = this.getTranslation(lang, "search.results.viewAll") || "";
+      const viewAllLink =
+        meta.viewAllUrl && viewAllLabel
+          ? `<a class="global-search__view-all" href="${meta.viewAllUrl}">${this.escapeHtml(viewAllLabel)}</a>`
+          : "";
+      let footer = "";
+      if (remaining > 0) {
+        const remainingTemplate = this.getTranslation(lang, "search.results.remaining") || "+{{count}}";
+        const remainingLabel = this.fillTemplate(remainingTemplate, { count: remaining });
+        footer = `
+          <div class="global-search__group-footer">
+            <span>${this.escapeHtml(remainingLabel)}</span>
+            ${viewAllLink}
+          </div>
+        `;
+      } else if (viewAllLink) {
+        footer = `<div class="global-search__group-footer">${viewAllLink}</div>`;
+      }
+      return `
+        <section class="global-search__group">
+          <p class="global-search__group-label">${this.escapeHtml(label)}</p>
+          ${itemsMarkup}
+          ${footer}
+        </section>
+      `;
+    }
+
+    renderEntry(entry, lang) {
+      const title = this.getEntryTitle(entry, lang);
+      const summary = this.getEntrySummary(entry, lang);
+      const badge = this.getEntryBadge(entry, lang);
+      const url = entry.url || "#";
+      return `
+        <a class="global-search__result" href="${url}">
+          ${badge ? `<span class="global-search__result-eyebrow">${this.escapeHtml(badge)}</span>` : ""}
+          <p class="global-search__result-title">${this.escapeHtml(title)}</p>
+          ${summary ? `<p class="global-search__result-summary">${this.escapeHtml(summary)}</p>` : ""}
+        </a>
+      `;
+    }
+
+    handleDocumentClick(event) {
+      const target = event.target;
+      if (!(target instanceof HTMLElement)) return;
+      const clickedInside = this.forms.some((form) => form.contains(target));
+      if (!clickedInside) {
+        this.forms.forEach((form) => this.hidePanel(form));
+      }
+    }
+
+    handleKeydown(event) {
+      if (event.key === "Escape") {
+        this.forms.forEach((form) => this.hidePanel(form));
+      }
+    }
+
+    showPanel(form) {
+      const panel = this.panels.get(form);
+      if (!panel) return;
+      panel.hidden = false;
+      panel.classList.add("is-visible");
+      this.activeForm = form;
+    }
+
+    hidePanel(form) {
+      const panel = this.panels.get(form);
+      if (!panel) return;
+      panel.hidden = true;
+      panel.classList.remove("is-visible");
+      panel.classList.remove("is-loading");
+      if (this.activeForm === form) {
+        this.activeForm = null;
+      }
+    }
+
+    fillTemplate(template, replacements) {
+      if (!template) return "";
+      return template.replace(/\{\{\s*(\w+)\s*\}\}/g, (_, key) => {
+        return replacements?.[key] != null ? String(replacements[key]) : "";
+      });
+    }
+
+    escapeHtml(text) {
+      if (!text) return "";
+      return String(text)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+  }
 
   const applyTranslations = (lang) => {
     const normalized = supportedLangs.includes(lang) ? lang : fallbackLang;
@@ -1921,6 +2705,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   currentLang = defaultLang;
   applyTranslations(currentLang);
+
+  new GlobalSearchController({
+    supportedLangs,
+    getTranslation,
+    getCurrentLang: () => currentLang,
+  });
 
   if (langSelector) {
     langSelector.value = defaultLang;
