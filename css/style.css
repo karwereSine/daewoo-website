@@ -857,14 +857,14 @@ body.is-mobile-nav-open {
   font-size: 0.92rem;
   color: rgba(17, 24, 39, 0.7);
   line-height: 1.6;
-  flex: 1;
   display: -webkit-box;
   -webkit-line-clamp: 4;
   line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  min-height: calc(1.6em * 4);
+  max-height: calc(1.6em * 4);
+  flex-shrink: 0;
 }
 
 .home-video-card .video-card__meta {
