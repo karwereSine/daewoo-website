@@ -24,8 +24,155 @@
         />
         <button type="submit" data-i18n="search.button">搜索</button>
       </form>
+      <button
+        class="mobile-menu-toggle"
+        type="button"
+        aria-controls="mega-nav-menu"
+        aria-expanded="false"
+        aria-label="目录"
+        data-mobile-menu-toggle
+      >
+        <img src="img/icons/menu.svg" alt="" class="mobile-menu-toggle__icon" aria-hidden="true" />
+        <span class="sr-only">Open menu</span>
+      </button>
     </div>
+
+    <nav
+      class="mega-nav"
+      aria-label="DAEWOO 主要服务"
+      data-i18n-aria-label="nav.label"
+    >
+      <button class="mega-nav__toggle" aria-expanded="false" aria-controls="mega-nav-menu" data-i18n="nav.toggle">
+        全部菜单
+      </button>
+      <ul id="mega-nav-menu" class="mega-nav__list">
+        <li class="mega-nav__item" data-panel="product" data-nav-url="product-center.html">
+          <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.product">产品中心</button>
+        </li>
+        <li class="mega-nav__item" data-panel="news" data-nav-url="news.html">
+          <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.news">新闻动态</button>
+        </li>
+        <li class="mega-nav__item" data-panel="video" data-nav-url="video-center.html">
+          <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.video">视频中心</button>
+        </li>
+        <li class="mega-nav__item" data-panel="contact" data-nav-url="contact.html">
+          <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.contact">联系我们</button>
+        </li>
+        <li class="mega-nav__item" data-panel="about" data-nav-url="about.html">
+          <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.about">公司概况</button>
+        </li>
+        <li class="mega-nav__item" data-panel="language">
+          <button class="mega-nav__trigger" aria-expanded="false" data-i18n="nav.language">LANGUAGE</button>
+        </li>
+      </ul>
+      <div class="mega-board" id="mega-board">
+        <div class="mega-board__inner">
+          <section class="mega-board__column" data-panel="product">
+            <h3 data-i18n="panel.product.heading">产品类别</h3>
+            <ul>
+              <li><a href="product-center.html#humidifier" data-i18n="panel.product.home">家用电器</a></li>
+              <li><a href="product-center.html#iron" data-i18n="panel.product.smartHome">智能家居</a></li>
+              <li><a href="product-center.html#cooker" data-i18n="panel.product.commercial">商用电器</a></li>
+              <li><a href="product-center.html#juicer" data-i18n="panel.product.personalCare">个人护理</a></li>
+            </ul>
+          </section>
+          <section class="mega-board__column" data-panel="news">
+            <h3 data-i18n="panel.news.heading">新闻分类</h3>
+            <ul>
+              <li><a href="news.html#news-section" data-i18n="panel.news.latest">新闻资讯 · 行业资讯</a></li>
+            </ul>
+          </section>
+          <section class="mega-board__column" data-panel="video">
+            <h3 data-i18n="panel.video.heading">精选视频</h3>
+            <ul>
+              <li><a href="video-center.html?video=hi029pro" data-i18n="panel.video.hi029pro">HI-029PRO 大宇手持挂烫机</a></li>
+              <li><a href="video-center.html?video=hi045" data-i18n="panel.video.hi045">HI-045 大宇 Hobo 手持熨烫机</a></li>
+              <li><a href="video-center.html?video=hi046" data-i18n="panel.video.hi046">HI-046 大宇小圆盒衣物护理机</a></li>
+              <li><a href="video-center.html?video=hi050" data-i18n="panel.video.hi050">HI-050 大宇喷熨挂烫机</a></li>
+              <li><a href="video-center.html?video=ph05" data-i18n="panel.video.ph05">PH05 大宇小巨蛋加湿器</a></li>
+              <li><a href="video-center.html?video=ph06" data-i18n="panel.video.ph06">PH06 大宇无雾加湿器</a></li>
+              <li><a href="video-center.html?video=s30pro" data-i18n="panel.video.s30pro">S30PRO 多功能炖蒸煮锅</a></li>
+              <li><a href="video-center.html?video=s31" data-i18n="panel.video.s31">S31 多功能蒸汽料理锅</a></li>
+              <li><a href="video-center.html" data-i18n="panel.video.more">更多</a></li>
+            </ul>
+          </section>
+          <section class="mega-board__column" data-panel="contact">
+            <h3 data-i18n="panel.contact.heading">联系渠道</h3>
+            <ul>
+              <li><a href="tel:4001230000" data-i18n="panel.contact.hotline">客服热线 400-123-0000</a></li>
+              <li><a href="contact.html#online" data-i18n="panel.contact.online">在线客服</a></li>
+              <li><a href="contact.html#partners" data-i18n="panel.contact.partner">合作伙伴支持</a></li>
+              <li><a href="contact.html#feedback" data-i18n="panel.contact.feedback">意见反馈</a></li>
+            </ul>
+          </section>
+          <section class="mega-board__column" data-panel="about">
+            <h3 data-i18n="panel.about.heading">DAEWOO 公司概况</h3>
+            <ul>
+              <li><a href="about.html#brand-story" data-i18n="panel.about.story">品牌故事</a></li>
+              <li><a href="about.html#timeline" data-i18n="panel.about.timeline">发展历程</a></li>
+              <li><a href="about.html#csr" data-i18n="panel.about.csr">社会责任</a></li>
+              <li><a href="about.html#partners" data-i18n="panel.about.partner">合作伙伴</a></li>
+            </ul>
+          </section>
+          <section class="mega-board__column" data-panel="language">
+            <h3 data-i18n="panel.language.heading">选择语言</h3>
+            <p data-i18n="panel.language.description">请选择您希望浏览网站的语言版本。</p>
+            <ul class="language-list" data-language-list>
+              <li>
+                <button type="button" data-lang="en">English</button>
+              </li>
+              <li>
+                <button type="button" data-lang="zh">中文</button>
+              </li>
+              <li>
+                <button type="button" data-lang="ko">한국어</button>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </nav>
   </header>
+
+  <div class="mobile-nav-panel" data-mobile-nav aria-hidden="true">
+    <div class="mobile-nav-panel__mask" data-mobile-nav-close></div>
+    <div
+      class="mobile-nav-panel__sheet"
+      role="dialog"
+      aria-modal="true"
+      aria-label="DAEWOO 移动目录"
+    >
+      <div class="mobile-nav-panel__header">
+        <a class="mobile-nav-panel__brand" href="index.html">
+          <img src="img/icons/DAEWOO-LOGO.png" alt="DAEWOO 服务" />
+        </a>
+        <button type="button" class="mobile-nav-panel__close" data-mobile-nav-close aria-label="关闭目录">
+          <span aria-hidden="true">×</span>
+          <span class="sr-only">Close menu</span>
+        </button>
+      </div>
+      <ul class="mobile-nav-menu">
+        <li><a href="product-center.html" data-i18n="nav.product">产品中心</a></li>
+        <li><a href="news.html#news-section" data-i18n="nav.news">新闻动态</a></li>
+        <li><a href="video-center.html" data-i18n="nav.video">视频中心</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">联系我们</a></li>
+        <li><a href="about.html" data-i18n="nav.about">公司概况</a></li>
+        <li class="mobile-nav-menu__item mobile-nav-menu__item--collapsible">
+          <button type="button" data-mobile-nav-collapsible aria-expanded="false">
+            <span>LANGUAGE</span>
+            <span class="mobile-nav-menu__chevron" aria-hidden="true"></span>
+          </button>
+          <div class="mobile-nav-menu__panel" data-mobile-nav-panel aria-hidden="true">
+            <div class="mobile-nav-menu__language-group" data-language-list>
+              <button type="button" data-lang="en">English</button>
+              <button type="button" data-lang="zh">中文</button>
+              <button type="button" data-lang="ko">한국어</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
 
   <main class="product-detail">
     <div class="product-detail__topbar">
