@@ -2401,16 +2401,44 @@ document.addEventListener("DOMContentLoaded", () => {
           };
           videoPlayer.addEventListener("error", handleError, { once: true });
           
-          // 也监听 loadeddata 事件，如果视频成功加载，移除错误消息
+          // 也监听 loadeddata 事件，如果视频成功加载，移除错误消息并自动播放
           const handleLoadedData = () => {
             const existingError = videoPlayer.parentElement.querySelector('.video-error-message');
             if (existingError) {
               existingError.remove();
             }
+            // 尝试自动播放（用户已经点击了按钮，满足交互要求）
+            const playPromise = videoPlayer.play();
+            if (playPromise !== undefined) {
+              playPromise.then(() => {
+                // 播放成功，尝试取消静音（某些浏览器允许在用户交互后取消静音）
+                if (videoPlayer.muted) {
+                  videoPlayer.muted = false;
+                }
+              }).catch((error) => {
+                console.log("自动播放被阻止，用户需要手动点击播放:", error);
+              });
+            }
           };
           videoPlayer.addEventListener("loadeddata", handleLoadedData, { once: true });
           
-          // 不自动播放，让用户点击播放按钮（Safari 需要用户交互）
+          // 也监听 canplay 事件作为备选（某些情况下 loadeddata 可能不会触发）
+          const handleCanPlay = () => {
+            if (videoPlayer.paused) {
+              const playPromise = videoPlayer.play();
+              if (playPromise !== undefined) {
+                playPromise.then(() => {
+                  // 播放成功，尝试取消静音
+                  if (videoPlayer.muted) {
+                    videoPlayer.muted = false;
+                  }
+                }).catch((error) => {
+                  console.log("自动播放被阻止:", error);
+                });
+              }
+            }
+          };
+          videoPlayer.addEventListener("canplay", handleCanPlay, { once: true });
         }, 150);
       } else {
         // 使用 iframe 播放第三方播放器
