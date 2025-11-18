@@ -932,57 +932,69 @@ body.is-mobile-nav-open {
 }
 
 .home-video-card {
-  width: 320px !important;
-  max-width: 320px !important;
-  min-width: 320px !important;
+  width: min(320px, 100%) !important;
+  max-width: none !important;
+  min-width: auto !important;
   height: auto !important;
-  min-height: 480px !important;
-  flex: 0 0 320px !important;
-  background: #f7f8fc !important;
-  border-radius: 20px !important;
-  overflow: hidden !important;
-  box-shadow: 0 18px 32px rgba(11, 22, 47, 0.08) !important;
+  min-height: auto !important;
+  max-height: none !important;
+  flex: 1 1 auto !important;
+  background: linear-gradient(160deg, rgba(0, 52, 120, 0.08), rgba(0, 52, 120, 0.02)) !important;
+  border: 1px solid rgba(0, 52, 120, 0.12) !important;
+  border-radius: 24px !important;
+  padding: clamp(1.75rem, 3.5vw, 2.5rem) !important;
+  box-shadow: 0 18px 36px rgba(7, 22, 53, 0.12) !important;
   display: flex !important;
   flex-direction: column !important;
+  gap: 1.25rem !important;
+  overflow: visible !important;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
 }
 
 .home-video-card:hover,
 .home-video-card:focus-within {
   transform: translateY(-6px);
-  box-shadow: 0 24px 48px rgba(11, 22, 47, 0.15) !important;
+  box-shadow: 0 24px 48px rgba(7, 22, 53, 0.18) !important;
 }
 
 /* 确保视频卡片不被基础 video-card 样式影响 */
 .video-card.home-video-card {
-  width: 320px !important;
-  max-width: 320px !important;
-  min-width: 320px !important;
+  width: min(320px, 100%) !important;
+  max-width: none !important;
+  min-width: auto !important;
   height: auto !important;
-  min-height: 480px !important;
-  flex: 0 0 320px !important;
-  background: #f7f8fc !important;
-  border-radius: 20px !important;
-  box-shadow: 0 18px 32px rgba(11, 22, 47, 0.08) !important;
+  min-height: auto !important;
+  max-height: none !important;
+  flex: 1 1 auto !important;
+  background: linear-gradient(160deg, rgba(0, 52, 120, 0.08), rgba(0, 52, 120, 0.02)) !important;
+  border: 1px solid rgba(0, 52, 120, 0.12) !important;
+  border-radius: 24px !important;
+  padding: clamp(1.75rem, 3.5vw, 2.5rem) !important;
+  box-shadow: 0 18px 36px rgba(7, 22, 53, 0.12) !important;
   display: flex !important;
   flex-direction: column !important;
-  overflow: hidden !important;
+  gap: 1.25rem !important;
+  overflow: visible !important;
+  position: relative;
 }
 
 .home-video-card .video-card__body {
-  padding: 1.5rem;
+  padding: 0 !important;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.5rem;
   flex: 1;
   min-height: 0;
-  overflow: hidden;
+  overflow: visible;
+  order: 1;
 }
 
 .home-video-card .video-card__body h3 {
   margin: 0;
-  font-size: 1.1rem;
-  line-height: 1.45;
+  font-size: clamp(1.3rem, 3vw, 1.6rem);
+  line-height: 1.35;
+  color: var(--color-primary-dark);
   flex-shrink: 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -990,18 +1002,19 @@ body.is-mobile-nav-open {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  min-height: calc(1.45em * 2);
+  min-height: calc(1.35em * 2);
+  order: 1;
 }
 
 .home-video-card .video-card__body h3 a {
-  color: #0b162f;
+  color: var(--color-primary-dark);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .home-video-card .video-card__body h3 a:hover,
 .home-video-card .video-card__body h3 a:focus {
   color: var(--color-primary);
-  text-decoration: underline;
 }
 
 .home-video-card .video-card__body p {
@@ -1017,11 +1030,18 @@ body.is-mobile-nav-open {
   text-overflow: ellipsis;
   max-height: calc(1.6em * 4);
   flex-shrink: 0;
+  order: 2;
 }
 
 .home-video-card .video-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  order: -1;
   flex-shrink: 0;
-  margin-top: auto;
 }
 
 .home-video-card .video-card__link {
@@ -1031,13 +1051,15 @@ body.is-mobile-nav-open {
   align-items: center;
   text-decoration: none;
   gap: 0.35rem;
-  margin-top: 0.5rem;
+  margin-top: 0;
   background: none;
   border: none;
   padding: 0;
   font-family: inherit;
   cursor: pointer;
   flex-shrink: 0;
+  order: 3;
+  align-self: flex-start;
 }
 
 .home-video-card .video-card__link:hover,
@@ -1052,27 +1074,31 @@ body.is-mobile-nav-open {
 
 .home-video-card .video-card__poster {
   position: relative;
-  width: 100% !important;
-  height: 200px !important;
-  min-height: 200px !important;
-  max-height: 200px !important;
-  display: block;
+  width: 100%;
+  border-radius: 18px;
   overflow: hidden;
+  box-shadow: 0 16px 32px rgba(7, 22, 53, 0.12);
+  aspect-ratio: 1 / 1;
+  background: #0d1a32;
   flex-shrink: 0;
-  border-radius: 20px 20px 0 0;
+  height: auto !important;
+  min-height: auto !important;
+  max-height: none !important;
+  order: 2;
 }
 
 .home-video-card .video-card__poster img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
-  transition: none !important;
+  transition: transform 0.3s ease;
 }
 
 .home-video-card:hover .video-card__poster img,
 .home-video-card:focus-within .video-card__poster img {
-  transform: none !important;
+  transform: scale(1.05);
 }
 
 .home-video-card .video-card__play {
@@ -2895,26 +2921,32 @@ footer {
 }
 
 .video-card {
-  background: var(--color-surface);
+  width: min(320px, 100%);
+  background: linear-gradient(160deg, rgba(0, 52, 120, 0.08), rgba(0, 52, 120, 0.02));
+  border: 1px solid rgba(0, 52, 120, 0.12);
   border-radius: 24px;
-  overflow: hidden;
+  padding: clamp(1.75rem, 3.5vw, 2.5rem);
+  box-shadow: 0 18px 36px rgba(7, 22, 53, 0.12);
   display: flex;
   flex-direction: column;
-  box-shadow: 0 16px 32px rgba(6, 30, 70, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  width: 320px !important;
-  max-width: 320px !important;
-  min-width: 320px !important;
-  height: 420px !important;
-  max-height: 420px !important;
-  min-height: 420px !important;
-  flex: 0 0 320px !important;
+  gap: 1.25rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  overflow: visible;
+  height: auto !important;
+  max-height: none !important;
+  min-height: auto !important;
+  max-width: none !important;
+  min-width: auto !important;
+  flex: 1 1 auto !important;
+  position: relative;
 }
+
+/* 重新排序：标签 -> 标题 -> 图片 */
 
 .video-card:hover,
 .video-card:focus-within {
   transform: translateY(-6px);
-  box-shadow: 0 24px 48px rgba(5, 26, 62, 0.18);
+  box-shadow: 0 24px 48px rgba(7, 22, 53, 0.18);
 }
 
 .video-card[hidden] {
@@ -2924,18 +2956,23 @@ footer {
 .video-card__poster {
   position: relative;
   width: 100%;
-  height: 240px !important;
-  min-height: 240px !important;
-  max-height: 240px !important;
+  border-radius: 18px;
   overflow: hidden;
+  box-shadow: 0 16px 32px rgba(7, 22, 53, 0.12);
+  aspect-ratio: 1 / 1;
   background: #0d1a32;
   flex-shrink: 0;
+  height: auto !important;
+  min-height: auto !important;
+  max-height: none !important;
+  order: 2;
 }
 
 .video-card__poster img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
   transition: transform 0.3s ease;
 }
@@ -2970,26 +3007,40 @@ footer {
 }
 
 .video-card__body {
-  padding: 1.5rem 1.75rem 1.75rem;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
+  gap: 0.5rem;
   flex: 1;
   min-height: 0;
+  order: 1;
 }
 
 .video-card__body h3 {
   margin: 0;
-  font-size: 1.15rem;
-  line-height: 1.4;
+  font-size: clamp(1.3rem, 3vw, 1.6rem);
+  line-height: 1.35;
+  color: var(--color-primary-dark);
   flex-shrink: 0;
-  min-height: calc(1.4em * 2);
+  min-height: calc(1.35em * 2);
   display: -webkit-box;
   -webkit-line-clamp: 2;
   line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  order: 1;
+}
+
+.video-card__body h3 a {
+  color: var(--color-primary-dark);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.video-card__body h3 a:hover,
+.video-card__body h3 a:focus {
+  color: var(--color-primary);
 }
 
 .video-card__body p {
@@ -3011,7 +3062,9 @@ footer {
   flex-wrap: wrap;
   gap: 0.75rem;
   align-items: center;
-  margin-top: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  order: -1;
 }
 
 .video-card__tag {
@@ -3200,18 +3253,19 @@ html.is-video-modal-open {
   }
 
   .video-card {
-    width: 320px !important;
+    width: min(320px, 100%) !important;
     max-width: 320px !important;
-    min-width: 320px !important;
-    height: 420px !important;
-    max-height: 420px !important;
-    min-height: 420px !important;
+    min-width: auto !important;
+    height: auto !important;
+    max-height: none !important;
+    min-height: auto !important;
   }
 
   .video-card__poster {
-    height: 240px !important;
-    min-height: 240px !important;
-    max-height: 240px !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    aspect-ratio: 1 / 1;
   }
 }
 
@@ -4264,6 +4318,57 @@ html.is-video-modal-open {
     max-height: none !important;
     min-height: unset !important;
     flex: 1 1 auto !important;
+    padding: 1rem !important;
+    gap: 0.75rem !important;
+    border-radius: 16px !important;
+  }
+
+  .video-card__body {
+    padding: 0 !important;
+    gap: 0.5rem !important;
+  }
+
+  .video-card__body h3 {
+    font-size: 1.05rem !important;
+    line-height: 1.3 !important;
+    min-height: calc(1.3em * 2) !important;
+    margin: 0 !important;
+  }
+
+  .video-card__body p {
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+    -webkit-line-clamp: 2 !important;
+    line-clamp: 2 !important;
+    min-height: calc(1.4em * 2) !important;
+    margin: 0 !important;
+  }
+
+  .video-card__meta {
+    margin: 0 !important;
+    gap: 0.5rem !important;
+  }
+
+  .video-card__tag {
+    font-size: 0.75rem !important;
+    padding: 0.25rem 0.65rem !important;
+  }
+
+  .video-card__poster {
+    height: auto !important;
+    min-height: unset !important;
+    max-height: none !important;
+    aspect-ratio: 4 / 3 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 16px rgba(7, 22, 53, 0.08) !important;
+  }
+
+  .video-card__play {
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+    font-size: 1rem !important;
+    right: 0.5rem !important;
+    bottom: 0.5rem !important;
   }
 
   .product-feature-grid {
@@ -4275,44 +4380,37 @@ html.is-video-modal-open {
   .product-feature-card {
     width: 100%;
     max-width: 100%;
-    padding: 1.25rem;
-    gap: 1rem;
+    padding: 1rem;
+    gap: 0.75rem;
     border-radius: 16px;
   }
 
   .product-feature-card__header {
-    gap: 0.4rem;
+    gap: 0.35rem;
   }
 
   .product-feature-card__category {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
 
   .product-feature-card__title {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     line-height: 1.3;
     min-height: calc(1.3em * 2);
   }
 
   .product-feature-card__image {
-    max-height: 200px;
+    max-height: 180px;
     border-radius: 12px;
   }
 
   .product-feature-card__price {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .product-feature-card__link {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
-  }
-
-  .video-card__poster {
-    height: auto !important;
-    min-height: unset !important;
-    max-height: none !important;
-    aspect-ratio: 16 / 9;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
   }
 
   /* 首页视频卡片 - 移动端适配 */
@@ -4329,13 +4427,62 @@ html.is-video-modal-open {
     min-width: unset !important;
     min-height: auto !important;
     flex: 1 1 auto !important;
+    padding: 1rem !important;
+    gap: 0.75rem !important;
+    border-radius: 16px !important;
+  }
+
+  .home-video-card .video-card__body {
+    padding: 0 !important;
+    gap: 0.5rem !important;
+  }
+
+  .home-video-card .video-card__body h3 {
+    font-size: 1.05rem !important;
+    line-height: 1.3 !important;
+    min-height: calc(1.3em * 2) !important;
+    margin: 0 !important;
+  }
+
+  .home-video-card .video-card__body p {
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+    -webkit-line-clamp: 2 !important;
+    line-clamp: 2 !important;
+    min-height: calc(1.4em * 2) !important;
+    margin: 0 !important;
+  }
+
+  .home-video-card .video-card__meta {
+    margin: 0 !important;
+    gap: 0.5rem !important;
+  }
+
+  .home-video-card .video-card__tag {
+    font-size: 0.75rem !important;
+    padding: 0.25rem 0.65rem !important;
+  }
+
+  .home-video-card .video-card__link {
+    font-size: 0.85rem !important;
+    margin-top: 0 !important;
   }
 
   .home-video-card .video-card__poster {
     height: auto !important;
     min-height: unset !important;
     max-height: none !important;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 4 / 3 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 16px rgba(7, 22, 53, 0.08) !important;
+  }
+
+  .home-video-card .video-card__play {
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+    font-size: 1rem !important;
+    right: 0.5rem !important;
+    bottom: 0.5rem !important;
   }
 
   /* 首页新闻卡片 - 移动端适配 */
