@@ -3383,6 +3383,9 @@ document.addEventListener("DOMContentLoaded", () => {
         closeVideoModal?.();
       }
     });
+    
+    // 将 openVideoModal 暴露到全局，供其他脚本使用
+    window.openVideoModal = openVideoModal;
   }
 
   // 处理混合内容问题：为 HTTP 图片添加错误处理和降级方案

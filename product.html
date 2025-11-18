@@ -234,6 +234,33 @@
     <p data-i18n="footer.copy">© 2025 DAEWOO SERVICE CO., LTD. 保留所有权利。</p>
   </footer>
 
+  <dialog class="video-modal" data-video-modal>
+    <div class="video-modal__container">
+      <button type="button" class="video-modal__close" data-video-close aria-label="关闭视频">×</button>
+      <div class="video-modal__frame">
+        <iframe
+          data-video-iframe
+          src=""
+          title="视频播放"
+          loading="lazy"
+          allow="autoplay; fullscreen"
+          allowfullscreen
+          style="display: none;"
+        ></iframe>
+        <video
+          data-video-player
+          controls
+          playsinline
+          webkit-playsinline="true"
+          x-webkit-airplay="allow"
+          style="display: none; width: 100%; height: 100%;"
+        >
+          您的浏览器不支持视频播放。
+        </video>
+      </div>
+    </div>
+  </dialog>
+
   <script src="js/product-detail.js" defer></script>
   <script src="js/app.js" defer></script>
 </body>

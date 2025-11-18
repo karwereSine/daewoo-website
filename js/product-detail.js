@@ -189,6 +189,7 @@
         ),
         gallery: mergeMediaItems(product.media?.gallery, translation.media?.gallery),
       },
+      video: product.video || null,
       service: {
         ...product.service,
         ...translation.service,
@@ -230,9 +231,55 @@
     renderToElement(specsListMobile);
   };
 
-  const renderThumbnails = (thumbnails, coverImage) => {
+  const renderThumbnails = (thumbnails, coverImage, video) => {
     if (!thumbnailsContainer && !thumbnailsContainerMobile) return;
     if (!Array.isArray(thumbnails) || thumbnails.length === 0) return;
+
+    // 添加或更新播放按钮的辅助函数
+    const updateVideoPlayButton = (targetImage, video, isMobile) => {
+      if (!targetImage || !video || !video.url) return;
+      
+      const coverContainer = targetImage.closest(isMobile ? ".product-detail__cover-mobile" : ".product-detail__cover");
+      if (!coverContainer) return;
+      
+      // 移除已存在的播放按钮
+      const existingPlayButton = coverContainer.querySelector(".product-detail__video-play");
+      if (existingPlayButton) {
+        existingPlayButton.remove();
+      }
+      
+      // 创建播放按钮
+      const playButton = document.createElement("button");
+      playButton.type = "button";
+      playButton.className = "product-detail__video-play";
+      playButton.setAttribute("data-video-src", video.url);
+      playButton.setAttribute("data-video-title", video.title || "");
+      playButton.setAttribute("aria-label", `播放 ${video.title || "视频"}`);
+      
+      const playIcon = document.createElement("span");
+      playIcon.className = "product-detail__video-play-icon";
+      playIcon.textContent = "▶";
+      playIcon.setAttribute("aria-hidden", "true");
+      
+      playButton.appendChild(playIcon);
+      coverContainer.appendChild(playButton);
+      
+      // 添加点击事件
+      playButton.addEventListener("click", (e) => {
+        e.stopPropagation();
+        // 使用全局的 openVideoModal 函数（由 app.js 提供）
+        if (window.openVideoModal) {
+          window.openVideoModal(video.url, video.title || "", playButton);
+        } else {
+          // 如果 openVideoModal 还未加载，等待一下
+          setTimeout(() => {
+            if (window.openVideoModal) {
+              window.openVideoModal(video.url, video.title || "", playButton);
+            }
+          }, 100);
+        }
+      });
+    };
 
     const createThumbnailButton = (item, index, container, targetImage, isMobile) => {
       if (!item?.src) return null;
@@ -240,6 +287,7 @@
       button.type = "button";
       button.className = isMobile ? "product-detail__thumbnail-mobile" : "product-detail__thumbnail";
       button.dataset.img = item.src;
+      button.dataset.index = index;
 
       const img = document.createElement("img");
       img.src = item.src;
@@ -252,6 +300,8 @@
         if (targetImage) {
           targetImage.src = item.src;
           targetImage.alt = item.alt || coverImage?.alt || "";
+          // 如果有视频，在主图片上添加播放按钮
+          updateVideoPlayButton(targetImage, video, isMobile);
         }
       }
 
@@ -277,12 +327,52 @@
         }
 
         // 同步更新另一个主图片
+        const clickedIndex = parseInt(button.dataset.index || "0", 10);
+        const isFirstImage = clickedIndex === 0;
+        
         if (isMobile && mainImage) {
           mainImage.src = newSrc;
           mainImage.alt = altText;
+          // 只有第一张图片时才显示播放按钮
+          if (isFirstImage) {
+            updateVideoPlayButton(mainImage, video, false);
+          } else {
+            const coverContainer = mainImage.closest(".product-detail__cover");
+            if (coverContainer) {
+              const existingPlayButton = coverContainer.querySelector(".product-detail__video-play");
+              if (existingPlayButton) {
+                existingPlayButton.remove();
+              }
+            }
+          }
         } else if (!isMobile && mainImageMobile) {
           mainImageMobile.src = newSrc;
           mainImageMobile.alt = altText;
+          // 只有第一张图片时才显示播放按钮
+          if (isFirstImage) {
+            updateVideoPlayButton(mainImageMobile, video, true);
+          } else {
+            const coverContainer = mainImageMobile.closest(".product-detail__cover-mobile");
+            if (coverContainer) {
+              const existingPlayButton = coverContainer.querySelector(".product-detail__video-play");
+              if (existingPlayButton) {
+                existingPlayButton.remove();
+              }
+            }
+          }
+        }
+        
+        // 更新当前主图片的播放按钮（只有第一张图片时才显示）
+        if (isFirstImage) {
+          updateVideoPlayButton(targetImage, video, isMobile);
+        } else {
+          const coverContainer = targetImage.closest(isMobile ? ".product-detail__cover-mobile" : ".product-detail__cover");
+          if (coverContainer) {
+            const existingPlayButton = coverContainer.querySelector(".product-detail__video-play");
+            if (existingPlayButton) {
+              existingPlayButton.remove();
+            }
+          }
         }
 
         // 滚动到主图片位置（仅桌面版）
@@ -395,6 +485,7 @@
     const hero = localizedProduct.hero || {};
     const summary = localizedProduct.summary || {};
     const media = localizedProduct.media || {};
+    const video = localizedProduct.video || null;
 
     if (pageTitle) {
       pageTitle.textContent = `${hero.title || "产品详情"} | DAEWOO`;
@@ -441,7 +532,7 @@
       noteElementMobile.textContent = summary.note || "";
     }
 
-    renderThumbnails(media.thumbnails, summary.cover);
+    renderThumbnails(media.thumbnails, summary.cover, video);
     renderGallery(media.gallery);
     renderService(localizedProduct.service);
   };
