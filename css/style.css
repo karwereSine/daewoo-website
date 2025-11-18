@@ -932,13 +932,13 @@ body.is-mobile-nav-open {
 }
 
 .home-video-card {
-  width: min(320px, 100%) !important;
-  max-width: none !important;
-  min-width: auto !important;
+  width: 320px !important;
+  max-width: 320px !important;
+  min-width: 320px !important;
   height: auto !important;
   min-height: auto !important;
   max-height: none !important;
-  flex: 1 1 auto !important;
+  flex: 0 0 320px !important;
   background: linear-gradient(160deg, rgba(0, 52, 120, 0.08), rgba(0, 52, 120, 0.02)) !important;
   border: 1px solid rgba(0, 52, 120, 0.12) !important;
   border-radius: 24px !important;
@@ -960,13 +960,13 @@ body.is-mobile-nav-open {
 
 /* 确保视频卡片不被基础 video-card 样式影响 */
 .video-card.home-video-card {
-  width: min(320px, 100%) !important;
-  max-width: none !important;
-  min-width: auto !important;
+  width: 320px !important;
+  max-width: 320px !important;
+  min-width: 320px !important;
   height: auto !important;
   min-height: auto !important;
   max-height: none !important;
-  flex: 1 1 auto !important;
+  flex: 0 0 320px !important;
   background: linear-gradient(160deg, rgba(0, 52, 120, 0.08), rgba(0, 52, 120, 0.02)) !important;
   border: 1px solid rgba(0, 52, 120, 0.12) !important;
   border-radius: 24px !important;
