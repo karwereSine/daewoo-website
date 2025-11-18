@@ -919,8 +919,8 @@
         ],
         "gallery": [
           {
-            "href": "http://oss.tgripon.com/video/2_ HI-045.jpg",
-            "src": "http://oss.tgripon.com/video/2_ HI-045.jpg",
+            "href": "https://oss.tgripon.com/video/2_ HI-045.jpg",
+            "src": "https://oss.tgripon.com/video/2_ HI-045.jpg",
             "alt": "产品描述图片"
           }
         ]
@@ -982,6 +982,234 @@
               { "label": "권장 소비자가", "value": "미정" },
               { "label": "출시일", "value": "미정" },
               { "label": "제품 유형", "value": "핸드헬드 다리미" }
+            ],
+            "note": "자료 출처: DAEWOO 공식 웹사이트. 최신 사양은 공식 공지를 참고하세요."
+          },
+          "service": {
+            "title": "상담원에게 문의",
+            "description": "요구 사항을 알려주시면 맞춤 가전 구성과 서비스 플랜을 추천해 드립니다.",
+            "primaryCta": {
+              "label": "이메일 상담"
+            },
+            "secondaryCta": {
+              "label": "서비스 센터 예약"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "product-hi-046",
+      "slug": "hi-046",
+      "locale": "zh",
+      "backLink": {
+        "href": "product-center.html#iron",
+        "label": "返回产品中心"
+      },
+      "hero": {
+        "eyebrow": "洗护护理 · 衣物护理机",
+        "title": "HI-046 大宇小圆盒衣物护理机",
+        "description": "待定"
+      },
+      "summary": {
+        "cover": {
+          "src": "https://oss.tgripon.com/video/iron_product03.png",
+          "alt": "HI-046 大宇小圆盒衣物护理机"
+        },
+        "details": [
+          { "label": "产品编号", "value": "待定" },
+          { "label": "官方售价", "value": "待定" },
+          { "label": "上市时间", "value": "待定" },
+          { "label": "产品类别", "value": "衣物护理机" }
+        ],
+        "note": "数据来源：大宇家电官方网站，若有更新请以官方公告为准。"
+      },
+      "media": {
+        "thumbnails": [
+          {
+            "src": "https://oss.tgripon.com/video/iron_product03.png",
+            "alt": "主视图"
+          }
+        ],
+        "gallery": [
+          {
+            "href": "https://oss.tgripon.com/video/3_ HI-046.jpg",
+            "src": "https://oss.tgripon.com/video/3_ HI-046.jpg",
+            "alt": "产品描述图片"
+          }
+        ]
+      },
+      "service": {
+        "title": "联系顾问",
+        "description": "提交您的需求，我们将结合您的使用场景，推荐合适的家用电器组合与配套服务。",
+        "primaryCta": {
+          "label": "联系顾问",
+          "href": "mailto:support@daewoo.com"
+        },
+        "secondaryCta": {
+          "label": "预约服务中心",
+          "href": "contact.html"
+        }
+      },
+      "translations": {
+        "en": {
+          "backLink": {
+            "label": "Back to Product Center"
+          },
+          "hero": {
+            "eyebrow": "Laundry Care · Garment Care Machine",
+            "title": "HI-046 DAEWOO Compact Garment Care Machine",
+            "description": "TBD"
+          },
+          "summary": {
+            "details": [
+              { "label": "Product ID", "value": "TBD" },
+              { "label": "MSRP", "value": "TBD" },
+              { "label": "Launch Date", "value": "TBD" },
+              { "label": "Category", "value": "Garment care machine" }
+            ],
+            "note": "Data source: DAEWOO official website. Refer to official announcements for the latest specifications."
+          },
+          "service": {
+            "title": "Talk to a consultant",
+            "description": "Share your needs and we will recommend the right appliance bundle and service plan.",
+            "primaryCta": {
+              "label": "Email consultant"
+            },
+            "secondaryCta": {
+              "label": "Book service center"
+            }
+          }
+        },
+        "ko": {
+          "backLink": {
+            "label": "제품 센터로 돌아가기"
+          },
+          "hero": {
+            "eyebrow": "세탁 관리 · 의류 케어 머신",
+            "title": "HI-046 대우 컴팩트 의류 케어 머신",
+            "description": "미정"
+          },
+          "summary": {
+            "details": [
+              { "label": "제품 번호", "value": "미정" },
+              { "label": "권장 소비자가", "value": "미정" },
+              { "label": "출시일", "value": "미정" },
+              { "label": "제품 유형", "value": "의류 케어 머신" }
+            ],
+            "note": "자료 출처: DAEWOO 공식 웹사이트. 최신 사양은 공식 공지를 참고하세요."
+          },
+          "service": {
+            "title": "상담원에게 문의",
+            "description": "요구 사항을 알려주시면 맞춤 가전 구성과 서비스 플랜을 추천해 드립니다.",
+            "primaryCta": {
+              "label": "이메일 상담"
+            },
+            "secondaryCta": {
+              "label": "서비스 센터 예약"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "product-hi-050",
+      "slug": "hi-050",
+      "locale": "zh",
+      "backLink": {
+        "href": "product-center.html#iron",
+        "label": "返回产品中心"
+      },
+      "hero": {
+        "eyebrow": "洗护护理 · 挂烫机",
+        "title": "HI-050 大宇喷熨挂烫机",
+        "description": "待定"
+      },
+      "summary": {
+        "cover": {
+          "src": "https://oss.tgripon.com/video/iron_product04_2.png",
+          "alt": "HI-050 大宇喷熨挂烫机"
+        },
+        "details": [
+          { "label": "产品编号", "value": "待定" },
+          { "label": "官方售价", "value": "待定" },
+          { "label": "上市时间", "value": "待定" },
+          { "label": "产品类别", "value": "挂烫机" }
+        ],
+        "note": "数据来源：大宇家电官方网站，若有更新请以官方公告为准。"
+      },
+      "media": {
+        "thumbnails": [
+          {
+            "src": "https://oss.tgripon.com/video/iron_product04_2.png",
+            "alt": "主视图"
+          }
+        ],
+        "gallery": [
+          {
+            "href": "https://oss.tgripon.com/video/4_ HI-050.jpg",
+            "src": "https://oss.tgripon.com/video/4_ HI-050.jpg",
+            "alt": "产品描述图片"
+          }
+        ]
+      },
+      "service": {
+        "title": "联系顾问",
+        "description": "提交您的需求，我们将结合您的使用场景，推荐合适的家用电器组合与配套服务。",
+        "primaryCta": {
+          "label": "联系顾问",
+          "href": "mailto:support@daewoo.com"
+        },
+        "secondaryCta": {
+          "label": "预约服务中心",
+          "href": "contact.html"
+        }
+      },
+      "translations": {
+        "en": {
+          "backLink": {
+            "label": "Back to Product Center"
+          },
+          "hero": {
+            "eyebrow": "Laundry Care · Garment Steamer",
+            "title": "HI-050 DAEWOO Steam Iron Garment Steamer",
+            "description": "TBD"
+          },
+          "summary": {
+            "details": [
+              { "label": "Product ID", "value": "TBD" },
+              { "label": "MSRP", "value": "TBD" },
+              { "label": "Launch Date", "value": "TBD" },
+              { "label": "Category", "value": "Garment steamer" }
+            ],
+            "note": "Data source: DAEWOO official website. Refer to official announcements for the latest specifications."
+          },
+          "service": {
+            "title": "Talk to a consultant",
+            "description": "Share your needs and we will recommend the right appliance bundle and service plan.",
+            "primaryCta": {
+              "label": "Email consultant"
+            },
+            "secondaryCta": {
+              "label": "Book service center"
+            }
+          }
+        },
+        "ko": {
+          "backLink": {
+            "label": "제품 센터로 돌아가기"
+          },
+          "hero": {
+            "eyebrow": "세탁 관리 · 스팀 다리미",
+            "title": "HI-050 대우 스팀 다리미 의류 스티머",
+            "description": "미정"
+          },
+          "summary": {
+            "details": [
+              { "label": "제품 번호", "value": "미정" },
+              { "label": "권장 소비자가", "value": "미정" },
+              { "label": "출시일", "value": "미정" },
+              { "label": "제품 유형", "value": "스팀 다리미" }
             ],
             "note": "자료 출처: DAEWOO 공식 웹사이트. 최신 사양은 공식 공지를 참고하세요."
           },
