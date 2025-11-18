@@ -17,9 +17,13 @@
   const heroTitle = document.querySelector("[data-product-hero-title]");
   const heroDescription = document.querySelector("[data-product-hero-description]");
   const mainImage = document.querySelector("[data-product-main]");
+  const mainImageMobile = document.querySelector("[data-product-main-mobile]");
   const specsList = document.querySelector("[data-product-specs]");
+  const specsListMobile = document.querySelector("[data-product-specs-mobile]");
   const noteElement = document.querySelector("[data-product-note]");
+  const noteElementMobile = document.querySelector("[data-product-note-mobile]");
   const thumbnailsContainer = document.querySelector("[data-product-thumbnails]");
+  const thumbnailsContainerMobile = document.querySelector("[data-product-thumbnails-mobile]");
   const mediaList = document.querySelector("[data-product-media]");
   const serviceTitle = document.querySelector("[data-product-service-title]");
   const serviceDescription = document.querySelector("[data-product-service-description]");
@@ -204,33 +208,37 @@
   setLocale(getPreferredLocale());
 
   const renderSpecs = (details) => {
-    if (!specsList) return;
-    specsList.innerHTML = "";
-    if (!Array.isArray(details) || details.length === 0) return;
+    const renderToElement = (element) => {
+      if (!element) return;
+      element.innerHTML = "";
+      if (!Array.isArray(details) || details.length === 0) return;
 
-    details.forEach((item) => {
-      if (!item || (!item.label && !item.value)) return;
-      const group = document.createElement("div");
-      const dt = document.createElement("dt");
-      dt.textContent = item.label || "";
-      const dd = document.createElement("dd");
-      dd.textContent = item.value || "";
-      group.appendChild(dt);
-      group.appendChild(dd);
-      specsList.appendChild(group);
-    });
+      details.forEach((item) => {
+        if (!item || (!item.label && !item.value)) return;
+        const group = document.createElement("div");
+        const dt = document.createElement("dt");
+        dt.textContent = item.label || "";
+        const dd = document.createElement("dd");
+        dd.textContent = item.value || "";
+        group.appendChild(dt);
+        group.appendChild(dd);
+        element.appendChild(group);
+      });
+    };
+
+    renderToElement(specsList);
+    renderToElement(specsListMobile);
   };
 
   const renderThumbnails = (thumbnails, coverImage) => {
-    if (!thumbnailsContainer) return;
-    thumbnailsContainer.innerHTML = "";
+    if (!thumbnailsContainer && !thumbnailsContainerMobile) return;
     if (!Array.isArray(thumbnails) || thumbnails.length === 0) return;
 
-    thumbnails.forEach((item, index) => {
-      if (!item?.src) return;
+    const createThumbnailButton = (item, index, container, targetImage, isMobile) => {
+      if (!item?.src) return null;
       const button = document.createElement("button");
       button.type = "button";
-      button.className = "product-detail__thumbnail";
+      button.className = isMobile ? "product-detail__thumbnail-mobile" : "product-detail__thumbnail";
       button.dataset.img = item.src;
 
       const img = document.createElement("img");
@@ -241,15 +249,15 @@
       if (index === 0) {
         button.classList.add("is-active");
         button.setAttribute("aria-current", "true");
-        if (mainImage) {
-          mainImage.src = item.src;
-          mainImage.alt = item.alt || coverImage?.alt || "";
+        if (targetImage) {
+          targetImage.src = item.src;
+          targetImage.alt = item.alt || coverImage?.alt || "";
         }
       }
 
       button.addEventListener("click", () => {
-        if (!mainImage) return;
-        const active = thumbnailsContainer.querySelector(".product-detail__thumbnail.is-active");
+        if (!targetImage) return;
+        const active = container.querySelector(`.${isMobile ? "product-detail__thumbnail-mobile" : "product-detail__thumbnail"}.is-active`);
         if (active && active !== button) {
           active.classList.remove("is-active");
           active.removeAttribute("aria-current");
@@ -260,16 +268,67 @@
         }
 
         const newSrc = button.dataset.img;
-        if (newSrc && mainImage.src !== newSrc) {
-          mainImage.src = newSrc;
+        if (newSrc && targetImage.src !== newSrc) {
+          targetImage.src = newSrc;
         }
         const altText = button.querySelector("img")?.alt || "";
         if (altText) {
+          targetImage.alt = altText;
+        }
+
+        // 同步更新另一个主图片
+        if (isMobile && mainImage) {
+          mainImage.src = newSrc;
           mainImage.alt = altText;
+        } else if (!isMobile && mainImageMobile) {
+          mainImageMobile.src = newSrc;
+          mainImageMobile.alt = altText;
+        }
+
+        // 滚动到主图片位置（仅桌面版）
+        if (!isMobile) {
+          const coverContainer = targetImage.closest(".product-detail__cover");
+          if (coverContainer) {
+            const siteHeader = document.querySelector(".site-header");
+            const topbar = document.querySelector(".product-detail__topbar");
+            let offset = 0;
+            
+            if (siteHeader) {
+              offset += siteHeader.offsetHeight;
+            }
+            if (topbar) {
+              offset += topbar.offsetHeight;
+            }
+            
+            const containerRect = coverContainer.getBoundingClientRect();
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const targetPosition = containerRect.top + scrollTop - offset;
+            
+            window.scrollTo({
+              top: Math.max(0, targetPosition),
+              behavior: "smooth"
+            });
+          }
         }
       });
 
-      thumbnailsContainer.appendChild(button);
+      return button;
+    };
+
+    // 清空容器
+    if (thumbnailsContainer) thumbnailsContainer.innerHTML = "";
+    if (thumbnailsContainerMobile) thumbnailsContainerMobile.innerHTML = "";
+
+    // 渲染缩略图
+    thumbnails.forEach((item, index) => {
+      if (thumbnailsContainer) {
+        const button = createThumbnailButton(item, index, thumbnailsContainer, mainImage, false);
+        if (button) thumbnailsContainer.appendChild(button);
+      }
+      if (thumbnailsContainerMobile) {
+        const button = createThumbnailButton(item, index, thumbnailsContainerMobile, mainImageMobile, true);
+        if (button) thumbnailsContainerMobile.appendChild(button);
+      }
     });
   };
 
@@ -364,6 +423,12 @@
       }
       mainImage.alt = summary.cover?.alt || hero.title || "产品主图";
     }
+    if (mainImageMobile) {
+      if (summary.cover?.src) {
+        mainImageMobile.src = summary.cover.src;
+      }
+      mainImageMobile.alt = summary.cover?.alt || hero.title || "产品主图";
+    }
 
     renderSpecs(summary.details);
 
@@ -371,6 +436,9 @@
 
     if (noteElement) {
       noteElement.textContent = summary.note || "";
+    }
+    if (noteElementMobile) {
+      noteElementMobile.textContent = summary.note || "";
     }
 
     renderThumbnails(media.thumbnails, summary.cover);
