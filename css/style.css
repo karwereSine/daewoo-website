@@ -2822,6 +2822,25 @@ footer {
   font-size: clamp(1.8rem, 3vw, 2.4rem);
 }
 
+.video-featured__title-link {
+  color: inherit;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.video-featured__title-link::after {
+  content: "↗";
+  font-size: 1rem;
+  color: var(--color-primary);
+}
+
+.video-featured__title-link:hover,
+.video-featured__title-link:focus {
+  color: var(--color-primary);
+}
+
 .video-featured__content p {
   margin: 0;
   color: var(--color-muted);
