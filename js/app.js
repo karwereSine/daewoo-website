@@ -2159,71 +2159,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { key: "videos", labelKey: "search.results.videos", viewAllUrl: "video-center.html", limit: 3 },
   ];
 
-  const PRODUCT_SEARCH_FALLBACK = [
-    {
-      type: "products",
-      id: "product-988",
-      url: "product.html?id=product-988",
-      title: {
-        zh: "DY-TN33 液体加热器（便携双模调奶器）",
-        en: "DY-TN33 Liquid Heater (Portable Dual-Mode Formula Maker)",
-        ko: "DY-TN33 액체 가열기(휴대 듀얼모드 분유기)",
-      },
-      summary: {
-        zh: "搭载便携双模加热与恒温功能，满足宝宝喂养的多场景需求。",
-        en: "Portable dual-mode heating with precise temperature control for every feeding scenario.",
-        ko: "휴대 듀얼 모드와 정밀 온도 제어로 다양한 수유 상황에 맞게 빠르게 가열합니다.",
-      },
-      eyebrow: {
-        zh: "母婴电器 · 调奶器",
-        en: "Nursery Appliances · Formula Maker",
-        ko: "모유·유아 가전 · 분유 조제기",
-      },
-      keywords: ["DY-TN33", "调奶器", "formula maker", "母婴", "portable heater"],
-    },
-    {
-      type: "products",
-      id: "product-t2311ayv",
-      url: "product.html?id=product-t2311ayv",
-      title: {
-        zh: "T2311AYV 踢脚线取暖器",
-        en: "T2311AYV Baseboard Heater",
-        ko: "T2311AYV 플린스 히터",
-      },
-      summary: {
-        zh: "纤薄踢脚线循环供暖，兼顾客厅、卧室与办公空间的舒适温度。",
-        en: "Slim baseboard heating with circulating airflow and multi-stage modes for living rooms, bedrooms, and studios.",
-        ko: "슬림한 플린스 난방과 순환 온풍으로 거실·침실·서재를 빠르게 데워 줍니다.",
-      },
-      eyebrow: {
-        zh: "两季电器 · 取暖器",
-        en: "Seasonal Appliances · Heater",
-        ko: "계절가전 · 난방기",
-      },
-      keywords: ["T2311AYV", "踢脚线取暖", "baseboard heater", "温控", "난방기"],
-    },
-    {
-      type: "products",
-      id: "product-s30pro",
-      url: "product.html?id=product-s30pro",
-      title: {
-        zh: "S30PRO 多功能炖蒸煮锅",
-        en: "S30PRO Multi-function Stew & Steam Pot",
-        ko: "S30PRO 멀티 스튜 & 스팀 포트",
-      },
-      summary: {
-        zh: "一机多用支持炖、蒸、煮，让家庭轻松打造健康餐桌。",
-        en: "An all-in-one cooker for stewing, steaming, and boiling to help families prepare healthy meals with ease.",
-        ko: "찌기·끓이기·조림까지 가능한 올인원 쿠커로 건강한 식단을 손쉽게 완성하세요.",
-      },
-      eyebrow: {
-        zh: "厨房电器 · 电炖锅",
-        en: "Kitchen Appliances · Multi Cooker",
-        ko: "주방가전 · 멀티 쿠커",
-      },
-      keywords: ["S30PRO", "多功能烹饪", "multi cooker", "厨房", "healthy meals"],
-    },
-  ];
+  const PRODUCT_SEARCH_FALLBACK = [];
 
   const fallbackLang = "zh";
   const supportedLangs = Object.keys(translations);
