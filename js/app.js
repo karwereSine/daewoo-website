@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "panel.video.ph06": "PH06 大宇无雾加湿器",
       "panel.video.s30pro": "S30PRO 多功能炖蒸煮锅",
       "panel.video.s31": "S31 多功能蒸汽料理锅",
+      "panel.video.zb13": "ZB13 大宇果蔬杯",
       "panel.video.more": "更多",
       "panel.contact.heading": "联系渠道",
       "panel.contact.hotline": "客服热线 400-123-0000",
@@ -691,6 +692,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "panel.video.ph06": "PH06 대우 무안개 가습기",
       "panel.video.s30pro": "S30PRO 멀티 쿠커",
       "panel.video.s31": "S31 멀티 스팀 쿠커",
+      "panel.video.zb13": "ZB13 대우 과일 야채 컵",
       "panel.video.more": "더보기",
       "panel.contact.heading": "연락 경로",
       "panel.contact.hotline": "고객센터 400-123-0000",
@@ -1330,6 +1332,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "panel.video.ph06": "PH06 DAEWOO Mist-Free Humidifier",
       "panel.video.s30pro": "S30PRO Multi-Function Steamer & Cooker",
       "panel.video.s31": "S31 Multi-Function Steam Cooker",
+      "panel.video.zb13": "ZB13 DAEWOO Fruit & Vegetable Cup",
       "panel.video.more": "More",
       "panel.contact.heading": "Contact Channels",
       "panel.contact.hotline": "Hotline 400-123-0000",
@@ -2160,7 +2163,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       type: "products",
       id: "product-988",
-      url: "product-988.html",
+      url: "product.html?id=product-988",
       title: {
         zh: "DY-TN33 液体加热器（便携双模调奶器）",
         en: "DY-TN33 Liquid Heater (Portable Dual-Mode Formula Maker)",
@@ -2181,7 +2184,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       type: "products",
       id: "product-t2311ayv",
-      url: "product-t2311ayv.html",
+      url: "product.html?id=product-t2311ayv",
       title: {
         zh: "T2311AYV 踢脚线取暖器",
         en: "T2311AYV Baseboard Heater",
@@ -2202,7 +2205,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       type: "products",
       id: "product-s30pro",
-      url: "product-s30pro.html",
+      url: "product.html?id=product-s30pro",
       title: {
         zh: "S30PRO 多功能炖蒸煮锅",
         en: "S30PRO Multi-function Stew & Steam Pot",
@@ -2350,7 +2353,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return {
         type: "products",
         id: product.id,
-        url: `${product.id}.html`,
+        url: `product.html?id=${encodeURIComponent(product.id)}`,
         title: localizedTitle,
         summary: localizedSummary,
         eyebrow: localizedEyebrow,
