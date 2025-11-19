@@ -75,6 +75,8 @@ document.addEventListener("DOMContentLoaded", () => {
       "productInterest.fridge": "冰箱",
       "productInterest.riceCooker": "电饭锅",
       "productInterest.soymilk": "豆浆机",
+      "productInterest.cooker": "电煮锅",
+      "productInterest.iron": "熨斗",
       "productInterest.juicer": "榨汁机",
       "productInterest.iceMaker": "制冰机",
       "productInterest.blender": "破壁机",
@@ -715,6 +717,8 @@ document.addEventListener("DOMContentLoaded", () => {
       "productInterest.fridge": "냉장고",
       "productInterest.riceCooker": "전기 밥솥",
       "productInterest.soymilk": "두유 제조기",
+      "productInterest.cooker": "전기 냄비",
+      "productInterest.iron": "다리미",
       "productInterest.juicer": "주스메이커",
       "productInterest.iceMaker": "제빙기",
       "productInterest.blender": "블렌더",
@@ -1355,6 +1359,8 @@ document.addEventListener("DOMContentLoaded", () => {
       "productInterest.fridge": "Refrigerators",
       "productInterest.riceCooker": "Rice Cookers",
       "productInterest.soymilk": "Soy Milk Makers",
+      "productInterest.cooker": "Electric Cookers",
+      "productInterest.iron": "Irons",
       "productInterest.juicer": "Juicers",
       "productInterest.iceMaker": "Ice Makers",
       "productInterest.blender": "Blenders",
@@ -3784,6 +3790,37 @@ document.addEventListener("DOMContentLoaded", () => {
     mediaQuery.addEventListener("change", handleMediaChange);
   } else if (typeof mediaQuery.addListener === "function") {
     mediaQuery.addListener(handleMediaChange);
+  }
+
+  // Product center page: scroll to section based on hash
+  if (window.location.pathname.includes("product-center.html") || document.body.classList.contains("product-center")) {
+    const scrollToSection = (hash) => {
+      if (!hash) return;
+      const targetId = hash.replace("#", "");
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        const header = document.querySelector(".site-header");
+        const headerHeight = header ? header.offsetHeight : 0;
+        const targetPosition = targetElement.offsetTop - headerHeight - 20;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth"
+        });
+      }
+    };
+
+    // Scroll on page load if hash exists
+    if (window.location.hash) {
+      // Wait for page to fully load
+      setTimeout(() => {
+        scrollToSection(window.location.hash);
+      }, 100);
+    }
+
+    // Handle hash changes (e.g., when clicking links)
+    window.addEventListener("hashchange", () => {
+      scrollToSection(window.location.hash);
+    });
   }
 });
 
