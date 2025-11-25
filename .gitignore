@@ -4,3 +4,27 @@
 node_modules
 dist
 .cache
+
+# Spring Boot / Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+.mvn/
+*.class
+*.log
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+.DS_Store
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+*.swp
+*.swo
+*~
+key/
