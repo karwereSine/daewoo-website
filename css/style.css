@@ -4363,15 +4363,16 @@ html.is-video-modal-open {
     overflow: hidden;
     box-shadow: 0 8px 18px rgba(7, 22, 53, 0.12);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    background: none;
-    border: none;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
     padding: 0;
+    position: relative;
   }
 
   .product-detail__thumbnail-mobile img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
     display: block;
   }
 
@@ -4808,16 +4809,21 @@ html.is-video-modal-open {
 
 .product-detail__thumbnail {
   width: 96px;
+  height: 96px;
   cursor: pointer;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 18px rgba(7, 22, 53, 0.12);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  position: relative;
 }
 
 .product-detail__thumbnail img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: fill;
   display: block;
 }
 

@@ -489,7 +489,7 @@
       },
       "summary": {
         "cover": {
-          "src": "https://oss.tgripon.com/video/cooker_product07_2.jpg",
+          "src": "https://oss.tgripon.com/video/product/S30PRO/S30PRO_1.jpg",
           "alt": "S30PRO 多功能炖蒸煮锅"
         },
         "details": [
@@ -503,8 +503,20 @@
       "media": {
         "thumbnails": [
           {
-            "src": "https://oss.tgripon.com/video/cooker_product07_2.jpg",
+            "src": "https://oss.tgripon.com/video/product/S30PRO/S30PRO_1.jpg",
             "alt": "主视图"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/S30PRO/S30PRO_2.jpg",
+            "alt": "多角度展示"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/S30PRO/S30PRO_3.jpg",
+            "alt": "产品细节"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/S30PRO/S30PRO_4.jpg",
+            "alt": "功能展示"
           }
         ],
         "gallery": [
@@ -607,7 +619,7 @@
       },
       "summary": {
         "cover": {
-          "src": "https://oss.tgripon.com/video/iron_product01_2.png",
+          "src": "https://oss.tgripon.com/video/product/HI-029PRO/HI-029PRO_1.jpg",
           "alt": "HI-029PRO 大宇手持挂烫机"
         },
         "details": [
@@ -621,8 +633,28 @@
       "media": {
         "thumbnails": [
           {
-            "src": "https://oss.tgripon.com/video/iron_product01_2.png",
+            "src": "https://oss.tgripon.com/video/product/HI-029PRO/HI-029PRO_1.jpg",
             "alt": "主视图"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/HI-029PRO/HI-029PRO_2.jpg",
+            "alt": "多角度展示"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/HI-029PRO/HI-029PRO_3.jpg",
+            "alt": "产品细节"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/HI-029PRO/HI-029PRO_4.jpg",
+            "alt": "功能展示"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/HI-029PRO/HI-029PRO_5.jpg",
+            "alt": "使用场景"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/HI-029PRO/HI-029PRO_6.jpg",
+            "alt": "产品特色"
           }
         ],
         "gallery": [
@@ -725,7 +757,7 @@
       },
       "summary": {
         "cover": {
-          "src": "https://oss.tgripon.com/video/iron_product02_2.png",
+          "src": "https://oss.tgripon.com/video/product/HI-045/HI-045_1.jpg",
           "alt": "HI-045 大宇 Hobo 手持熨烫机"
         },
         "details": [
@@ -739,8 +771,24 @@
       "media": {
         "thumbnails": [
           {
-            "src": "https://oss.tgripon.com/video/iron_product02_2.png",
+            "src": "https://oss.tgripon.com/video/product/HI-045/HI-045_1.jpg",
             "alt": "主视图"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/HI-045/HI-045_2.jpg",
+            "alt": "多角度展示"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/HI-045/HI-045_3.jpg",
+            "alt": "产品细节"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/HI-045/HI-045_4.jpg",
+            "alt": "功能展示"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/HI-045/HI-045_5.jpg",
+            "alt": "使用场景"
           }
         ],
         "gallery": [
@@ -843,7 +891,7 @@
       },
       "summary": {
         "cover": {
-          "src": "https://oss.tgripon.com/video/iron_product03.png",
+          "src": "https://oss.tgripon.com/video/product/HI-046/HI-046_1.jpg",
           "alt": "HI-046 大宇小圆盒衣物护理机"
         },
         "details": [
@@ -857,8 +905,32 @@
       "media": {
         "thumbnails": [
           {
-            "src": "https://oss.tgripon.com/video/iron_product03.png",
+            "src": "https://oss.tgripon.com/video/product/HI-046/HI-046_1.jpg",
             "alt": "主视图"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/HI-046/HI-046_2.jpg",
+            "alt": "多角度展示"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/HI-046/HI-046_3.jpg",
+            "alt": "产品细节"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/HI-046/HI-046_4.jpg",
+            "alt": "功能展示"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/HI-046/HI-046_5.jpg",
+            "alt": "使用场景"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/HI-046/HI-046_6.jpg",
+            "alt": "产品特色"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/HI-046/HI-046_7.jpg",
+            "alt": "细节展示"
           }
         ],
         "gallery": [
@@ -961,7 +1033,7 @@
       },
       "summary": {
         "cover": {
-          "src": "https://oss.tgripon.com/video/iron_product04_2.png",
+          "src": "https://oss.tgripon.com/video/product/HI-050/HI-050_1.jpg",
           "alt": "HI-050 大宇喷熨挂烫机"
         },
         "details": [
@@ -975,8 +1047,36 @@
       "media": {
         "thumbnails": [
           {
-            "src": "https://oss.tgripon.com/video/iron_product04_2.png",
+            "src": "https://oss.tgripon.com/video/product/HI-050/HI-050_1.jpg",
             "alt": "主视图"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/HI-050/HI-050_2.jpg",
+            "alt": "多角度展示"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/HI-050/HI-050_3.jpg",
+            "alt": "产品细节"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/HI-050/HI-050_4.jpg",
+            "alt": "功能展示"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/HI-050/HI-050_5.jpg",
+            "alt": "使用场景"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/HI-050/HI-050_6.jpg",
+            "alt": "产品特色"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/HI-050/HI-050_7.jpg",
+            "alt": "细节展示"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/HI-050/HI-050_8.jpg",
+            "alt": "应用场景"
           }
         ],
         "gallery": [
@@ -1079,7 +1179,7 @@
       },
       "summary": {
         "cover": {
-          "src": "https://oss.tgripon.com/video/humidifier_product05_2.png",
+          "src": "https://oss.tgripon.com/video/product/PH05/PH05_1.jpg",
           "alt": "PH05 大宇小巨蛋加湿器"
         },
         "details": [
@@ -1093,8 +1193,32 @@
       "media": {
         "thumbnails": [
           {
-            "src": "https://oss.tgripon.com/video/humidifier_product05_2.png",
+            "src": "https://oss.tgripon.com/video/product/PH05/PH05_1.jpg",
             "alt": "主视图"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/PH05/PH05_2.jpg",
+            "alt": "多角度展示"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/PH05/PH05_3.jpg",
+            "alt": "产品细节"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/PH05/PH05_4.jpg",
+            "alt": "功能展示"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/PH05/PH05_5.jpg",
+            "alt": "使用场景"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/PH05/PH05_6.jpg",
+            "alt": "产品特色"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/PH05/PH05_7.jpg",
+            "alt": "细节展示"
           }
         ],
         "gallery": [
@@ -1197,7 +1321,7 @@
       },
       "summary": {
         "cover": {
-          "src": "https://oss.tgripon.com/video/humidifier_product06_2.png",
+          "src": "https://oss.tgripon.com/video/product/PH06/PH06_1.jpg",
           "alt": "PH06 大宇无雾加湿器"
         },
         "details": [
@@ -1211,8 +1335,24 @@
       "media": {
         "thumbnails": [
           {
-            "src": "https://oss.tgripon.com/video/humidifier_product06_2.png",
+            "src": "https://oss.tgripon.com/video/product/PH06/PH06_1.jpg",
             "alt": "主视图"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/PH06/PH06_2.jpg",
+            "alt": "多角度展示"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/PH06/PH06_3.jpg",
+            "alt": "产品细节"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/PH06/PH06_4.jpg",
+            "alt": "功能展示"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/PH06/PH06_5.jpg",
+            "alt": "使用场景"
           }
         ],
         "gallery": [
@@ -1315,7 +1455,7 @@
       },
       "summary": {
         "cover": {
-          "src": "https://oss.tgripon.com/video/cooker_product08.png",
+          "src": "https://oss.tgripon.com/video/product/S31/S31_1.jpg",
           "alt": "S31 多功能蒸汽料理锅"
         },
         "details": [
@@ -1329,8 +1469,24 @@
       "media": {
         "thumbnails": [
           {
-            "src": "https://oss.tgripon.com/video/cooker_product08.png",
+            "src": "https://oss.tgripon.com/video/product/S31/S31_1.jpg",
             "alt": "主视图"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/S31/S31_2.jpg",
+            "alt": "多角度展示"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/S31/S31_3.jpg",
+            "alt": "产品细节"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/S31/S31_4.jpg",
+            "alt": "功能展示"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/S31/S31_5.jpg",
+            "alt": "使用场景"
           }
         ],
         "gallery": [
@@ -1433,7 +1589,7 @@
       },
       "summary": {
         "cover": {
-          "src": "https://oss.tgripon.com/video/juice_product09_2.png",
+          "src": "https://oss.tgripon.com/video/product/ZB13/ZB13_1.jpg",
           "alt": "ZB13 大宇果蔬杯"
         },
         "details": [
@@ -1447,8 +1603,20 @@
       "media": {
         "thumbnails": [
           {
-            "src": "https://oss.tgripon.com/video/juice_product09_2.png",
+            "src": "https://oss.tgripon.com/video/product/ZB13/ZB13_1.jpg",
             "alt": "主视图"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/ZB13/ZB13_2.jpg",
+            "alt": "多角度展示"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/ZB13/ZB13_3.jpg",
+            "alt": "产品细节"
+          },
+          {
+            "src": "https://oss.tgripon.com/video/product/ZB13/ZB13_4.jpg",
+            "alt": "功能展示"
           }
         ],
         "gallery": [
