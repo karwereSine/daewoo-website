@@ -2167,7 +2167,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const PRODUCT_SEARCH_FALLBACK = [];
 
-  const fallbackLang = "zh";
+  const fallbackLang = "ko";
   const supportedLangs = Object.keys(translations);
   const htmlElement = document.documentElement;
   const langSelector = document.getElementById("lang-select");
