@@ -1,6 +1,2126 @@
 {
   "products": [
     {
+      "id": "product-x25",
+      "slug": "x25",
+      "locale": "zh",
+      "backLink": {
+        "href": "product-center.html#humidifier",
+        "label": "返回产品中心"
+      },
+      "hero": {
+        "eyebrow": "生活电器 · 纯净加湿",
+        "title": "X25 纯净无雾加湿器",
+        "description": "模拟自然水汽冷蒸发，母婴无白粉无雾加湿，大容量恒湿润燥，静音舒适睡眠。"
+      },
+      "summary": {
+        "cover": {
+          "src": "https://oss.tgripon.com/product-web/Humidifier_X25/00_cover.png",
+          "alt": "X25 纯净无雾加湿器"
+        },
+        "details": [
+          {
+            "label": "产品编号",
+            "value": "X25"
+          },
+          {
+            "label": "官方售价",
+            "value": "待定"
+          },
+          {
+            "label": "上市时间",
+            "value": "2026-10"
+          },
+          {
+            "label": "产品类别",
+            "value": "加湿器"
+          }
+        ],
+        "note": "数据来源：大宇家电官方网站，若有更新请以官方公告为准。"
+      },
+      "media": {
+        "thumbnails": [
+          {
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/00_cover.png",
+            "alt": "X25 纯净无雾加湿器 主视图"
+          }
+        ],
+        "gallery": [
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/01_-1-260Z4155504448.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/01_-1-260Z4155504448.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 1"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/02_-1-260Z4155505W0.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/02_-1-260Z4155505W0.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 2"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/03_-1-260Z415550C17.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/03_-1-260Z415550C17.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 3"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/04_-1-260Z415550UK.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/04_-1-260Z415550UK.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 4"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/05_-1-260Z4155515916.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/05_-1-260Z4155515916.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 5"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/06_-1-260Z415551KO.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/06_-1-260Z415551KO.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 6"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/07_-1-260Z415551Y48.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/07_-1-260Z415551Y48.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 7"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/08_-1-260Z4155521457.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/08_-1-260Z4155521457.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 8"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/09_-1-260Z4155522Q3.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/09_-1-260Z4155522Q3.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 9"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/10_-1-260Z4155524C7.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/10_-1-260Z4155524C7.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 10"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/11_-1-260Z4155524c4.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/11_-1-260Z4155524c4.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 11"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/12_-1-260Z4155525245.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/12_-1-260Z4155525245.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 12"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/13_-1-260Z415552Q91.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/13_-1-260Z415552Q91.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 13"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/14_-1-260Z415553J24.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/14_-1-260Z415553J24.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 14"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/15_-1-260Z415553c53.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/15_-1-260Z415553c53.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 15"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/16_-1-260Z41555404X.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/16_-1-260Z41555404X.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 16"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/17_-1-260Z4155543V4.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/17_-1-260Z4155543V4.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 17"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/18_-1-260Z41555461N.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/18_-1-260Z41555461N.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 18"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/19_-1-260Z415554O21.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/19_-1-260Z415554O21.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 19"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/20_-1-260Z4155550437.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/20_-1-260Z4155550437.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 20"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/21_-1-260Z4155F0624.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/21_-1-260Z4155F0624.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 21"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/22_-1-260Z4155F2215.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/22_-1-260Z4155F2215.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 22"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/23_-1-260Z4155F3R4.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/23_-1-260Z4155F3R4.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 23"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/24_-1-260Z4155F5531.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/24_-1-260Z4155F5531.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 24"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/25_-1-260Z4155G2947.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/25_-1-260Z4155G2947.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 25"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/26_-1-260Z4155G5596.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/26_-1-260Z4155G5596.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 26"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/27_-1-260Z4155GM37.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/27_-1-260Z4155GM37.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 27"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/28_-1-260Z4155G9446.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/28_-1-260Z4155G9446.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 28"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/29_-1-260Z4155H4132.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/29_-1-260Z4155H4132.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 29"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/30_-1-260Z4155H5202.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/30_-1-260Z4155H5202.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 30"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/31_-1-260Z4155HY05.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/31_-1-260Z4155HY05.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 31"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/32_-1-260Z4155I3492.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/32_-1-260Z4155I3492.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 32"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/33_-1-260Z4155I41A.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/33_-1-260Z4155I41A.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 33"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/34_-1-260Z4155I5396.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/34_-1-260Z4155I5396.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 34"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Humidifier_X25/35_-1-260Z4155IBY.jpg",
+            "src": "https://oss.tgripon.com/product-web/Humidifier_X25/35_-1-260Z4155IBY.jpg",
+            "alt": "X25 纯净无雾加湿器 功能介绍图 35"
+          }
+        ]
+      },
+      "service": {
+        "title": "需要更多帮助？",
+        "description": "联系我们的顾问团队，获取选型建议、使用指导与售后支持安排。",
+        "primaryCta": {
+          "label": "联系顾问",
+          "href": "mailto:support@daewoo.com"
+        },
+        "secondaryCta": {
+          "label": "预约服务中心",
+          "href": "contact.html"
+        }
+      },
+      "translations": {
+        "ko": {
+          "backLink": {
+            "label": "제품 센터로 돌아가기"
+          },
+          "hero": {
+            "eyebrow": "생활가전 · 자연기화식 가습기",
+            "title": "X25 자연기화식 대용량 가습기",
+            "description": "자연 증발 원리로 세균과 유해물질 걱정 없는 순수 수분 공급, 스마트 자동 항습 케어."
+          },
+          "summary": {
+            "details": [
+              {
+                "label": "제품 모델명",
+                "value": "X25"
+              },
+              {
+                "label": "공식 출시가",
+                "value": "미정"
+              },
+              {
+                "label": "출시 일정",
+                "value": "2026-10"
+              },
+              {
+                "label": "제품 카테고리",
+                "value": "가습기"
+              }
+            ],
+            "note": "자료 출처: DAEWOO 공식 웹사이트. 상세 정보는 공식 공지를 참고해 주시기 바랍니다."
+          },
+          "service": {
+            "title": "도움이 필요하신가요?",
+            "description": "전문 상담팀에 문의하여 제품 추천, 규격 확인 및 서비스 센터 예약을 안내받으세요.",
+            "primaryCta": {
+              "label": "전문 상담원 문의"
+            },
+            "secondaryCta": {
+              "label": "서비스 센터 예약"
+            }
+          }
+        },
+        "en": {
+          "backLink": {
+            "label": "Back to Product Center"
+          },
+          "hero": {
+            "eyebrow": "Home Appliances · Humidifier",
+            "title": "X25 Evaporative Humidifier",
+            "description": "Natural cold evaporative mist-free humidification, whisper quiet operation, and smart humidity control for whole-home comfort."
+          },
+          "summary": {
+            "details": [
+              {
+                "label": "Model No.",
+                "value": "X25"
+              },
+              {
+                "label": "Official Price",
+                "value": "TBD"
+              },
+              {
+                "label": "Release Date",
+                "value": "2026-10"
+              },
+              {
+                "label": "Category",
+                "value": "Humidifier"
+              }
+            ],
+            "note": "Data source: DAEWOO official website. Subject to official announcements."
+          },
+          "service": {
+            "title": "Need More Assistance?",
+            "description": "Contact our consultant team for model selection, technical advice, and after-sales support.",
+            "primaryCta": {
+              "label": "Contact Consultant"
+            },
+            "secondaryCta": {
+              "label": "Book Service Center"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "product-hi-032",
+      "slug": "hi-032",
+      "locale": "zh",
+      "backLink": {
+        "href": "product-center.html#iron",
+        "label": "返回产品中心"
+      },
+      "hero": {
+        "eyebrow": "衣物护理 · 蒸汽熨烫",
+        "title": "HI-032 手持折叠挂烫机",
+        "description": "180°灵活折叠机身，强劲增压脉冲蒸汽，挂烫平熨双模随心，快速除皱不伤衣料。"
+      },
+      "summary": {
+        "cover": {
+          "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/00_cover.png",
+          "alt": "HI-032 手持折叠挂烫机"
+        },
+        "details": [
+          {
+            "label": "产品编号",
+            "value": "HI-032"
+          },
+          {
+            "label": "官方售价",
+            "value": "待定"
+          },
+          {
+            "label": "上市时间",
+            "value": "2026-10"
+          },
+          {
+            "label": "产品类别",
+            "value": "挂烫机"
+          }
+        ],
+        "note": "数据来源：大宇家电官方网站，若有更新请以官方公告为准。"
+      },
+      "media": {
+        "thumbnails": [
+          {
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/00_cover.png",
+            "alt": "HI-032 手持折叠挂烫机 主视图"
+          }
+        ],
+        "gallery": [
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/01_-1-26100G0401L41.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/01_-1-26100G0401L41.jpg",
+            "alt": "HI-032 手持折叠挂烫机 功能介绍图 1"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/02_-1-26100G0401TN.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/02_-1-26100G0401TN.jpg",
+            "alt": "HI-032 手持折叠挂烫机 功能介绍图 2"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/03_-1-26100G040193C.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/03_-1-26100G040193C.jpg",
+            "alt": "HI-032 手持折叠挂烫机 功能介绍图 3"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/04_-1-26100G04020A4.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/04_-1-26100G04020A4.jpg",
+            "alt": "HI-032 手持折叠挂烫机 功能介绍图 4"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/05_-1-26100G04022313.gif",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/05_-1-26100G04022313.gif",
+            "alt": "HI-032 手持折叠挂烫机 功能介绍图 5"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/06_-1-26100G04022208.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/06_-1-26100G04022208.jpg",
+            "alt": "HI-032 手持折叠挂烫机 功能介绍图 6"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/07_-1-26100G04023159.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/07_-1-26100G04023159.jpg",
+            "alt": "HI-032 手持折叠挂烫机 功能介绍图 7"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/08_-1-26100G04024646.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/08_-1-26100G04024646.jpg",
+            "alt": "HI-032 手持折叠挂烫机 功能介绍图 8"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/09_-1-26100G04024P3.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/09_-1-26100G04024P3.jpg",
+            "alt": "HI-032 手持折叠挂烫机 功能介绍图 9"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/10_-1-26100G04025K0.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/10_-1-26100G04025K0.jpg",
+            "alt": "HI-032 手持折叠挂烫机 功能介绍图 10"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/11_-1-26100G040263I.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/11_-1-26100G040263I.jpg",
+            "alt": "HI-032 手持折叠挂烫机 功能介绍图 11"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/12_-1-26100G0402C53.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/12_-1-26100G0402C53.jpg",
+            "alt": "HI-032 手持折叠挂烫机 功能介绍图 12"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/13_-1-26100G0402KA.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/13_-1-26100G0402KA.jpg",
+            "alt": "HI-032 手持折叠挂烫机 功能介绍图 13"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/14_-1-26100G0402VV.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/14_-1-26100G0402VV.jpg",
+            "alt": "HI-032 手持折叠挂烫机 功能介绍图 14"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/15_-1-26100G0402W57.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/15_-1-26100G0402W57.jpg",
+            "alt": "HI-032 手持折叠挂烫机 功能介绍图 15"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/16_-1-26100G040294F.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/16_-1-26100G040294F.jpg",
+            "alt": "HI-032 手持折叠挂烫机 功能介绍图 16"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/17_-1-26100G04030B9.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/17_-1-26100G04030B9.jpg",
+            "alt": "HI-032 手持折叠挂烫机 功能介绍图 17"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/18_-1-26100G040301L.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/18_-1-26100G040301L.jpg",
+            "alt": "HI-032 手持折叠挂烫机 功能介绍图 18"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/19_-1-26100G04031T1.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/19_-1-26100G04031T1.jpg",
+            "alt": "HI-032 手持折叠挂烫机 功能介绍图 19"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/20_-1-26100G04031M9.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-032/20_-1-26100G04031M9.jpg",
+            "alt": "HI-032 手持折叠挂烫机 功能介绍图 20"
+          }
+        ]
+      },
+      "service": {
+        "title": "需要更多帮助？",
+        "description": "联系我们的顾问团队，获取选型建议、使用指导与售后支持安排。",
+        "primaryCta": {
+          "label": "联系顾问",
+          "href": "mailto:support@daewoo.com"
+        },
+        "secondaryCta": {
+          "label": "预约服务中心",
+          "href": "contact.html"
+        }
+      },
+      "translations": {
+        "ko": {
+          "backLink": {
+            "label": "제품 센터로 돌아가기"
+          },
+          "hero": {
+            "eyebrow": "의류케어 · 스팀다리미",
+            "title": "HI-032 핸디 폴더블 스팀다리미",
+            "description": "180도 회전식 접이식 디자인과 강력한 고압 스팀 분사로 옷감 손상 없이 빠르고 간편한 주름 개선."
+          },
+          "summary": {
+            "details": [
+              {
+                "label": "제품 모델명",
+                "value": "HI-032"
+              },
+              {
+                "label": "공식 출시가",
+                "value": "미정"
+              },
+              {
+                "label": "출시 일정",
+                "value": "2026-10"
+              },
+              {
+                "label": "제품 카테고리",
+                "value": "스팀다리미"
+              }
+            ],
+            "note": "자료 출처: DAEWOO 공식 웹사이트. 상세 정보는 공식 공지를 참고해 주시기 바랍니다."
+          },
+          "service": {
+            "title": "도움이 필요하신가요?",
+            "description": "전문 상담팀에 문의하여 제품 추천, 규격 확인 및 서비스 센터 예약을 안내받으세요.",
+            "primaryCta": {
+              "label": "전문 상담원 문의"
+            },
+            "secondaryCta": {
+              "label": "서비스 센터 예약"
+            }
+          }
+        },
+        "en": {
+          "backLink": {
+            "label": "Back to Product Center"
+          },
+          "hero": {
+            "eyebrow": "Garment Care · Steam Iron",
+            "title": "HI-032 Foldable Garment Steamer",
+            "description": "180-degree rotatable foldable design with high-pressure pulse steam for fast, gentle wrinkle removal anytime, anywhere."
+          },
+          "summary": {
+            "details": [
+              {
+                "label": "Model No.",
+                "value": "HI-032"
+              },
+              {
+                "label": "Official Price",
+                "value": "TBD"
+              },
+              {
+                "label": "Release Date",
+                "value": "2026-10"
+              },
+              {
+                "label": "Category",
+                "value": "Garment Steamer"
+              }
+            ],
+            "note": "Data source: DAEWOO official website. Subject to official announcements."
+          },
+          "service": {
+            "title": "Need More Assistance?",
+            "description": "Contact our consultant team for model selection, technical advice, and after-sales support.",
+            "primaryCta": {
+              "label": "Contact Consultant"
+            },
+            "secondaryCta": {
+              "label": "Book Service Center"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "product-hi-035",
+      "slug": "hi-035",
+      "locale": "zh",
+      "backLink": {
+        "href": "product-center.html#iron",
+        "label": "返回产品中心"
+      },
+      "hero": {
+        "eyebrow": "衣物护理 · 便携挂烫",
+        "title": "HI-035 便携增压手持挂烫机",
+        "description": "微增压细腻干蒸汽即烫即穿，高精度智能温控面板，轻巧机身商务差旅与家庭必备。"
+      },
+      "summary": {
+        "cover": {
+          "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/00_cover.png",
+          "alt": "HI-035 便携增压手持挂烫机"
+        },
+        "details": [
+          {
+            "label": "产品编号",
+            "value": "HI-035"
+          },
+          {
+            "label": "官方售价",
+            "value": "待定"
+          },
+          {
+            "label": "上市时间",
+            "value": "2026-10"
+          },
+          {
+            "label": "产品类别",
+            "value": "挂烫机"
+          }
+        ],
+        "note": "数据来源：大宇家电官方网站，若有更新请以官方公告为准。"
+      },
+      "media": {
+        "thumbnails": [
+          {
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/00_cover.png",
+            "alt": "HI-035 便携增压手持挂烫机 主视图"
+          }
+        ],
+        "gallery": [
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/01_1-260Q312014L14.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/01_1-260Q312014L14.jpg",
+            "alt": "HI-035 便携增压手持挂烫机 功能介绍图 1"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/02_1-260Q312014Ta.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/02_1-260Q312014Ta.jpg",
+            "alt": "HI-035 便携增压手持挂烫机 功能介绍图 2"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/03_1-260Q3120150255.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/03_1-260Q3120150255.jpg",
+            "alt": "HI-035 便携增压手持挂烫机 功能介绍图 3"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/04_1-260Q3120152164.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/04_1-260Q3120152164.jpg",
+            "alt": "HI-035 便携增压手持挂烫机 功能介绍图 4"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/05_1-260Q3120153L2.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/05_1-260Q3120153L2.jpg",
+            "alt": "HI-035 便携增压手持挂烫机 功能介绍图 5"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/06_1-260Q3120155562.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/06_1-260Q3120155562.jpg",
+            "alt": "HI-035 便携增压手持挂烫机 功能介绍图 6"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/07_1-260Q312015J08.gif",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/07_1-260Q312015J08.gif",
+            "alt": "HI-035 便携增压手持挂烫机 功能介绍图 7"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/08_1-260Q31202005K.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/08_1-260Q31202005K.jpg",
+            "alt": "HI-035 便携增压手持挂烫机 功能介绍图 8"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/09_1-260Q31202002N.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/09_1-260Q31202002N.jpg",
+            "alt": "HI-035 便携增压手持挂烫机 功能介绍图 9"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/10_1-260Q3120205433.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/10_1-260Q3120205433.jpg",
+            "alt": "HI-035 便携增压手持挂烫机 功能介绍图 10"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/11_1-260Q312020J06.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/11_1-260Q312020J06.jpg",
+            "alt": "HI-035 便携增压手持挂烫机 功能介绍图 11"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/12_1-260Q312020S31.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/12_1-260Q312020S31.jpg",
+            "alt": "HI-035 便携增压手持挂烫机 功能介绍图 12"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/13_1-260Q31202095R.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/13_1-260Q31202095R.jpg",
+            "alt": "HI-035 便携增压手持挂烫机 功能介绍图 13"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/14_1-260Q3120211292.gif",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/14_1-260Q3120211292.gif",
+            "alt": "HI-035 便携增压手持挂烫机 功能介绍图 14"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/15_1-260Q3120211412.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/15_1-260Q3120211412.jpg",
+            "alt": "HI-035 便携增压手持挂烫机 功能介绍图 15"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/16_1-260Q3120213Q6.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/16_1-260Q3120213Q6.jpg",
+            "alt": "HI-035 便携增压手持挂烫机 功能介绍图 16"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/17_1-260Q3120216231.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/17_1-260Q3120216231.jpg",
+            "alt": "HI-035 便携增压手持挂烫机 功能介绍图 17"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/18_1-260Q312021C47.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/18_1-260Q312021C47.jpg",
+            "alt": "HI-035 便携增压手持挂烫机 功能介绍图 18"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/19_1-260Q312021OY.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/19_1-260Q312021OY.jpg",
+            "alt": "HI-035 便携增压手持挂烫机 功能介绍图 19"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/20_1-260Q3120219A8.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/20_1-260Q3120219A8.jpg",
+            "alt": "HI-035 便携增压手持挂烫机 功能介绍图 20"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/21_1-260Q3120311524.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/21_1-260Q3120311524.jpg",
+            "alt": "HI-035 便携增压手持挂烫机 功能介绍图 21"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/22_1-260Q3120312M3.jpg",
+            "src": "https://oss.tgripon.com/product-web/Steam_Iron_HI-035/22_1-260Q3120312M3.jpg",
+            "alt": "HI-035 便携增压手持挂烫机 功能介绍图 22"
+          }
+        ]
+      },
+      "service": {
+        "title": "需要更多帮助？",
+        "description": "联系我们的顾问团队，获取选型建议、使用指导与售后支持安排。",
+        "primaryCta": {
+          "label": "联系顾问",
+          "href": "mailto:support@daewoo.com"
+        },
+        "secondaryCta": {
+          "label": "预约服务中心",
+          "href": "contact.html"
+        }
+      },
+      "translations": {
+        "ko": {
+          "backLink": {
+            "label": "제품 센터로 돌아가기"
+          },
+          "hero": {
+            "eyebrow": "의류케어 · 스팀다리미",
+            "title": "HI-035 휴대용 고압 스팀다리미",
+            "description": "미세 가압 드라이 스팀으로 다림질 후 바로 착용 가능, 정밀 스마트 온도 제어로 모든 옷감 완벽 케어."
+          },
+          "summary": {
+            "details": [
+              {
+                "label": "제품 모델명",
+                "value": "HI-035"
+              },
+              {
+                "label": "공식 출시가",
+                "value": "미정"
+              },
+              {
+                "label": "출시 일정",
+                "value": "2026-10"
+              },
+              {
+                "label": "제품 카테고리",
+                "value": "스팀다리미"
+              }
+            ],
+            "note": "자료 출처: DAEWOO 공식 웹사이트. 상세 정보는 공식 공지를 참고해 주시기 바랍니다."
+          },
+          "service": {
+            "title": "도움이 필요하신가요?",
+            "description": "전문 상담팀에 문의하여 제품 추천, 규격 확인 및 서비스 센터 예약을 안내받으세요.",
+            "primaryCta": {
+              "label": "전문 상담원 문의"
+            },
+            "secondaryCta": {
+              "label": "서비스 센터 예약"
+            }
+          }
+        },
+        "en": {
+          "backLink": {
+            "label": "Back to Product Center"
+          },
+          "hero": {
+            "eyebrow": "Garment Care · Steam Iron",
+            "title": "HI-035 Portable Garment Steamer",
+            "description": "Micro-pressurized dry steam with intelligent temperature control, compact and portable for effortless travel and home ironing."
+          },
+          "summary": {
+            "details": [
+              {
+                "label": "Model No.",
+                "value": "HI-035"
+              },
+              {
+                "label": "Official Price",
+                "value": "TBD"
+              },
+              {
+                "label": "Release Date",
+                "value": "2026-10"
+              },
+              {
+                "label": "Category",
+                "value": "Garment Steamer"
+              }
+            ],
+            "note": "Data source: DAEWOO official website. Subject to official announcements."
+          },
+          "service": {
+            "title": "Need More Assistance?",
+            "description": "Contact our consultant team for model selection, technical advice, and after-sales support.",
+            "primaryCta": {
+              "label": "Contact Consultant"
+            },
+            "secondaryCta": {
+              "label": "Book Service Center"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "product-dyzl-12l35",
+      "slug": "dyzl-12l35",
+      "locale": "zh",
+      "backLink": {
+        "href": "product-center.html#cooker",
+        "label": "返回产品中心"
+      },
+      "hero": {
+        "eyebrow": "厨房烹饪 · 多功能电蒸锅",
+        "title": "DYZL-12L35 双层多功能电蒸锅",
+        "description": "12L双层食品级不锈钢大容量，60秒极速聚能聚汽，智能预约保温，蒸煮焖炖全能膳食。"
+      },
+      "summary": {
+        "cover": {
+          "src": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/00_cover.png",
+          "alt": "DYZL-12L35 双层多功能电蒸锅"
+        },
+        "details": [
+          {
+            "label": "产品编号",
+            "value": "DYZL-12L35"
+          },
+          {
+            "label": "官方售价",
+            "value": "待定"
+          },
+          {
+            "label": "上市时间",
+            "value": "2026-10"
+          },
+          {
+            "label": "产品类别",
+            "value": "电蒸锅"
+          }
+        ],
+        "note": "数据来源：大宇家电官方网站，若有更新请以官方公告为准。"
+      },
+      "media": {
+        "thumbnails": [
+          {
+            "src": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/00_cover.png",
+            "alt": "DYZL-12L35 双层多功能电蒸锅 主视图"
+          }
+        ],
+        "gallery": [
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/01_0083316510ef202c.jpg.avif",
+            "src": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/01_0083316510ef202c.jpg.avif",
+            "alt": "DYZL-12L35 双层多功能电蒸锅 功能介绍图 1"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/02_0083316309a56f69.jpg.avif",
+            "src": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/02_0083316309a56f69.jpg.avif",
+            "alt": "DYZL-12L35 双层多功能电蒸锅 功能介绍图 2"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/03_008331657f5b5f6a.jpg.avif",
+            "src": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/03_008331657f5b5f6a.jpg.avif",
+            "alt": "DYZL-12L35 双层多功能电蒸锅 功能介绍图 3"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/04_008331651c56599c.jpg.avif",
+            "src": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/04_008331651c56599c.jpg.avif",
+            "alt": "DYZL-12L35 双层多功能电蒸锅 功能介绍图 4"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/05_008331656da9ae96.jpg.avif",
+            "src": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/05_008331656da9ae96.jpg.avif",
+            "alt": "DYZL-12L35 双层多功能电蒸锅 功能介绍图 5"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/06_00833165647f366c.jpg.avif",
+            "src": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/06_00833165647f366c.jpg.avif",
+            "alt": "DYZL-12L35 双层多功能电蒸锅 功能介绍图 6"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/07_00833164bf3ce15e.jpg.avif",
+            "src": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/07_00833164bf3ce15e.jpg.avif",
+            "alt": "DYZL-12L35 双层多功能电蒸锅 功能介绍图 7"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/08_00833164884d3b55.jpg.avif",
+            "src": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/08_00833164884d3b55.jpg.avif",
+            "alt": "DYZL-12L35 双层多功能电蒸锅 功能介绍图 8"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/09_008331647dae096b.jpg.avif",
+            "src": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/09_008331647dae096b.jpg.avif",
+            "alt": "DYZL-12L35 双层多功能电蒸锅 功能介绍图 9"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/10_00833162a0cbccb8.jpg.avif",
+            "src": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/10_00833162a0cbccb8.jpg.avif",
+            "alt": "DYZL-12L35 双层多功能电蒸锅 功能介绍图 10"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/11_008331654ce589a1.jpg.avif",
+            "src": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/11_008331654ce589a1.jpg.avif",
+            "alt": "DYZL-12L35 双层多功能电蒸锅 功能介绍图 11"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/12_008331654093e8d7.jpg.avif",
+            "src": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/12_008331654093e8d7.jpg.avif",
+            "alt": "DYZL-12L35 双层多功能电蒸锅 功能介绍图 12"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/13_008331652e76de5d.jpg.avif",
+            "src": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/13_008331652e76de5d.jpg.avif",
+            "alt": "DYZL-12L35 双层多功能电蒸锅 功能介绍图 13"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/14_00833164a7e4c3b5.jpg.avif",
+            "src": "https://oss.tgripon.com/product-web/Electric_Steamer_DYZL-12L35/14_00833164a7e4c3b5.jpg.avif",
+            "alt": "DYZL-12L35 双层多功能电蒸锅 功能介绍图 14"
+          }
+        ]
+      },
+      "service": {
+        "title": "需要更多帮助？",
+        "description": "联系我们的顾问团队，获取选型建议、使用指导与售后支持安排。",
+        "primaryCta": {
+          "label": "联系顾问",
+          "href": "mailto:support@daewoo.com"
+        },
+        "secondaryCta": {
+          "label": "预约服务中心",
+          "href": "contact.html"
+        }
+      },
+      "translations": {
+        "ko": {
+          "backLink": {
+            "label": "제품 센터로 돌아가기"
+          },
+          "hero": {
+            "eyebrow": "주방가전 · 스팀쿠커",
+            "title": "DYZL-12L35 멀티 스팀 찜기",
+            "description": "12L 대용량 2단 스테인리스 스티머, 60초 초고속 스팀 분사로 본연의 맛과 영양을 지키는 스마트 조리."
+          },
+          "summary": {
+            "details": [
+              {
+                "label": "제품 모델명",
+                "value": "DYZL-12L35"
+              },
+              {
+                "label": "공식 출시가",
+                "value": "미정"
+              },
+              {
+                "label": "출시 일정",
+                "value": "2026-10"
+              },
+              {
+                "label": "제품 카테고리",
+                "value": "스팀쿠커"
+              }
+            ],
+            "note": "자료 출처: DAEWOO 공식 웹사이트. 상세 정보는 공식 공지를 참고해 주시기 바랍니다."
+          },
+          "service": {
+            "title": "도움이 필요하신가요?",
+            "description": "전문 상담팀에 문의하여 제품 추천, 규격 확인 및 서비스 센터 예약을 안내받으세요.",
+            "primaryCta": {
+              "label": "전문 상담원 문의"
+            },
+            "secondaryCta": {
+              "label": "서비스 센터 예약"
+            }
+          }
+        },
+        "en": {
+          "backLink": {
+            "label": "Back to Product Center"
+          },
+          "hero": {
+            "eyebrow": "Kitchen Appliances · Food Steamer",
+            "title": "DYZL-12L35 Multi-function Electric Steamer",
+            "description": "12L large double-layer stainless steel capacity, 60s fast steam generation, and smart presets for healthy, nutrient-rich steaming."
+          },
+          "summary": {
+            "details": [
+              {
+                "label": "Model No.",
+                "value": "DYZL-12L35"
+              },
+              {
+                "label": "Official Price",
+                "value": "TBD"
+              },
+              {
+                "label": "Release Date",
+                "value": "2026-10"
+              },
+              {
+                "label": "Category",
+                "value": "Electric Steamer"
+              }
+            ],
+            "note": "Data source: DAEWOO official website. Subject to official announcements."
+          },
+          "service": {
+            "title": "Need More Assistance?",
+            "description": "Contact our consultant team for model selection, technical advice, and after-sales support.",
+            "primaryCta": {
+              "label": "Contact Consultant"
+            },
+            "secondaryCta": {
+              "label": "Book Service Center"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "product-dy-sm26",
+      "slug": "dy-sm26",
+      "locale": "zh",
+      "backLink": {
+        "href": "product-center.html#juicer",
+        "label": "返回产品中心"
+      },
+      "hero": {
+        "eyebrow": "轻餐饮品 · 破壁轻养杯",
+        "title": "DY-SM26 便携破壁轻养杯",
+        "description": "免泡豆免过滤细腻破壁，支持一键快速自动清洗，多档冷热轻养饮品一键智享。"
+      },
+      "summary": {
+        "cover": {
+          "src": "https://oss.tgripon.com/product-web/Blender_DY-SM26/00_cover.png",
+          "alt": "DY-SM26 便携破壁轻养杯"
+        },
+        "details": [
+          {
+            "label": "产品编号",
+            "value": "DY-SM26"
+          },
+          {
+            "label": "官方售价",
+            "value": "待定"
+          },
+          {
+            "label": "上市时间",
+            "value": "2026-10"
+          },
+          {
+            "label": "产品类别",
+            "value": "轻养破壁杯"
+          }
+        ],
+        "note": "数据来源：大宇家电官方网站，若有更新请以官方公告为准。"
+      },
+      "media": {
+        "thumbnails": [
+          {
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM26/00_cover.png",
+            "alt": "DY-SM26 便携破壁轻养杯 主视图"
+          }
+        ],
+        "gallery": [
+          {
+            "href": "https://oss.tgripon.com/product-web/Blender_DY-SM26/01_-1-26092P925255B.jpg",
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM26/01_-1-26092P925255B.jpg",
+            "alt": "DY-SM26 便携破壁轻养杯 功能介绍图 1"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Blender_DY-SM26/02_-1-26092P9252R51.jpg",
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM26/02_-1-26092P9252R51.jpg",
+            "alt": "DY-SM26 便携破壁轻养杯 功能介绍图 2"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Blender_DY-SM26/03_-1-26092P92529106.gif",
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM26/03_-1-26092P92529106.gif",
+            "alt": "DY-SM26 便携破壁轻养杯 功能介绍图 3"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Blender_DY-SM26/04_-1-26092P92532105.jpg",
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM26/04_-1-26092P92532105.jpg",
+            "alt": "DY-SM26 便携破壁轻养杯 功能介绍图 4"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Blender_DY-SM26/05_-1-26092P92533546.jpg",
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM26/05_-1-26092P92533546.jpg",
+            "alt": "DY-SM26 便携破壁轻养杯 功能介绍图 5"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Blender_DY-SM26/06_-1-26092P925343Z.jpg",
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM26/06_-1-26092P925343Z.jpg",
+            "alt": "DY-SM26 便携破壁轻养杯 功能介绍图 6"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Blender_DY-SM26/07_-1-26092P925342L.jpg",
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM26/07_-1-26092P925342L.jpg",
+            "alt": "DY-SM26 便携破壁轻养杯 功能介绍图 7"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Blender_DY-SM26/08_-1-26092P92535157.jpg",
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM26/08_-1-26092P92535157.jpg",
+            "alt": "DY-SM26 便携破壁轻养杯 功能介绍图 8"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Blender_DY-SM26/09_-1-26092P925362P.jpg",
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM26/09_-1-26092P925362P.jpg",
+            "alt": "DY-SM26 便携破壁轻养杯 功能介绍图 9"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Blender_DY-SM26/10_-1-26092P9253Mb.jpg",
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM26/10_-1-26092P9253Mb.jpg",
+            "alt": "DY-SM26 便携破壁轻养杯 功能介绍图 10"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Blender_DY-SM26/11_-1-26092P9253W43.jpg",
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM26/11_-1-26092P9253W43.jpg",
+            "alt": "DY-SM26 便携破壁轻养杯 功能介绍图 11"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Blender_DY-SM26/12_-1-26092P925395U.jpg",
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM26/12_-1-26092P925395U.jpg",
+            "alt": "DY-SM26 便携破壁轻养杯 功能介绍图 12"
+          }
+        ]
+      },
+      "service": {
+        "title": "需要更多帮助？",
+        "description": "联系我们的顾问团队，获取选型建议、使用指导与售后支持安排。",
+        "primaryCta": {
+          "label": "联系顾问",
+          "href": "mailto:support@daewoo.com"
+        },
+        "secondaryCta": {
+          "label": "预约服务中心",
+          "href": "contact.html"
+        }
+      },
+      "translations": {
+        "ko": {
+          "backLink": {
+            "label": "제품 센터로 돌아가기"
+          },
+          "hero": {
+            "eyebrow": "주방/음료 · 미니 블렌더",
+            "title": "DY-SM26 휴대용 미니 믹서기/두유기",
+            "description": "불릴 필요 없이 바로 갈아 마시는 고운 입자, 간편한 원터치 자동 세척 기능과 감성적인 콤팩트 디자인."
+          },
+          "summary": {
+            "details": [
+              {
+                "label": "제품 모델명",
+                "value": "DY-SM26"
+              },
+              {
+                "label": "공식 출시가",
+                "value": "미정"
+              },
+              {
+                "label": "출시 일정",
+                "value": "2026-10"
+              },
+              {
+                "label": "제품 카테고리",
+                "value": "미니블렌더"
+              }
+            ],
+            "note": "자료 출처: DAEWOO 공식 웹사이트. 상세 정보는 공식 공지를 참고해 주시기 바랍니다."
+          },
+          "service": {
+            "title": "도움이 필요하신가요?",
+            "description": "전문 상담팀에 문의하여 제품 추천, 규격 확인 및 서비스 센터 예약을 안내받으세요.",
+            "primaryCta": {
+              "label": "전문 상담원 문의"
+            },
+            "secondaryCta": {
+              "label": "서비스 센터 예약"
+            }
+          }
+        },
+        "en": {
+          "backLink": {
+            "label": "Back to Product Center"
+          },
+          "hero": {
+            "eyebrow": "Personal Care · Mini Blender",
+            "title": "DY-SM26 Portable Soy Milk Maker & Blender",
+            "description": "Filter-free smooth blending without soaking, one-touch self-cleaning, and ultra-portable size for daily fresh nutrition."
+          },
+          "summary": {
+            "details": [
+              {
+                "label": "Model No.",
+                "value": "DY-SM26"
+              },
+              {
+                "label": "Official Price",
+                "value": "TBD"
+              },
+              {
+                "label": "Release Date",
+                "value": "2026-10"
+              },
+              {
+                "label": "Category",
+                "value": "Portable Blender"
+              }
+            ],
+            "note": "Data source: DAEWOO official website. Subject to official announcements."
+          },
+          "service": {
+            "title": "Need More Assistance?",
+            "description": "Contact our consultant team for model selection, technical advice, and after-sales support.",
+            "primaryCta": {
+              "label": "Contact Consultant"
+            },
+            "secondaryCta": {
+              "label": "Book Service Center"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "product-dy-sm30",
+      "slug": "dy-sm30",
+      "locale": "zh",
+      "backLink": {
+        "href": "product-center.html#juicer",
+        "label": "返回产品中心"
+      },
+      "hero": {
+        "eyebrow": "厨房烹饪 · 破壁料理机",
+        "title": "DY-SM30 复古柔音破壁料理机",
+        "description": "多维降噪低音运行，强力高速电机与精钢刀头深层破壁，复古美学机身搭载智能预设菜单。"
+      },
+      "summary": {
+        "cover": {
+          "src": "https://oss.tgripon.com/product-web/Blender_DY-SM30/00_cover.png",
+          "alt": "DY-SM30 复古柔音破壁料理机"
+        },
+        "details": [
+          {
+            "label": "产品编号",
+            "value": "DY-SM30"
+          },
+          {
+            "label": "官方售价",
+            "value": "待定"
+          },
+          {
+            "label": "上市时间",
+            "value": "2026-10"
+          },
+          {
+            "label": "产品类别",
+            "value": "破壁料理机"
+          }
+        ],
+        "note": "数据来源：大宇家电官方网站，若有更新请以官方公告为准。"
+      },
+      "media": {
+        "thumbnails": [
+          {
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM30/00_cover.png",
+            "alt": "DY-SM30 复古柔音破壁料理机 主视图"
+          }
+        ],
+        "gallery": [
+          {
+            "href": "https://oss.tgripon.com/product-web/Blender_DY-SM30/01_-1-26100G01PM30.png",
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM30/01_-1-26100G01PM30.png",
+            "alt": "DY-SM30 复古柔音破壁料理机 功能介绍图 1"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Blender_DY-SM30/02_-1-26100G01PR15.jpg",
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM30/02_-1-26100G01PR15.jpg",
+            "alt": "DY-SM30 复古柔音破壁料理机 功能介绍图 2"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Blender_DY-SM30/03_-1-26100G01Pb94.jpg",
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM30/03_-1-26100G01Pb94.jpg",
+            "alt": "DY-SM30 复古柔音破壁料理机 功能介绍图 3"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Blender_DY-SM30/04_-1-26100G01Q1515.jpg",
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM30/04_-1-26100G01Q1515.jpg",
+            "alt": "DY-SM30 复古柔音破壁料理机 功能介绍图 4"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Blender_DY-SM30/05_-1-26100G01Q2U0.jpg",
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM30/05_-1-26100G01Q2U0.jpg",
+            "alt": "DY-SM30 复古柔音破壁料理机 功能介绍图 5"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Blender_DY-SM30/06_-1-26100G01Q2B1.jpg",
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM30/06_-1-26100G01Q2B1.jpg",
+            "alt": "DY-SM30 复古柔音破壁料理机 功能介绍图 6"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Blender_DY-SM30/07_-1-26100G01Q4609.jpg",
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM30/07_-1-26100G01Q4609.jpg",
+            "alt": "DY-SM30 复古柔音破壁料理机 功能介绍图 7"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Blender_DY-SM30/08_-1-26100G01Q4T5.jpg",
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM30/08_-1-26100G01Q4T5.jpg",
+            "alt": "DY-SM30 复古柔音破壁料理机 功能介绍图 8"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Blender_DY-SM30/09_-1-26100G01Q5612.jpg",
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM30/09_-1-26100G01Q5612.jpg",
+            "alt": "DY-SM30 复古柔音破壁料理机 功能介绍图 9"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Blender_DY-SM30/10_-1-26100G01QB59.jpg",
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM30/10_-1-26100G01QB59.jpg",
+            "alt": "DY-SM30 复古柔音破壁料理机 功能介绍图 10"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Blender_DY-SM30/11_-1-26100G01QV44.jpg",
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM30/11_-1-26100G01QV44.jpg",
+            "alt": "DY-SM30 复古柔音破壁料理机 功能介绍图 11"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Blender_DY-SM30/12_-1-26100G01QQH.jpg",
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM30/12_-1-26100G01QQH.jpg",
+            "alt": "DY-SM30 复古柔音破壁料理机 功能介绍图 12"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Blender_DY-SM30/13_-1-26100G01Q9194.jpg",
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM30/13_-1-26100G01Q9194.jpg",
+            "alt": "DY-SM30 复古柔音破壁料理机 功能介绍图 13"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Blender_DY-SM30/14_-1-26100G01R0927.jpg",
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM30/14_-1-26100G01R0927.jpg",
+            "alt": "DY-SM30 复古柔音破壁料理机 功能介绍图 14"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Blender_DY-SM30/15_-1-26100G01R1562.jpg",
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM30/15_-1-26100G01R1562.jpg",
+            "alt": "DY-SM30 复古柔音破壁料理机 功能介绍图 15"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Blender_DY-SM30/16_-1-26100G01R2322.jpg",
+            "src": "https://oss.tgripon.com/product-web/Blender_DY-SM30/16_-1-26100G01R2322.jpg",
+            "alt": "DY-SM30 复古柔音破壁料理机 功能介绍图 16"
+          }
+        ]
+      },
+      "service": {
+        "title": "需要更多帮助？",
+        "description": "联系我们的顾问团队，获取选型建议、使用指导与售后支持安排。",
+        "primaryCta": {
+          "label": "联系顾问",
+          "href": "mailto:support@daewoo.com"
+        },
+        "secondaryCta": {
+          "label": "预约服务中心",
+          "href": "contact.html"
+        }
+      },
+      "translations": {
+        "ko": {
+          "backLink": {
+            "label": "제품 센터로 돌아가기"
+          },
+          "hero": {
+            "eyebrow": "주방가전 · 블렌더",
+            "title": "DY-SM30 저소음 레트로 블렌더",
+            "description": "다중 소음 저감 설계와 강력한 고속 모터, 클래식 레트로 감성과 스마트 다기능 메뉴가 돋보이는 프리미엄 믹서기."
+          },
+          "summary": {
+            "details": [
+              {
+                "label": "제품 모델명",
+                "value": "DY-SM30"
+              },
+              {
+                "label": "공식 출시가",
+                "value": "미정"
+              },
+              {
+                "label": "출시 일정",
+                "value": "2026-10"
+              },
+              {
+                "label": "제품 카테고리",
+                "value": "초고속블렌더"
+              }
+            ],
+            "note": "자료 출처: DAEWOO 공식 웹사이트. 상세 정보는 공식 공지를 참고해 주시기 바랍니다."
+          },
+          "service": {
+            "title": "도움이 필요하신가요?",
+            "description": "전문 상담팀에 문의하여 제품 추천, 규격 확인 및 서비스 센터 예약을 안내받으세요.",
+            "primaryCta": {
+              "label": "전문 상담원 문의"
+            },
+            "secondaryCta": {
+              "label": "서비스 센터 예약"
+            }
+          }
+        },
+        "en": {
+          "backLink": {
+            "label": "Back to Product Center"
+          },
+          "hero": {
+            "eyebrow": "Kitchen Appliances · Blender",
+            "title": "DY-SM30 Retro Low-noise Blender",
+            "description": "Multi-dimensional noise reduction with a high-torque motor and precision steel blades for creamy smoothies and hot soups."
+          },
+          "summary": {
+            "details": [
+              {
+                "label": "Model No.",
+                "value": "DY-SM30"
+              },
+              {
+                "label": "Official Price",
+                "value": "TBD"
+              },
+              {
+                "label": "Release Date",
+                "value": "2026-10"
+              },
+              {
+                "label": "Category",
+                "value": "Blender"
+              }
+            ],
+            "note": "Data source: DAEWOO official website. Subject to official announcements."
+          },
+          "service": {
+            "title": "Need More Assistance?",
+            "description": "Contact our consultant team for model selection, technical advice, and after-sales support.",
+            "primaryCta": {
+              "label": "Contact Consultant"
+            },
+            "secondaryCta": {
+              "label": "Book Service Center"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "product-dysh-18d16",
+      "slug": "dysh-18d16",
+      "locale": "zh",
+      "backLink": {
+        "href": "product-center.html#kettle",
+        "label": "返回产品中心"
+      },
+      "hero": {
+        "eyebrow": "厨房电器 · 电热水壶",
+        "title": "DYSH-18D16 双层防烫电热水壶",
+        "description": "1.8L大容量食品接触级不锈钢内胆，双层中空隔热防烫手，大功率聚能极速沸腾。"
+      },
+      "summary": {
+        "cover": {
+          "src": "https://oss.tgripon.com/product-web/Electric_Kettle_DYSH-18D16/00_cover.png",
+          "alt": "DYSH-18D16 双层防烫电热水壶"
+        },
+        "details": [
+          {
+            "label": "产品编号",
+            "value": "DYSH-18D16"
+          },
+          {
+            "label": "官方售价",
+            "value": "待定"
+          },
+          {
+            "label": "上市时间",
+            "value": "2026-10"
+          },
+          {
+            "label": "产品类别",
+            "value": "电热水壶"
+          }
+        ],
+        "note": "数据来源：大宇家电官方网站，若有更新请以官方公告为准。"
+      },
+      "media": {
+        "thumbnails": [
+          {
+            "src": "https://oss.tgripon.com/product-web/Electric_Kettle_DYSH-18D16/00_cover.png",
+            "alt": "DYSH-18D16 双层防烫电热水壶 主视图"
+          }
+        ],
+        "gallery": [
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Kettle_DYSH-18D16/01_-1-26100G01435647.jpg",
+            "src": "https://oss.tgripon.com/product-web/Electric_Kettle_DYSH-18D16/01_-1-26100G01435647.jpg",
+            "alt": "DYSH-18D16 双层防烫电热水壶 功能介绍图 1"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Kettle_DYSH-18D16/02_-1-26100G0143G58.jpg",
+            "src": "https://oss.tgripon.com/product-web/Electric_Kettle_DYSH-18D16/02_-1-26100G0143G58.jpg",
+            "alt": "DYSH-18D16 双层防烫电热水壶 功能介绍图 2"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Kettle_DYSH-18D16/03_-1-26100G0143JI.jpg",
+            "src": "https://oss.tgripon.com/product-web/Electric_Kettle_DYSH-18D16/03_-1-26100G0143JI.jpg",
+            "alt": "DYSH-18D16 双层防烫电热水壶 功能介绍图 3"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Kettle_DYSH-18D16/04_-1-26100G0143VV.jpg",
+            "src": "https://oss.tgripon.com/product-web/Electric_Kettle_DYSH-18D16/04_-1-26100G0143VV.jpg",
+            "alt": "DYSH-18D16 双层防烫电热水壶 功能介绍图 4"
+          }
+        ]
+      },
+      "service": {
+        "title": "需要更多帮助？",
+        "description": "联系我们的顾问团队，获取选型建议、使用指导与售后支持安排。",
+        "primaryCta": {
+          "label": "联系顾问",
+          "href": "mailto:support@daewoo.com"
+        },
+        "secondaryCta": {
+          "label": "预约服务中心",
+          "href": "contact.html"
+        }
+      },
+      "translations": {
+        "ko": {
+          "backLink": {
+            "label": "제품 센터로 돌아가기"
+          },
+          "hero": {
+            "eyebrow": "주방가전 · 전기주전자",
+            "title": "DYSH-18D16 이중단열 무선 전기포트",
+            "description": "1.8L 대용량 프리미엄 스테인리스 내부, 겉면이 뜨겁지 않은 이중 단열 쿨터치 구조와 초고속 가열."
+          },
+          "summary": {
+            "details": [
+              {
+                "label": "제품 모델명",
+                "value": "DYSH-18D16"
+              },
+              {
+                "label": "공식 출시가",
+                "value": "미정"
+              },
+              {
+                "label": "출시 일정",
+                "value": "2026-10"
+              },
+              {
+                "label": "제품 카테고리",
+                "value": "전기주전자"
+              }
+            ],
+            "note": "자료 출처: DAEWOO 공식 웹사이트. 상세 정보는 공식 공지를 참고해 주시기 바랍니다."
+          },
+          "service": {
+            "title": "도움이 필요하신가요?",
+            "description": "전문 상담팀에 문의하여 제품 추천, 규격 확인 및 서비스 센터 예약을 안내받으세요.",
+            "primaryCta": {
+              "label": "전문 상담원 문의"
+            },
+            "secondaryCta": {
+              "label": "서비스 센터 예약"
+            }
+          }
+        },
+        "en": {
+          "backLink": {
+            "label": "Back to Product Center"
+          },
+          "hero": {
+            "eyebrow": "Kitchen Appliances · Electric Kettle",
+            "title": "DYSH-18D16 Double Wall Electric Kettle",
+            "description": "1.8L large capacity food-grade stainless steel interior with cool-touch double-wall insulation for fast and safe boiling."
+          },
+          "summary": {
+            "details": [
+              {
+                "label": "Model No.",
+                "value": "DYSH-18D16"
+              },
+              {
+                "label": "Official Price",
+                "value": "TBD"
+              },
+              {
+                "label": "Release Date",
+                "value": "2026-10"
+              },
+              {
+                "label": "Category",
+                "value": "Electric Kettle"
+              }
+            ],
+            "note": "Data source: DAEWOO official website. Subject to official announcements."
+          },
+          "service": {
+            "title": "Need More Assistance?",
+            "description": "Contact our consultant team for model selection, technical advice, and after-sales support.",
+            "primaryCta": {
+              "label": "Contact Consultant"
+            },
+            "secondaryCta": {
+              "label": "Book Service Center"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "product-ek01max-m",
+      "slug": "ek01max-m",
+      "locale": "zh",
+      "backLink": {
+        "href": "product-center.html#kettle",
+        "label": "返回产品中心"
+      },
+      "hero": {
+        "eyebrow": "厨房电器 · 复古温控水壶",
+        "title": "EK01MAX-M 复古温控电热水壶",
+        "description": "经典复古优雅设计，多档精准温度调控与长效保温，冲泡红茶、咖啡与温水随心随选。"
+      },
+      "summary": {
+        "cover": {
+          "src": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/00_cover.png",
+          "alt": "EK01MAX-M 复古温控电热水壶"
+        },
+        "details": [
+          {
+            "label": "产品编号",
+            "value": "EK01MAX-M"
+          },
+          {
+            "label": "官方售价",
+            "value": "待定"
+          },
+          {
+            "label": "上市时间",
+            "value": "2026-10"
+          },
+          {
+            "label": "产品类别",
+            "value": "恒温水壶"
+          }
+        ],
+        "note": "数据来源：大宇家电官方网站，若有更新请以官方公告为准。"
+      },
+      "media": {
+        "thumbnails": [
+          {
+            "src": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/00_cover.png",
+            "alt": "EK01MAX-M 复古温控电热水壶 主视图"
+          }
+        ],
+        "gallery": [
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/01_-1-26100G03402460.jpg",
+            "src": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/01_-1-26100G03402460.jpg",
+            "alt": "EK01MAX-M 复古温控电热水壶 功能介绍图 1"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/02_-1-26100G03404360.jpg",
+            "src": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/02_-1-26100G03404360.jpg",
+            "alt": "EK01MAX-M 复古温控电热水壶 功能介绍图 2"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/03_-1-26100G0340G16.jpg",
+            "src": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/03_-1-26100G0340G16.jpg",
+            "alt": "EK01MAX-M 复古温控电热水壶 功能介绍图 3"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/04_-1-26100G0340b15.jpg",
+            "src": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/04_-1-26100G0340b15.jpg",
+            "alt": "EK01MAX-M 复古温控电热水壶 功能介绍图 4"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/05_-1-26100G03410L2.jpg",
+            "src": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/05_-1-26100G03410L2.jpg",
+            "alt": "EK01MAX-M 复古温控电热水壶 功能介绍图 5"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/06_-1-26100G034113D.jpg",
+            "src": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/06_-1-26100G034113D.jpg",
+            "alt": "EK01MAX-M 复古温控电热水壶 功能介绍图 6"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/07_-1-26100G03412Q1.jpg",
+            "src": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/07_-1-26100G03412Q1.jpg",
+            "alt": "EK01MAX-M 复古温控电热水壶 功能介绍图 7"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/08_-1-26100G034124G.jpg",
+            "src": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/08_-1-26100G034124G.jpg",
+            "alt": "EK01MAX-M 复古温控电热水壶 功能介绍图 8"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/09_-1-26100G03413464.jpg",
+            "src": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/09_-1-26100G03413464.jpg",
+            "alt": "EK01MAX-M 复古温控电热水壶 功能介绍图 9"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/10_-1-26100G03414341.jpg",
+            "src": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/10_-1-26100G03414341.jpg",
+            "alt": "EK01MAX-M 复古温控电热水壶 功能介绍图 10"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/11_-1-26100G03415954.jpg",
+            "src": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/11_-1-26100G03415954.jpg",
+            "alt": "EK01MAX-M 复古温控电热水壶 功能介绍图 11"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/12_-1-26100G0341E24.jpg",
+            "src": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/12_-1-26100G0341E24.jpg",
+            "alt": "EK01MAX-M 复古温控电热水壶 功能介绍图 12"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/13_-1-26100G0341IG.jpg",
+            "src": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/13_-1-26100G0341IG.jpg",
+            "alt": "EK01MAX-M 复古温控电热水壶 功能介绍图 13"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/14_-1-26100G0341K26.jpg",
+            "src": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/14_-1-26100G0341K26.jpg",
+            "alt": "EK01MAX-M 复古温控电热水壶 功能介绍图 14"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/15_-1-26100G03432141.jpg",
+            "src": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/15_-1-26100G03432141.jpg",
+            "alt": "EK01MAX-M 复古温控电热水壶 功能介绍图 15"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/16_-1-26100G03435V0.jpg",
+            "src": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/16_-1-26100G03435V0.jpg",
+            "alt": "EK01MAX-M 复古温控电热水壶 功能介绍图 16"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/17_-1-26100G0343K01.jpg",
+            "src": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/17_-1-26100G0343K01.jpg",
+            "alt": "EK01MAX-M 复古温控电热水壶 功能介绍图 17"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/18_-1-26100G0343Y21.jpg",
+            "src": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/18_-1-26100G0343Y21.jpg",
+            "alt": "EK01MAX-M 复古温控电热水壶 功能介绍图 18"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/19_-1-26100G0343a07.jpg",
+            "src": "https://oss.tgripon.com/product-web/Electric_Kettle_EK01MAX-M/19_-1-26100G0343a07.jpg",
+            "alt": "EK01MAX-M 复古温控电热水壶 功能介绍图 19"
+          }
+        ]
+      },
+      "service": {
+        "title": "需要更多帮助？",
+        "description": "联系我们的顾问团队，获取选型建议、使用指导与售后支持安排。",
+        "primaryCta": {
+          "label": "联系顾问",
+          "href": "mailto:support@daewoo.com"
+        },
+        "secondaryCta": {
+          "label": "预约服务中心",
+          "href": "contact.html"
+        }
+      },
+      "translations": {
+        "ko": {
+          "backLink": {
+            "label": "제품 센터로 돌아가기"
+          },
+          "hero": {
+            "eyebrow": "주방가전 · 전기주전자",
+            "title": "EK01MAX-M 레트로 온도조절 전기포트",
+            "description": "클래식 레트로 디자인, 원터치 정밀 다단계 맞춤 온도 조절 및 항온 보온으로 완벽한 차와 커피 추출."
+          },
+          "summary": {
+            "details": [
+              {
+                "label": "제품 모델명",
+                "value": "EK01MAX-M"
+              },
+              {
+                "label": "공식 출시가",
+                "value": "미정"
+              },
+              {
+                "label": "출시 일정",
+                "value": "2026-10"
+              },
+              {
+                "label": "제품 카테고리",
+                "value": "전기주전자"
+              }
+            ],
+            "note": "자료 출처: DAEWOO 공식 웹사이트. 상세 정보는 공식 공지를 참고해 주시기 바랍니다."
+          },
+          "service": {
+            "title": "도움이 필요하신가요?",
+            "description": "전문 상담팀에 문의하여 제품 추천, 규격 확인 및 서비스 센터 예약을 안내받으세요.",
+            "primaryCta": {
+              "label": "전문 상담원 문의"
+            },
+            "secondaryCta": {
+              "label": "서비스 센터 예약"
+            }
+          }
+        },
+        "en": {
+          "backLink": {
+            "label": "Back to Product Center"
+          },
+          "hero": {
+            "eyebrow": "Kitchen Appliances · Electric Kettle",
+            "title": "EK01MAX-M Retro Temperature Control Kettle",
+            "description": "Classic vintage aesthetics paired with multi-temperature precision settings and keep-warm functionality for exquisite brewing."
+          },
+          "summary": {
+            "details": [
+              {
+                "label": "Model No.",
+                "value": "EK01MAX-M"
+              },
+              {
+                "label": "Official Price",
+                "value": "TBD"
+              },
+              {
+                "label": "Release Date",
+                "value": "2026-10"
+              },
+              {
+                "label": "Category",
+                "value": "Electric Kettle"
+              }
+            ],
+            "note": "Data source: DAEWOO official website. Subject to official announcements."
+          },
+          "service": {
+            "title": "Need More Assistance?",
+            "description": "Contact our consultant team for model selection, technical advice, and after-sales support.",
+            "primaryCta": {
+              "label": "Contact Consultant"
+            },
+            "secondaryCta": {
+              "label": "Book Service Center"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "product-l11",
+      "slug": "l11",
+      "locale": "zh",
+      "backLink": {
+        "href": "product-center.html#vacuum",
+        "label": "返回产品中心"
+      },
+      "hero": {
+        "eyebrow": "清洁生活 · 无线吸尘器",
+        "title": "L11 轻量无线手持吸尘器",
+        "description": "羽量级机身设计轻巧顺手，强劲无刷数码电机输出澎湃吸力，多合一刷头全屋无死角除尘。"
+      },
+      "summary": {
+        "cover": {
+          "src": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/00_cover.png",
+          "alt": "L11 轻量无线手持吸尘器"
+        },
+        "details": [
+          {
+            "label": "产品编号",
+            "value": "L11"
+          },
+          {
+            "label": "官方售价",
+            "value": "待定"
+          },
+          {
+            "label": "上市时间",
+            "value": "2026-10"
+          },
+          {
+            "label": "产品类别",
+            "value": "无线吸尘器"
+          }
+        ],
+        "note": "数据来源：大宇家电官方网站，若有更新请以官方公告为准。"
+      },
+      "media": {
+        "thumbnails": [
+          {
+            "src": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/00_cover.png",
+            "alt": "L11 轻量无线手持吸尘器 主视图"
+          }
+        ],
+        "gallery": [
+          {
+            "href": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/01_-1-26091Q4121M48.jpg",
+            "src": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/01_-1-26091Q4121M48.jpg",
+            "alt": "L11 轻量无线手持吸尘器 功能介绍图 1"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/02_-1-26091Q4121aQ.jpg",
+            "src": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/02_-1-26091Q4121aQ.jpg",
+            "alt": "L11 轻量无线手持吸尘器 功能介绍图 2"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/03_-1-26091Q41220Y7.jpg",
+            "src": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/03_-1-26091Q41220Y7.jpg",
+            "alt": "L11 轻量无线手持吸尘器 功能介绍图 3"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/04_-1-26091Q41223491.jpg",
+            "src": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/04_-1-26091Q41223491.jpg",
+            "alt": "L11 轻量无线手持吸尘器 功能介绍图 4"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/05_-1-26091Q41223137.jpg",
+            "src": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/05_-1-26091Q41223137.jpg",
+            "alt": "L11 轻量无线手持吸尘器 功能介绍图 5"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/06_-1-26091Q41229364.jpg",
+            "src": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/06_-1-26091Q41229364.jpg",
+            "alt": "L11 轻量无线手持吸尘器 功能介绍图 6"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/07_-1-26091Q412314a.jpg",
+            "src": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/07_-1-26091Q412314a.jpg",
+            "alt": "L11 轻量无线手持吸尘器 功能介绍图 7"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/08_-1-26091Q41233618.jpg",
+            "src": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/08_-1-26091Q41233618.jpg",
+            "alt": "L11 轻量无线手持吸尘器 功能介绍图 8"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/09_-1-26091Q41234560.jpg",
+            "src": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/09_-1-26091Q41234560.jpg",
+            "alt": "L11 轻量无线手持吸尘器 功能介绍图 9"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/10_-1-26091Q41236145.jpg",
+            "src": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/10_-1-26091Q41236145.jpg",
+            "alt": "L11 轻量无线手持吸尘器 功能介绍图 10"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/11_-1-26091Q4123WY.jpg",
+            "src": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/11_-1-26091Q4123WY.jpg",
+            "alt": "L11 轻量无线手持吸尘器 功能介绍图 11"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/12_-1-26091Q412402Z.jpg",
+            "src": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/12_-1-26091Q412402Z.jpg",
+            "alt": "L11 轻量无线手持吸尘器 功能介绍图 12"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/13_-1-26091Q41245112.jpg",
+            "src": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/13_-1-26091Q41245112.jpg",
+            "alt": "L11 轻量无线手持吸尘器 功能介绍图 13"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/14_-1-26091Q4124D31.jpg",
+            "src": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/14_-1-26091Q4124D31.jpg",
+            "alt": "L11 轻量无线手持吸尘器 功能介绍图 14"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/15_-1-26091Q41251223.jpg",
+            "src": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/15_-1-26091Q41251223.jpg",
+            "alt": "L11 轻量无线手持吸尘器 功能介绍图 15"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/16_-1-26091Q41254592.jpg",
+            "src": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/16_-1-26091Q41254592.jpg",
+            "alt": "L11 轻量无线手持吸尘器 功能介绍图 16"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/17_-1-26091Q4125C07.jpg",
+            "src": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/17_-1-26091Q4125C07.jpg",
+            "alt": "L11 轻量无线手持吸尘器 功能介绍图 17"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/18_-1-26091Q4125X00.jpg",
+            "src": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/18_-1-26091Q4125X00.jpg",
+            "alt": "L11 轻量无线手持吸尘器 功能介绍图 18"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/19_-1-26091Q4125WC.jpg",
+            "src": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/19_-1-26091Q4125WC.jpg",
+            "alt": "L11 轻量无线手持吸尘器 功能介绍图 19"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/20_-1-26091Q41301Q9.jpg",
+            "src": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/20_-1-26091Q41301Q9.jpg",
+            "alt": "L11 轻量无线手持吸尘器 功能介绍图 20"
+          },
+          {
+            "href": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/21_-1-26091Q4131Q23.jpg",
+            "src": "https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/21_-1-26091Q4131Q23.jpg",
+            "alt": "L11 轻量无线手持吸尘器 功能介绍图 21"
+          }
+        ]
+      },
+      "service": {
+        "title": "需要更多帮助？",
+        "description": "联系我们的顾问团队，获取选型建议、使用指导与售后支持安排。",
+        "primaryCta": {
+          "label": "联系顾问",
+          "href": "mailto:support@daewoo.com"
+        },
+        "secondaryCta": {
+          "label": "预约服务中心",
+          "href": "contact.html"
+        }
+      },
+      "translations": {
+        "ko": {
+          "backLink": {
+            "label": "제품 센터로 돌아가기"
+          },
+          "hero": {
+            "eyebrow": "청소생활 · 무선청소기",
+            "title": "L11 초경량 무선 핸디 청소기",
+            "description": "초경량 바디로 손목 부담 없는 자유로운 청소, 강력한 디지털 흡입력과 다용도 브러시로 구석구석 깨끗하게 케어."
+          },
+          "summary": {
+            "details": [
+              {
+                "label": "제품 모델명",
+                "value": "L11"
+              },
+              {
+                "label": "공식 출시가",
+                "value": "미정"
+              },
+              {
+                "label": "출시 일정",
+                "value": "2026-10"
+              },
+              {
+                "label": "제품 카테고리",
+                "value": "무선청소기"
+              }
+            ],
+            "note": "자료 출처: DAEWOO 공식 웹사이트. 상세 정보는 공식 공지를 참고해 주시기 바랍니다."
+          },
+          "service": {
+            "title": "도움이 필요하신가요?",
+            "description": "전문 상담팀에 문의하여 제품 추천, 규격 확인 및 서비스 센터 예약을 안내받으세요.",
+            "primaryCta": {
+              "label": "전문 상담원 문의"
+            },
+            "secondaryCta": {
+              "label": "서비스 센터 예약"
+            }
+          }
+        },
+        "en": {
+          "backLink": {
+            "label": "Back to Product Center"
+          },
+          "hero": {
+            "eyebrow": "Cleaning · Vacuum Cleaner",
+            "title": "L11 Lightweight Cordless Vacuum Cleaner",
+            "description": "Ultra-lightweight ergonomic balance, powerful high-speed brushless suction, and multi-surface attachments for effortless home cleaning."
+          },
+          "summary": {
+            "details": [
+              {
+                "label": "Model No.",
+                "value": "L11"
+              },
+              {
+                "label": "Official Price",
+                "value": "TBD"
+              },
+              {
+                "label": "Release Date",
+                "value": "2026-10"
+              },
+              {
+                "label": "Category",
+                "value": "Vacuum Cleaner"
+              }
+            ],
+            "note": "Data source: DAEWOO official website. Subject to official announcements."
+          },
+          "service": {
+            "title": "Need More Assistance?",
+            "description": "Contact our consultant team for model selection, technical advice, and after-sales support.",
+            "primaryCta": {
+              "label": "Contact Consultant"
+            },
+            "secondaryCta": {
+              "label": "Book Service Center"
+            }
+          }
+        }
+      }
+    },
+    {
       "id": "product-988",
       "slug": "dy-tn33",
       "locale": "zh",
@@ -19,10 +2139,22 @@
           "alt": "DY-TN33 液体加热器"
         },
         "details": [
-          { "label": "产品编号", "value": "SN1761793198" },
-          { "label": "官方售价", "value": "¥432" },
-          { "label": "上市时间", "value": "2025-10-30" },
-          { "label": "产品类别", "value": "调奶器" }
+          {
+            "label": "产品编号",
+            "value": "SN1761793198"
+          },
+          {
+            "label": "官方售价",
+            "value": "¥432"
+          },
+          {
+            "label": "上市时间",
+            "value": "2025-10-30"
+          },
+          {
+            "label": "产品类别",
+            "value": "调奶器"
+          }
         ],
         "note": "数据来源：大宇家电官方网站，若有更新请以官方公告为准。"
       },
@@ -160,10 +2292,22 @@
           },
           "summary": {
             "details": [
-              { "label": "Product ID", "value": "SN1761793198" },
-              { "label": "MSRP", "value": "¥432" },
-              { "label": "Launch Date", "value": "2025-10-30" },
-              { "label": "Category", "value": "Formula maker" }
+              {
+                "label": "Product ID",
+                "value": "SN1761793198"
+              },
+              {
+                "label": "MSRP",
+                "value": "¥432"
+              },
+              {
+                "label": "Launch Date",
+                "value": "2025-10-30"
+              },
+              {
+                "label": "Category",
+                "value": "Formula maker"
+              }
             ],
             "note": "Data source: DAEWOO official website. Refer to official announcements for the latest specifications."
           },
@@ -189,10 +2333,22 @@
           },
           "summary": {
             "details": [
-              { "label": "제품 번호", "value": "SN1761793198" },
-              { "label": "권장 소비자가", "value": "¥432" },
-              { "label": "출시일", "value": "2025-10-30" },
-              { "label": "제품 유형", "value": "분유 조제기" }
+              {
+                "label": "제품 번호",
+                "value": "SN1761793198"
+              },
+              {
+                "label": "권장 소비자가",
+                "value": "¥432"
+              },
+              {
+                "label": "출시일",
+                "value": "2025-10-30"
+              },
+              {
+                "label": "제품 유형",
+                "value": "분유 조제기"
+              }
             ],
             "note": "자료 출처: DAEWOO 공식 웹사이트. 최신 사양은 공식 공지를 참고하세요."
           },
@@ -228,10 +2384,22 @@
           "alt": "T2311AYV 踢脚线取暖器"
         },
         "details": [
-          { "label": "产品编号", "value": "SN1761794295" },
-          { "label": "官方售价", "value": "¥699" },
-          { "label": "上市时间", "value": "2025-10-30" },
-          { "label": "产品类别", "value": "踢脚线取暖器" }
+          {
+            "label": "产品编号",
+            "value": "SN1761794295"
+          },
+          {
+            "label": "官方售价",
+            "value": "¥699"
+          },
+          {
+            "label": "上市时间",
+            "value": "2025-10-30"
+          },
+          {
+            "label": "产品类别",
+            "value": "踢脚线取暖器"
+          }
         ],
         "note": "数据来源：大宇家电官方网站，最新参数与促销信息以官方发布为准。"
       },
@@ -425,10 +2593,22 @@
           },
           "summary": {
             "details": [
-              { "label": "Product ID", "value": "SN1761794295" },
-              { "label": "MSRP", "value": "¥699" },
-              { "label": "Launch Date", "value": "2025-10-30" },
-              { "label": "Category", "value": "Baseboard heater" }
+              {
+                "label": "Product ID",
+                "value": "SN1761794295"
+              },
+              {
+                "label": "MSRP",
+                "value": "¥699"
+              },
+              {
+                "label": "Launch Date",
+                "value": "2025-10-30"
+              },
+              {
+                "label": "Category",
+                "value": "Baseboard heater"
+              }
             ],
             "note": "Data source: DAEWOO official website. Latest parameters and promotions are subject to official announcements."
           },
@@ -454,10 +2634,22 @@
           },
           "summary": {
             "details": [
-              { "label": "제품 번호", "value": "SN1761794295" },
-              { "label": "권장 소비자가", "value": "¥699" },
-              { "label": "출시일", "value": "2025-10-30" },
-              { "label": "제품 유형", "value": "플린스 히터" }
+              {
+                "label": "제품 번호",
+                "value": "SN1761794295"
+              },
+              {
+                "label": "권장 소비자가",
+                "value": "¥699"
+              },
+              {
+                "label": "출시일",
+                "value": "2025-10-30"
+              },
+              {
+                "label": "제품 유형",
+                "value": "플린스 히터"
+              }
             ],
             "note": "자료 출처: DAEWOO 공식 웹사이트. 최신 사양과 프로모션은 공식 공지를 따릅니다."
           },
@@ -493,10 +2685,22 @@
           "alt": "S30PRO 多功能炖蒸煮锅"
         },
         "details": [
-          { "label": "产品编号", "value": "待定" },
-          { "label": "官方售价", "value": "待定" },
-          { "label": "上市时间", "value": "待定" },
-          { "label": "产品类别", "value": "多功能炖蒸煮锅" }
+          {
+            "label": "产品编号",
+            "value": "待定"
+          },
+          {
+            "label": "官方售价",
+            "value": "待定"
+          },
+          {
+            "label": "上市时间",
+            "value": "待定"
+          },
+          {
+            "label": "产品类别",
+            "value": "多功能炖蒸煮锅"
+          }
         ],
         "note": "数据来源：大宇家电官方网站，若有更新请以官方公告为准。"
       },
@@ -555,10 +2759,22 @@
           },
           "summary": {
             "details": [
-              { "label": "Product ID", "value": "TBD" },
-              { "label": "MSRP", "value": "TBD" },
-              { "label": "Launch Date", "value": "TBD" },
-              { "label": "Category", "value": "Multi-function stew & steam pot" }
+              {
+                "label": "Product ID",
+                "value": "TBD"
+              },
+              {
+                "label": "MSRP",
+                "value": "TBD"
+              },
+              {
+                "label": "Launch Date",
+                "value": "TBD"
+              },
+              {
+                "label": "Category",
+                "value": "Multi-function stew & steam pot"
+              }
             ],
             "note": "Data source: DAEWOO official website. Refer to official announcements for the latest specifications."
           },
@@ -584,10 +2800,22 @@
           },
           "summary": {
             "details": [
-              { "label": "제품 번호", "value": "미정" },
-              { "label": "권장 소비자가", "value": "미정" },
-              { "label": "출시일", "value": "미정" },
-              { "label": "제품 유형", "value": "멀티 스튜 & 스팀 포트" }
+              {
+                "label": "제품 번호",
+                "value": "미정"
+              },
+              {
+                "label": "권장 소비자가",
+                "value": "미정"
+              },
+              {
+                "label": "출시일",
+                "value": "미정"
+              },
+              {
+                "label": "제품 유형",
+                "value": "멀티 스튜 & 스팀 포트"
+              }
             ],
             "note": "자료 출처: DAEWOO 공식 웹사이트. 최신 사양은 공식 공지를 참고하세요."
           },
@@ -623,10 +2851,22 @@
           "alt": "HI-029PRO 大宇手持挂烫机"
         },
         "details": [
-          { "label": "产品编号", "value": "待定" },
-          { "label": "官方售价", "value": "待定" },
-          { "label": "上市时间", "value": "待定" },
-          { "label": "产品类别", "value": "手持挂烫机" }
+          {
+            "label": "产品编号",
+            "value": "待定"
+          },
+          {
+            "label": "官方售价",
+            "value": "待定"
+          },
+          {
+            "label": "上市时间",
+            "value": "待定"
+          },
+          {
+            "label": "产品类别",
+            "value": "手持挂烫机"
+          }
         ],
         "note": "数据来源：大宇家电官方网站，若有更新请以官方公告为准。"
       },
@@ -693,10 +2933,22 @@
           },
           "summary": {
             "details": [
-              { "label": "Product ID", "value": "TBD" },
-              { "label": "MSRP", "value": "TBD" },
-              { "label": "Launch Date", "value": "TBD" },
-              { "label": "Category", "value": "Handheld garment steamer" }
+              {
+                "label": "Product ID",
+                "value": "TBD"
+              },
+              {
+                "label": "MSRP",
+                "value": "TBD"
+              },
+              {
+                "label": "Launch Date",
+                "value": "TBD"
+              },
+              {
+                "label": "Category",
+                "value": "Handheld garment steamer"
+              }
             ],
             "note": "Data source: DAEWOO official website. Refer to official announcements for the latest specifications."
           },
@@ -722,10 +2974,22 @@
           },
           "summary": {
             "details": [
-              { "label": "제품 번호", "value": "미정" },
-              { "label": "권장 소비자가", "value": "미정" },
-              { "label": "출시일", "value": "미정" },
-              { "label": "제품 유형", "value": "핸드헬드 스팀 다리미" }
+              {
+                "label": "제품 번호",
+                "value": "미정"
+              },
+              {
+                "label": "권장 소비자가",
+                "value": "미정"
+              },
+              {
+                "label": "출시일",
+                "value": "미정"
+              },
+              {
+                "label": "제품 유형",
+                "value": "핸드헬드 스팀 다리미"
+              }
             ],
             "note": "자료 출처: DAEWOO 공식 웹사이트. 최신 사양은 공식 공지를 참고하세요."
           },
@@ -761,10 +3025,22 @@
           "alt": "HI-045 大宇 Hobo 手持熨烫机"
         },
         "details": [
-          { "label": "产品编号", "value": "待定" },
-          { "label": "官方售价", "value": "待定" },
-          { "label": "上市时间", "value": "待定" },
-          { "label": "产品类别", "value": "手持熨烫机" }
+          {
+            "label": "产品编号",
+            "value": "待定"
+          },
+          {
+            "label": "官方售价",
+            "value": "待定"
+          },
+          {
+            "label": "上市时间",
+            "value": "待定"
+          },
+          {
+            "label": "产品类别",
+            "value": "手持熨烫机"
+          }
         ],
         "note": "数据来源：大宇家电官方网站，若有更新请以官方公告为准。"
       },
@@ -827,10 +3103,22 @@
           },
           "summary": {
             "details": [
-              { "label": "Product ID", "value": "TBD" },
-              { "label": "MSRP", "value": "TBD" },
-              { "label": "Launch Date", "value": "TBD" },
-              { "label": "Category", "value": "Handheld iron" }
+              {
+                "label": "Product ID",
+                "value": "TBD"
+              },
+              {
+                "label": "MSRP",
+                "value": "TBD"
+              },
+              {
+                "label": "Launch Date",
+                "value": "TBD"
+              },
+              {
+                "label": "Category",
+                "value": "Handheld iron"
+              }
             ],
             "note": "Data source: DAEWOO official website. Refer to official announcements for the latest specifications."
           },
@@ -856,10 +3144,22 @@
           },
           "summary": {
             "details": [
-              { "label": "제품 번호", "value": "미정" },
-              { "label": "권장 소비자가", "value": "미정" },
-              { "label": "출시일", "value": "미정" },
-              { "label": "제품 유형", "value": "핸드헬드 다리미" }
+              {
+                "label": "제품 번호",
+                "value": "미정"
+              },
+              {
+                "label": "권장 소비자가",
+                "value": "미정"
+              },
+              {
+                "label": "출시일",
+                "value": "미정"
+              },
+              {
+                "label": "제품 유형",
+                "value": "핸드헬드 다리미"
+              }
             ],
             "note": "자료 출처: DAEWOO 공식 웹사이트. 최신 사양은 공식 공지를 참고하세요."
           },
@@ -895,10 +3195,22 @@
           "alt": "HI-046 大宇小圆盒衣物护理机"
         },
         "details": [
-          { "label": "产品编号", "value": "待定" },
-          { "label": "官方售价", "value": "待定" },
-          { "label": "上市时间", "value": "待定" },
-          { "label": "产品类别", "value": "衣物护理机" }
+          {
+            "label": "产品编号",
+            "value": "待定"
+          },
+          {
+            "label": "官方售价",
+            "value": "待定"
+          },
+          {
+            "label": "上市时间",
+            "value": "待定"
+          },
+          {
+            "label": "产品类别",
+            "value": "衣物护理机"
+          }
         ],
         "note": "数据来源：大宇家电官方网站，若有更新请以官方公告为准。"
       },
@@ -969,10 +3281,22 @@
           },
           "summary": {
             "details": [
-              { "label": "Product ID", "value": "TBD" },
-              { "label": "MSRP", "value": "TBD" },
-              { "label": "Launch Date", "value": "TBD" },
-              { "label": "Category", "value": "Garment care machine" }
+              {
+                "label": "Product ID",
+                "value": "TBD"
+              },
+              {
+                "label": "MSRP",
+                "value": "TBD"
+              },
+              {
+                "label": "Launch Date",
+                "value": "TBD"
+              },
+              {
+                "label": "Category",
+                "value": "Garment care machine"
+              }
             ],
             "note": "Data source: DAEWOO official website. Refer to official announcements for the latest specifications."
           },
@@ -998,10 +3322,22 @@
           },
           "summary": {
             "details": [
-              { "label": "제품 번호", "value": "미정" },
-              { "label": "권장 소비자가", "value": "미정" },
-              { "label": "출시일", "value": "미정" },
-              { "label": "제품 유형", "value": "의류 케어 머신" }
+              {
+                "label": "제품 번호",
+                "value": "미정"
+              },
+              {
+                "label": "권장 소비자가",
+                "value": "미정"
+              },
+              {
+                "label": "출시일",
+                "value": "미정"
+              },
+              {
+                "label": "제품 유형",
+                "value": "의류 케어 머신"
+              }
             ],
             "note": "자료 출처: DAEWOO 공식 웹사이트. 최신 사양은 공식 공지를 참고하세요."
           },
@@ -1037,10 +3373,22 @@
           "alt": "HI-050 大宇喷熨挂烫机"
         },
         "details": [
-          { "label": "产品编号", "value": "待定" },
-          { "label": "官方售价", "value": "待定" },
-          { "label": "上市时间", "value": "待定" },
-          { "label": "产品类别", "value": "挂烫机" }
+          {
+            "label": "产品编号",
+            "value": "待定"
+          },
+          {
+            "label": "官方售价",
+            "value": "待定"
+          },
+          {
+            "label": "上市时间",
+            "value": "待定"
+          },
+          {
+            "label": "产品类别",
+            "value": "挂烫机"
+          }
         ],
         "note": "数据来源：大宇家电官方网站，若有更新请以官方公告为准。"
       },
@@ -1115,10 +3463,22 @@
           },
           "summary": {
             "details": [
-              { "label": "Product ID", "value": "TBD" },
-              { "label": "MSRP", "value": "TBD" },
-              { "label": "Launch Date", "value": "TBD" },
-              { "label": "Category", "value": "Garment steamer" }
+              {
+                "label": "Product ID",
+                "value": "TBD"
+              },
+              {
+                "label": "MSRP",
+                "value": "TBD"
+              },
+              {
+                "label": "Launch Date",
+                "value": "TBD"
+              },
+              {
+                "label": "Category",
+                "value": "Garment steamer"
+              }
             ],
             "note": "Data source: DAEWOO official website. Refer to official announcements for the latest specifications."
           },
@@ -1144,10 +3504,22 @@
           },
           "summary": {
             "details": [
-              { "label": "제품 번호", "value": "미정" },
-              { "label": "권장 소비자가", "value": "미정" },
-              { "label": "출시일", "value": "미정" },
-              { "label": "제품 유형", "value": "스팀 다리미" }
+              {
+                "label": "제품 번호",
+                "value": "미정"
+              },
+              {
+                "label": "권장 소비자가",
+                "value": "미정"
+              },
+              {
+                "label": "출시일",
+                "value": "미정"
+              },
+              {
+                "label": "제품 유형",
+                "value": "스팀 다리미"
+              }
             ],
             "note": "자료 출처: DAEWOO 공식 웹사이트. 최신 사양은 공식 공지를 참고하세요."
           },
@@ -1183,10 +3555,22 @@
           "alt": "PH05 大宇小巨蛋加湿器"
         },
         "details": [
-          { "label": "产品编号", "value": "待定" },
-          { "label": "官方售价", "value": "待定" },
-          { "label": "上市时间", "value": "待定" },
-          { "label": "产品类别", "value": "加湿器" }
+          {
+            "label": "产品编号",
+            "value": "待定"
+          },
+          {
+            "label": "官方售价",
+            "value": "待定"
+          },
+          {
+            "label": "上市时间",
+            "value": "待定"
+          },
+          {
+            "label": "产品类别",
+            "value": "加湿器"
+          }
         ],
         "note": "数据来源：大宇家电官方网站，若有更新请以官方公告为准。"
       },
@@ -1257,10 +3641,22 @@
           },
           "summary": {
             "details": [
-              { "label": "Product ID", "value": "TBD" },
-              { "label": "MSRP", "value": "TBD" },
-              { "label": "Launch Date", "value": "TBD" },
-              { "label": "Category", "value": "Humidifier" }
+              {
+                "label": "Product ID",
+                "value": "TBD"
+              },
+              {
+                "label": "MSRP",
+                "value": "TBD"
+              },
+              {
+                "label": "Launch Date",
+                "value": "TBD"
+              },
+              {
+                "label": "Category",
+                "value": "Humidifier"
+              }
             ],
             "note": "Data source: DAEWOO official website. Refer to official announcements for the latest specifications."
           },
@@ -1286,10 +3682,22 @@
           },
           "summary": {
             "details": [
-              { "label": "제품 번호", "value": "미정" },
-              { "label": "권장 소비자가", "value": "미정" },
-              { "label": "출시일", "value": "미정" },
-              { "label": "제품 유형", "value": "가습기" }
+              {
+                "label": "제품 번호",
+                "value": "미정"
+              },
+              {
+                "label": "권장 소비자가",
+                "value": "미정"
+              },
+              {
+                "label": "출시일",
+                "value": "미정"
+              },
+              {
+                "label": "제품 유형",
+                "value": "가습기"
+              }
             ],
             "note": "자료 출처: DAEWOO 공식 웹사이트. 최신 사양은 공식 공지를 참고하세요."
           },
@@ -1325,10 +3733,22 @@
           "alt": "PH06 大宇无雾加湿器"
         },
         "details": [
-          { "label": "产品编号", "value": "待定" },
-          { "label": "官方售价", "value": "待定" },
-          { "label": "上市时间", "value": "待定" },
-          { "label": "产品类别", "value": "加湿器" }
+          {
+            "label": "产品编号",
+            "value": "待定"
+          },
+          {
+            "label": "官方售价",
+            "value": "待定"
+          },
+          {
+            "label": "上市时间",
+            "value": "待定"
+          },
+          {
+            "label": "产品类别",
+            "value": "加湿器"
+          }
         ],
         "note": "数据来源：大宇家电官方网站，若有更新请以官方公告为准。"
       },
@@ -1391,10 +3811,22 @@
           },
           "summary": {
             "details": [
-              { "label": "Product ID", "value": "TBD" },
-              { "label": "MSRP", "value": "TBD" },
-              { "label": "Launch Date", "value": "TBD" },
-              { "label": "Category", "value": "Humidifier" }
+              {
+                "label": "Product ID",
+                "value": "TBD"
+              },
+              {
+                "label": "MSRP",
+                "value": "TBD"
+              },
+              {
+                "label": "Launch Date",
+                "value": "TBD"
+              },
+              {
+                "label": "Category",
+                "value": "Humidifier"
+              }
             ],
             "note": "Data source: DAEWOO official website. Refer to official announcements for the latest specifications."
           },
@@ -1420,10 +3852,22 @@
           },
           "summary": {
             "details": [
-              { "label": "제품 번호", "value": "미정" },
-              { "label": "권장 소비자가", "value": "미정" },
-              { "label": "출시일", "value": "미정" },
-              { "label": "제품 유형", "value": "가습기" }
+              {
+                "label": "제품 번호",
+                "value": "미정"
+              },
+              {
+                "label": "권장 소비자가",
+                "value": "미정"
+              },
+              {
+                "label": "출시일",
+                "value": "미정"
+              },
+              {
+                "label": "제품 유형",
+                "value": "가습기"
+              }
             ],
             "note": "자료 출처: DAEWOO 공식 웹사이트. 최신 사양은 공식 공지를 참고하세요."
           },
@@ -1459,10 +3903,22 @@
           "alt": "S31 多功能蒸汽料理锅"
         },
         "details": [
-          { "label": "产品编号", "value": "待定" },
-          { "label": "官方售价", "value": "待定" },
-          { "label": "上市时间", "value": "待定" },
-          { "label": "产品类别", "value": "蒸汽料理锅" }
+          {
+            "label": "产品编号",
+            "value": "待定"
+          },
+          {
+            "label": "官方售价",
+            "value": "待定"
+          },
+          {
+            "label": "上市时间",
+            "value": "待定"
+          },
+          {
+            "label": "产品类别",
+            "value": "蒸汽料理锅"
+          }
         ],
         "note": "数据来源：大宇家电官方网站，若有更新请以官方公告为准。"
       },
@@ -1525,10 +3981,22 @@
           },
           "summary": {
             "details": [
-              { "label": "Product ID", "value": "TBD" },
-              { "label": "MSRP", "value": "TBD" },
-              { "label": "Launch Date", "value": "TBD" },
-              { "label": "Category", "value": "Steam cooker" }
+              {
+                "label": "Product ID",
+                "value": "TBD"
+              },
+              {
+                "label": "MSRP",
+                "value": "TBD"
+              },
+              {
+                "label": "Launch Date",
+                "value": "TBD"
+              },
+              {
+                "label": "Category",
+                "value": "Steam cooker"
+              }
             ],
             "note": "Data source: DAEWOO official website. Refer to official announcements for the latest specifications."
           },
@@ -1554,10 +4022,22 @@
           },
           "summary": {
             "details": [
-              { "label": "제품 번호", "value": "미정" },
-              { "label": "권장 소비자가", "value": "미정" },
-              { "label": "출시일", "value": "미정" },
-              { "label": "제품 유형", "value": "스팀 쿠커" }
+              {
+                "label": "제품 번호",
+                "value": "미정"
+              },
+              {
+                "label": "권장 소비자가",
+                "value": "미정"
+              },
+              {
+                "label": "출시일",
+                "value": "미정"
+              },
+              {
+                "label": "제품 유형",
+                "value": "스팀 쿠커"
+              }
             ],
             "note": "자료 출처: DAEWOO 공식 웹사이트. 최신 사양은 공식 공지를 참고하세요."
           },
@@ -1593,10 +4073,22 @@
           "alt": "ZB13 大宇果蔬杯"
         },
         "details": [
-          { "label": "产品编号", "value": "待定" },
-          { "label": "官方售价", "value": "待定" },
-          { "label": "上市时间", "value": "待定" },
-          { "label": "产品类别", "value": "果蔬杯" }
+          {
+            "label": "产品编号",
+            "value": "待定"
+          },
+          {
+            "label": "官方售价",
+            "value": "待定"
+          },
+          {
+            "label": "上市时间",
+            "value": "待定"
+          },
+          {
+            "label": "产品类别",
+            "value": "果蔬杯"
+          }
         ],
         "note": "数据来源：大宇家电官方网站，若有更新请以官方公告为准。"
       },
@@ -1655,10 +4147,22 @@
           },
           "summary": {
             "details": [
-              { "label": "Product ID", "value": "TBD" },
-              { "label": "MSRP", "value": "TBD" },
-              { "label": "Launch Date", "value": "TBD" },
-              { "label": "Category", "value": "Fruit & vegetable cup" }
+              {
+                "label": "Product ID",
+                "value": "TBD"
+              },
+              {
+                "label": "MSRP",
+                "value": "TBD"
+              },
+              {
+                "label": "Launch Date",
+                "value": "TBD"
+              },
+              {
+                "label": "Category",
+                "value": "Fruit & vegetable cup"
+              }
             ],
             "note": "Data source: DAEWOO official website. Refer to official announcements for the latest specifications."
           },
@@ -1684,10 +4188,22 @@
           },
           "summary": {
             "details": [
-              { "label": "제품 번호", "value": "미정" },
-              { "label": "권장 소비자가", "value": "미정" },
-              { "label": "출시일", "value": "미정" },
-              { "label": "제품 유형", "value": "과일·채소 컵" }
+              {
+                "label": "제품 번호",
+                "value": "미정"
+              },
+              {
+                "label": "권장 소비자가",
+                "value": "미정"
+              },
+              {
+                "label": "출시일",
+                "value": "미정"
+              },
+              {
+                "label": "제품 유형",
+                "value": "과일·채소 컵"
+              }
             ],
             "note": "자료 출처: DAEWOO 공식 웹사이트. 최신 사양은 공식 공지를 참고하세요."
           },
@@ -1706,4 +4222,3 @@
     }
   ]
 }
-
