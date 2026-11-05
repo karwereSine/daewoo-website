@@ -663,6 +663,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "footer.copy": "© 2025 DAEWOO SERVICE CO., LTD. 保留所有权利。",
       "hero.prev": "上一张横幅",
       "hero.next": "下一张横幅",
+      // [AUTO_INJECT_ZH]
     },
     ko: {
       "brand.name": "DAEWOO 서비스",
@@ -1327,6 +1328,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "footer.copy": "© 2025 DAEWOO SERVICE CO., LTD. All rights reserved.",
       "hero.prev": "이전 배너",
       "hero.next": "다음 배너",
+      // [AUTO_INJECT_KO]
     },
     en: {
       "brand.name": "DAEWOO Service",
@@ -1991,6 +1993,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "footer.copy": "© 2025 DAEWOO SERVICE CO., LTD. All rights reserved.",
       "hero.prev": "Previous banner",
       "hero.next": "Next banner",
+      // [AUTO_INJECT_EN]
     }
   };
 

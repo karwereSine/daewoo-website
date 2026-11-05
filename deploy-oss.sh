@@ -31,6 +31,7 @@ cd "$PROJECT_DIR"
     --exclude "src*" \
     --exclude "deploy*" \
     --exclude "documents*" \
+    --exclude "scripts*" \
     --exclude "node_modules*" \
     --exclude "*.sh" \
     --exclude "pom.xml" \

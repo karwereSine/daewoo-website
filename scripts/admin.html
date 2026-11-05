@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    // 安全自锁：仅允许本地环境 (localhost / 127.0.0.1) 访问，杜绝任何公网环境暴露
+    if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+      document.documentElement.innerHTML = '<h1 style="text-align:center;margin-top:20%;font-family:sans-serif;color:#333;">403 Forbidden - 本地工作台禁止公网访问</h1>';
+      window.stop();
+    }
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAEWOO 产品管理工作台 - SOP 自动化控制台</title>
+  <style>
+    :root {
+      --primary: #0b2e59;
+      --primary-hover: #071e3d;
+      --accent: #2563eb;
+      --accent-light: #eff6ff;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --success: #10b981;
+      --danger: #ef4444;
+      --radius: 12px;
+      --shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+    /* 顶部导航 */
+    header.topbar {
+      background: var(--primary);
+      color: white;
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .brand-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .brand-badge {
+      background: rgba(255, 255, 255, 0.18);
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      letter-spacing: 0.3px;
+    }
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .btn-primary { background: var(--accent); color: white; }
+    .btn-primary:hover { background: #1d4ed8; }
+    .btn-outline { background: transparent; border-color: rgba(255,255,255,0.3); color: white; }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); }
+    .btn-success { background: var(--success); color: white; }
+    .btn-success:hover { background: #059669; }
+    .btn-danger { background: #fee2e2; color: var(--danger); border-color: #fecaca; }
+    .btn-danger:hover { background: #fecaca; }
+    .btn-secondary { background: #e2e8f0; color: var(--text-main); }
+    .btn-secondary:hover { background: #cbd5e1; }
+
+    /* 主布局 */
+    .container {
+      max-width: 1200px;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+    }
+
+    /* 状态指示卡片 */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .stat-card {
+      background: var(--card-bg);
+      padding: 1.25rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    .stat-label { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 4px; }
+    .stat-val { font-size: 1.75rem; font-weight: 700; color: var(--primary); }
+
+    /* Tab 选项卡 */
+    .nav-tabs {
+      display: flex;
+      gap: 8px;
+      border-bottom: 2px solid var(--border);
+      margin-bottom: 1.5rem;
+    }
+    .tab-btn {
+      padding: 10px 20px;
+      border: none;
+      background: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      position: relative;
+      bottom: -2px;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* 卡片式内容区 */
+    .panel {
+      display: none;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    .panel.active { display: block; }
+    .panel-header {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .panel-title { font-size: 1.25rem; font-weight: 700; color: var(--primary); }
+    .panel-desc { font-size: 0.875rem; color: var(--text-muted); margin-top: 4px; }
+
+    /* 表单布局 */
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-group.full { grid-column: 1 / -1; }
+    label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+    .req { color: var(--danger); }
+    input[type="text"], input[type="url"], select, textarea {
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      width: 100%;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    .help-text { font-size: 0.75rem; color: var(--text-muted); }
+
+    /* 三语子选项卡 */
+    .lang-tabs {
+      display: flex;
+      gap: 6px;
+      background: #f1f5f9;
+      padding: 4px;
+      border-radius: 8px;
+      width: fit-content;
+      margin-bottom: 1.25rem;
+    }
+    .lang-tab-btn {
+      padding: 6px 16px;
+      border: none;
+      background: none;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+    .lang-tab-btn.active {
+      background: white;
+      color: var(--accent);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .lang-panel { display: none; }
+    .lang-panel.active { display: block; }
+
+    /* 图片预览网格 */
+    .preview-strip {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 8px 0;
+      min-height: 90px;
+    }
+    .preview-thumb {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      object-fit: contain;
+      background: #f8fafc;
+      padding: 4px;
+      flex-shrink: 0;
+    }
+
+    /* 终端回显框 */
+    .terminal-box {
+      background: #0f172a;
+      color: #38bdf8;
+      font-family: ui-monospace, Menlo, Monaco, Consolas, monospace;
+      padding: 1.25rem;
+      border-radius: 8px;
+      min-height: 240px;
+      max-height: 480px;
+      overflow-y: auto;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+
+    /* 表格样式 */
+    .table-container {
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      background: #f8fafc;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    tr:hover td { background: #f8fafc; }
+    .table-thumb {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      border-radius: 6px;
+      background: #f1f5f9;
+      padding: 2px;
+    }
+
+    /* 弹窗模态框 */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal {
+      background: white;
+      border-radius: var(--radius);
+      width: 90%;
+      max-width: 640px;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+    .modal-header {
+      background: var(--primary);
+      color: white;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-body { padding: 1.5rem; max-height: 80vh; overflow-y: auto; }
+    .modal-footer {
+      padding: 1rem 1.5rem;
+      background: #f8fafc;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    /* 提示 Toast */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #0f172a;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3);
+      display: none;
+      z-index: 999;
+      animation: slideUp 0.3s ease;
+    }
+    .toast.success { background: var(--success); }
+    .toast.error { background: var(--danger); }
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand-group">
+      <span class="brand-title">DAEWOO Korea</span>
+      <span class="brand-badge">SOP 自动化管理工作台</span>
+    </div>
+    <div class="topbar-actions">
+      <a href="/product-center.html" target="_blank" class="btn btn-outline">
+        👁️ 本地预览
+      </a>
+      <a href="https://deawoo.tgripon.com/product-center.html" target="_blank" class="btn btn-outline">
+        🌐 线上站点
+      </a>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- 指标概览 -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">已上线产品总数</div>
+        <div class="stat-val" id="stat-product-count">-</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">品类专区总数</div>
+        <div class="stat-val" id="stat-category-count">-</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">当前全站资源版本号</div>
+        <div class="stat-val" style="font-size: 1.25rem; font-family: monospace;" id="stat-version">-</div>
+      </div>
+    </div>
+
+    <!-- 顶层 Tab -->
+    <div class="nav-tabs">
+      <button class="tab-btn active" onclick="switchMainTab('add-product')">📦 发布新产品</button>
+      <button class="tab-btn" onclick="switchMainTab('categories')">📑 品类专区管理</button>
+      <button class="tab-btn" onclick="switchMainTab('products-list')">📋 产品清单 (20+)</button>
+      <button class="tab-btn" onclick="switchMainTab('deploy')">🚀 一键发布线上</button>
+    </div>
+
+    <!-- Panel 1: 发布新产品 -->
+    <div id="panel-add-product" class="panel active">
+      <div class="panel-header">
+        <div>
+          <h2 class="panel-title">发布新产品 (遵循 SOP 标准流程)</h2>
+          <p class="panel-desc">保存后将全自动写入 products.json、注入 app.js 三语字典、生成防裁切卡片并递增资源版本号</p>
+        </div>
+        <button class="btn btn-secondary" type="button" onclick="openNewCategoryModal()">
+          + 新建分类
+        </button>
+      </div>
+
+      <form id="product-form" onsubmit="handleProductSubmit(event)">
+        <!-- 基础配置 -->
+        <div class="form-grid">
+          <div class="form-group">
+            <label>产品型号 <span class="req">*</span></label>
+            <input type="text" id="p-model" placeholder="例如: L11, X25, EK01MAX-M" required oninput="syncProductId()">
+            <span class="help-text">生成唯一 ID: <code id="p-id-preview">product-model</code></span>
+          </div>
+          <div class="form-group">
+            <label>所属分类 <span class="req">*</span></label>
+            <select id="p-category" required>
+              <!-- 动态填充 -->
+            </select>
+          </div>
+        </div>
+
+        <!-- 图片资源配置 -->
+        <div class="form-grid">
+          <div class="form-group full">
+            <label>封面主图 URL (00_cover.png) <span class="req">*</span></label>
+            <input type="url" id="p-cover" placeholder="https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/00_cover.png" required oninput="previewCoverImage()">
+            <span class="help-text">必须为阿里云 OSS 上的高清白底或透明背景图片</span>
+            <div id="cover-preview-box" style="margin-top: 8px; display: none;">
+              <img id="cover-preview-img" style="width: 80px; height: 80px; object-fit: contain; border: 1px solid #cbd5e1; border-radius: 8px; padding: 4px; background: #fff;">
+            </div>
+          </div>
+
+          <div class="form-group full">
+            <label>详情切片长图 URLs (按顺序多行粘贴)</label>
+            <textarea id="p-gallery" rows="4" placeholder="每行一个图片链接，例如:
+https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/01.jpg
+https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/02.jpg" oninput="previewGalleryImages()"></textarea>
+            <span class="help-text">系统会自动过滤空行并生成有序图集切片流</span>
+            <div class="preview-strip" id="gallery-preview-strip"></div>
+          </div>
+        </div>
+
+        <!-- 三语本地化切换区 -->
+        <div style="margin-top: 1rem; border-top: 1px solid var(--border); padding-top: 1rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <label style="font-size: 1rem; color: var(--primary);">三语本地化文案录入</label>
+            <button type="button" class="btn btn-secondary" style="font-size: 0.75rem; padding: 4px 10px;" onclick="copyZhToAll()">⚡ 一键将中文复制到韩文与英文 (快速占位)</button>
+          </div>
+
+          <div class="lang-tabs">
+            <button type="button" class="lang-tab-btn active" onclick="switchLangTab('zh')">🇨🇳 中文 (zh)</button>
+            <button type="button" class="lang-tab-btn" onclick="switchLangTab('ko')">🇰🇷 한국어 (ko)</button>
+            <button type="button" class="lang-tab-btn" onclick="switchLangTab('en')">🇺🇸 English (en)</button>
+          </div>
+
+          <!-- 中文表单 -->
+          <div id="lang-panel-zh" class="lang-panel active">
+            <div class="form-grid">
+              <div class="form-group">
+                <label>产品标题 (中文) <span class="req">*</span></label>
+                <input type="text" id="p-title-zh" placeholder="L11 轻量无线手持吸尘器" required>
+              </div>
+              <div class="form-group">
+                <label>分类短标签 (中文)</label>
+                <input type="text" id="p-category-name-zh" placeholder="清洁生活 · 无线吸尘器">
+              </div>
+              <div class="form-group full">
+                <label>核心亮点摘要 (中文)</label>
+                <input type="text" id="p-summary-zh" placeholder="羽量化机身设计，大吸力轻松除尘">
+              </div>
+            </div>
+          </div>
+
+          <!-- 韩文表单 -->
+          <div id="lang-panel-ko" class="lang-panel">
+            <div class="form-grid">
+              <div class="form-group">
+                <label>제품명 (한국어) <span class="req">*</span></label>
+                <input type="text" id="p-title-ko" placeholder="L11 초경량 무선 핸디 청소기" required>
+              </div>
+              <div class="form-group">
+                <label>카테고리 라벨 (한국어)</label>
+                <input type="text" id="p-category-name-ko" placeholder="청소생활 · 무선청소기">
+              </div>
+              <div class="form-group full">
+                <label>제품 요약 (한국어)</label>
+                <input type="text" id="p-summary-ko" placeholder="초경량 바디와 강력한 흡입력으로 간편한 청소">
+              </div>
+            </div>
+          </div>
+
+          <!-- 英文表单 -->
+          <div id="lang-panel-en" class="lang-panel">
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Product Title (English) <span class="req">*</span></label>
+                <input type="text" id="p-title-en" placeholder="L11 Lightweight Cordless Vacuum Cleaner" required>
+              </div>
+              <div class="form-group">
+                <label>Category Tag (English)</label>
+                <input type="text" id="p-category-name-en" placeholder="Cleaning · Vacuum Cleaner">
+              </div>
+              <div class="form-group full">
+                <label>Product Summary (English)</label>
+                <input type="text" id="p-summary-en" placeholder="Ultra-lightweight design with powerful suction">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; justify-content: flex-end; gap: 1rem;">
+          <button type="reset" class="btn btn-secondary">重置表单</button>
+          <button type="submit" class="btn btn-primary" id="btn-submit-product" style="padding: 10px 24px; font-size: 1rem;">
+            💾 保存并全自动生成代码 (SOP)
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Panel 2: 品类专区管理 -->
+    <div id="panel-categories" class="panel">
+      <div class="panel-header">
+        <div>
+          <h2 class="panel-title">品类专区管理 (全站 7 页面导航联动)</h2>
+          <p class="panel-desc">支持新增一级品类，自动在 product-center 建立专区并同步更新所有页面的 Mega-Menu 下拉菜单</p>
+        </div>
+        <button class="btn btn-primary" onclick="openNewCategoryModal()">+ 添加新的分类</button>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>标识 (Key)</th>
+              <th>中文名称</th>
+              <th>한국어</th>
+              <th>English</th>
+              <th>专区锚点</th>
+            </tr>
+          </thead>
+          <tbody id="category-table-body">
+            <!-- 动态填充 -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Panel 3: 产品清单 -->
+    <div id="panel-products-list" class="panel">
+      <div class="panel-header">
+        <div>
+          <h2 class="panel-title">已收录产品清单</h2>
+          <p class="panel-desc">包含当前线上全部产品，支持直接预览详情或移除下架</p>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>缩略图</th>
+              <th>型号 / ID</th>
+              <th>中文名称</th>
+              <th>所属分类</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody id="products-table-body">
+            <!-- 动态填充 -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Panel 4: 一键发布控制台 -->
+    <div id="panel-deploy" class="panel">
+      <div class="panel-header">
+        <div>
+          <h2 class="panel-title">一键增量发布到阿里云 OSS</h2>
+          <p class="panel-desc">自动调用 ./deploy-oss.sh，将最新 HTML、CSS、JS 及 products.json 秒级推送到线上站点</p>
+        </div>
+        <button class="btn btn-success" id="btn-run-deploy" onclick="triggerDeploy()">
+          🚀 开始一键发布
+        </button>
+      </div>
+
+      <div class="terminal-box" id="deploy-log">等待触发部署命令... 点击右上角“开始一键发布”后将在此实时输出日志。</div>
+    </div>
+  </div>
+
+  <!-- 新建分类模态弹窗 -->
+  <div class="modal-overlay" id="category-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 style="font-size: 1.1rem; font-weight: 600;">+ 添加新的产品分类</h3>
+        <button type="button" style="background:none;border:none;color:white;font-size:1.5rem;cursor:pointer;" onclick="closeCategoryModal()">×</button>
+      </div>
+      <form id="category-form" onsubmit="handleCategorySubmit(event)">
+        <div class="modal-body">
+          <div class="form-group" style="margin-bottom: 1rem;">
+            <label>分类标识 Key (小写英文) <span class="req">*</span></label>
+            <input type="text" id="cat-key" placeholder="例如: purifier, heater, washer" required pattern="^[a-z0-9_-]+$">
+            <span class="help-text">用于页面锚点 ID (如 #purifier) 与字典键名</span>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label>中文分类名 <span class="req">*</span></label>
+              <input type="text" id="cat-zh" placeholder="空气净化器" required>
+            </div>
+            <div class="form-group">
+              <label>中文品类介绍描述 <span class="req">*</span></label>
+              <input type="text" id="cat-desc-zh" placeholder="高效过滤与空气焕新，保持室内健康呼吸。" required>
+            </div>
+
+            <div class="form-group">
+              <label>한국어 카테고리명 <span class="req">*</span></label>
+              <input type="text" id="cat-ko" placeholder="공기청정기" required>
+            </div>
+            <div class="form-group">
+              <label>한국어 설명 <span class="req">*</span></label>
+              <input type="text" id="cat-desc-ko" placeholder="미세먼지 완벽 케어로 언제나 쾌적한 실내 환경." required>
+            </div>
+
+            <div class="form-group">
+              <label>English Category Name <span class="req">*</span></label>
+              <input type="text" id="cat-en" placeholder="Air Purifiers" required>
+            </div>
+            <div class="form-group">
+              <label>English Description <span class="req">*</span></label>
+              <input type="text" id="cat-desc-en" placeholder="High-efficiency filtration for pure, refreshing indoor air." required>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeCategoryModal()">取消</button>
+          <button type="submit" class="btn btn-primary" id="btn-save-category">保存并全站同步分类</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    let appState = {
+      categories: [],
+      products: [],
+      version: ""
+    };
+
+    // 初始化加载
+    document.addEventListener("DOMContentLoaded", () => {
+      loadStatus();
+    });
+
+    async function loadStatus() {
+      try {
+        const res = await fetch("/api/status");
+        const data = await res.json();
+        appState = data;
+
+        document.getElementById("stat-product-count").textContent = data.products.length;
+        document.getElementById("stat-category-count").textContent = data.categories.length;
+        document.getElementById("stat-version").textContent = data.version || "未设置";
+
+        renderCategorySelect(data.categories);
+        renderCategoryTable(data.categories);
+        renderProductsTable(data.products);
+      } catch (err) {
+        showToast("无法连接本地 admin 服务，请确保服务已启动", "error");
+      }
+    }
+
+    // 渲染分类下拉框
+    function renderCategorySelect(categories) {
+      const select = document.getElementById("p-category");
+      select.innerHTML = categories.map(c => `
+        <option value="${c.key}">${c.zh} (${c.key})</option>
+      `).join("");
+    }
+
+    // 渲染分类表格
+    function renderCategoryTable(categories) {
+      const tbody = document.getElementById("category-table-body");
+      tbody.innerHTML = categories.map(c => `
+        <tr>
+          <td><code>${c.key}</code></td>
+          <td><strong>${c.zh}</strong></td>
+          <td>${c.ko}</td>
+          <td>${c.en}</td>
+          <td><a href="/product-center.html#${c.key}" target="_blank">#${c.key}</a></td>
+        </tr>
+      `).join("");
+    }
+
+    // 渲染产品表格
+    function renderProductsTable(products) {
+      const tbody = document.getElementById("products-table-body");
+      tbody.innerHTML = products.map(p => {
+        const cover = p.summary?.cover?.src || p.media?.thumbnails?.[0]?.src || p.media?.gallery?.[0]?.src || p.gallery?.[0] || "";
+        const zhTitle = p.hero?.title || p.translations?.zh?.title || p.id;
+        const catKey = p.backLink?.href?.split("#")?.[1] || "";
+        const catObj = appState.categories?.find(c => c.key === catKey);
+        const catLabel = catObj ? `${catObj.zh} (#${catKey})` : (catKey ? `#${catKey}` : "-");
+        return `
+          <tr>
+            <td><img src="${cover}" class="table-thumb" alt="${zhTitle}" onerror="this.style.opacity='0.2'"></td>
+            <td><strong>${p.id}</strong></td>
+            <td>${zhTitle}</td>
+            <td><code>${catLabel}</code></td>
+            <td>
+              <a href="/product.html?id=${p.id}" target="_blank" class="btn btn-secondary" style="padding: 4px 8px; font-size: 0.75rem;">预览</a>
+              <button class="btn btn-danger" style="padding: 4px 8px; font-size: 0.75rem;" onclick="deleteProduct('${p.id}')">下架</button>
+            </td>
+          </tr>
+        `;
+      }).join("");
+    }
+
+    // 切换 Tab
+    function switchMainTab(tabId) {
+      document.querySelectorAll(".nav-tabs .tab-btn").forEach(b => b.classList.remove("active"));
+      document.querySelectorAll(".panel").forEach(p => p.classList.remove("active"));
+      
+      const idx = ['add-product', 'categories', 'products-list', 'deploy'].indexOf(tabId);
+      document.querySelectorAll(".nav-tabs .tab-btn")[idx].classList.add("active");
+      document.getElementById("panel-" + tabId).classList.add("active");
+    }
+
+    // 切换语言子 Tab
+    function switchLangTab(lang) {
+      document.querySelectorAll(".lang-tabs .lang-tab-btn").forEach(b => b.classList.remove("active"));
+      document.querySelectorAll(".lang-panel").forEach(p => p.classList.remove("active"));
+
+      const idx = ['zh', 'ko', 'en'].indexOf(lang);
+      document.querySelectorAll(".lang-tabs .lang-tab-btn")[idx].classList.add("active");
+      document.getElementById("lang-panel-" + lang).classList.add("active");
+    }
+
+    // 同步 Model -> ID
+    function syncProductId() {
+      const model = document.getElementById("p-model").value.trim().toLowerCase().replace(/[^a-z0-9_-]/g, "");
+      document.getElementById("p-id-preview").textContent = model ? `product-${model}` : "product-model";
+    }
+
+    // 预览封面
+    function previewCoverImage() {
+      const url = document.getElementById("p-cover").value.trim();
+      const box = document.getElementById("cover-preview-box");
+      const img = document.getElementById("cover-preview-img");
+      if (url) {
+        img.src = url;
+        box.style.display = "block";
+      } else {
+        box.style.display = "none";
+      }
+    }
+
+    // 预览切片长图
+    function previewGalleryImages() {
+      const text = document.getElementById("p-gallery").value;
+      const lines = text.split("\n").map(l => l.trim()).filter(l => l.startsWith("http"));
+      const strip = document.getElementById("gallery-preview-strip");
+      strip.innerHTML = lines.map(url => `
+        <img src="${url}" class="preview-thumb" onerror="this.style.display='none'">
+      `).join("");
+    }
+
+    // 一键复制中文到韩英文
+    function copyZhToAll() {
+      const titleZh = document.getElementById("p-title-zh").value;
+      const catZh = document.getElementById("p-category-name-zh").value;
+      const summaryZh = document.getElementById("p-summary-zh").value;
+
+      if (!titleZh) {
+        showToast("请先填写中文标题", "error");
+        return;
+      }
+      document.getElementById("p-title-ko").value = titleZh;
+      document.getElementById("p-title-en").value = titleZh;
+      document.getElementById("p-category-name-ko").value = catZh;
+      document.getElementById("p-category-name-en").value = catZh;
+      document.getElementById("p-summary-ko").value = summaryZh;
+      document.getElementById("p-summary-en").value = summaryZh;
+
+      showToast("已复制中文内容至韩语与英语 (可按需微调)", "success");
+    }
+
+    // 提交新产品
+    async function handleProductSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById("btn-submit-product");
+      btn.disabled = true;
+      btn.textContent = "⏳ 正在执行 SOP 自动化写入...";
+
+      const model = document.getElementById("p-model").value.trim();
+      const categoryKey = document.getElementById("p-category").value;
+      const coverUrl = document.getElementById("p-cover").value.trim();
+      const galleryText = document.getElementById("p-gallery").value;
+      const parsedSlices = galleryText.split("\n").map(l => l.trim()).filter(l => l.startsWith("http"));
+      const gallery = parsedSlices.length > 0 ? parsedSlices : [coverUrl];
+
+      const payload = {
+        model,
+        categoryKey,
+        coverUrl,
+        gallery,
+        zh: {
+          title: document.getElementById("p-title-zh").value.trim(),
+          category: document.getElementById("p-category-name-zh").value.trim(),
+          summary: document.getElementById("p-summary-zh").value.trim()
+        },
+        ko: {
+          title: document.getElementById("p-title-ko").value.trim(),
+          category: document.getElementById("p-category-name-ko").value.trim(),
+          summary: document.getElementById("p-summary-ko").value.trim()
+        },
+        en: {
+          title: document.getElementById("p-title-en").value.trim(),
+          category: document.getElementById("p-category-name-en").value.trim(),
+          summary: document.getElementById("p-summary-en").value.trim()
+        }
+      };
+
+      try {
+        const res = await fetch("/api/products", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        const result = await res.json();
+        if (result.success) {
+          showToast(`✅ 产品 ${payload.model} 已成功发布并注入全站！`, "success");
+          document.getElementById("product-form").reset();
+          document.getElementById("gallery-preview-strip").innerHTML = "";
+          document.getElementById("cover-preview-box").style.display = "none";
+          loadStatus();
+          switchMainTab("products-list");
+        } else {
+          showToast(result.error || "发布失败", "error");
+        }
+      } catch (err) {
+        showToast("网络请求异常: " + err.message, "error");
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "💾 保存并全自动生成代码 (SOP)";
+      }
+    }
+
+    // 模态弹窗控制
+    function openNewCategoryModal() {
+      document.getElementById("category-modal").classList.add("active");
+    }
+    function closeCategoryModal() {
+      document.getElementById("category-modal").classList.remove("active");
+    }
+
+    // 提交新分类
+    async function handleCategorySubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById("btn-save-category");
+      btn.disabled = true;
+      btn.textContent = "正在同步全站导航与专区...";
+
+      const payload = {
+        key: document.getElementById("cat-key").value.trim().toLowerCase(),
+        zh: document.getElementById("cat-zh").value.trim(),
+        descZh: document.getElementById("cat-desc-zh").value.trim(),
+        ko: document.getElementById("cat-ko").value.trim(),
+        descKo: document.getElementById("cat-desc-ko").value.trim(),
+        en: document.getElementById("cat-en").value.trim(),
+        descEn: document.getElementById("cat-desc-en").value.trim()
+      };
+
+      try {
+        const res = await fetch("/api/categories", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        const result = await res.json();
+        if (result.success) {
+          showToast(`✅ 新分类「${payload.zh}」已全站 7 页面无缝接入！`, "success");
+          closeCategoryModal();
+          document.getElementById("category-form").reset();
+          loadStatus();
+        } else {
+          showToast(result.error || "创建分类失败", "error");
+        }
+      } catch (err) {
+        showToast("网络请求异常: " + err.message, "error");
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "保存并全站同步分类";
+      }
+    }
+
+    // 删除下架产品
+    async function deleteProduct(id) {
+      if (!confirm(`确定要从产品中心下架移除产品 [${id}] 吗？`)) return;
+      try {
+        const res = await fetch(`/api/products/${id}`, { method: "DELETE" });
+        const result = await res.json();
+        if (result.success) {
+          showToast(`产品 ${id} 已下架`, "success");
+          loadStatus();
+        } else {
+          showToast(result.error || "下架失败", "error");
+        }
+      } catch (err) {
+        showToast("请求失败: " + err.message, "error");
+      }
+    }
+
+    // 触发部署到 OSS
+    async function triggerDeploy() {
+      const btn = document.getElementById("btn-run-deploy");
+      const box = document.getElementById("deploy-log");
+      btn.disabled = true;
+      btn.textContent = "🚀 正在部署推送中...";
+      box.textContent = "==========================================\n启动增量部署至阿里云 OSS (oss://daewoo)...\n==========================================\n";
+
+      try {
+        const res = await fetch("/api/deploy", { method: "POST" });
+        const reader = res.body.getReader();
+        const decoder = new TextDecoder("utf-8");
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          const chunk = decoder.decode(value);
+          box.textContent += chunk;
+          box.scrollTop = box.scrollHeight;
+        }
+        showToast("🎉 线上部署已完成！", "success");
+      } catch (err) {
+        box.textContent += "\n[Error] 部署执行异常: " + err.message;
+        showToast("部署中断", "error");
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "🚀 开始一键发布";
+      }
+    }
+
+    function showToast(msg, type = "success") {
+      const t = document.getElementById("toast");
+      t.textContent = msg;
+      t.className = `toast ${type}`;
+      t.style.display = "block";
+      setTimeout(() => { t.style.display = "none"; }, 3500);
+    }
+  </script>
+</body>
+</html>
