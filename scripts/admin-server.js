@@ -5,6 +5,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const os = require('os');
 const { spawn } = require('child_process');
 
 const PORT = process.env.PORT || 3000;
@@ -13,6 +14,14 @@ const PRODUCTS_JSON_PATH = path.join(ROOT_DIR, 'data/products.json');
 const APP_JS_PATH = path.join(ROOT_DIR, 'js/app.js');
 const PRODUCT_CENTER_HTML_PATH = path.join(ROOT_DIR, 'product-center.html');
 const DEPLOY_SCRIPT_PATH = path.join(ROOT_DIR, 'deploy-oss.sh');
+
+const OSSUTIL_BIN = '/Users/sin/bin/ossutil';
+const OSS_MEDIA_BUCKET = 'oss://tgripon';
+const OSS_MEDIA_BASE_URL = 'https://oss.tgripon.com';
+const UPLOAD_TEMP_DIR = path.join(os.tmpdir(), 'daewoo-media-uploads');
+if (!fs.existsSync(UPLOAD_TEMP_DIR)) {
+  fs.mkdirSync(UPLOAD_TEMP_DIR, { recursive: true });
+}
 
 const ALL_PAGES = [
   'index.html',
@@ -536,6 +545,241 @@ const server = http.createServer((req, res) => {
       child.on('error', err => {
         res.write(`\n[ERROR] 脚本执行启动失败: ${err.message}\n`);
         res.end();
+      });
+      return;
+    }
+
+    // 6. POST /api/upload-file (接收单个文件二进制流并保持原文件名落盘)
+    if (pathname === '/api/upload-file' && method === 'POST') {
+      const batchId = parsedUrl.searchParams.get('batchId') || String(Date.now());
+      const rawFilename = parsedUrl.searchParams.get('filename');
+      if (!rawFilename) {
+        res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+        res.end(JSON.stringify({ error: '缺少文件名参数 (filename)' }));
+        return;
+      }
+      const safeFilename = path.basename(decodeURIComponent(rawFilename));
+      const batchDir = path.join(UPLOAD_TEMP_DIR, batchId);
+      fs.mkdirSync(batchDir, { recursive: true });
+
+      const targetPath = path.join(batchDir, safeFilename);
+      const writeStream = fs.createWriteStream(targetPath);
+
+      req.pipe(writeStream);
+
+      writeStream.on('finish', () => {
+        res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+        res.end(JSON.stringify({ success: true, filename: safeFilename }));
+      });
+
+      writeStream.on('error', err => {
+        res.writeHead(500, { 'Content-Type': 'application/json; charset=utf-8' });
+        res.end(JSON.stringify({ error: '临时文件写入失败: ' + err.message }));
+      });
+      return;
+    }
+
+    // 7. POST /api/upload-complete (调用 ossutil 批量推送至 oss://tgripon，保序返回 URL 列表)
+    if (pathname === '/api/upload-complete' && method === 'POST') {
+      let body = '';
+      req.on('data', chunk => { body += chunk; });
+      req.on('end', () => {
+        try {
+          const { batchId, targetDir } = JSON.parse(body);
+          if (!batchId || !targetDir) {
+            res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+            res.end(JSON.stringify({ error: '缺少 batchId 或 targetDir 参数' }));
+            return;
+          }
+
+          const cleanDir = targetDir.replace(/^\/+|\/+$/g, '');
+          const batchDir = path.join(UPLOAD_TEMP_DIR, batchId);
+
+          if (!fs.existsSync(batchDir)) {
+            res.writeHead(404, { 'Content-Type': 'application/json; charset=utf-8' });
+            res.end(JSON.stringify({ error: '未找到上传批次临时目录' }));
+            return;
+          }
+
+          const files = fs.readdirSync(batchDir).filter(f => !f.startsWith('.'));
+          if (files.length === 0) {
+            res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+            res.end(JSON.stringify({ error: '批次中无任何待上传文件' }));
+            return;
+          }
+
+          // 执行 ossutil cp -r -u <batchDir>/ oss://tgripon/<cleanDir>/
+          const ossTarget = `${OSS_MEDIA_BUCKET}/${cleanDir}/`;
+          const args = ['cp', '-r', '-u', `${batchDir}/`, ossTarget];
+          const child = spawn(OSSUTIL_BIN, args);
+
+          let outputLog = '';
+          child.stdout.on('data', d => { outputLog += d; });
+          child.stderr.on('data', d => { outputLog += d; });
+
+          child.on('close', code => {
+            // 清理本地临时批次文件
+            fs.rmSync(batchDir, { recursive: true, force: true });
+
+            if (code !== 0) {
+              res.writeHead(500, { 'Content-Type': 'application/json; charset=utf-8' });
+              res.end(JSON.stringify({ error: 'ossutil 上传执行失败', detail: outputLog }));
+              return;
+            }
+
+            // 自然数值保序排序: 00_cover, 01, 02 ... 10 ... 20
+            files.sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }));
+
+            const urls = files.map(f => `${OSS_MEDIA_BASE_URL}/${cleanDir}/${f}`);
+
+            res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+            res.end(JSON.stringify({
+              success: true,
+              targetDir: cleanDir,
+              count: urls.length,
+              urls,
+              files
+            }));
+          });
+
+          child.on('error', err => {
+            fs.rmSync(batchDir, { recursive: true, force: true });
+            res.writeHead(500, { 'Content-Type': 'application/json; charset=utf-8' });
+            res.end(JSON.stringify({ error: '启动 ossutil 异常: ' + err.message }));
+          });
+
+        } catch (err) {
+          res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+          res.end(JSON.stringify({ error: err.message }));
+        }
+      });
+      return;
+    }
+
+    // 8. POST /api/download-images (从网络批量抓取图片保存到用户指定的本地文件夹)
+    if (pathname === '/api/download-images' && method === 'POST') {
+      let body = '';
+      req.on('data', chunk => { body += chunk; });
+      req.on('end', async () => {
+        try {
+          const { targetDir, urls, addIndexPrefix } = JSON.parse(body);
+          if (!targetDir || !Array.isArray(urls) || urls.length === 0) {
+            res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+            res.end(JSON.stringify({ error: '缺少本地保存目录或图片 URL 列表' }));
+            return;
+          }
+
+          // 确保本地目录存在
+          const resolvedDir = path.resolve(targetDir);
+          fs.mkdirSync(resolvedDir, { recursive: true });
+
+          const pad = n => String(n).padStart(2, '0');
+
+          // 构建并发任务 (并发度 5，保序写入)
+          const tasks = urls.map((rawUrl, i) => async () => {
+            const trimmed = rawUrl.trim();
+            if (!trimmed) return null;
+
+            const urlObj = new URL(trimmed);
+            let baseName = path.basename(urlObj.pathname);
+            if (!baseName.includes('.')) baseName += '.jpg';
+
+            let filename = baseName;
+            if (addIndexPrefix) {
+              const hasPrefix = /^\d{2}_/.test(baseName);
+              if (!hasPrefix) {
+                filename = `${pad(i + 1)}_${baseName}`;
+              }
+            }
+
+            const targetFilePath = path.join(resolvedDir, filename);
+
+            const fetchRes = await fetch(trimmed, {
+              headers: {
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Referer': urlObj.origin
+              }
+            });
+
+            if (!fetchRes.ok) {
+              throw new Error(`下载失败 [HTTP ${fetchRes.status}]: ${trimmed}`);
+            }
+
+            const buffer = Buffer.from(await fetchRes.arrayBuffer());
+            fs.writeFileSync(targetFilePath, buffer);
+            return { filename, path: targetFilePath, size: buffer.length };
+          });
+
+          // 分批并发执行 (每批 5 个)
+          const concurrency = 5;
+          const savedFiles = [];
+          for (let i = 0; i < tasks.length; i += concurrency) {
+            const batch = tasks.slice(i, i + concurrency);
+            const results = await Promise.all(batch.map(fn => fn()));
+            savedFiles.push(...results.filter(Boolean));
+          }
+
+          res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+          res.end(JSON.stringify({
+            success: true,
+            targetDir: resolvedDir,
+            count: savedFiles.length,
+            savedFiles
+          }));
+        } catch (err) {
+          res.writeHead(500, { 'Content-Type': 'application/json; charset=utf-8' });
+          res.end(JSON.stringify({ error: err.message }));
+        }
+      });
+      return;
+    }
+
+    // 9. POST /api/open-folder (在 macOS 访达中打开目录)
+    if (pathname === '/api/open-folder' && method === 'POST') {
+      let body = '';
+      req.on('data', chunk => { body += chunk; });
+      req.on('end', () => {
+        try {
+          const { dir } = JSON.parse(body);
+          if (!dir || !fs.existsSync(dir)) {
+            res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+            res.end(JSON.stringify({ error: '目录不存在' }));
+            return;
+          }
+          spawn('open', [dir]);
+          res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+          res.end(JSON.stringify({ success: true }));
+        } catch (err) {
+          res.writeHead(500, { 'Content-Type': 'application/json; charset=utf-8' });
+          res.end(JSON.stringify({ error: err.message }));
+        }
+      });
+      return;
+    }
+
+    // 10. POST /api/choose-directory (调用 macOS 原生访达弹窗选择本地目录)
+    if (pathname === '/api/choose-directory' && method === 'POST') {
+      const script = 'POSIX path of (choose folder with prompt "请选择图片保存的本地目录:")';
+      const child = spawn('osascript', ['-e', script]);
+
+      let output = '';
+      child.stdout.on('data', d => { output += d; });
+
+      child.on('close', code => {
+        if (code === 0) {
+          const selectedDir = output.trim().replace(/\/$/, '');
+          res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+          res.end(JSON.stringify({ success: true, dir: selectedDir }));
+        } else {
+          // 用户点击取消或关闭弹窗
+          res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+          res.end(JSON.stringify({ success: false, canceled: true }));
+        }
+      });
+
+      child.on('error', err => {
+        res.writeHead(500, { 'Content-Type': 'application/json; charset=utf-8' });
+        res.end(JSON.stringify({ error: '调用系统目录选择器失败: ' + err.message }));
       });
       return;
     }

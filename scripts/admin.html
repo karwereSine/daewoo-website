@@ -199,6 +199,56 @@
     }
     .help-text { font-size: 0.75rem; color: var(--text-muted); }
 
+    /* 批量素材上传区 */
+    .upload-box {
+      background: #f8fafc;
+      border: 2px dashed #cbd5e1;
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      margin-top: 1rem;
+      margin-bottom: 1.25rem;
+      transition: all 0.2s;
+    }
+    .upload-box:hover, .upload-box.dragover {
+      border-color: var(--accent);
+      background: #eff6ff;
+    }
+    .upload-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+    .upload-header h4 {
+      font-size: 0.95rem;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .progress-bar-bg {
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 999px;
+      overflow: hidden;
+      margin: 10px 0;
+      display: none;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--accent);
+      transition: width 0.15s ease-out;
+    }
+    .upload-result-box {
+      display: none;
+      margin-top: 1rem;
+      background: #ffffff;
+      border: 1px solid #bbf7d0;
+      border-radius: 8px;
+      padding: 1rem;
+    }
+
     /* 三语子选项卡 */
     .lang-tabs {
       display: flex;
@@ -418,6 +468,99 @@
             <select id="p-category" required>
               <!-- 动态填充 -->
             </select>
+          </div>
+        </div>
+
+        <!-- 智能提取文档并下载到本地辅助工具 -->
+        <div class="upload-box" style="background: #faf5ff; border-color: #d8b4fe; margin-bottom: 1.25rem;">
+          <div class="upload-header">
+            <h4 style="color: #6b21a8;">
+              <span>📥</span>
+              <span>智能识别文档/HTML并一键下载切片到本地</span>
+            </h4>
+            <span style="background:#f3e8ff;color:#7e22ce;padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">本地素材抓取</span>
+          </div>
+
+          <div class="form-group full" style="margin-bottom: 10px;">
+            <label style="font-size: 0.8rem; margin-bottom: 4px; display: block;">直接粘贴包含图片的原始文本或 HTML 片段</label>
+            <textarea id="raw-doc-input" rows="3" placeholder="例如粘贴: 2.Steam Iron HI-032 <div style='text-align:center;'><img src='http://www.daewoolife.com/...jpg'>...</div>" oninput="parseDocImages()"></textarea>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: flex-end; margin-bottom: 10px;">
+            <div>
+              <label style="font-size: 0.8rem; margin-bottom: 4px; display: block;">下载到本地电脑目录 <span class="req">*</span></label>
+              <div style="display: flex; gap: 8px;">
+                <input type="text" id="download-target-dir" placeholder="例如: /Users/sin/Desktop/Deawoo/products_media/HI-032" value="/Users/sin/Desktop/Deawoo/products_media/">
+                <button type="button" class="btn btn-secondary" id="btn-choose-dir" style="white-space: nowrap; font-size: 0.8rem; padding: 6px 12px;" onclick="chooseLocalDirectory()">📁 选择目录...</button>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 6px; padding-bottom: 8px;">
+              <input type="checkbox" id="add-index-prefix" checked style="width: 16px; height: 16px;">
+              <label for="add-index-prefix" style="font-size: 0.8rem; cursor: pointer; user-select: none;">自动追加序号 (01_原文件名.jpg)</label>
+            </div>
+          </div>
+
+          <div id="parse-status-info" style="font-size: 0.8rem; color: #7e22ce; margin-bottom: 8px;">
+            尚未粘贴内容（支持识别任意 img 标签与直链图片）
+          </div>
+
+          <div class="progress-bar-bg" id="download-progress-bg">
+            <div class="progress-bar-fill" id="download-progress-fill" style="background: #9333ea;"></div>
+          </div>
+          <div id="download-progress-text" style="font-size: 0.8rem; color: #7e22ce; display: none; margin-bottom: 8px;"></div>
+
+          <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+            <button type="button" class="btn btn-primary" id="btn-start-download" style="background: #7e22ce; border-color: #6b21a8; font-size: 0.85rem; padding: 6px 14px;" onclick="startDownloadImages()">
+              🚀 批量下载这批图片到本地
+            </button>
+            <button type="button" class="btn btn-secondary" id="btn-open-folder" style="font-size: 0.85rem; padding: 6px 12px; display: none;" onclick="openLocalFolder()">
+              📂 在访达 (Finder) 中打开文件夹
+            </button>
+          </div>
+        </div>
+
+        <!-- 批量图片上传辅助工具 (保持本地原文件名) -->
+        <div class="upload-box" id="media-upload-area">
+          <div class="upload-header">
+            <h4>
+              <span>📦</span>
+              <span>批量上传本地图片至阿里云 OSS (保持本地原名)</span>
+            </h4>
+            <span style="background:#e0f2fe;color:#0369a1;padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;">直传 oss://tgripon</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 10px;">
+            <div>
+              <label style="font-size: 0.8rem; margin-bottom: 4px; display: block;">OSS 存放子目录 <span class="req">*</span></label>
+              <input type="text" id="upload-target-dir" placeholder="例如: product-web/Humidifier_X25" value="product-web/">
+            </div>
+            <div>
+              <label style="font-size: 0.8rem; margin-bottom: 4px; display: block;">选择本地图片 (全选 00_cover.png ~ 20.png) <span class="req">*</span></label>
+              <input type="file" id="batch-file-input" multiple accept="image/*" style="padding: 6px 10px; font-size: 0.85rem;" onchange="handleFileSelection(event)">
+            </div>
+          </div>
+
+          <div id="file-selection-info" style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 8px;">尚未选择文件</div>
+
+          <div class="progress-bar-bg" id="upload-progress-bg">
+            <div class="progress-bar-fill" id="upload-progress-fill"></div>
+          </div>
+          <div id="upload-progress-text" style="font-size: 0.8rem; color: var(--accent); display: none; margin-bottom: 8px;"></div>
+
+          <button type="button" class="btn btn-primary" id="btn-start-upload" onclick="startBatchUpload()" style="font-size: 0.85rem; padding: 6px 14px;">
+            🚀 开始批量上传到 OSS
+          </button>
+
+          <!-- 上传成功后的结果展示 -->
+          <div class="upload-result-box" id="upload-result-box">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px;">
+              <span style="font-weight: 600; color: var(--success); font-size: 0.85rem;">🎉 批量上传成功！图片已按原名与自然顺序就绪</span>
+              <div style="display: flex; gap: 8px;">
+                <button type="button" class="btn btn-success" style="padding: 4px 10px; font-size: 0.75rem;" onclick="applyUploadUrlsToForm()">⚡ 一键填入下方表单 (自动识别封面与长图)</button>
+                <button type="button" class="btn btn-secondary" style="padding: 4px 10px; font-size: 0.75rem;" onclick="copyUploadedUrls()">📋 复制全部链接</button>
+              </div>
+            </div>
+            <textarea id="upload-result-urls" rows="4" readonly style="font-size: 0.8rem; background: #f8fafc; font-family: monospace;"></textarea>
           </div>
         </div>
 
@@ -740,10 +883,277 @@ https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/02.jpg" oninput="previewG
       document.getElementById("lang-panel-" + lang).classList.add("active");
     }
 
-    // 同步 Model -> ID
+    // 同步 Model -> ID 及自动填充上传目录与本地下载目录
     function syncProductId() {
-      const model = document.getElementById("p-model").value.trim().toLowerCase().replace(/[^a-z0-9_-]/g, "");
+      const rawModel = document.getElementById("p-model").value.trim();
+      const model = rawModel.toLowerCase().replace(/[^a-z0-9_-]/g, "");
       document.getElementById("p-id-preview").textContent = model ? `product-${model}` : "product-model";
+
+      // 联动建议 OSS 子目录
+      const dirInput = document.getElementById("upload-target-dir");
+      if (rawModel && (dirInput.value === "product-web/" || dirInput.dataset.autoFilled === "true")) {
+        dirInput.value = `product-web/${rawModel}`;
+        dirInput.dataset.autoFilled = "true";
+      }
+
+      // 联动建议本地下载目录
+      const localDirInput = document.getElementById("download-target-dir");
+      if (rawModel && (localDirInput.value === "/Users/sin/Desktop/Deawoo/products_media/" || localDirInput.dataset.autoFilled === "true")) {
+        localDirInput.value = `/Users/sin/Desktop/Deawoo/products_media/${rawModel}`;
+        localDirInput.dataset.autoFilled = "true";
+      }
+    }
+
+    // 智能提取文档图片并下载
+    let parsedDocUrls = [];
+    let lastDownloadDir = "";
+
+    function parseDocImages() {
+      const text = document.getElementById("raw-doc-input").value;
+      const regex = /(?:https?:)?\/\/[^\s"'<>]+\.(?:jpg|jpeg|png|gif|webp|avif)(?:\?[^\s"'<>]*)?/gi;
+      const matches = text.match(regex) || [];
+      const cleaned = [];
+      matches.forEach(m => {
+        let u = m.trim();
+        if (u.startsWith("//")) u = "http:" + u;
+        if (!cleaned.includes(u)) cleaned.push(u);
+      });
+      parsedDocUrls = cleaned;
+
+      const info = document.getElementById("parse-status-info");
+      if (cleaned.length === 0) {
+        info.innerHTML = "尚未检测到图片链接，请粘贴包含 <code>&lt;img src=...&gt;</code> 或图片直链的内容";
+      } else {
+        const first = cleaned[0].split("/").pop();
+        info.innerHTML = `✅ <strong>已智能识别提取出 ${cleaned.length} 张图片</strong> (首张: <code>${first}</code>)`;
+      }
+    }
+
+    // 批量下载图片到本地目录
+    async function startDownloadImages() {
+      if (!parsedDocUrls || parsedDocUrls.length === 0) {
+        showToast("请先在上方输入框粘贴包含图片链接的内容", "error");
+        return;
+      }
+
+      const targetDir = document.getElementById("download-target-dir").value.trim();
+      if (!targetDir || targetDir === "/Users/sin/Desktop/Deawoo/products_media/") {
+        showToast("请指定具体的本地保存路径，如 /Users/sin/Desktop/Deawoo/products_media/HI-032", "error");
+        return;
+      }
+
+      const addIndexPrefix = document.getElementById("add-index-prefix").checked;
+      const btn = document.getElementById("btn-start-download");
+      const progressBg = document.getElementById("download-progress-bg");
+      const progressFill = document.getElementById("download-progress-fill");
+      const progressText = document.getElementById("download-progress-text");
+      const openFolderBtn = document.getElementById("btn-open-folder");
+
+      btn.disabled = true;
+      progressBg.style.display = "block";
+      progressText.style.display = "block";
+      progressFill.style.width = "40%";
+      progressText.textContent = `⏳ 正在并发抓取 ${parsedDocUrls.length} 张原图并写入本地磁盘...`;
+
+      try {
+        const res = await fetch("/api/download-images", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            targetDir,
+            urls: parsedDocUrls,
+            addIndexPrefix
+          })
+        });
+
+        const data = await res.json();
+        if (!data.success) {
+          throw new Error(data.error || "下载失败");
+        }
+
+        progressFill.style.width = "100%";
+        progressText.textContent = `🎉 成功！全部 ${data.count} 张图片已保存在: ${data.targetDir}`;
+        lastDownloadDir = data.targetDir;
+        openFolderBtn.style.display = "inline-flex";
+
+        showToast(`✅ 成功将 ${data.count} 张图片下载到本地！`, "success");
+      } catch (err) {
+        progressText.textContent = `❌ 下载异常: ${err.message}`;
+        showToast("下载出错: " + err.message, "error");
+      } finally {
+        btn.disabled = false;
+      }
+    }
+
+    // 在访达中打开文件夹
+    async function openLocalFolder() {
+      if (!lastDownloadDir) return;
+      try {
+        await fetch("/api/open-folder", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ dir: lastDownloadDir })
+        });
+      } catch (e) {
+        showToast("打开文件夹失败: " + e.message, "error");
+      }
+    }
+
+    // 弹出 Mac 原生访达目录选择器
+    async function chooseLocalDirectory() {
+      const btn = document.getElementById("btn-choose-dir");
+      const oldText = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = "⏳ 选取中...";
+
+      try {
+        const res = await fetch("/api/choose-directory", { method: "POST" });
+        const data = await res.json();
+        if (data.success && data.dir) {
+          document.getElementById("download-target-dir").value = data.dir;
+          showToast(`已选定目录: ${data.dir}`, "success");
+        }
+      } catch (err) {
+        showToast("调起目录选择器失败: " + err.message, "error");
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = oldText;
+      }
+    }
+
+    // 选中本地图片反馈
+    let selectedFiles = [];
+    let lastUploadedUrls = [];
+
+    function handleFileSelection(e) {
+      const files = Array.from(e.target.files || []);
+      // 自然数值排序
+      files.sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: 'base' }));
+      selectedFiles = files;
+
+      const infoBox = document.getElementById("file-selection-info");
+      if (files.length === 0) {
+        infoBox.textContent = "尚未选择文件";
+        return;
+      }
+
+      const sampleNames = files.slice(0, 3).map(f => f.name).join(", ");
+      const extra = files.length > 3 ? ` ...等共 ${files.length} 个文件` : ` (共 ${files.length} 个文件)`;
+      infoBox.innerHTML = `<strong>已就绪 ${files.length} 个本地文件:</strong> <code>${sampleNames}${extra}</code> (将按此原始顺序上传)`;
+    }
+
+    // 执行批量上传
+    async function startBatchUpload() {
+      if (selectedFiles.length === 0) {
+        showToast("请先点击选择本地图片文件", "error");
+        return;
+      }
+
+      const targetDir = document.getElementById("upload-target-dir").value.trim();
+      if (!targetDir || targetDir === "product-web/") {
+        showToast("请填写具体的 OSS 存放子目录，如 product-web/Kettle_F30", "error");
+        return;
+      }
+
+      const btn = document.getElementById("btn-start-upload");
+      const progressBg = document.getElementById("upload-progress-bg");
+      const progressFill = document.getElementById("upload-progress-fill");
+      const progressText = document.getElementById("upload-progress-text");
+      const resultBox = document.getElementById("upload-result-box");
+
+      btn.disabled = true;
+      progressBg.style.display = "block";
+      progressText.style.display = "block";
+      resultBox.style.display = "none";
+
+      const batchId = "batch_" + Date.now();
+      const total = selectedFiles.length;
+
+      try {
+        // 1. 逐个将本地文件以原始文件名传输到服务临时目录
+        for (let i = 0; i < total; i++) {
+          const file = selectedFiles[i];
+          const percent = Math.round(((i) / total) * 90);
+          progressFill.style.width = percent + "%";
+          progressText.textContent = `⏳ 正在传输 (${i + 1}/${total}): ${file.name} ...`;
+
+          const uploadUrl = `/api/upload-file?batchId=${batchId}&filename=${encodeURIComponent(file.name)}`;
+          const res = await fetch(uploadUrl, {
+            method: "POST",
+            body: file
+          });
+          const data = await res.json();
+          if (!data.success) {
+            throw new Error(`文件 [${file.name}] 传输失败: ` + (data.error || ""));
+          }
+        }
+
+        // 2. 调用后端使用 ossutil 批量推送到 OSS 存储桶
+        progressFill.style.width = "95%";
+        progressText.textContent = `🚀 本地文件已全部就绪，正在调用 ossutil 高并发推送至阿里云 OSS (oss://tgripon/${targetDir})...`;
+
+        const completeRes = await fetch("/api/upload-complete", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ batchId, targetDir })
+        });
+        const completeData = await completeRes.json();
+
+        if (!completeData.success) {
+          throw new Error(completeData.error || "OSS 同步失败");
+        }
+
+        // 3. 上传成功，展示保序的图片列表
+        progressFill.style.width = "100%";
+        progressText.textContent = `✅ 恭喜！全部 ${completeData.count} 张图片已成功上传至 oss.tgripon.com！`;
+
+        lastUploadedUrls = completeData.urls || [];
+        document.getElementById("upload-result-urls").value = lastUploadedUrls.join("\n");
+        resultBox.style.display = "block";
+
+        showToast(`🎉 成功上传 ${completeData.count} 张图片至 OSS！`, "success");
+      } catch (err) {
+        showToast("上传异常: " + err.message, "error");
+        progressText.textContent = `❌ 出错: ${err.message}`;
+      } finally {
+        btn.disabled = false;
+      }
+    }
+
+    // 一键回填到表单 (自动识别封面与长图)
+    function applyUploadUrlsToForm() {
+      if (!lastUploadedUrls || lastUploadedUrls.length === 0) {
+        showToast("无可用的图片 URL", "error");
+        return;
+      }
+
+      // 智能匹配封面图：优先寻找文件名包含 cover 或 00 的项，若无则取第一项
+      let coverIndex = lastUploadedUrls.findIndex(u => /00|cover/i.test(u));
+      if (coverIndex === -1) coverIndex = 0;
+
+      const coverUrl = lastUploadedUrls[coverIndex];
+      const galleryUrls = lastUploadedUrls.filter((_, idx) => idx !== coverIndex);
+
+      document.getElementById("p-cover").value = coverUrl;
+      previewCoverImage();
+
+      document.getElementById("p-gallery").value = galleryUrls.join("\n");
+      previewGalleryImages();
+
+      showToast(`已成功填入：1 张封面图，${galleryUrls.length} 张切片长图！`, "success");
+    }
+
+    // 复制全部链接
+    function copyUploadedUrls() {
+      const textarea = document.getElementById("upload-result-urls");
+      if (!textarea.value.trim()) return;
+      navigator.clipboard.writeText(textarea.value).then(() => {
+        showToast("已将全部图片链接复制到剪贴板！", "success");
+      }).catch(() => {
+        textarea.select();
+        document.execCommand("copy");
+        showToast("已复制到剪贴板！", "success");
+      });
     }
 
     // 预览封面
