@@ -325,10 +325,21 @@ function addProduct(payload) {
     }
   };
 
-  // 严格增量合并：若存在则替换，不存在则插入到头部
-  const filtered = existingList.filter(p => p.id !== productId);
-  filtered.unshift(newProduct);
-  productsData.products = filtered;
+  // 严格增量合并：若已存在则原地替换更新（保留历史顺序与上市时间），若不存在则作为新品置顶
+  const existingIndex = existingList.findIndex(p => p.id === productId);
+  if (existingIndex !== -1) {
+    const oldItem = existingList[existingIndex];
+    const oldRelease = oldItem.summary?.details?.find(d => d.label === '上市时间')?.value;
+    if (oldRelease) {
+      const d = newProduct.summary.details.find(item => item.label === '上市时间');
+      if (d) d.value = oldRelease;
+    }
+    existingList[existingIndex] = newProduct;
+    productsData.products = existingList;
+  } else {
+    existingList.unshift(newProduct);
+    productsData.products = existingList;
+  }
   fs.writeFileSync(PRODUCTS_JSON_PATH, JSON.stringify(productsData, null, 2), 'utf-8');
 
   // 2. 注入 js/app.js 三语字典 (Step 3: 绝不遗漏)
@@ -355,15 +366,11 @@ function addProduct(payload) {
   appJs = appJs.replace(enInjectAnchor, enEntries);
   fs.writeFileSync(APP_JS_PATH, appJs, 'utf-8');
 
-  // 3. 更新 product-center.html (Step 4 & 避坑指南：防裁切、内联样式兜底、排在最上方)
+  // 3. 更新 product-center.html (Step 4 & 避坑指南：防裁切、内联样式兜底、原位更新)
   let pcHtml = fs.readFileSync(PRODUCT_CENTER_HTML_PATH, 'utf-8');
 
-  // 如果已存在该卡片，先精准删除旧卡片
-  const existingCardRegex = new RegExp(`<article[^>]*class="product-feature-card"[\\s\\S]*?href="product\\.html\\?id=${productId}"[\\s\\S]*?<\\/article>`, 'g');
-  pcHtml = pcHtml.replace(existingCardRegex, '');
-
   const newCardHtml = `
-          <!-- 新品: ${zh.title} (SOP规范: 内联样式防裁切兜底) -->
+          <!-- 产品: ${zh.title} (SOP规范: 内联样式防裁切兜底) -->
           <article class="product-feature-card">
             <header class="product-feature-card__header">
               <span class="product-feature-card__category" data-i18n="productCenter.cards.${modelKey}.category">${zh.category}</span>
@@ -376,14 +383,18 @@ function addProduct(payload) {
             <a class="product-feature-card__link" href="product.html?id=${productId}" data-i18n="productCenter.cards.viewDetails">查看详情</a>
           </article>`;
 
-  // 寻找指定分类专区容器: <section id="${categoryKey}" class="product-section"> ... <div class="product-feature-grid">
-  const sectionTarget = new RegExp(`(<section[^>]*id="${categoryKey}"[^>]*>[\\s\\S]*?<div\\s+class="product-feature-grid">)`);
-  if (pcHtml.match(sectionTarget)) {
-    // 严格排在最上方：作为 product-feature-grid 的第一个卡片插入
-    pcHtml = pcHtml.replace(sectionTarget, `$1${newCardHtml}`);
+  // 如果已存在该卡片，进行原位精准替换；若不存在，作为新品插入该分类最顶部
+  const existingCardRegex = new RegExp(`<article[^>]*class="product-feature-card"[\\s\\S]*?href="product\\.html\\?id=${productId}"[\\s\\S]*?<\\/article>`);
+  if (pcHtml.match(existingCardRegex)) {
+    pcHtml = pcHtml.replace(existingCardRegex, newCardHtml.trim());
   } else {
-    // 降级兜底：若找不到特定分类，插入到第一个 product-feature-grid
-    pcHtml = pcHtml.replace(/(<div\s+class="product-feature-grid">)/, `$1${newCardHtml}`);
+    // 寻找指定分类专区容器: <section id="${categoryKey}" class="product-section"> ... <div class="product-feature-grid">
+    const sectionTarget = new RegExp(`(<section[^>]*id="${categoryKey}"[^>]*>[\\s\\S]*?<div\\s+class="product-feature-grid">)`);
+    if (pcHtml.match(sectionTarget)) {
+      pcHtml = pcHtml.replace(sectionTarget, `$1${newCardHtml}`);
+    } else {
+      pcHtml = pcHtml.replace(/(<div\s+class="product-feature-grid">)/, `$1${newCardHtml}`);
+    }
   }
   fs.writeFileSync(PRODUCT_CENTER_HTML_PATH, pcHtml, 'utf-8');
 

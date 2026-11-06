@@ -455,6 +455,20 @@
         </button>
       </div>
 
+      <!-- 编辑状态指示横幅 -->
+      <div id="edit-banner" style="display: none; background: #e0f2fe; border: 1px solid #7dd3fc; border-radius: 8px; padding: 12px 16px; margin-bottom: 1.25rem; justify-content: space-between; align-items: center;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 1.2rem;">✏️</span>
+          <div>
+            <div style="font-size: 0.95rem; font-weight: 700; color: #0369a1;">当前正在编辑商品: <span id="edit-product-label" style="font-family: monospace; color: #075985;"></span></div>
+            <div style="font-size: 0.8rem; color: #0284c7;">修改切片长图、封面或文案后点击下方保存，将原位更新全站并刷新资源版本号</div>
+          </div>
+        </div>
+        <button type="button" class="btn btn-secondary" style="font-size: 0.8rem; padding: 6px 12px; background: white;" onclick="cancelEditMode()">
+          ✕ 退出编辑模式 (返回新建)
+        </button>
+      </div>
+
       <form id="product-form" onsubmit="handleProductSubmit(event)">
         <!-- 基础配置 -->
         <div class="form-grid">
@@ -854,8 +868,9 @@ https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/02.jpg" oninput="previewG
             <td><strong>${p.id}</strong></td>
             <td>${zhTitle}</td>
             <td><code>${catLabel}</code></td>
-            <td>
-              <a href="/product.html?id=${p.id}" target="_blank" class="btn btn-secondary" style="padding: 4px 8px; font-size: 0.75rem;">预览</a>
+            <td style="white-space: nowrap;">
+              <a href="/product.html?id=${p.id}" target="_blank" class="btn btn-secondary" style="padding: 4px 8px; font-size: 0.75rem;">👁️ 预览</a>
+              <button class="btn btn-primary" style="padding: 4px 8px; font-size: 0.75rem;" onclick="loadProductForEdit('${p.id}')">✏️ 编辑</button>
               <button class="btn btn-danger" style="padding: 4px 8px; font-size: 0.75rem;" onclick="deleteProduct('${p.id}')">下架</button>
             </td>
           </tr>
@@ -1199,12 +1214,90 @@ https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/02.jpg" oninput="previewG
       showToast("已复制中文内容至韩语与英语 (可按需微调)", "success");
     }
 
-    // 提交新产品
+    // 编辑商品相关状态
+    let isEditingProduct = false;
+    let editingProductId = "";
+
+    function loadProductForEdit(productId) {
+      const p = (appState.products || []).find(item => item.id === productId);
+      if (!p) {
+        showToast("未找到该商品数据: " + productId, "error");
+        return;
+      }
+
+      isEditingProduct = true;
+      editingProductId = productId;
+
+      // 切换到表单 Tab
+      switchMainTab('add-product');
+
+      // 显示编辑横幅
+      const banner = document.getElementById("edit-banner");
+      banner.style.display = "flex";
+      document.getElementById("edit-product-label").textContent = `${p.hero?.title || p.id} (${p.id})`;
+
+      // 1. 填入型号
+      const rawModel = p.slug || p.id.replace(/^product-/, '');
+      document.getElementById("p-model").value = rawModel;
+      syncProductId();
+
+      // 2. 选中分类
+      const catKey = p.backLink?.href?.split("#")?.[1] || "";
+      if (catKey) {
+        document.getElementById("p-category").value = catKey;
+      }
+
+      // 3. 填入封面主图
+      const coverUrl = p.summary?.cover?.src || p.media?.thumbnails?.[0]?.src || "";
+      document.getElementById("p-cover").value = coverUrl;
+      previewCoverImage();
+
+      // 4. 填入详情切片长图 URLs (将已有切片完整逐行导出)
+      const galleryUrls = (p.media?.gallery || []).map(g => (typeof g === 'string' ? g : (g.src || g.href))).filter(Boolean);
+      document.getElementById("p-gallery").value = galleryUrls.join("\n");
+      previewGalleryImages();
+
+      // 5. 填入三语内容
+      // 中文
+      document.getElementById("p-title-zh").value = p.hero?.title || "";
+      document.getElementById("p-category-name-zh").value = p.hero?.eyebrow || "";
+      document.getElementById("p-summary-zh").value = p.hero?.description || "";
+
+      // 韩文
+      document.getElementById("p-title-ko").value = p.translations?.ko?.hero?.title || p.hero?.title || "";
+      document.getElementById("p-category-name-ko").value = p.translations?.ko?.hero?.eyebrow || p.hero?.eyebrow || "";
+      document.getElementById("p-summary-ko").value = p.translations?.ko?.hero?.description || p.hero?.description || "";
+
+      // 英文
+      document.getElementById("p-title-en").value = p.translations?.en?.hero?.title || p.hero?.title || "";
+      document.getElementById("p-category-name-en").value = p.translations?.en?.hero?.eyebrow || p.hero?.eyebrow || "";
+      document.getElementById("p-summary-en").value = p.translations?.en?.hero?.description || p.hero?.description || "";
+
+      // 6. 更新提交按钮文案
+      const submitBtn = document.getElementById("btn-submit-product");
+      submitBtn.textContent = "💾 保存修改并同步更新全站 (SOP)";
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      showToast(`已成功载入 [${p.hero?.title || p.id}]，可直接修改切片长图或文案！`, "success");
+    }
+
+    function cancelEditMode() {
+      isEditingProduct = false;
+      editingProductId = "";
+      document.getElementById("product-form").reset();
+      document.getElementById("edit-banner").style.display = "none";
+      document.getElementById("cover-preview-box").style.display = "none";
+      document.getElementById("gallery-preview-strip").innerHTML = "";
+      document.getElementById("btn-submit-product").textContent = "💾 保存并全自动生成代码 (SOP)";
+      syncProductId();
+    }
+
+    // 提交新产品 / 保存编辑
     async function handleProductSubmit(e) {
       e.preventDefault();
       const btn = document.getElementById("btn-submit-product");
       btn.disabled = true;
-      btn.textContent = "⏳ 正在执行 SOP 自动化写入...";
+      btn.textContent = isEditingProduct ? "⏳ 正在执行原位更新与 SOP 同步..." : "⏳ 正在执行 SOP 自动化写入...";
 
       const model = document.getElementById("p-model").value.trim();
       const categoryKey = document.getElementById("p-category").value;
@@ -1243,20 +1336,19 @@ https://oss.tgripon.com/product-web/Vacuum_Cleaner_L11/02.jpg" oninput="previewG
         });
         const result = await res.json();
         if (result.success) {
-          showToast(`✅ 产品 ${payload.model} 已成功发布并注入全站！`, "success");
-          document.getElementById("product-form").reset();
-          document.getElementById("gallery-preview-strip").innerHTML = "";
-          document.getElementById("cover-preview-box").style.display = "none";
+          const actionText = isEditingProduct ? "更新并同步全站" : "发布并注入全站";
+          showToast(`✅ 产品 ${payload.model} 已成功${actionText}！`, "success");
+          cancelEditMode();
           loadStatus();
           switchMainTab("products-list");
         } else {
-          showToast(result.error || "发布失败", "error");
+          showToast(result.error || "保存失败", "error");
         }
       } catch (err) {
         showToast("网络请求异常: " + err.message, "error");
       } finally {
         btn.disabled = false;
-        btn.textContent = "💾 保存并全自动生成代码 (SOP)";
+        btn.textContent = isEditingProduct ? "💾 保存修改并同步更新全站 (SOP)" : "💾 保存并全自动生成代码 (SOP)";
       }
     }
 
