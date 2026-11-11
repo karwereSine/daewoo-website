@@ -204,6 +204,51 @@ function addCategory({ key, zh, ko, en, descZh, descKo, descEn }) {
   return { success: true, key: safeKey, version: newV };
 }
 
+// 安全查找并替换单张产品卡片（逐卡片匹配，杜绝跨标签吞噬其他专区）
+function safeReplaceProductCard(html, productId, newCardHtml) {
+  const articleRegex = /<article\b[^>]*class="[^"]*product-feature-card[^"]*"[\s\S]*?<\/article>/gi;
+  let match;
+  while ((match = articleRegex.exec(html)) !== null) {
+    const cardBlock = match[0];
+    if (cardBlock.includes(`product.html?id=${productId}`)) {
+      let startIndex = match.index;
+      let endIndex = startIndex + cardBlock.length;
+
+      // 检查卡片前面是否有紧邻的产品注释行，如果有，一并囊括
+      const prefix = html.slice(0, startIndex);
+      const commentMatch = prefix.match(/([ \t]*<!--[^\n]*-->[ \t]*\r?\n)[ \t]*$/);
+      if (commentMatch) {
+        startIndex -= commentMatch[0].length;
+      }
+
+      return html.slice(0, startIndex) + `\n${newCardHtml.trim()}\n` + html.slice(endIndex);
+    }
+  }
+  return null;
+}
+
+// 安全删除单张产品卡片
+function safeRemoveProductCard(html, productId) {
+  const articleRegex = /<article\b[^>]*class="[^"]*product-feature-card[^"]*"[\s\S]*?<\/article>/gi;
+  let match;
+  while ((match = articleRegex.exec(html)) !== null) {
+    const cardBlock = match[0];
+    if (cardBlock.includes(`product.html?id=${productId}`)) {
+      let startIndex = match.index;
+      let endIndex = startIndex + cardBlock.length;
+
+      const prefix = html.slice(0, startIndex);
+      const commentMatch = prefix.match(/([ \t]*<!--[^\n]*-->[ \t]*\r?\n)[ \t]*$/);
+      if (commentMatch) {
+        startIndex -= commentMatch[0].length;
+      }
+
+      return html.slice(0, startIndex) + html.slice(endIndex);
+    }
+  }
+  return html;
+}
+
 // 添加或更新产品 (严格遵循 SOP: Step 2, 3, 4, 6)
 function addProduct(payload) {
   const { model, categoryKey, coverUrl, gallery, zh, ko, en } = payload;
@@ -366,7 +411,7 @@ function addProduct(payload) {
   appJs = appJs.replace(enInjectAnchor, enEntries);
   fs.writeFileSync(APP_JS_PATH, appJs, 'utf-8');
 
-  // 3. 更新 product-center.html (Step 4 & 避坑指南：防裁切、内联样式兜底、原位更新)
+  // 3. 更新 product-center.html (Step 4 & 避坑指南：防裁切、内联样式兜底、原位安全更新)
   let pcHtml = fs.readFileSync(PRODUCT_CENTER_HTML_PATH, 'utf-8');
 
   const newCardHtml = `
@@ -383,17 +428,17 @@ function addProduct(payload) {
             <a class="product-feature-card__link" href="product.html?id=${productId}" data-i18n="productCenter.cards.viewDetails">查看详情</a>
           </article>`;
 
-  // 如果已存在该卡片，进行原位精准替换；若不存在，作为新品插入该分类最顶部
-  const existingCardRegex = new RegExp(`<article[^>]*class="product-feature-card"[\\s\\S]*?href="product\\.html\\?id=${productId}"[\\s\\S]*?<\\/article>`);
-  if (pcHtml.match(existingCardRegex)) {
-    pcHtml = pcHtml.replace(existingCardRegex, newCardHtml.trim());
+  // 使用安全切片替换函数进行原位精准替换，彻底杜绝跨标签吞噬其他专区
+  const replacedHtml = safeReplaceProductCard(pcHtml, productId, newCardHtml);
+  if (replacedHtml !== null) {
+    pcHtml = replacedHtml;
   } else {
-    // 寻找指定分类专区容器: <section id="${categoryKey}" class="product-section"> ... <div class="product-feature-grid">
+    // 若不存在，作为新品插入该分类最顶部
     const sectionTarget = new RegExp(`(<section[^>]*id="${categoryKey}"[^>]*>[\\s\\S]*?<div\\s+class="product-feature-grid">)`);
     if (pcHtml.match(sectionTarget)) {
-      pcHtml = pcHtml.replace(sectionTarget, `$1${newCardHtml}`);
+      pcHtml = pcHtml.replace(sectionTarget, `$1\n${newCardHtml.trim()}`);
     } else {
-      pcHtml = pcHtml.replace(/(<div\s+class="product-feature-grid">)/, `$1${newCardHtml}`);
+      pcHtml = pcHtml.replace(/(<div\s+class="product-feature-grid">)/, `$1\n${newCardHtml.trim()}`);
     }
   }
   fs.writeFileSync(PRODUCT_CENTER_HTML_PATH, pcHtml, 'utf-8');
@@ -414,10 +459,9 @@ function deleteProduct(productId) {
   productsData.products = (productsData.products || []).filter(p => p.id !== productId);
   fs.writeFileSync(PRODUCTS_JSON_PATH, JSON.stringify(productsData, null, 2), 'utf-8');
 
-  // 2. 从 product-center.html 移除卡片
+  // 2. 从 product-center.html 原位安全移除卡片
   let pcHtml = fs.readFileSync(PRODUCT_CENTER_HTML_PATH, 'utf-8');
-  const cardRegex = new RegExp(`<article[^>]*class="product-feature-card"[\\s\\S]*?href="product\\.html\\?id=${productId}"[\\s\\S]*?<\\/article>`, 'g');
-  pcHtml = pcHtml.replace(cardRegex, '');
+  pcHtml = safeRemoveProductCard(pcHtml, productId);
   fs.writeFileSync(PRODUCT_CENTER_HTML_PATH, pcHtml, 'utf-8');
 
   // 3. 全站递增版本号
