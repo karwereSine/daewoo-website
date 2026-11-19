@@ -814,7 +814,14 @@ const server = http.createServer((req, res) => {
 
     // 10. POST /api/choose-directory (调用 macOS 原生访达弹窗选择本地目录)
     if (pathname === '/api/choose-directory' && method === 'POST') {
-      const script = 'POSIX path of (choose folder with prompt "请选择图片保存的本地目录:")';
+      const lang = parsedUrl.searchParams.get('lang') || 'zh';
+      const promptMap = {
+        zh: '请选择图片保存的本地目录:',
+        en: 'Select a local folder to save images:',
+        ko: '이미지를 저장할 로컬 폴더를 선택하세요:'
+      };
+      const promptText = promptMap[lang] || promptMap.zh;
+      const script = `POSIX path of (choose folder with prompt "${promptText}")`;
       const child = spawn('osascript', ['-e', script]);
 
       let output = '';
